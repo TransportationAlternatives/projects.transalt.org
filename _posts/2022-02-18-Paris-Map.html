@@ -1,0 +1,103 @@
+---
+layout: post
+date: 2022-02-18
+title: What would Paris’s proposed car-free zone look like in New York City?
+shorthead: Car-Free Zone
+label: NYC 25x25
+permalink: /paris
+image: /paris-map.jpg
+---
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+
+<style type="text/css">
+	#popup {
+	z-index: 54;
+}
+.mgl-map-overlay {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   z-index: 1;
+}
+    #shape {
+ position: absolute;
+ overflow: hidden;
+	}
+    #map {
+        width: 100%;
+        height: 100vh;
+    }
+    .leaflet-zoom-box {
+    display: none;
+}
+</style>
+
+<p>When we saw the <a href="https://twitter.com/TransAlt/status/1494661495216615428" target="_blank">proposed car-free zone in Paris</a>, it got us wondering: &ldquo;What would that look like in New York City?&rdquo;</p>
+
+<p">Check out the map below to see an approximation of what the zone coming to Paris in 2024 would look like in the city. We can make this possible here with <a href="https://nyc25x25.org" target="_blank"><em>NYC 25x25</em></a>, our vision to reclaim 25 percent of space for cars and turn it into space for people by 2025.</p>
+
+		<div class="d-none d-lg-block pt-2">
+			<a href="#map" style="border-bottom: none;" class="btn btn-primary btn-lg">See the map</a>
+			<span style="padding-left: 8px"><i class="bi bi-arrows-move"></i> Drag the map around to see the car-free zone.</span>
+		</div>
+		<div class="d-lg-none pt-4">
+			<a href="#map" style="border-bottom: none;" class="btn btn-lg btn-primary">See the map</a>
+			<p style="padding-top: 8px"><i class="bi bi-arrows-move"></i> Drag the map around to see the car-free zone.</p>
+		</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container pt-5">
+<div style=" display: flex;
+  align-items: center;
+  justify-content: center;">
+	<div style="position:; z-index: 1000;" id="shape">
+		<img id="" src="https://raw.githubusercontent.com/TransportationAlternatives/projects/bb48469614bdfbd23dc068b8ffb3ef464058d575/images/map.svg" width="275px"></div>
+	<div id="map"></div>
+</div>
+
+
+
+<script>
+    var map = L.map('map', { zoomControl:false,  scrollWheelZoom: false, touchZoom: false, doubleClickZoom: false }).setView([40.747401382848594, -73.96983010648414], 13); 
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_token={accessToken}', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+    	zoomOffset: -1,
+    	zoomControl: false,
+    	scrollWheelZoom: false,
+    	detectRetina: true,
+        accessToken: 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJja3dtZGV5aWsyYjJmMndub2R3cTBuazIyIn0.DaRqJP0ez4gMNtcslbVakQ'
+    }).addTo(map);
+
+    L.Control.Watermark = L.Control.extend({
+    onAdd: function(map) {
+        var img = L.DomUtil.create('img');
+
+        img.src = 'https://raw.githubusercontent.com/TransportationAlternatives/projects/7d53e6c98b74324ca952a0fc583fed777264f55d/images/t-tr.svg';
+        img.style.width = '60px';
+
+        return img;
+    },
+
+    onRemove: function(map) {
+        // Nothing to do here
+    }
+});
+
+L.control.watermark = function(opts) {
+    return new L.Control.Watermark(opts);
+}
+
+L.control.watermark({ position: 'bottomleft' }).addTo(map);
+
+
+</script>  

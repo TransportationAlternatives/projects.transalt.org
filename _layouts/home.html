@@ -1,0 +1,29 @@
+---
+layout: default
+---
+  		<article style="min-height: 70vh;">
+  			<div class="container">
+  				<div class="row d-flex justify-content-center">
+  					<div class="col-lg-8">
+  						<div class="bg-light" style="padding: 1rem 1rem .4rem;">
+  							<h1 class="fs-4">Transportation Alternatives Projects</h1>
+  							<p>Archive of TA web projects.</p>
+
+  						</div>
+  						{% for post in site.posts %}
+						  	{% assign currentdate = post.date | date: "%Y" %}
+						  	{% if currentdate != date %}
+						    	{% unless forloop.first %}{% endunless %}
+	    						<h3 class="fs-5 pt-3" style="font-weight: 400" id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h3>
+	    						{% assign date = currentdate %}
+	    					{% endif %}
+	    						<div class="archive-item d-md-flex justify-content-between flex-row-reverse" style="margin-bottom: -5px;">
+	    							<p class="archive-date">{{ post.date | date: "%B" }} {{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}</p>
+	    							<a href="{{ post.url }}" class="archive-link">{{ post.title }}</a>
+	    						</div>					
+	    						{% if forloop.last %}{% endif %}
+	    				{% endfor %}
+  					</div>
+  				</div>
+  			</div>
+  		</article>
