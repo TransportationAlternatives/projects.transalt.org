@@ -28,9 +28,44 @@ p,li {
 	font-weight: 600;
 }
 
-.nav-cta {
-	margin-left: 12px;
+@media (max-width: 575.98px) {
+	.nav-cta {
+		margin-left: 0px;
+	}
+	.logo-icon {
+		height: 24px;
+		width: 24px;
+	}
+	.navbar-brand {
+		font-size: 14px !important;
+	}
+	.navbar-toggler {
+		background-color: white;
+		border: none;
+		padding: 0;
+		margin: 0;
+		color: ##414042;
+	}
+	
 }
+
+@media (max-width: 765px) {
+	.archive-date {
+		padding-top: 16px;
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 575.99px) {
+	.nav-cta {
+		margin-left: 12px;
+	}
+	.logo-icon {
+		height: 28px;
+		width: 36px;
+	}
+}
+
 
 .navbar {
 	border-bottom: 2px solid #e6e7e8;
