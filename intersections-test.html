@@ -1,0 +1,66 @@
+---
+layout: page
+title: Tracking Mayor Adams’s Promise to Upgrade 1,000 Intersections
+shorthead: Intersection Tracker Test
+label: Non-Production
+search-no: yes
+image: https://raw.githubusercontent.com/TransportationAlternatives/projects.transalt.org/main/assets/img/intersection.jpg
+---
+
+<table id="top-stats" class="table table-condensed"></table>
+
+{% include intersection-test.html %}
+
+		</div>
+	</div>
+</div>
+<div class="container pt-5">
+	<div class="row d-flex justify-content-center">
+		<div class="text-center">
+			<button class="show btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Show intersection list
+			</button>
+		</div>
+		<div class="col-md-10">
+			<style type="text/css">
+				.table td, .table th { padding-left: 0; }
+			</style>
+			<div class="table-responsive pt-5 collapse" id="collapseExample">
+				<table id="all-intersections" class="table table-condensed" style="padding: 0"></table>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+<script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+<script type="text/javascript">
+	var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/11srMO56wrX5EqZJBugv6Z3GYn8v8jBvCsizI7Y1VNRw/edit#gid=0';
+
+$('#top-stats').sheetrock({
+  url: mySpreadsheet,
+  query: "select I",
+  fetchSize: 2
+});
+
+$('#all-intersections').sheetrock({
+  url: mySpreadsheet,
+  query: "select A,D,F,G",
+  fetchSize: 1000
+});
+</script>
+
+<script type="text/javascript">
+	$('.show').click(function() {
+    if ($(this).text() === 'Show intersection list') {
+         $(this).text('Hide intersection list');
+    }
+    else {
+        $(this).text('Show intersection list');
+    }
+});
+</script>
+
+
+  
