@@ -10,6 +10,54 @@ image: https://raw.githubusercontent.com/TransportationAlternatives/projects.tra
 ---
 
 <p>Earlier this year, Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez <a href="https://www.amny.com/transit/nyc-intersections-redesigned-police-enforcement-nyc-traffic-safety/" target="_blank">promised to upgrade 1,000 intersections</a> across New York City for safety. These improvements could include installing <a href="https://www.nytimes.com/2022/03/02/nyregion/nyc-raised-crosswalks-traffic-deaths.html" target="_blank">raised crosswalks</a>, leading pedestrian intervals, shortening crossings, or other interventions.</p>
+
+<!-- Intersection treatments -->
+
+		</div>
+	</div>
+</div>
+<div class="container pt-5">
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-3">
+			<img src="assets/img/inter/raised.png" class="dict float-end" alt="">
+			<h3 class="fs-5">Raised Crosswalks</h3>
+			<p class="small-text">Raised crosswalks put crosswalks at the same height as sidewalks. Raised crosswalks increase visibility, improve accessibility, and serve as speed bumps that slow drivers.</p>
+		</div>
+		<div class="col-md-3">
+			<img src="assets/img/inter/lpi.png" class="dict float-end" alt="">
+			<h3 class="fs-5">Leading Pedestrian Interval</h3>
+			<p class="small-text">These show a walk sign for pedestrians before a green light to car traffic, improving visibility by allowing pedestrians to begin crossing the street before cars make turns across the crosswalk.</p>
+		</div>
+		<div class="col-md-3">
+			<img src="assets/img/inter/corral.png" class="dict float-end" alt="">
+			<h3 class="fs-5">Bike Corral</h3>
+			<p class="small-text">Bike corrals serve "daylight" intersections, increasing intersection visibility for drivers, bike riders, and pedestrians. Their placement also helps prevent drivers from taking turns too quickly.</p>
+		</div>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-3">
+			<img src="assets/img/inter/left.png" class="dict float-end" alt="">
+			<h3 class="fs-5">Left Turn Calming</h3>
+			<p class="small-text">DOT places rubber curbs, flexible plastic posts, or bollards along the path of the turn to encourage drivers to follow the intended path for the turn and slow drivers down.</p>
+		</div>
+		<div class="col-md-3">
+			<img src="assets/img/inter/light.png" class="dict float-end" alt="">
+			<h3 class="fs-5">Traffic Signal</h3>
+			<p class="small-text">Traffic signals give pedestrians a specific time to cross an intersection without waiting for a gap in traffic and clarify when drivers, cyclists, and pedestrians should proceed.</p>
+		</div>
+		<div class="col-md-3">
+			<img src="assets/img/inter/stop.png" class="dict float-end" alt="">
+			<h3 class="fs-5">All-Way Stop</h3>
+			<p class="small-text">All-way stops allow pedestrians to cross an intersection without waiting for a gap in traffic and make crossing less chaotic for drivers and cyclists.</p>
+		</div>
+	</div>
+</div>
+
+<div class="container pt-5">
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-6">
+
+
 <p>The city has not comprehensively published where intersection upgrades have taken place or what metrics are being used to determine which intersections get improvements, so Transportation Alternatives's <a href="https://transalt.org/brooklyn" target="_blank">Brooklyn Activist Committee</a> is tracking the administration's commitment to meeting this goal.</p>
 
 <table id="top-stats" class="table table-condensed"></table>
@@ -22,8 +70,7 @@ image: https://raw.githubusercontent.com/TransportationAlternatives/projects.tra
 <div class="container pt-5">
 	<div class="row d-flex justify-content-center">
 		<div class="text-center">
-			<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-				See intersection list <i class="bi bi-chevron-down"></i>
+			<button class="show btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Show intersection list
 			</button>
 		</div>
 		<div class="col-md-10">
@@ -61,6 +108,16 @@ $('#all-intersections').sheetrock({
 });
 </script>
 
+<script type="text/javascript">
+	$('.show').click(function() {
+    if ($(this).text() === 'Show intersection list') {
+         $(this).text('Hide intersection list');
+    }
+    else {
+        $(this).text('Show intersection list');
+    }
+});
+</script>
 
 
   
