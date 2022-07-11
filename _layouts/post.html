@@ -11,8 +11,8 @@ layout: default
 						<span class="article-label">{{ page.label }}</span>
 					</div>
 				{% endif %}
-				<h1 class="headline">{{ page.title }}</h1>
-				<p class="byline">Published on {{ page.date | date: "%B" }} {{ page.date | date: "%d" | plus:'0' }}, {{ page.date | date: "%Y" }}</p>
+				<h1 class="headline pb-4">{{ page.title }}</h1>
+				<!-- <p class="byline">Published on {{ page.date | date: "%B" }} {{ page.date | date: "%d" | plus:'0' }}, {{ page.date | date: "%Y" }}</p> -->
 				
 				{{ content }}
 			</div>
