@@ -187,18 +187,17 @@ main a {
     </nav>
     </header>
     <main>
-      <div class="container py-5">
+      <div class="container pt-5 pb-3">
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
             <h1>Bike Lane Tracker</h1>
-            <p class="pb-3">Mayor Eric Adams promised to install 300 miles of protected bike lanes by the end of his first term in 2025. The NYC Streets Plan requires New York City to install at least 30 miles of protected bike lanes by the end of 2022. We’re keeping track of the administration’s progress.</p>
+            <p class="pb-3 pt-2">Mayor Eric Adams promised to install 300 miles of protected bike lanes by the end of his first term in 2025. The <a href="#smp">NYC Streets Plan</a> requires New York City to install at least 30 miles of protected bike lanes by the end of 2022. We’re keeping track of the administration’s progress.</p>
             <hr>
-            <h3><strong>TK out of 30 required miles</strong> have been installed in 2022.</h3>
-            <hr>
+            <h3><strong><span style="color: #0B9D58;">TK</span> out of 30 required miles</strong> have been installed in 2022.</h3>
           </div>
         </div>
       </div>
-      <div class="container-fluid py-3">
+      <div class="container-fluid pb-3">
          <div id="map"></div>
 
       </div>
@@ -207,7 +206,7 @@ main a {
           <div class="col-md-8">
             <iframe title="How close is Mayor Adams to reaching his goals?" aria-label="Table" id="datawrapper-chart-JW3Gg" src="https://datawrapper.dwcdn.net/JW3Gg/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="205"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
-            <h2 class="pt-5">About the NYC Streets Plan</h2>
+            <h2 class="pt-5" id="smp">About the NYC Streets Plan</h2>
             <p>The New York City Streets Plan will transform how we get around our city. TA, Families for Safe Streets, and countless other organizations and elected officials fought for years to require the city to put together the first ever streets plan. In 2022, the New York City Council and Mayor Adams agreed to a <a href="https://www.ny1.com/nyc/all-boroughs/transit/2022/04/24/mayor-adams-pledges--904-million-in-traffic-safety-investments" target="_blank">historic $904 million investment</a> in the NYC Streets Plan — a crucial investment into making the reality and, in turn, achieving <a href="https://nyc25x25.org" target="_blank">NYC 25x25</a>.</p>
             <p>This plan is a legal requirement that New York City must follow, with annual benchmarks it must meet over the next five years, including:</p>
               <div class="wide-right-text border-top">
@@ -241,11 +240,11 @@ main a {
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 py-3">
-            <h2>Lanes in progress</h2>
+            <h2>Lanes in <span style="color: #9B27B0;">progress</span></h2>
             <div id="map2"></div>
           </div>
           <div class="col-md-6 py-3">
-            <h2>Lanes announced</h2>
+            <h2>Lanes <span style="color: #E65200;">announced</span></h2>
             <div id="map3"></div>
           </div>
         </div>
