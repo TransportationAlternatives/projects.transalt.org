@@ -98,6 +98,58 @@ li {
     width: 36px;
   }
 }
+
+main a {
+  color: #0E9C4B;
+  text-decoration-color: #BFE2CD;
+  transition: 0.2s;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+
+  .wide-right {
+    padding-top: 45px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+    margin-right: -40%;
+    float: right;
+    width: 80%;
+    text-align: right;
+  }
+
+  .wide-right-text {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    padding-left: 0;
+    margin-right: -30%;
+    margin-left: 30px;
+    float: right;
+    width: 50%;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+  }
+
+  p.wide-right-text {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .big-image,.wide-right,.wide-left {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+      .wide-right-text {
+        padding-top: 15px;
+        padding-bottom: 30px;
+        width: 100%;
+        text-align: left;
+        font-family: 'Lato', sans-serif;
+      }
+}
+
   </style>
 
   </head>
@@ -153,15 +205,18 @@ li {
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
             <h2>About the NYC Streets Plan</h2>
-            <p>The New York City Streets Plan will transform how we get around our city. TA, Families for Safe Streets, and countless other organizations and elected officials fought for years to require the city to put together the first ever streets plan. In 2022, the New York City Council and Mayor Adams agreed to a historic $904 million investment in the NYC Streets Plan — a crucial investment into making the reality and, in turn, achieving NYC 25x25.</p>
+            <p>The New York City Streets Plan will transform how we get around our city. TA, Families for Safe Streets, and countless other organizations and elected officials fought for years to require the city to put together the first ever streets plan. In 2022, the New York City Council and Mayor Adams agreed to a <a href="https://www.ny1.com/nyc/all-boroughs/transit/2022/04/24/mayor-adams-pledges--904-million-in-traffic-safety-investments" target="_blank">historic $904 million investment</a> in the NYC Streets Plan — a crucial investment into making the reality and, in turn, achieving <a href="https://nyc25x25.org" target="_blank">NYC 25x25</a>.</p>
             <p>This plan is a legal requirement that New York City must follow, with annual benchmarks it must meet over the next five years, including:</p>
-
+              <div class="wide-right-text border-top">
+              <p style="margin-bottom: 5px; font-size: 18px;"><b>Tracking the Streets Plan</b></p>
+              <p>Mayor Adams is required to install at least 20 miles of bus lanes by the end of 2022. Our partners at Riders Alliance are tracking the administration’s progress toward that goal.</p>
+              <a class="btn btn-primary" href="https://www.ridersalliance.org/bus-lane-tracker" role="button" target="_blank">Bus lane tracker</a>
+            </div>
             <ul>
 
             <li>250 miles of protected bike lanes (At least 30 miles in 2022 and at least 50 miles in following years)</li>
 
             <li>150 miles of physically- or camera-protected bus lanes (At least 20 miles in 2022 and at least 30 miles in following years)</li>
-
             <li>Create and maintain one million square feet of pedestrian space within the first two years of the plan</li>
 
             <li>Transit signal priority at 750 intersections during the first year and at least 1,000 in following years</li>
@@ -189,14 +244,6 @@ li {
           <div class="col-md-6">
             <h2>Lanes announced</h2>
             <div id="map3"></div>
-          </div>
-        </div>
-      </div>
-      <div class="container p-5 pt-5">
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-8">
-            <h2>What about the other metrics?</h2>
-            <p>Mayor Adams is required to install at least 20 miles of bus lanes by the end of 2022. Our partners at Riders Alliance are tracking the administration’s progress toward that goal. Take a look at their bus lane tracker.</p>
           </div>
         </div>
       </div>
