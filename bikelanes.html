@@ -21,6 +21,8 @@
 <!-- Leaflet-KMZ -->
 <script src="https://unpkg.com/leaflet-kmz@latest/dist/leaflet-kmz.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
+<script src="https://unpkg.com/leaflet-gesture-handling"></script>
 
 
   <style type="text/css">
@@ -207,7 +209,7 @@ main a {
             <iframe title="How close is Mayor Adams to reaching his goals?" aria-label="Table" id="datawrapper-chart-JW3Gg" src="https://datawrapper.dwcdn.net/JW3Gg/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="205"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
             <h2 class="pt-5" id="smp">About the NYC Streets Plan</h2>
-            <p>The New York City Streets Plan will transform how we get around our city. TA, Families for Safe Streets, and countless other organizations and elected officials fought for years to require the city to put together the first ever streets plan. In 2022, the New York City Council and Mayor Adams agreed to a <a href="https://www.ny1.com/nyc/all-boroughs/transit/2022/04/24/mayor-adams-pledges--904-million-in-traffic-safety-investments" target="_blank">historic $904 million investment</a> in the NYC Streets Plan — a crucial investment into making the reality and, in turn, achieving <a href="https://nyc25x25.org" target="_blank">NYC 25x25</a>.</p>
+            <p>The <a href="https://www1.nyc.gov/html/dot/html/about/nyc-streets-plan.shtm" target="_blank">New York City Streets Plan</a> will transform how we get around our city. TA, Families for Safe Streets, and countless other organizations and elected officials fought for years to require the city to put together the first ever streets plan. In 2022, the New York City Council and Mayor Adams agreed to a <a href="https://www.ny1.com/nyc/all-boroughs/transit/2022/04/24/mayor-adams-pledges--904-million-in-traffic-safety-investments" target="_blank">historic $904 million investment</a> in the NYC Streets Plan — a crucial investment into making the reality and, in turn, achieving <em><a href="https://nyc25x25.org" target="_blank">NYC 25x25</a></em>.</p>
             <p>This plan is a legal requirement that New York City must follow, with annual benchmarks it must meet over the next five years, including:</p>
               <div class="wide-right-text border-top">
               <p style="margin-bottom: 5px; font-size: 18px;"><b>Tracking the Streets Plan</b></p>
@@ -269,12 +271,14 @@ main a {
     </main>
    <script>
   var map = L.map('map', {
-    preferCanvas: true // recommended when loading large layers.
+    preferCanvas: true, // recommended when loading large layers.
+    gestureHandling: true
   });
   map.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
 
  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 17,
+    minZoom: 10,
     attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL'
 }).addTo(map);
 
@@ -293,12 +297,14 @@ main a {
 
    <script>
   var map2 = L.map('map2', {
-    preferCanvas: true // recommended when loading large layers.
+    preferCanvas: true,
+    gestureHandling: true
   });
   map2.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
 
  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     maxZoom: 19,
+    minZoom: 10,
     attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL'
 }).addTo(map2);
 
@@ -317,12 +323,14 @@ main a {
 
    <script>
   var map3 = L.map('map3', {
-    preferCanvas: true // recommended when loading large layers.
+    preferCanvas: true, // recommended when loading large layers.
+    gestureHandling: true
   });
   map3.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
 
  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     maxZoom: 19,
+    minZoom: 10,
     attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL'
 }).addTo(map3);
 
