@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bike Lane Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<!-- Leaflet-KMZ -->
+<script src="https://unpkg.com/leaflet-kmz@latest/dist/leaflet-kmz.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid p-5 pb-3">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Bike Lane Tracker</h1>
+            <p>Mayor Eric Adams promised to install 300 miles of protected bike lanes by the end of his first term in 2025. The NYC Streets Plan requires New York City to install at least 30 miles of protected bike lanes by the end of 2022. We’re keeping track of the administration’s progress.</p>
+            <hr>
+            <h3>3.1 out of 30 required miles have been installed in 2022.</h3>
+            <hr>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid p-5 pt-0">
+         <div id="map"></div>
+      </div>
+      <div class="container-fluid p-5 pt-5">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>About the NYC Streets Plan</h2>
+          </div>
+          <div class="col-md-8">
+            <p>The New York City Streets Plan will transform how we get around our city. TA, Families for Safe Streets, and countless other organizations and elected officials fought for years to require the city to put together the first ever streets plan. In 2022, the New York City Council and Mayor Adams agreed to a historic $904 million investment in the NYC Streets Plan — a crucial investment into making the reality and, in turn, achieving NYC 25x25.</p>
+            <p>This plan is a legal requirement that New York City must follow, with annual benchmarks it must meet over the next five years, including:</p>
+
+            <ul>
+
+            <li>250 miles of protected bike lanes (At least 30 miles in 2022 and at least 50 miles in following years)</li>
+
+            <li>150 miles of physically- or camera-protected bus lanes (At least 20 miles in 2022 and at least 30 miles in following years)</li>
+
+            <li>Create and maintain one million square feet of pedestrian space within the first two years of the plan</li>
+
+            <li>Transit signal priority at 750 intersections during the first year and at least 1,000 in following years</li>
+
+            <li>Bus stop upgrades like benches, shelters, and real-time passenger information at 500 bus stops each year</li>
+
+            <li>Redesigning at least 2,000 signalized intersections over five years, with at least 400 redesigns each year</li>
+
+            <li>Accessible pedestrian signals at no fewer than 2,500 intersections, with at least 500 installations each year</li>
+
+            <li>Assessing and amending commercial loading zones and truck routes</li>
+
+            <li>Developing parking policies to promote the master plan’s goals of safety, mass transit use, reduced vehicle emissions, and access for individuals with disabilities</li>
+
+          </ul>
+        </div>
+        <div class="row pt-5">
+          <div class="col-md-4">
+            <h2>What about the other metrics?</h2>
+          </div>
+          <div class="col-md-8">
+            <p>Mayor Adams is required to install at least 20 miles of bus lanes by the end of 2022. Our partners at Riders Alliance are tracking the administration’s progress toward that goal. Take a look at their bus lane tracker.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+             <p>Created by Brandon Chamberlain and Transportation Alternatives.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+   <script>
+  var map = L.map('map', {
+    preferCanvas: true // recommended when loading large layers.
+  });
+  map.setView(new L.LatLng(40.77884834194515, -73.92836800903775), 10);
+
+ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+  // Instantiate KMZ layer (async)
+  var kmz = L.kmzLayer().addTo(map);
+
+  kmz.on('load', function(e) {
+    control.addOverlay(e.layer, e.name);
+    // e.layer.addTo(map);
+  });
+
+  // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
+  kmz.load('https://raruto.github.io/leaflet-kmz/examples/capitals.kmz');
+
+  var control = L.control.layers(null, null, { collapsed:false }).addTo(map);
+</script>
+  </body>
+</html>
