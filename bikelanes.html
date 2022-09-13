@@ -235,53 +235,53 @@ li {
 </script>
 
    <script>
-  var map = L.map('map2', {
+  var map2 = L.map('map2', {
     preferCanvas: true // recommended when loading large layers.
   });
-  map.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
+  map2.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
 
  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL'
-}).addTo(map);
+}).addTo(map2);
 
   // Instantiate KMZ layer (async)
-  var kmz = L.kmzLayer().addTo(map);
+  var kmz = L.kmzLayer().addTo(map2);
 
   kmz.on('load', function(e) {
     control.addOverlay(e.layer, e.name);
-    // e.layer.addTo(map);
+    // e.layer.addTo(map2);
   });
 
   // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
   kmz.load('https://projects.transalt.org/assets/img/In%20progress.kmz');
 
-  var control = L.control.layers(null, null, { collapsed:false }).addTo(map);
+  var control = L.control.layers(null, null, { collapsed:false }).addTo(map2);
 </script>
 
    <script>
-  var map = L.map('map3', {
+  var map3 = L.map('map3', {
     preferCanvas: true // recommended when loading large layers.
   });
-  map.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
+  map3.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
 
  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL'
-}).addTo(map);
+}).addTo(map3);
 
   // Instantiate KMZ layer (async)
-  var kmz = L.kmzLayer().addTo(map);
+  var kmz = L.kmzLayer().addTo(map3);
 
   kmz.on('load', function(e) {
     control.addOverlay(e.layer, e.name);
-    // e.layer.addTo(map);
+    // e.layer.addTo(map3);
   });
 
   // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
   kmz.load('https://projects.transalt.org/assets/img/announced.kmz');
 
-  var control = L.control.layers(null, null, { collapsed:false }).addTo(map);
+  var control = L.control.layers(null, null, { collapsed:false }).addTo(map3);
 </script>
   </body>
 </html>
