@@ -1,25 +1,33 @@
 <!doctype html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Bike Lane Tracker – Transportation Alternatives</title>
 
+
+    <!-- Fonts/Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-   crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    
     <!-- Leaflet-KMZ -->
     <script src="https://unpkg.com/leaflet-kmz@latest/dist/leaflet-kmz.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
     <script src="https://unpkg.com/leaflet-gesture-handling"></script>
+
+    <!-- Sheetrock -->
+    <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
 
     <!-- Primary Meta Tags -->
     <title>Bike Lane Tracker – Transportation Alternatives</title>
@@ -41,141 +49,140 @@
     <meta property="twitter:image" content="https://raw.githubusercontent.com/TransportationAlternatives/projects.transalt.org/main/assets/img/bikelane.png">
 
 
-  <style type="text/css">
-    #map { height: 750px; }
+    <style type="text/css">
+      #map { height: 750px; }
 
-    #map3 { height: 500px; }
+      #map3 { height: 500px; }
 
-    #map2 { height: 500px; }
+      #map2 { height: 500px; }
 
-    body { font-family: 'Inter', sans-serif; }
+      body { font-family: 'Inter', sans-serif; }
 
-    h1 {
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    li {
-      padding-top: 8px;
-    }
-    .small-header {
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .nav-link, .navbar-brand {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      color: #414042 !important;
-      font-size: 18px !important;
-    }
-
-    .btn {
-      text-transform: uppercase;
-      border-radius: 0;
-    }
-
-    .btn-primary {
-      background-color: #f15d22 !important;
-      border-color: #f15d22 !important;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-    }
-
-    @media (max-width: 575.98px) {
-      .nav-cta {
-        margin-left: 0px;
-      }
-      .logo-icon {
-        height: 24px;
-        width: 24px;
-      }
-      .navbar-brand {
-        font-size: 14px !important;
-      }
-      .navbar-toggler {
-        background-color: white;
-        border: none;
-        padding: 0;
-        margin: 0;
-        color: ##414042;
-      }
-      
-    }
-    .navbar {
-      border-bottom: 2px solid #e6e7e8;
-      padding-bottom: 5px;
-    }
-
-    @media (min-width: 575.99px) {
-      .nav-cta {
-        margin-left: 12px;
-      }
-      .logo-icon {
-        height: 28px;
-        width: 36px;
-      }
-    }
-
-    main a {
-      color: #0E9C4B;
-      text-decoration-color: #BFE2CD;
-      transition: 0.2s;
-      text-underline-offset: 3px;
-    }
-
-    @media (min-width: 768px) {
-
-      .wide-right {
-        padding-top: 45px;
-        padding-bottom: 30px;
-        padding-left: 25px;
-        margin-right: -40%;
-        float: right;
-        width: 80%;
-        text-align: right;
+      h1 {
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
       }
 
-      .wide-right-text {
-        padding-top: 15px;
-        padding-bottom: 30px;
-        padding-left: 0;
-        margin-right: -30%;
-        margin-left: 30px;
-        float: right;
-        width: 50%;
-        text-align: left;
-        font-family: 'Inter', sans-serif;
+      li {
+        padding-top: 8px;
+      }
+      .small-header {
+        font-weight: 600;
+        text-transform: uppercase;
       }
 
-      p.wide-right-text {
-        margin-bottom: 0;
-        margin-top: 0;
+      .nav-link, .navbar-brand {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #414042 !important;
+        font-size: 18px !important;
       }
-    }
 
-    @media (max-width: 767px) {
-      .big-image,.wide-right,.wide-left {
-            padding-top: 25px;
-            padding-bottom: 25px;
-          }
-          .wide-right-text {
-            padding-top: 15px;
-            padding-bottom: 30px;
-            width: 100%;
-            text-align: left;
-            font-family: 'Lato', sans-serif;
-          }
-    }
+      .btn {
+        text-transform: uppercase;
+        border-radius: 0;
+      }
 
-    footer a {
-      color: black;
-      text-decoration-color: #606060;
-      transition: 0.2s;
-      text-underline-offset: 3px;
-    }
+      .btn-primary {
+        background-color: #f15d22 !important;
+        border-color: #f15d22 !important;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+      }
 
-  </style>
+      @media (max-width: 575.98px) {
+        .nav-cta {
+          margin-left: 0px;
+        }
+        .logo-icon {
+          height: 24px;
+          width: 24px;
+        }
+        .navbar-brand {
+          font-size: 14px !important;
+        }
+        .navbar-toggler {
+          background-color: white;
+          border: none;
+          padding: 0;
+          margin: 0;
+          color: ##414042;
+        }
+        
+      }
+      .navbar {
+        border-bottom: 2px solid #e6e7e8;
+        padding-bottom: 5px;
+      }
+
+      @media (min-width: 575.99px) {
+        .nav-cta {
+          margin-left: 12px;
+        }
+        .logo-icon {
+          height: 28px;
+          width: 36px;
+        }
+      }
+
+      main a {
+        color: #0E9C4B;
+        text-decoration-color: #BFE2CD;
+        transition: 0.2s;
+        text-underline-offset: 3px;
+      }
+
+      @media (min-width: 768px) {
+
+        .wide-right {
+          padding-top: 45px;
+          padding-bottom: 30px;
+          padding-left: 25px;
+          margin-right: -40%;
+          float: right;
+          width: 80%;
+          text-align: right;
+        }
+
+        .wide-right-text {
+          padding-top: 15px;
+          padding-bottom: 30px;
+          padding-left: 0;
+          margin-right: -30%;
+          margin-left: 30px;
+          float: right;
+          width: 50%;
+          text-align: left;
+          font-family: 'Inter', sans-serif;
+        }
+
+        p.wide-right-text {
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .big-image,.wide-right,.wide-left {
+              padding-top: 25px;
+              padding-bottom: 25px;
+            }
+            .wide-right-text {
+              padding-top: 15px;
+              padding-bottom: 30px;
+              width: 100%;
+              text-align: left;
+              font-family: 'Lato', sans-serif;
+            }
+      }
+
+      footer a {
+        color: black;
+        text-decoration-color: #606060;
+        transition: 0.2s;
+        text-underline-offset: 3px;
+      }
+    </style>
 
   </head>
   <body>
@@ -218,7 +225,7 @@
             <h1>Bike Lane Tracker</h1>
             <p class="pb-3 pt-2">Mayor Eric Adams promised to install 300 miles of protected bike lanes by the end of his first term in 2025. The <a href="#smp">NYC Streets Plan</a> requires New York City to install at least 30 miles of protected bike lanes by the end of 2022. We’re keeping track of the administration’s progress.</p>
             <hr>
-            <h3><strong><span style="color: #0B9D58;">TK</span> out of 30 required miles</strong> have been installed in 2022.</h3>
+            <h3><strong><span style="color: #0B9D58;" id="display"></span> out of 30 required miles</strong> have been installed in 2022.</h3>
           </div>
         </div>
       </div>
@@ -371,6 +378,20 @@
   // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
   kmz.load('https://projects.transalt.org/assets/img/announced.kmz');
 
+</script>
+<script type="text/javascript">
+        window.onload = function loadData() {
+          var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTYz4-6IZQeIz1ylVGERSVlaGzRPUdFr02mIa6sy7E3XhKRfHOAkRWSrb5QGVHLERZqSwwRwW183NRT/pub?gid=0&range=H16&single=true&output=csv";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+              if (xmlhttp.readyState == 4) {
+                  document.getElementById("display").innerHTML = xmlhttp.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+      }
 </script>
   </body>
 </html>
