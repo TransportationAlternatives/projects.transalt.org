@@ -247,19 +247,12 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
             <h2 class="pt-5">How close is Mayor Adams to reaching his goals?</h2>
-
-            <script type="text/javascript">
-              var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
-
-            // Load top ten switch hitters.
-            $('#switch-hitters').sheetrock({
-              url: mySpreadsheet,
-              query: "select A,B,C,D,E,L where E = 'Both' order by L desc",
-              fetchSize: 10
-            });
-            </script>
             
-            <table id="switch-hitters" class="table table-condensed table-striped"></table>
+            <style type="text/css">
+             .table td, .table th { padding-left: 0; }
+            </style>
+            
+            <table id="top-stats" class="table table-condensed" style="padding: 0"></table>
 
 
             <h2 class="pt-5" id="">Take action today!</h2>
@@ -422,6 +415,22 @@
           xmlhttp.open("GET", url, true);
           xmlhttp.send(null);
       }
+</script>
+<script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+<script type="text/javascript">
+  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1C52wkRgmXqbU7DHCkvXK7b1k8KFRhK-toRA1zoSNDps/edit#gid=0';
+
+$('#top-stats').sheetrock({
+  url: mySpreadsheet,
+  query: "select K,L",
+  fetchSize: 3
+});
+
+$('#all-intersections').sheetrock({
+  url: mySpreadsheet,
+  query: "select A,D,F,G",
+  fetchSize: 1000
+});
 </script>
 
   </body>
