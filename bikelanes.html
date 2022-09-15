@@ -236,7 +236,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
             <h1>Protected Bike Lane Tracker</h1>
-            <p class="pb-3 pt-2">The <a href="#smp">NYC Streets Plan</a> requires the City of New York to install at least 30 miles of protected bike lanes by the end of 2022 and 250 by the end of 2026. <strong>Transportation Alternatives is keeping track of the administration’s progress.</strong></p>
+            <p class="pb-3 pt-2">The <a href="#smp">NYC Streets Plan</a> requires the City of New York to install at least 30 miles of <a data-bs-toggle="modal" href="#pbl-define">protected bike lanes</a> by the end of 2022 and 250 by the end of 2026. <strong>Transportation Alternatives is keeping track of the administration’s progress.</strong></p>
             <h3 style="line-height: 2em;"><span style="font-weight: 700; background-color: #0B9D58; color: white; padding: 8px;"><span style="color: #;" id="display"></span> out of 30 required miles</span> have been installed in 2022.</h3>
           </div>
         </div>
@@ -251,12 +251,16 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
             <h2 class="pt-5">How close is Mayor Adams to meeting the Streets Plan requirements?</h2>
+
+
             
             <style type="text/css">
              .table td, .table th { padding-left: 0; }
             </style>
             
             <table id="top-stats" class="table table-condensed" style="padding: 0"></table>
+
+
 
             <p><small><em>During the 2021 mayoral campaign, Mayor Adams <a href="https://nypost.com/2021/10/19/eric-adams-will-add-300-miles-of-protected-nyc-bike-lanes-as-mayor/" target="_blank">promised to install 300 miles</a> of protected bike lanes.</small></em></p>
 
@@ -325,6 +329,34 @@
       </div>
     </div>
       
+<!-- What is a PBL -->
+
+    <div class="modal" tabindex="-1" id="pbl-define">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">What is as a protected bike lane?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Protected bike lanes, unlike paint-only bike lanes, provide physical protection between people riding bikes and vehicle traffic. In New York City, there are three main types of protected bike lanes.</p>
+        <img src="https://projects.transalt.org/assets/img/jersey.png" class="rounded float-end" alt="..." width="50%">
+        <p><strong>Jersey barriers</strong></p>
+        <p>Jersey barriers use concrete to provide separation between vehicles and people using the bike lane.</p>
+        <img src="https://projects.transalt.org/assets/img/parking.png" class="rounded float-start" alt="..." width="50%">
+        <p><strong>Parking-protected</strong></p>
+        <p>Parking-protected bike lanes use a lane of parking to separate people using the bike lane from vehicle traffic.</p>
+        <img src="https://projects.transalt.org/assets/img/bollards.png" class="rounded float-end" alt="..." width="50%">
+        <p><strong>Bollards</strong></p>
+        <p>DOT also uses plastic bollards to provide physical separation between bike riders and vehicle traffic. In late 2021, DOT Commissioner Ydanis Rogriguez <a href="https://www.amny.com/transit/dot-promises-plastic-protected-nyc-bike-lanes-sturdier/" target="_blank">promised to upgrade</a> half of these barriers with sturider materials, such as concrete.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     </main>
     <footer>
       <div class="border-top mt-5">
@@ -337,6 +369,13 @@
         </div>
       </div>
     </footer>
+
+    
+
+
+
+    <!-- SCRIPTS -->
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
         <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
