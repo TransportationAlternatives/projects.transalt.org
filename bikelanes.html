@@ -458,7 +458,7 @@
 </script>
 <script type="text/javascript">
         window.onload = function loadData() {
-          var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTYz4-6IZQeIz1ylVGERSVlaGzRPUdFr02mIa6sy7E3XhKRfHOAkRWSrb5QGVHLERZqSwwRwW183NRT/pub?gid=0&range=H16&single=true&output=csv";
+          var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTDp5GkbDbotiX9y0F0l6fuNJu0FyEZdGCcsQSiRU3KRh74DAGG-Sr8MERXR1UNXXiNl5GUa_humkI/pub?gid=621464063&range=H16&single=true&output=csv";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
               if (xmlhttp.readyState == 4) {
@@ -472,11 +472,11 @@
 </script>
 <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
 <script type="text/javascript">
-  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1C52wkRgmXqbU7DHCkvXK7b1k8KFRhK-toRA1zoSNDps/edit#gid=0';
+  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1j13O-dG7tveVrrRrsGMVB3aLnkiM2ZeMOljmrdewU00/edit#gid=0';
 
 $('#top-stats').sheetrock({
   url: mySpreadsheet,
-  query: "select K,L",
+  query: "select L,M",
   fetchSize: 3
 });
 
