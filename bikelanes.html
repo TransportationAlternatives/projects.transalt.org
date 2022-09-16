@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
     <script src="https://unpkg.com/leaflet-gesture-handling"></script>
 
+    <!-- Mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+
     <!-- Sheetrock -->
     <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
@@ -82,15 +86,15 @@
       .btn {
         text-transform: uppercase;
         border-radius: 0;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
       }
 
       .btn-primary {
         background-color: #f15d22 !important;
         border-color: #f15d22 !important;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
       }
 
       @media (max-width: 575.98px) {
@@ -157,7 +161,6 @@
           float: right;
           width: 50%;
           text-align: left;
-          font-family: 'Inter', sans-serif;
         }
 
         p.wide-right-text {
@@ -176,7 +179,6 @@
               padding-bottom: 30px;
               width: 100%;
               text-align: left;
-              font-family: 'Lato', sans-serif;
             }
             .wide-right {
               margin-top: 30px;
@@ -390,11 +392,21 @@
           });
           map.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
 
-         L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-            maxZoom: 17,
-            minZoom: 10,
-            attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL'
+         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_token={accessToken}', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+      'Imagery © <a href="https://www.mapbox.com/about/maps/">Mapbox</a>' + ' | <a href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
+        id: 'mapbox/light-v10',
+        tileSize: 512,
+        maxZoom: 19,
+        minZoom: 10,
+        zoomOffset: -1,
+        zoomControl: false,
+        scrollWheelZoom: false,
+        detectRetina: true,
+        accessToken: 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJja3dtZGV5aWsyYjJmMndub2R3cTBuazIyIn0.DaRqJP0ez4gMNtcslbVakQ'
         }).addTo(map);
+
+
 
           // Instantiate KMZ layer (async)
           var kmz = L.kmzLayer().addTo(map);
@@ -415,10 +427,18 @@
   });
   map2.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
 
- L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    minZoom: 10,
-    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL'
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_token={accessToken}', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+      'Imagery © <a href="https://www.mapbox.com/about/maps/">Mapbox</a>' + ' | <a href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
+        id: 'mapbox/light-v10',
+        tileSize: 512,
+        maxZoom: 19,
+        minZoom: 10,
+        zoomOffset: -1,
+        zoomControl: false,
+        scrollWheelZoom: false,
+        detectRetina: true,
+        accessToken: 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJja3dtZGV5aWsyYjJmMndub2R3cTBuazIyIn0.DaRqJP0ez4gMNtcslbVakQ'
 }).addTo(map2);
 
   // Instantiate KMZ layer (async)
@@ -441,10 +461,18 @@
   });
   map3.setView(new L.LatLng(40.71195076055024, -73.97455587121415), 11);
 
- L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    minZoom: 10,
-    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL'
+ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_token={accessToken}', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+      'Imagery © <a href="https://www.mapbox.com/about/maps/">Mapbox</a>' + ' | <a href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
+        id: 'mapbox/light-v10',
+        tileSize: 512,
+        maxZoom: 19,
+        minZoom: 10,
+        zoomOffset: -1,
+        zoomControl: false,
+        scrollWheelZoom: false,
+        detectRetina: true,
+        accessToken: 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJja3dtZGV5aWsyYjJmMndub2R3cTBuazIyIn0.DaRqJP0ez4gMNtcslbVakQ'
 }).addTo(map3);
 
   // Instantiate KMZ layer (async)
