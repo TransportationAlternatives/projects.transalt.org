@@ -285,10 +285,12 @@
           <div class="col-md-6 py-3">
             <h2>Lanes in <span style="color: #9B27B0;">progress</span></h2>
             <div id="map2"></div>
+            <table id="in-progress" class="table table-condensed mt-1" style="padding: 0"></table>
           </div>
           <div class="col-md-6 py-3">
             <h2>Lanes <span style="color: #E65200;">announced</span></h2>
             <div id="map3"></div>
+            <table id="announced" class="table table-condensed mt-1" style="padding:0"></table>
           </div>
         </div>
       </div>
@@ -511,10 +513,16 @@ $('#top-stats').sheetrock({
   fetchSize: 3
 });
 
-$('#all-intersections').sheetrock({
+$('#in-progress').sheetrock({
   url: mySpreadsheet,
-  query: "select A,D,F,G",
-  fetchSize: 1000
+  query: "select O",
+  fetchSize: 1
+});
+
+$('#announced').sheetrock({
+  url: mySpreadsheet,
+  query: "select P",
+  fetchSize: 1
 });
 </script>
 
