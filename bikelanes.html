@@ -34,6 +34,7 @@
     <!-- Sheetrock -->
     <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+    <script src="https://unpkg.com/handlebars@4.5.0/dist/handlebars.min.js"></script>
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="Bike Lane Tracker – Transportation Alternatives">
@@ -259,8 +260,10 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
             <h1>Protected Bike Lane Tracker</h1>
+            <p style="color: gray">Last updated <span id="date"></span></p>
             <p class="pb-3 pt-2">The <a href="#smp">NYC Streets Plan</a> requires the City of New York to install at least 30 miles of <a data-bs-toggle="modal" href="#pbl-define">protected bike lanes</a> by the end of 2022 and 250 by the end of 2026. <strong>Transportation Alternatives is tracking the Adams administration’s progress.</strong></p>
             <h3 style="line-height: 1.65em;"><span style="font-weight: 700; background-color: #0B9D58; color: white; padding: 8px;"><span style="color: #;" id="display"></span> out of 30 required miles</span> have been installed in 2022.</h3>
+            
           </div>
         </div>
       </div>
@@ -302,14 +305,13 @@
       <div class="container-xxl">
         <div class="row">
           <div class="col-md-6 py-3">
-            <h2>Lanes <span style="color: #9B27B0;">under construction</span></h2>
+            <h2><span id="in-progress"></span> miles <span style="color: #9B27B0;">under construction</span></h2>
             <div id="map2"></div>
-            <table id="in-progress" class="table table-condensed mt-1" style="padding: 0"></table>
+            
           </div>
           <div class="col-md-6 py-3">
-            <h2>Projects <span style="color: #E65200;">announced</span></h2>
+            <h2><span id="announced"></span> miles <span style="color: #E65200;">announced</span></h2>
             <div id="map3"></div>
-            <table id="announced" class="table table-condensed mt-1" style="padding:0"></table>
           </div>
         </div>
       </div>
@@ -353,6 +355,10 @@
             </div>
             <h2 class="pt-5" id="smp">About the data</h2>
             <p>This map is compiled based on DOT presentations to community boards, social media posts, and on-the-ground reports. Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7c3JcPTzaeecgNovqfHqZfxLrcfrdHCPVE2XLTpTD2s8r8A/viewform" target="_blank">let us know</a> if you see a bike lane project underway or complete.</p>
+
+            <p><strong>When are projects marked as completed?</strong> Projects are marked as completed once DOT finishes construction in line with what was originally presented online, on social media, or to community boards.</p>
+
+            <p></p>
         </div>
       </div>
     </div>
@@ -545,6 +551,13 @@ $('#announced').sheetrock({
   query: "select P",
   fetchSize: 1
 });
+
+$('#date').sheetrock({
+  url: mySpreadsheet,
+  query: "select R",
+  fetchSize: 1
+});
+
 </script>
 
   </body>
