@@ -23,6 +23,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/ba78ba88-0894-44d4-80bb-e407c4b578c2/favicon%203.ico?v=1648657962312">
+    <link rel="stylesheet" type="text/css" href="smp-style.css">
     
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
@@ -55,175 +56,7 @@
     <meta property="og:description" content="Mayor Eric Adams promised to install 300 miles of protected bike lanes by the end of his first term in 2025. The NYC Streets Plan requires New York City to install at least 30 miles of protected bike lanes by the end of 2022. We’re keeping track of the administration’s progress.">
     <meta property="og:image" content="https://projects.transalt.org/assets/img/bikelane.png">
 
-  
-
-
-    <style type="text/css">
-      #map { height: 750px; }
-
-      #map3 { height: 500px; }
-
-      #map2 { height: 500px; }
-
-      body { font-family: 'Inter', sans-serif; }
-
-      h1 {
-        font-weight: 600;
-        font-family: 'Montserrat', sans-serif;
-      }
-
-      li {
-        padding-top: 8px;
-      }
-      .small-header {
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-
-      .nav-link, .navbar-brand {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
-        color: #414042 !important;
-        font-size: 18px !important;
-      }
-
-      .btn {
-        text-transform: uppercase;
-        border-radius: 0;
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-      }
-
-      .btn-primary {
-        background-color: #f15d22 !important;
-        border-color: #f15d22 !important;
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-      }
-
-      @media (max-width: 575.98px) {
-        .nav-cta {
-          margin-left: 0px;
-        }
-        .logo-icon {
-          height: 24px;
-          width: 24px;
-        }
-        .navbar-brand {
-          font-size: 14px !important;
-        }
-        .navbar-toggler {
-          background-color: white;
-          border: none;
-          padding: 0;
-          margin: 0;
-          color: ##414042;
-        }
-        
-      }
-      .navbar {
-        border-bottom: 2px solid #e6e7e8;
-        padding-bottom: 5px;
-      }
-
-      @media (min-width: 575.99px) {
-        .nav-cta {
-          margin-left: 12px;
-        }
-        .logo-icon {
-          height: 28px;
-          width: 36px;
-        }
-      }
-
-      main a {
-        color: #0E9C4B;
-        text-decoration-color: #BFE2CD;
-        transition: 0.2s;
-        text-underline-offset: 3px;
-      }
-
-      @media (min-width: 768px) {
-
-        .wide-right {
-          margin-top: 30px;
-          margin-bottom: 30px;
-          padding-left: 25px;
-          margin-right: -40%;
-          float: right;
-          width: 80%;
-          text-align: right;
-          border-top:  1px solid #C6C8C9;
-        }
-
-        .wide-right-text {
-          padding-top: 15px;
-          padding-bottom: 30px;
-          padding-left: 0;
-          margin-right: -30%;
-          margin-left: 30px;
-          float: right;
-          width: 50%;
-          text-align: left;
-        }
-
-        p.wide-right-text {
-          margin-bottom: 0;
-          margin-top: 0;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .big-image,.wide-right,.wide-left {
-              padding-top: 25px;
-              padding-bottom: 25px;
-            }
-            .wide-right-text {
-              padding-top: 15px;
-              padding-bottom: 30px;
-              width: 100%;
-              text-align: left;
-            }
-            .wide-right {
-              margin-top: 30px;
-              margin-bottom: 30px;
-              border-top:  1px solid #C6C8C9;
-              border-bottom:  1px solid #C6C8C9;
-            }
-      }
-
-      footer a {
-        color: black;
-        text-decoration-color: #606060;
-        transition: 0.2s;
-        text-underline-offset: 3px;
-      }
-
-      .take-action {
-        background-color: #f15d22;
-        padding: 24px;
-        color: white;
-      }
-
-       @media (min-width: 650px) { 
-  .graphic {
-    width: 60%;
-  }
-   .logoHeader {
-     height: 30px;
-   }
- }
- @media (max-width: 649px) { 
-  .graphic {
-    width: 100%;
-  }
-   .logoHeader {
-     height: 24px;
-   }
-   
-    </style>
-
-  </head>
+</head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light pt-2">
       <div class="container-fluid">
@@ -281,12 +114,6 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
             <h2 class="pt-3">How close is Mayor Adams to meeting the NYC Streets Plan requirements?</h2>
-
-
-            
-            <style type="text/css">
-             .table td, .table th { padding-left: 0; }
-            </style>
             
             <table id="top-stats" class="table table-condensed" style="padding: 0"></table>
 
@@ -358,7 +185,7 @@
               <a class="btn btn-light" href="https://p2a.co/joh22e1" role="button" target="_blank" style="color: #f15d22">Send a message</a>
               <a class="btn btn-outline-light" href="https://ctt.ac/UbQ2h" role="button" target="_blank" style="color: white">Send a tweet</a>
             </div>
-            <h2 class="pt-5" id="smp">About the data</h2>
+            <h2 class="pt-5" id="about">About the data</h2>
             <p>Because there is no open data set or city-hosted tracker that clearly lists bike lane project status citywide, this map has been compiled based on DOT presentations to community boards, social media posts, and on-the-ground reports.</p>
 
             <p><strong>Help us keep this tracker up-to-date.</strong> Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7c3JcPTzaeecgNovqfHqZfxLrcfrdHCPVE2XLTpTD2s8r8A/viewform" target="_blank">this form to share an update</a> on a protected bike lane project you see under construction or completed, and we'll update our maps.</p>
@@ -383,13 +210,13 @@
       </div>
       <div class="modal-body">
         <p>Protected bike lanes, unlike paint-only bike lanes, provide physical protection between people riding bikes and vehicle traffic. In New York City, there are three main types of protected bike lanes.</p>
-        <img src="https://projects.transalt.org/assets/img/jersey.png" class="rounded float-end" alt="..." width="50%">
+        <img src="https://projects.transalt.org/assets/img/jersey.png" class="rounded float-end" alt="drawing of a concrete barrier bike lane" width="50%">
         <p><strong>Jersey barriers</strong></p>
         <p>Jersey barriers use concrete to provide separation between vehicles and people using the bike lane.</p>
-        <img src="https://projects.transalt.org/assets/img/parking.png" class="rounded float-start" alt="..." width="50%">
+        <img src="https://projects.transalt.org/assets/img/parking.png" class="rounded float-start" alt="drawing of a car protecting a bike lane" width="50%">
         <p><strong>Parking-protected</strong></p>
         <p>Parking-protected bike lanes use a lane of parking to separate people using the bike lane from vehicle traffic.</p>
-        <img src="https://projects.transalt.org/assets/img/bollards.png" class="rounded float-end" alt="..." width="50%">
+        <img src="https://projects.transalt.org/assets/img/bollards.png" class="rounded float-end" alt="drawing of a post protecting a bike lane" width="50%">
         <p><strong>Flexible delineators</strong></p>
         <p>DOT also uses flexible delineator, a.k.a. flexi-posts, to provide physical separation between bike riders and vehicle traffic. In late 2021, DOT Commissioner Ydanis Rodriguez <a href="https://www.amny.com/transit/dot-promises-plastic-protected-nyc-bike-lanes-sturdier/" target="_blank">promised to upgrade</a> half of these barriers with sturdier materials, such as concrete.</p>
       </div>
