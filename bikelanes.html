@@ -202,30 +202,48 @@
 <!-- What is a PBL -->
 
     <div class="modal" tabindex="-1" id="pbl-define">
-  <div class="modal-dialog ">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">What is a protected bike lane?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Protected bike lanes, unlike paint-only bike lanes, provide physical protection between people riding bikes and vehicle traffic. In New York City, there are three main types of protected bike lanes.</p>
-        <img src="https://projects.transalt.org/assets/img/jersey.png" class="rounded float-end" alt="drawing of a concrete barrier bike lane" width="50%">
-        <p><strong>Jersey barriers</strong></p>
-        <p>Jersey barriers use concrete to provide separation between vehicles and people using the bike lane.</p>
-        <img src="https://projects.transalt.org/assets/img/parking.png" class="rounded float-start" alt="drawing of a car protecting a bike lane" width="50%">
-        <p><strong>Parking-protected</strong></p>
-        <p>Parking-protected bike lanes use a lane of parking to separate people using the bike lane from vehicle traffic.</p>
-        <img src="https://projects.transalt.org/assets/img/bollards.png" class="rounded float-end" alt="drawing of a post protecting a bike lane" width="50%">
-        <p><strong>Flexible delineators</strong></p>
-        <p>DOT also uses flexible delineator, a.k.a. flexi-posts, to provide physical separation between bike riders and vehicle traffic. In late 2021, DOT Commissioner Ydanis Rodriguez <a href="https://www.amny.com/transit/dot-promises-plastic-protected-nyc-bike-lanes-sturdier/" target="_blank">promised to upgrade</a> half of these barriers with sturdier materials, such as concrete.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">What is a protected bike lane?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Protected bike lanes, unlike paint-only bike lanes, provide physical protection between people riding bikes and vehicle traffic. In New York City, there are three main types of protected bike lanes.</p>
+            <img src="https://projects.transalt.org/assets/img/jersey.png" class="rounded float-end" alt="drawing of a concrete barrier bike lane" width="50%">
+            <p><strong>Jersey barriers</strong></p>
+            <p>Jersey barriers use concrete to provide separation between vehicles and people using the bike lane.</p>
+            <img src="https://projects.transalt.org/assets/img/parking.png" class="rounded float-start" alt="drawing of a car protecting a bike lane" width="50%">
+            <p><strong>Parking-protected</strong></p>
+            <p>Parking-protected bike lanes use a lane of parking to separate people using the bike lane from vehicle traffic.</p>
+            <img src="https://projects.transalt.org/assets/img/bollards.png" class="rounded float-end" alt="drawing of a post protecting a bike lane" width="50%">
+            <p><strong>Flexible delineators</strong></p>
+            <p>DOT also uses flexible delineator, a.k.a. flexi-posts, to provide physical separation between bike riders and vehicle traffic. In late 2021, DOT Commissioner Ydanis Rodriguez <a href="https://www.amny.com/transit/dot-promises-plastic-protected-nyc-bike-lanes-sturdier/" target="_blank">promised to upgrade</a> half of these barriers with sturdier materials, such as concrete.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+
+    <div class="modal" tabindex="-1" id="submitUpdate">
+      <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Keep this tracker updated</h5>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Fill out this form to share an update on a protected bike lane project you see under construction or completed, and we'll update our maps.</p>
+            <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc7c3JcPTzaeecgNovqfHqZfxLrcfrdHCPVE2XLTpTD2s8r8A/viewform" role="button" target="_blank">Submit an update</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
     </main>
     <footer>
@@ -394,6 +412,16 @@ $('#date').sheetrock({
   fetchSize: 1
 });
 
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+  if(window.location.href.indexOf('#submitUpdate') != -1) {
+    $('#submitUpdate').modal('show');
+  }
+
+});
 </script>
 
   </body>
