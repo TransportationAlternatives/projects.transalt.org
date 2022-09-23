@@ -162,4 +162,19 @@ footer a {
 	margin-left: 10px;
 }
 
+@media (min-width: 650px) { 
+  .graphic {
+  width: 60%;
+  }
+  .logoHeader {
+    height: 30px;
+  }
+}
 
+@media (max-width: 649px) { 
+  .graphic {
+    width: 100%;
+  }
+  .logoHeader {
+    height: 24px;
+}
