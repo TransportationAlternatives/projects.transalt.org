@@ -13,6 +13,7 @@ const config = {
     'Filter by upgrade type, borough, and Vision Zero priority intersections.',
   sideBarInfo: ['Intersection', 'Borough', 'Elements'],
   popupInfo: ['PopUp'],
+  cooperativeGestures: true,
   filters: [
     {
       type: 'dropdown',
