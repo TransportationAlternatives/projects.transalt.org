@@ -11,7 +11,7 @@ const config = {
   title: 'See where upgrades have been made',
   description:
     'Filter by upgrade type, borough, and Vision Zero priority intersections.',
-  sideBarInfo: ['Intersection', 'Borough', 'Elements'],
+  sideBarInfo: ['Intersection', 'Borough', ,'Date','Elements'],
   popupInfo: ['PopUp'],
   cooperativeGestures: true,
   filters: [
