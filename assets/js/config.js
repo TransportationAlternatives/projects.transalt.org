@@ -31,7 +31,7 @@ const config = {
       type: 'checkbox',
       title: 'Upgrades made: ',
       columnHeader: 'Elements', // Case sensitive - must match spreadsheet entry
-      listItems: ['Leading Pedestrian Interval', 'Raised Crosswalk', 'Traffic Signal'], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
+      listItems: ['Leading Pedestrian Interval', 'Raised Crosswalk', 'Traffic Signal', 'Left Turn Calming'], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
     },
     {
       type: 'dropdown',
