@@ -63,6 +63,16 @@
         width: 100%;
         height: 90vh;
       }
+      .article-label {
+  background-color: #d1d3d4;
+  padding: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #414042;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
     </style>
 
 </head>
@@ -104,6 +114,9 @@
       <div class="container pt-5 pb-3">
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
+            <div style="padding-bottom: 1rem;">
+              <span class="article-label">1,000 Intersection Tracker</span>
+            </div>
             <h1><span style="font-weight: 400;">Mayor Adams promised to upgrade 1,000 intersections in 2022.</span> So far, he has improved <span id="count"></span>.</h1>
             <h3 style="font-family: 'Montserrat', sans-serif; color: #58595b;">Only <span id="count2"></span> of those intersections include upgrades to physical infrastructure.</h3>
           </div>
@@ -123,15 +136,16 @@
             <!-- <h1><span id="sto"></span></h1>
             <p style="margin-top: -2%;"><strong>Signal timing only</strong>, including leading pedestrian intervals. No new physical infrastructure was installed.</p> -->
             <h1><span id="lpi"></span></h1>
-            <p style="margin-top: -2%;"><strong>Signal timing only</strong>, including leading pedestrian intervals. No new physical infrastructure was installed.</p>
+            <p style="margin-top: -2%;"><strong>Signal timing only upgrades</strong>, including leading pedestrian intervals. No new physical infrastructure was installed.</p>
           </div>
-          <div class="col-md-3">
-            <h1><span id="vzp"></span></h1>
-            <p style="margin-top: -2%;"><strong>Vision Zero priority intersections</strong>. These are intersections known to be dangerous to the City of New York.</p>
-          </div>
+          
           <div class="col-md-3">
             <h1><span id="rcw"></span><span style="color: #bcbec0; font-weight: 400;">/100</span></h1>
             <p style="margin-top: -2%;"><strong>Raised crosswalks installed</strong>. Mayor Adams promised to install 100 raised crosswalks in 2022.</p>
+            <div class="col-md-3">
+            <h1><span id="vzp"></span></h1>
+            <p style="margin-top: -2%;"><strong>Vision Zero priority intersections upgraded</strong>. These are intersections known to be dangerous to the City of New York.</p>
+          </div>
           </div>
         </div>
         <div class="row d-flex justify-content-center">
@@ -150,12 +164,12 @@
   <div class="container pt-5 pb-3">
     <div class="row d-flex justify-content-center">
           <div class="col-md-8">
-            <div class="take-action mt-3">
+            <!-- <div class="take-action mt-3">
               <h2 style="font-weight: 700;" id="">Take action!</h2>
               <h4>Tell Mayor Adams to redesign intersections with physical infrastructure to protect New Yorkers.</h4>
               <a class="btn btn-light" href="https://p2a.co/joh22e1" role="button" target="_blank" style="color: #f15d22">Send a message</a>
               <a class="btn btn-outline-light" href="https://ctt.ac/UbQ2h" role="button" target="_blank" style="color: white">Send a tweet</a>
-            </div>
+            </div> -->
             <h2 class="pt-5">About the data</h2>
         <p>This list of upgraded intersections is compiled from NYC Open Data's&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Raised-Crosswalk-Locations/uh2s-ftgh" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/Transportation/Raised-Crosswalk-Locations/uh2s-ftgh&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw0d3Z_wkIVVqA3v2IyXMbcO">Raised Crosswalks</a>,&nbsp;<a href="https://data.cityofnewyork.us/Transportation/VZV_Leading-Pedestrian-Interval-Signals/mqt5-ctec" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/Transportation/VZV_Leading-Pedestrian-Interval-Signals/mqt5-ctec&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw31Mt2JDMxQow8V3UWSpC55">Leading Pedestrian Interval Signals</a>&nbsp;(LPIs),&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Bicycle-Parking/yh4a-g3fj" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/Transportation/Bicycle-Parking/yh4a-g3fj&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw0A4rxPrcSlRAJT4ZmpVurh">Bicycle Parking (to get Bike Corral locations)</a>,&nbsp;<a href="https://data.cityofnewyork.us/dataset/dot_VZV_Left_Turn_Traffic_Calming_20200401/jy2j-7quc" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/dataset/dot_VZV_Left_Turn_Traffic_Calming_20200401/jy2j-7quc&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw2oZeqfrzXq4uj98CmYrWSa">Left Turn Calming</a>, and&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Traffic-Signal-and-All-Way-Stop-Study-Requests/w76s-c5u4" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/Transportation/Traffic-Signal-and-All-Way-Stop-Study-Requests/w76s-c5u4&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw3G-XpWeT71_k-IAkoJYPPQ">Traffic Signal and All-Way Stop Study Requests</a>&nbsp;datasets.&nbsp;There are some intersection changes that DOT could be implementing that we believe wouldn't show up in any of these data sets, including adding Barnes Dances (or any other non-LPI signal changes), pedestrian islands, and any bulb-outs that might not be classified as turn calming. Our combined dataset is <a href="https://github.com/lizdenys/1000intersections-tracker-data" target="_blank">available on GitHub</a>.</p>
 
