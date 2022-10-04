@@ -117,7 +117,7 @@
             <div style="padding-bottom: 1rem;">
               <span class="article-label">1,000 Intersection Tracker</span>
             </div>
-            <h1><span style="font-weight: 400;">Mayor Adams promised to upgrade 1,000 intersections for safety in 2022.</span> So far, the administration has improved <span id="count"></span>.</h1>
+            <h1><span style="font-weight: 400;">Mayor Adams promised to upgrade 1,000 intersections for safety in 2022.</span> So far, his administration has improved <span id="count"></span>.</h1>
             <h3 style="font-family: 'Montserrat', sans-serif; color: #58595b;"><span id="count2"></span> of those intersections include upgrades to physical infrastructure.</h3>
           </div>
         </div>
@@ -133,8 +133,6 @@
         </div>
          <div class="row d-flex justify-content-center pt-3">
           <div class="col-md-3">
-            <!-- <h1><span id="sto"></span></h1>
-            <p style="margin-top: -2%;"><strong>Signal timing only</strong>, including leading pedestrian intervals. No new physical infrastructure was installed.</p> -->
             <h1><span id="lpi"></span></h1>
             <p style="margin-top: -2%;"><strong>Signal timing only upgrades</strong>, including leading pedestrian intervals. No new physical infrastructure was installed at these locations.</p>
           </div>
@@ -249,6 +247,12 @@
         fetchSize: 1
       });
 
+         $('#lpi').sheetrock({
+        url: mySpreadsheet,
+        query: "select M",
+        fetchSize: 1
+      });
+
       $('#count2').sheetrock({
         url: mySpreadsheet,
         query: "select P",
@@ -274,11 +278,7 @@
         fetchSize: 1
       });
 
-      $('#lpi').sheetrock({
-        url: mySpreadsheet,
-        query: "select M",
-        fetchSize: 1
-      });
+     
 
 </script>
 
