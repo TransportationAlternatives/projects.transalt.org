@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+      <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@transalt">
+    <meta property="twitter:url" content="https://projects.transalt.org/bikelanes">
+    <meta property="twitter:title" content="1,000 Intersection Tracker – Transportation Alternatives">
+    <meta property="twitter:description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez promised to upgrade 1,000 intersections across New York City for safety. We’re keeping track of the administration’s progress.">
+    <meta property="twitter:image" content="https://projects.transalt.org/assets/img/intersection.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>1,000 Intersection Tracker – Transportation Alternatives</title>
+
+
+    <!-- Fonts/Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/ba78ba88-0894-44d4-80bb-e407c4b578c2/favicon%203.ico?v=1648657962312">
+    <link rel="stylesheet" type="text/css" href="assets/css/smp-style.css">
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    
+    <!-- Leaflet-KMZ -->
+    <script src="https://unpkg.com/leaflet-kmz@latest/dist/leaflet-kmz.js"></script>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
+    <script src="https://unpkg.com/leaflet-gesture-handling"></script>
+
+    <!-- Mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+
+    <!-- Sheetrock -->
+    <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+    <script src="https://unpkg.com/handlebars@4.5.0/dist/handlebars.min.js"></script>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="1,000 Intersection Tracker">
+    <meta name="description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez promised to upgrade 1,000 intersections across New York City for safety. We’re keeping track of the administration’s progress.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://projects.transalt.org/bikelanes">
+    <meta property="og:title" content="1,000 Intersection Tracker">
+    <meta property="og:description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez promised to upgrade 1,000 intersections across New York City for safety. We’re keeping track of the administration’s progress.">
+    <meta property="og:image" content="https://projects.transalt.org/assets/img/intersection.png">
+
+    <style type="text/css">
+      .table td, .table th { padding-left: 0; }
+
+      .map-frame {
+        width: 100%;
+        height: 90vh;
+      }
+      .article-label {
+  background-color: #d1d3d4;
+  padding: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #414042;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+    </style>
+
+</head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-light pt-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="https://raw.githubusercontent.com/TransportationAlternatives/projects/d101cedf544c9acd39fa87c0f00f7b4b63129b46/images/ta%20horizontal%20gray.svg" alt="TA logo" class="filter-gray d-inline-block align-middle logoHeader">
+          
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/transalt" target="_blank"><i class="bi bi-twitter"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://facebook.com/transportationalternatives" target="_blank"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://instagram.com/transportationalternatives" target="_blank"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/company/transportation-alternatives/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </li>
+            <li class="nav-item">
+              
+                  <a class="btn btn-primary nav-cta" href="https://transalt.org/take-action" target="_blank">Join us</a>
+                
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+    <main>
+      <div class="container pt-5 pb-3">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8">
+            <div style="padding-bottom: 1rem;">
+              <span class="article-label">1,000 Intersection Tracker</span>
+            </div>
+            <h1><span style="font-weight: 400;">Mayor Adams promised to upgrade 1,000 intersections for safety in 2022.</span> So far, his administration has improved <span id="count"></span>.</h1>
+            <h3 style="font-family: 'Montserrat', sans-serif; color: #58595b;"><span id="count2"></span> of those intersections include upgrades to physical infrastructure.</h3>
+          </div>
+        </div>
+       
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8">
+            <p class="pt-3">Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez <a href="https://www.amny.com/transit/nyc-intersections-redesigned-police-enforcement-nyc-traffic-safety/" target="_blank">promised to upgrade 1,000 intersections</a> across New York City for safety. These improvements could include installing raised crosswalks, leading pedestrian intervals, shortening crossings, or other interventions. <a data-bs-toggle="modal" href="#inter-define">What do these interventions look like? <i class="bi bi-arrow-up-right-square"></i></a></p>
+
+    
+  
+          </div>
+        </div>
+         <div class="row d-flex justify-content-center pt-3">
+          
+          
+          <div class="col-md-3">
+            <h1><span id="rcw"></span><span style="color: #bcbec0; font-weight: 400;">/100</span></h1>
+            <p style="margin-top: -2%;"><strong>Raised crosswalks installed</strong>. Mayor Adams promised to install 100 raised crosswalks in 2022.</p>
+          </div>
+          <div class="col-md-3">
+            <h1><span id="tci"></span><span style="color: #bcbec0; font-weight: 400;">/100</span></h1>
+            <p style="margin-top: -2%;"><strong>Turn calming interventions installed</strong>. DOT committed to install turn calming elements at 100 intersections in 2022.</p>
+          </div>
+          <div class="col-md-3">
+            <h1><span id="bc"></span><span style="color: #bcbec0; font-weight: 400;">/100</span></h1>
+            <p style="margin-top: -2%;"><strong>Intersections daylighted with bike corrals</strong>. DOT pledged to "daylight" 100 intersections with bike corrals in 2022.</p>
+          </div>
+          
+        </div>
+          <div class="row d-flex justify-content-center pt-3">
+          <div class="col-md-3">
+            <h1><span id="lpi"></span></h1>
+            <p style="margin-top: -2%;"><strong>Signal timing only upgrades</strong>, including leading pedestrian intervals. No new physical infrastructure was installed.</p>
+          </div>
+          
+          <div class="col-md-3">
+            <h1><span id="vzp"></span></h1>
+            <p style="margin-top: -2%;"><strong>Vision Zero priority intersections upgraded</strong>. These are intersections known to be dangerous to the City.</p>
+          </div>
+        </div>
+</div>
+<div class="container-xxl pt-4">
+  <div>
+    <iframe class="map-frame border" src='https://projects.transalt.org/intersection-map'></iframe>
+  </div>
+</div>
+
+  <div class="container pt-5 pb-3">
+    <div class="row d-flex justify-content-center">
+          <div class="col-md-8">
+            <!-- <div class="take-action mt-3">
+              <h2 style="font-weight: 700;" id="">Take action!</h2>
+              <h4>Tell Mayor Adams to redesign intersections with physical infrastructure to protect New Yorkers.</h4>
+              <a class="btn btn-light" href="https://p2a.co/joh22e1" role="button" target="_blank" style="color: #f15d22">Send a message</a>
+              <a class="btn btn-outline-light" href="https://ctt.ac/UbQ2h" role="button" target="_blank" style="color: white">Send a tweet</a>
+            </div> -->
+            <h2 class="pt-5">About the data</h2>
+        <p>This list of upgraded intersections is compiled from NYC Open Data's&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Raised-Crosswalk-Locations/uh2s-ftgh" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/Transportation/Raised-Crosswalk-Locations/uh2s-ftgh&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw0d3Z_wkIVVqA3v2IyXMbcO">Raised Crosswalks</a>,&nbsp;<a href="https://data.cityofnewyork.us/Transportation/VZV_Leading-Pedestrian-Interval-Signals/mqt5-ctec" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/Transportation/VZV_Leading-Pedestrian-Interval-Signals/mqt5-ctec&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw31Mt2JDMxQow8V3UWSpC55">Leading Pedestrian Interval Signals</a>&nbsp;(LPIs),&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Bicycle-Parking/yh4a-g3fj" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/Transportation/Bicycle-Parking/yh4a-g3fj&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw0A4rxPrcSlRAJT4ZmpVurh">Bicycle Parking (to get Bike Corral locations)</a>,&nbsp;<a href="https://data.cityofnewyork.us/dataset/dot_VZV_Left_Turn_Traffic_Calming_20200401/jy2j-7quc" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/dataset/dot_VZV_Left_Turn_Traffic_Calming_20200401/jy2j-7quc&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw2oZeqfrzXq4uj98CmYrWSa">Left Turn Calming</a>, and&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Traffic-Signal-and-All-Way-Stop-Study-Requests/w76s-c5u4" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://data.cityofnewyork.us/Transportation/Traffic-Signal-and-All-Way-Stop-Study-Requests/w76s-c5u4&amp;source=gmail&amp;ust=1651849016873000&amp;usg=AOvVaw3G-XpWeT71_k-IAkoJYPPQ">Traffic Signal and All-Way Stop Study Requests</a>&nbsp;datasets.&nbsp; DOT also makes available <a href="https://www1.nyc.gov/html/dot/downloads/pdf/bike-corral-locations.pdf" target="_blank">an installed bike corral</a> PDF that is used. There are some intersection changes that DOT could be implementing that we believe wouldn't show up in any of these data sets, including adding Barnes Dances (or any other non-LPI signal changes), pedestrian islands, and any bulb-outs that might not be classified as turn calming. Our combined dataset is <a href="https://github.com/lizdenys/1000intersections-tracker-data" target="_blank">available on GitHub</a>.</p>
+
+        <h2>About the site</h2>
+        <p>This site is developed and maintained by <a href="https://transalt.org" target="_blank">Transportation Alternatives</a> staff and volunteers from TA's <a href="https://transalt.org/brooklyn">Brooklyn Activist Committee</a>: <a href="https://lizdenys.com/" target="_blank">Liz Denys</a>, <a href="https://www.mattdenys.com/" target="_blank">Matt Denys</a>, and Thomas Huzij.
+  
+          </div>
+        </div>
+      </div>
+
+    <footer>
+      <div class="border-top mt-5">
+        <div class="container-xxl pt-4 pb-2">
+          <div class="row">
+            <div class="col-md-12">
+               <p>Created by <a href="https://transalt.org" target="_blank">Transportation Alternatives</a> and the <a href="https://transalt.org/brooklyn" target="_blank">TA Brooklyn Activist Committee</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- What are the interventions? -->
+
+    <div class="modal modal-lg" tabindex="-1" id="inter-define">
+      <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">What is a protected bike lane?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="https://projects.transalt.org/assets/img/inter/raised.png" style="width: 100%; " alt="">
+                <h3 class="fs-5">Raised Crosswalks</h3>
+                <p class="small-text">Raised crosswalks put crosswalks at the same height as sidewalks. <a href="https://www.nytimes.com/2022/03/02/nyregion/nyc-raised-crosswalks-traffic-deaths.html" target="_blank">Raised crosswalks</a> increase visibility, improve accessibility, and serve as speed bumps that slow drivers.</p>
+              </div>
+              <div class="col-md-4">
+                <img src="https://projects.transalt.org/assets/img/inter/lpi.png" style="width: 100%; " alt="">
+                <h3 class="fs-5">Leading Pedestrian Interval</h3>
+                <p class="small-text">These show a walk sign for pedestrians before a green light to car traffic, improving visibility by allowing pedestrians to begin crossing the street before cars make turns across the crosswalk.</p>
+              </div>
+              <div class="col-md-4">
+                <img src="https://projects.transalt.org/assets/img/inter/corral.png" style="width: 100%; " alt="">
+                <h3 class="fs-5">Bike Corral</h3>
+                <p class="small-text">Bike corrals serve "daylight" intersections, increasing intersection visibility for drivers, bike riders, and pedestrians. Their placement also helps prevent drivers from taking turns too quickly.</p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-4">
+                <img src="https://projects.transalt.org/assets/img/inter/left.png" style="width: 100%; " alt="">
+                <h3 class="fs-5">Left Turn Calming</h3>
+                <p class="small-text">DOT places rubber curbs, flexible plastic posts, or bollards along the path of the turn to encourage drivers to follow the intended path for the turn and slow drivers down.</p>
+              </div>
+              <div class="col-md-4">
+                <img src="https://projects.transalt.org/assets/img/inter/light.png" style="width: 100%; " alt="">
+                <h3 class="fs-5">Traffic Signal</h3>
+                <p class="small-text">Traffic signals give pedestrians a specific time to cross an intersection without waiting for a gap in traffic and clarify when drivers, cyclists, and pedestrians should proceed.</p>
+              </div>
+              <div class="col-md-4">
+                <img src="https://projects.transalt.org/assets/img/inter/stop.png" style="width: 100%; " alt="">
+                <h3 class="fs-5">All-Way Stop</h3>
+                <p class="small-text">All-way stops allow pedestrians to cross an intersection without waiting for a gap in traffic and make crossing less chaotic for drivers and cyclists.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        
+
+      <script type="text/javascript">
+        var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1OHA-wyjgquc7NPCbKnfh4Fcpylz5CATmyk0r-BWqtvo/edit#gid=0';
+
+        $('#count').sheetrock({
+        url: mySpreadsheet,
+        query: "select J",
+        fetchSize: 1
+      });
+
+         $('#lpi').sheetrock({
+        url: mySpreadsheet,
+        query: "select M",
+        fetchSize: 1
+      });
+
+      $('#count2').sheetrock({
+        url: mySpreadsheet,
+        query: "select P",
+        fetchSize: 1
+      });
+
+      $('#tci').sheetrock({
+        url: mySpreadsheet,
+        query: "select R",
+        fetchSize: 1
+      });
+
+      $('#bc').sheetrock({
+        url: mySpreadsheet,
+        query: "select Q",
+        fetchSize: 1
+      });
+
+
+      $('#vzp').sheetrock({
+        url: mySpreadsheet,
+        query: "select K",
+        fetchSize: 1
+      });
+
+      $('#rcw').sheetrock({
+        url: mySpreadsheet,
+        query: "select N",
+        fetchSize: 1
+      });
+
+      $('#lpishare').sheetrock({
+        url: mySpreadsheet,
+        query: "select O",
+        fetchSize: 1
+      });
+
+      
+
+     
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+  </body>
+</html>
