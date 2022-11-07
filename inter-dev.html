@@ -6,14 +6,14 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:site" content="@transalt">
     <meta property="twitter:url" content="https://projects.transalt.org/bikelanes">
-    <meta property="twitter:title" content="1,000 Intersections Tracker – Transportation Alternatives">
-    <meta property="twitter:description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez promised to upgrade 1,000 intersections across New York City for safety. We’re keeping track of the administration’s progress.">
+    <meta property="twitter:title" content="Intersections Upgrade Tracker – Transportation Alternatives">
+    <meta property="twitter:description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez upgraded more than 1,200 intersections across New York City for safety. We’re mapping these improvements.">
     <meta property="twitter:image" content="https://projects.transalt.org/assets/img/intersectiontracker.png">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>1,000 Intersections Tracker – Transportation Alternatives</title>
+    <title>Intersections Upgrade Tracker – Transportation Alternatives</title>
 
 
     <!-- Fonts/Icons -->
@@ -46,14 +46,14 @@
     <script src="https://unpkg.com/handlebars@4.5.0/dist/handlebars.min.js"></script>
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="1,000 Intersections Tracker">
-    <meta name="description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez promised to upgrade 1,000 intersections across New York City for safety. We’re keeping track of the administration’s progress.">
+    <meta name="title" content="Intersections Upgrade Tracker – Transportation Alternatives">
+    <meta name="description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez upgraded more than 1,200 intersections across New York City for safety. We’re mapping these improvements.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://projects.transalt.org/bikelanes">
-    <meta property="og:title" content="1,000 Intersections Tracker">
-    <meta property="og:description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez promised to upgrade 1,000 intersections across New York City for safety. We’re keeping track of the administration’s progress.">
+    <meta property="og:title" content="Intersections Upgrade Tracker – Transportation Alternatives">
+    <meta property="og:description" content="Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez upgraded more than 1,200 intersections across New York City for safety. We’re mapping these improvements.">
     <meta property="og:image" content="https://projects.transalt.org/assets/img/intersectiontracker.png">
 
     <style type="text/css">
@@ -115,32 +115,36 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
             <div style="padding-bottom: 1rem;">
-              <span class="article-label">1,000 Intersections Tracker</span>
+              <span class="article-label">Intersection Upgade Tracker</span>
             </div>
-            <h1><span style="font-weight: 400;">Mayor Adams promised to upgrade 1,000 intersections for safety in 2022.</span> So far, his administration has improved <span id="count"></span>.</h1>
-            <h3 style="font-family: 'Montserrat', sans-serif; color: #58595b;"><span id="count2"></span> of those intersections include upgrades to physical infrastructure.</h3>
+            <h1><span style="font-weight: 400;">Mayor Adams has upgraded more than 1,200 intersections for safety in 2022.</span> We mapped  <span id="count"></span> locations.</h1>
+            <h3 style="font-family: 'Montserrat', sans-serif; color: #58595b;">At least <span id="count2"></span> of those intersections include upgrades to physical infrastructure.</h3>
           </div>
         </div>
        
 
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
-            <p class="pt-3">Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez <a href="https://www.amny.com/transit/nyc-intersections-redesigned-police-enforcement-nyc-traffic-safety/" target="_blank">promised to upgrade 1,000 intersections</a> across New York City for safety. These improvements could include installing raised crosswalks, leading pedestrian intervals, shortening crossings, or other interventions. <a data-bs-toggle="modal" href="#inter-define">What do these interventions look like? <i class="bi bi-arrow-up-right-square"></i></a></p>
+            <p class="pt-3">Mayor Eric Adams and DOT Commissioner Ydanis Rodriguez <a href="https://www.amny.com/transit/nyc-redesigned-1200-intersections-2022-adams/" target="_blank">have upgraded more than 1,200 intersections</a> across New York City for safety. These improvements include installing raised crosswalks, leading pedestrian intervals, shortening crossings, or other interventions. <a data-bs-toggle="modal" href="#inter-define">What do these interventions look like? <i class="bi bi-arrow-up-right-square"></i></a></p>
 
     
   
           </div>
         </div>
          <div class="row d-flex justify-content-center pt-3">
+          <div class="col-md-8">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Using Open Data, we've mapped:</h2>
+          </div>
+        </div>
           
-          
+          <div class="row d-flex justify-content-center pt-3">
           <div class="col-md-4">
-            <h1><span id="rcw"></span><span style="color: #bcbec0; font-weight: 400;">/100</span></h1>
-            <p style="margin-top: -2%;"><strong>Raised crosswalks installed</strong>. Mayor Adams promised to install 100 raised crosswalks in 2022.</p>
+            <h1><span id="rcw"></span><span style="color: #bcbec0; font-weight: 400;"></span></h1>
+            <p style="margin-top: -2%;"><strong>Raised crosswalks</strong>. Mayor Adams promised to install 100 raised crosswalks in 2022.</p>
           </div>
           <div class="col-md-4">
-            <h1><span id="tci"></span><span style="color: #bcbec0; font-weight: 400;">/100</span></h1>
-            <p style="margin-top: -2%;"><strong>Turn calming interventions installed</strong>. DOT committed to install turn calming elements at 100 intersections in 2022.</p>
+            <h1><span id="tci"></span><span style="color: #bcbec0; font-weight: 400;"></span></h1>
+            <p style="margin-top: -2%;"><strong>Turn calming interventions</strong>. DOT committed to install turn calming elements at 100 intersections in 2022.</p>
           </div>
           
         </div>
@@ -152,7 +156,7 @@
           
           <div class="col-md-4">
             <h1><span id="vzp"></span></h1>
-            <p style="margin-top: -2%;"><strong>Vision Zero priority intersections upgraded</strong>. These are intersections known to be dangerous to the City.</p>
+            <p style="margin-top: -2%;"><strong>Vision Zero priority intersection upgrades</strong>. These are intersections known to be dangerous to the City.</p>
           </div>
         </div>
 </div>
@@ -172,7 +176,7 @@
               <a class="btn btn-outline-light" href="https://ctt.ac/UbQ2h" role="button" target="_blank" style="color: white">Send a tweet</a>
             </div> -->
             <h2 class="pt-5">About the data</h2>
-        <p>The 1,000 Intersections Tracker compiles changes from&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Raised-Crosswalk-Locations/uh2s-ftgh" rel="nofollow" title="Raised Crosswalk Locations | NYC Open Data">NYC Open Data&apos;s Raised Crosswalks</a>,&nbsp;<a href="https://data.cityofnewyork.us/Transportation/VZV_Leading-Pedestrian-Interval-Signals/mqt5-ctec" rel="nofollow" title="VZV_Leading Pedestrian Interval Signals | NYC Open Data">Leading Pedestrian Interval Signals (LPIs)</a>,&nbsp;<a href="https://data.cityofnewyork.us/Transportation/VZV_Turn-Traffic-Calming/hz4p-9f7s" rel="nofollow" title="VZV_Turn Traffic Calming | NYC Open Data">Turn Traffic Calming</a>, and&nbsp;<a href="https://data.cityofnewyork.us/resource/w76s-c5u4" rel="nofollow" title="Traffic Signal and All-Way Stop Study Requests | NYC Open Data">Traffic Signal and All-Way Stop Study Requests</a> datasets. The city has not provided a dataset that specifies bike corrals daylighting intersections. (The&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Bicycle-Parking/yh4a-g3fj" rel="nofollow" title="Bicycle Parking | NYC Open Data">Bicycle Parking</a> dataset includes bike corrals, but not this information.) Additionally, there are some intersection changes that NYC DOT could implement that do not show up in any Open Data datasets in any form, including adding Barnes Dances (or any other non-LPI signal changes), pedestrian islands, and any bulb-outs that might not be classified as turn calming. Our combined dataset is <a href="https://github.com/lizdenys/1000intersections-tracker-data" target="_blank">available on GitHub</a>.</p>
+        <p>The Intersection Upgrades Tracker compiles changes from&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Raised-Crosswalk-Locations/uh2s-ftgh" rel="nofollow" title="Raised Crosswalk Locations | NYC Open Data">NYC Open Data&apos;s Raised Crosswalks</a>,&nbsp;<a href="https://data.cityofnewyork.us/Transportation/VZV_Leading-Pedestrian-Interval-Signals/mqt5-ctec" rel="nofollow" title="VZV_Leading Pedestrian Interval Signals | NYC Open Data">Leading Pedestrian Interval Signals (LPIs)</a>,&nbsp;<a href="https://data.cityofnewyork.us/Transportation/VZV_Turn-Traffic-Calming/hz4p-9f7s" rel="nofollow" title="VZV_Turn Traffic Calming | NYC Open Data">Turn Traffic Calming</a>, and&nbsp;<a href="https://data.cityofnewyork.us/resource/w76s-c5u4" rel="nofollow" title="Traffic Signal and All-Way Stop Study Requests | NYC Open Data">Traffic Signal and All-Way Stop Study Requests</a> datasets. The city has not provided a dataset that specifies bike corrals daylighting intersections. (The&nbsp;<a href="https://data.cityofnewyork.us/Transportation/Bicycle-Parking/yh4a-g3fj" rel="nofollow" title="Bicycle Parking | NYC Open Data">Bicycle Parking</a> dataset includes bike corrals, but not this information.) Additionally, there are some intersection changes that NYC DOT could implement that do not show up in any Open Data datasets in any form, including adding Barnes Dances (or any other non-LPI signal changes), pedestrian islands, and any bulb-outs that might not be classified as turn calming. Our combined dataset is <a href="https://github.com/lizdenys/1000intersections-tracker-data" target="_blank">available on GitHub</a>.</p>
 
         <h2>About the site</h2>
         <p>This site is developed and maintained by <a href="https://transalt.org" target="_blank">Transportation Alternatives</a> staff and volunteers from TA's <a href="https://transalt.org/brooklyn">Brooklyn Activist Committee</a>: <a href="https://lizdenys.com/" target="_blank">Liz Denys</a>, <a href="https://www.mattdenys.com/" target="_blank">Matt Denys</a>, and Thomas Huzij.
