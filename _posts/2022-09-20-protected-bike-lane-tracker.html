@@ -282,8 +282,6 @@ permalink: /bikelanes
         accessToken: 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJja3dtZGV5aWsyYjJmMndub2R3cTBuazIyIn0.DaRqJP0ez4gMNtcslbVakQ'
         }).addTo(map);
 
-
-
           // Instantiate KMZ layer (async)
           var kmz = L.kmzLayer().addTo(map);
 
@@ -294,6 +292,7 @@ permalink: /bikelanes
 
           // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
           kmz.load('https://projects.transalt.org/assets/img/total.kmz');
+          kmz.load('https://projects.transalt.org/assets/img/installed2022.kmz');
         </script>
 
    <script>
