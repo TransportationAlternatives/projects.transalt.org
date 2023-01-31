@@ -292,7 +292,7 @@ permalink: /bikelanes
 
           // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
           kmz.load('https://projects.transalt.org/assets/img/2023.kmz', '2023');
-          kmz.load('https://projects.transalt.org/assets/img/installed2022.kmz', '2022');
+          kmz.load('https://projects.transalt.org/assets/img/2022.kmz', '2022');
 
            var control = L.control.layers(null, null, { collapsed:false }).addTo(map);
         </script>
@@ -319,15 +319,15 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_t
 }).addTo(map2);
 
   // Instantiate KMZ layer (async)
-  var kmz = L.kmzLayer().addTo(map2);
+  var kmz2 = L.kmzLayer().addTo(map2);
 
-  kmz.on('load', function(e) {
+  kmz2.on('load', function(e) {
     control.addOverlay(e.layer, e.name);
     // e.layer.addTo(map2);
   });
 
   // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
-  kmz.load('https://projects.transalt.org/assets/img/In%20progress.kmz');
+  kmz2.load('https://projects.transalt.org/assets/img/In%20progress.kmz');
 
 </script>
 
@@ -353,15 +353,15 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_t
 }).addTo(map3);
 
   // Instantiate KMZ layer (async)
-  var kmz = L.kmzLayer().addTo(map3);
+  var kmz3 = L.kmzLayer().addTo(map3);
 
-  kmz.on('load', function(e) {
+  kmz3.on('load', function(e) {
     control.addOverlay(e.layer, e.name);
     // e.layer.addTo(map3);
   });
 
   // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
-  kmz.load('https://projects.transalt.org/assets/img/announced.kmz');
+  kmz3.load('https://projects.transalt.org/assets/img/announced.kmz');
 
 </script>
 <script type="text/javascript">
