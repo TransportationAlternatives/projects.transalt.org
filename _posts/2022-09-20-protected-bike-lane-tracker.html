@@ -294,7 +294,7 @@ permalink: /bikelanes
           kmz.load('https://projects.transalt.org/assets/img/2023.kmz');
           kmz.load('https://projects.transalt.org/assets/img/2022.kmz');
 
-           L.control.layers(null, null, { collapsed:false }).addTo(map);
+          var control = L.control.layers(null, null, { collapsed:false }).addTo(map);
         </script>
 
    <script>
