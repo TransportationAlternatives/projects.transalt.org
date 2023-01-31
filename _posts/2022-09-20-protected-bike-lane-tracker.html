@@ -281,7 +281,6 @@ permalink: /bikelanes
         detectRetina: true,
         accessToken: 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJja3dtZGV5aWsyYjJmMndub2R3cTBuazIyIn0.DaRqJP0ez4gMNtcslbVakQ'
         }).addTo(map);
-         L.control.layers(null, null, { collapsed:false }).addTo(map);
 
           // Instantiate KMZ layer (async)
           var kmz = L.kmzLayer().addTo(map);
@@ -292,10 +291,10 @@ permalink: /bikelanes
           });
 
           // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
-          kmz.load('https://projects.transalt.org/assets/img/2023.kmz', 2023);
-          kmz.load('https://projects.transalt.org/assets/img/2022.kmz', 2022);
+          kmz.load('https://projects.transalt.org/assets/img/2023.kmz');
+          kmz.load('https://projects.transalt.org/assets/img/2022.kmz');
 
-           
+           L.control.layers(null, null, { collapsed:false }).addTo(map);
         </script>
 
    <script>
