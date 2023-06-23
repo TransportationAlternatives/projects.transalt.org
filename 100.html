@@ -2,7 +2,6 @@
 title: Traffic violence has killed 100 children since 2014.
 permalink: /100demo
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,7 +35,7 @@ permalink: /100demo
       }
 
       .entryimg {
-        height: 300px;
+        height: 350px;
         background-size: cover;
       }
 
@@ -121,7 +120,7 @@ img.grayscale:hover {
   </head>
   <body>
 
-        <nav class="animate__animated animate__fadeInDown animate__delay-5s navbar fixed-top navbar-dark" style="padding-left: 6px; padding-right: 6px; padding-top: 12px; background: rgb(27,27,27);
+        <nav class="animate__animated animate__fadeInDown animate__delay-5s navbar sticky-top navbar-dark" style="padding-left: 6px; padding-right: 6px; padding-top: 12px; background: rgb(27,27,27);
 background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239845938375) 68%, rgba(0,212,255,0) 100%);">
 <div class="container-fluid">
   <a class="navbar-brand" href="https://familiesforsafestreets.org">
@@ -131,7 +130,7 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
      <h4 style="color: #A2A2A2;"><a class="nav-link clipboard" target="_blank" href="https://ctt.ac/MeOf6">Share</a></h4>
   </div>
 </nav>
-    <header>
+    <header style="">
       <div class="container" style="height: 100vh;">
         <div class="row h-100 justify-content-center align-items-center">
           <div class="col-sm-8">
@@ -159,7 +158,7 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
     <section class="intro-graf" id="graf" style="background-image: linear-gradient(
     to bottom, rgba(0, 0, 0, .5), #1B1B1B), url(https://images.squarespace-cdn.com/content/v1/5cab9d9b65a707a9b36f4b6c/1632771676188-JGVN6BBHKSPCDR09O0CN/White+strollers+with+yellow+photos+installed+across+from+City+Hall+with+a+sign+in+front+reading+Vision+Zero+is+in+a+state+of+emergency?format=2500w); background-position: center; ">
       <div>
-      <div class="container" style="height: 100vh;">
+      <div class="container" style="height: 100vh; padding-top: 5%; padding-bottom: 5%;">
         <div class="row h-100 justify-content-center align-items-center">
           <div class="col-md-6 info-graf" style="padding-bottom: 10%">
             <h2>Our children deserve the chance to grow up.</h2>
@@ -176,11 +175,11 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
 
       <div class="row">
 
-      {% for child in site.data.children6 %}
-        <div class="col-md-4">
+      {% for child in site.data.children7 %}
+        <div class="col-sm-3">
           <div class="entry animate__animated animate__fadeInUp " style="text-align:center;">
             <div style="background-color:">
-              <img src="{{child.ImgURL}}" class="entryimg" width="100%" height="auto" style="object-fit: cover;">
+              <img src="{{child.ImgURL}}" class="entryimg grayscale" width="100%" height="" style="object-fit: cover; object-position: 65%;">
             </div>
             <h3 class="name"><strong><span style="text-transform: ;">{{ child.Name }}</span></strong>, {{child.Age}}</h3>
             <p class="caption">{{child.Sentence}}</p>
