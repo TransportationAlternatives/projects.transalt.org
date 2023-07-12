@@ -1,0 +1,462 @@
+---
+title: Traffic violence has killed 100 children since 2014.
+date: 2023-07-13
+image: /assets/100children-card.png
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/bzw7vha.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Mapbox -->
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+
+    
+
+    <style type="text/css">
+
+
+      .entry {
+        padding-top: ;
+        padding-bottom: 24px;
+      }
+
+      .name {
+        padding-top: 22px;
+        font-family: "freight-text-pro", serif;
+        font-size: 24px;
+      }
+
+      .entryimg {
+        height: 350px;
+        background-size: cover;
+      }
+
+
+      .title {
+        font-size: 46px;
+        font-family: Georgia, "freight-text-pro", serif;
+        text-align: center;
+        line-height: 64px;
+      }
+
+      .innerLink a {
+        color: #ffc20e !important;
+      }
+
+      body {
+        background-color: #121212;
+        color: white;
+        font-family: Georgia, "freight-text-pro", serif;
+      }
+
+      .caption {
+        font-family: 'Inter', Georgia, "freight-text-pro", serif;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .subhead {
+        padding-top: 12px;
+      }
+      .title-section {
+        padding-top: 5%;
+        font-family: Georgia, "freight-text-pro", serif;
+        text-align: center;
+        padding-bottom: 5%;
+      }
+      .captionText {
+        color: white;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: "Inter",Georgia, "freight-text-pro", serif;
+      }
+      .titleUnd {
+        box-shadow: inset 0px -6px #ffc20e;
+      }
+
+      .info-graf {
+        font-size: 18px;
+        font-family: "Inter",Georgia, "freight-text-pro", serif;
+      }
+      img.grayscale {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(80%); /* Chrome 19+ & Safari 6+ */
+  transition: 0.2s;
+}
+
+img.grayscale:hover {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+}
+
+#map {
+      width: 100%;
+      height: 80vh;
+    }
+
+    .height {
+        height: 1200px;
+      }
+
+
+
+    /* Popup styling */
+
+    .mapboxgl-popup {
+      padding-bottom: 5px;
+    }
+
+    .mapboxgl-popup-close-button {
+      display: none;
+    }
+
+    .mapboxgl-popup-content {
+      font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+      padding: 0;
+      width: 250px;
+    }
+
+    .mapboxgl-popup-content-wrapper {
+      padding: 1%;
+    }
+
+    .mapboxgl-popup-content h3 {
+      background: rgb(61, 59, 59);
+      text-align: center;
+      color: #fff;
+      margin: 0;
+      display: block;
+      padding: 15px;
+      font-weight: 700;
+      margin-top: -5px;
+      font-family: "freight-text-pro", serif;
+    }
+
+    .mapboxgl-popup-content h4 {
+      margin: 0;
+      display: block;
+      padding: 16px;
+      font-weight: 400;
+      color: black;
+      font-family: "freight-text-pro", serif;
+      font-size: 16px;
+    }
+
+    .mapboxgl-container {
+      cursor: pointer;
+    }
+
+    .mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
+      margin-top: 3px;
+    }
+
+    .mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
+      border-bottom-color: rgb(61, 59, 59);
+    }
+
+    </style>
+
+    <!-- Primary Meta Tags -->
+<title>More Than 100 Children Killed in Crashes — Families for Safe Streets</title>
+<meta name="title" content="More Than 100 Children Killed in Crashes — Families for Safe Streets" />
+<meta name="description" content="Our children deserve the chance to grow up. Instead, traffic violence continues to rob New Yorkers of their children, siblings, friends, and loved ones." />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://transalt.org" />
+<meta property="og:title" content="More Than 100 Children Killed in Crashes — Families for Safe Streets" />
+<meta property="og:description" content="Our children deserve the chance to grow up. Instead, traffic violence continues to rob New Yorkers of their children, siblings, friends, and loved ones." />
+<meta property="og:image" content="assets/100children-card.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://transalt.org" />
+<meta name="twitter:site" content="@TransAlt">
+<meta property="twitter:title" content="More Than 100 Children Killed in Crashes — Families for Safe Streets" />
+<meta property="twitter:description" content="Our children deserve the chance to grow up. Instead, traffic violence continues to rob New Yorkers of their children, siblings, friends, and loved ones." />
+<meta property="twitter:image" content="assets/100children-card.png" />
+
+  </head>
+  <body>
+
+        <nav class="animate__animated animate__fadeInDown animate__delay-5s navbar sticky-top navbar-dark" style="padding-left: 6px; padding-right: 6px; padding-top: 12px; background: rgb(27,27,27);
+background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239845938375) 68%, rgba(0,212,255,0) 100%);">
+<div class="container-fluid">
+  <a class="navbar-brand" href="https://familiesforsafestreets.org">
+      <img src="assets/fss.png" alt="FSS Logo" width="50" height="50">
+    </a>
+    <h1 class="" id="nav" style="color: #ffc20e; font-size: 32px;"><span id="menu"></span> Children</h1>
+     <h6 style="color: #A2A2A2;"><a class="nav-link clipboard" target="_blank" href="https://transalt.org/reports-list/streets-for-children">Take Action</a></h6>
+  </div>
+</nav>
+    <header style="">
+      <div class="container" style="height: 100vh;">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-sm-8">
+            <h1 class="title animate__animated animate__fadeInUp animate__delay-1s">Traffic violence has killed <span class="titleUnd"><span id="titleNum"></span> children</span> in New York City since Vision Zero began</h1>
+            <div class="title-section">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+                  <h2><strong><span id="toSchool"></span></strong></h2><h2 class="captionText">children killed walking to or from school</h2>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-3s">
+                  <h2><span id="largeCar"></span></h2><h2 class="captionText">children killed by SUVs or larger vehicles</h2>
+                </div>
+                 <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-4s">
+                  <h2><strong><span id="VZtotal"></span></strong></h2><h2 class="captionText">people killed in total since Vision Zero began in 2014</h2>
+                </div>
+              </div>
+            </div>
+            <p style="text-align: center; padding-top: 5%;"><a href="#graf" style="font-variant: small-caps; font-size: 24px;  color: #ffc20e; text-decoration: none;" class="animate__animated animate__fadeInUp animate__delay-5s">Keep reading <i class="bi bi-arrow-down"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <section class="intro-graf" id="graf" style="background-image: linear-gradient(
+    to bottom, rgba(0, 0, 0, .5), #1B1B1B), url('https://raw.githubusercontent.com/TransportationAlternatives/projects.transalt.org/main/assets/img/100fatalitiesimages/White%2Bstrollers%2Bwith%2Byellow%2Bphotos%2Binstalled%2Bacross%2Bfrom%2BCity%2BHall%2Bwith%2Ba%2Bsign%2Bin%2Bfront%2Breading%2BVision%2BZero%2Bis%2Bin%2Ba%2Bstate%2Bof%2Bemergency-2.webp'); background-position: center; ">
+      <div>
+      <div class="container" style=" padding-top: 5%; padding-bottom: 5%;">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-md-6 info-graf" style="padding-bottom: 10%">
+            <h2 style="font-family: Georgia, serif;">Our children deserve the chance to grow up</h2>
+            <p style="padding-top: 14px;">Instead, traffic violence continues to rob New Yorkers of their children, siblings, friends, and loved ones. Since Vision Zero — an initiative to end all traffic deaths — began in New York City in 2014, crashes have killed <span id="children3"></span> children 17 and younger.</p>
+            <p>This memorial should never should have had to be made. It&rsquo;s the result of our city and state leaders failing to act and failing to stop a preventable public health crisis.</p>
+            <p>Transportation Alternatives and Families for Safe Streets record information about each fatal crash in New York City. We've used this information to create a memorial to the children our city has lost to traffic violence in the Vision Zero era.</p>
+            <p><strong>Have you lost a loved one in a crash?</strong></p>
+            <p>You are not alone. Families for Safe Streets confronts the epidemic of traffic violence by advocating for lifesaving changes and providing support to those who have been impacted by crashes. <a href="https://www.familiesforsafestreets.org/personally-impacted" target="_blank" style="color:#ffc20e">Please reach out to us</a>.</p>
+            <p style="text-align: center; padding-top: 5%;"><a href="#names" style="font-variant: small-caps; font-size: 24px;  color: #ffc20e; text-decoration: none; font-family: Georgia, serif;">See their names <i class="bi bi-arrow-down"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" id="names" style="padding-top: 5%">
+
+      <div class="row">
+
+      {% for child in site.data.children7 %}
+        <div class="col-6 col-sm-4 col-md-3">
+          <div class="entry animate__animated animate__fadeInUp " style="text-align:center;">
+            <div style="background-color:">
+              <img src="{{child.ImgURL}}" class="entryimg grayscale" width="100%" height="" style="object-fit: cover; object-position:50% 65%;">
+            </div>
+            <h3 class="name"><strong><span style="text-transform: ;">{{ child.Name }}</span></strong>, {{child.Age}}</h3>
+            <p class="caption">{{child.Sentence}}</p>
+          </div>
+        </div>
+      {% endfor %}
+        </div>
+      
+      </div>
+
+    </div>
+
+    <div class="container" id="names" style="padding-top: 5%;">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-4" style="padding-bottom: 3%;">
+          <h2>Preventable traffic violence has devastated communities across New York City</h2>
+          <h4 class="pt-2"><em>On average, 12 children are killed by crashes each year in New York City</em></h4>
+          <p class="pt-3" style="font-family: 'Inter', sans-serif;">Motor vehicle-related injuries are the leading cause of unintentional injury death among children in New York City. In 80% of these deaths, the child was a pedestrian struck by a motor vehicle.</p>
+          <p class="pt-2" style="font-family: 'Inter', sans-serif;">In New York State, twice as many children are killed by motor vehicle traffic than by firearms.</p>
+        </div>
+        <div class="col-md-8" style="padding-right: 24px; padding-left:;">
+          <div id="map"></div> 
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      
+      <div class="container animate__animated animate__fadeInUp" style="padding-top:5%; padding-bottom: 5%;">
+        <div class="row">
+          <div class="col-md-4">
+            <p style="color:#ffc20e; text-transform:uppercase; text-align: center; text-decoration:none;font-size: 18px;"><a href="mailto:info@familiesforsafestreets.org" class="innerLink" style="color:#ffc20e; text-decoration:none;">Have something to add?</a></p>
+            <p style="text-align:center; margin-top: -12px; font-family: 'Inter', sans-serif;">Please reach out to us by email to submit a photo of your child or a correction. We are committed to keeping this memorial to the children killed in traffic violence in New York City accurate and updated.</p>
+          </div>
+          <div class="col-md-4">
+            <p style="color:#ffc20e; text-transform:uppercase; text-align: center; text-decoration:none;font-size: 18px;"><a href="#graf" class="innerLink" style="color:#ffc20e; text-decoration:none;">About this project</a></p>
+            <p style="text-align:center; margin-top: -12px; font-family: 'Inter', sans-serif;">We record information about each fatal crash in New York City, verifying each with media reports, NYPD, and New York City Department of Transportation records. We used this to create this memorial.</p>
+          </div>
+          <div class="col-md-4">
+            <p style="color:#ffc20e; text-transform:uppercase; text-align: center; text-decoration:none;font-size: 18px;"><a href="https://www.familiesforsafestreets.org/get-involved" target="_blank" class="innerLink" style="color:#ffc20e; text-decoration:none;">Have you lost a loved one in a crash?</a></p>
+            <p style="text-align:center; margin-top: -12px; font-family: 'Inter', sans-serif;"><strong>You are not alone.</strong> FSS confronts the epidemic of traffic violence by advocating for lifesaving changes and providing support to those who have been impacted by crashes. Please reach out to us.</p>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+    
+
+    <script type="text/javascript">
+
+    var transformRequest = (url, resourceType) => {
+      var isMapboxRequest =
+        url.slice(8, 22) === "api.mapbox.com" ||
+        url.slice(10, 26) === "tiles.mapbox.com";
+      return {
+        url: isMapboxRequest
+          ? url.replace("?", "?pluginName=sheetMapper&")
+          : url
+      };
+    };
+    
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjbGpoazM2cG0waTlvM2dtazV0MjRjYTBwIn0.TxvHC1nG_KFFz8AMgTNBwQ'; //Mapbox token 
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/dark-v11',
+      cooperativeGestures: true,
+      center: [-73.933298, 40.719247],
+      zoom: 10
+    });
+
+
+
+    $(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        url: 'https://docs.google.com/spreadsheets/d/1-76TysvoluJqHqI2SeRcha15o3FC-kuu0Rxs35bgy94/gviz/tq?tqx=out:csv&sheet=Sheet1',
+        dataType: "text",
+        success: function (csvData) { makeGeoJSON(csvData); }
+      });
+
+
+
+      function makeGeoJSON(csvData) {
+        csv2geojson.csv2geojson(csvData, {
+          latfield: 'latitude',
+          lonfield: 'longitude',
+          delimiter: ','
+        }, function (err, data) {
+          map.on('load', function () {
+
+            //Add the the layer to the map
+            map.addLayer({
+              'id': 'csvData',
+              'type': 'circle',
+              'source': {
+                'type': 'geojson',
+                'data': data
+              },
+              'paint': {
+                'circle-radius': 5,
+                'circle-color': "#ffc20e"
+              }
+            });
+
+
+            // When a click event occurs on a feature in the csvData layer, open a popup at the
+            // location of the feature, with description HTML from its properties.
+            map.on('click', 'csvData', function (e) {
+              var coordinates = e.features[0].geometry.coordinates.slice();
+
+              //set popup text
+              //You can adjust the values of the popup to match the headers of your CSV.
+              // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
+              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + e.features[0].properties.Sentence + `</b>` + `</h4>`;
+
+              // Ensure that if the map is zoomed out such that multiple
+              // copies of the feature are visible, the popup appears
+              // over the copy being pointed to.
+              while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+              }
+
+              //add Popup to map
+
+              new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+            });
+
+            // Change the cursor to a pointer when the mouse is over the places layer.
+            map.on('mouseenter', 'csvData', function () {
+              map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'places', function () {
+              map.getCanvas().style.cursor = '';
+            });
+
+            var bbox = turf.bbox(data);
+            map.fitBounds(bbox, { padding: 50 });
+
+          });
+
+        });
+      };
+    });
+
+map.addControl(new mapboxgl.FullscreenControl());
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+
+  
+<script type="text/javascript">
+  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1-76TysvoluJqHqI2SeRcha15o3FC-kuu0Rxs35bgy94/edit#gid=1824771661';
+
+$('#VZtotal').sheetrock({
+  url: mySpreadsheet,
+  query: "select A",
+  fetchSize: 1
+});
+
+$('#menu').sheetrock({
+  url: mySpreadsheet,
+  query: "select B",
+  fetchSize: 1
+});
+
+$('#titleNum').sheetrock({
+  url: mySpreadsheet,
+  query: "select C",
+  fetchSize: 1
+});
+
+$('#toSchool').sheetrock({
+  url: mySpreadsheet,
+  query: "select D",
+  fetchSize: 1
+});
+
+$('#largeCar').sheetrock({
+  url: mySpreadsheet,
+  query: "select E",
+  fetchSize: 1
+});
+
+$('#children3').sheetrock({
+  url: mySpreadsheet,
+  query: "select F",
+  fetchSize: 1
+});
+
+</script>
+
+   
+  </body>
+</html>
