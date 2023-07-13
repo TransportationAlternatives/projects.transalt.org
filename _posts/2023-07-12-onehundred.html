@@ -19,10 +19,12 @@ layout: null
     <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-       <!-- Fonts -->
+    <!-- Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/bzw7vha.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/ba78ba88-0894-44d4-80bb-e407c4b578c2/favicon%203.ico?v=1648657962312">
 
     <!-- Mapbox -->
@@ -41,7 +43,8 @@ layout: null
 
       gtag('config', 'G-2TB4133TPG');
     </script>
-    
+
+
 
     <style type="text/css">
 
@@ -97,9 +100,10 @@ layout: null
       }
       .captionText {
         color: white;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 18px;
         font-family: "Inter",Georgia, "freight-text-pro", serif;
+        font-weight: 300;
       }
       .titleUnd {
         box-shadow: inset 0px -6px #ffc20e;
@@ -108,6 +112,7 @@ layout: null
       .info-graf {
         font-size: 18px;
         font-family: "Inter",Georgia, "freight-text-pro", serif;
+        font-weight: 300;
       }
       img.grayscale {
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
@@ -215,17 +220,16 @@ img.grayscale:hover {
 background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239845938375) 68%, rgba(0,212,255,0) 100%);">
 <div class="container-fluid">
   <a class="navbar-brand" href="https://familiesforsafestreets.org">
-      <img src="assets/fss.png" alt="FSS Logo" width="50" height="50">
+      <img src="assets/fss.png" alt="FSS Logo" width="50" height="50"> <span style="color: #A2A2A2; font-size: 26px; margin-left: 6px;"><span id="menu"></span> Children</span>
     </a>
-    <h1 class="" id="nav" style="color: #ffc20e; font-size: 32px;"><span id="menu"></span> Children</h1>
-     <h6 style="color: #A2A2A2;"><a class="nav-link clipboard" target="_blank" href="https://transalt.org/reports-list/streets-for-children">Take Action</a></h6>
+     <h6 style="color: #A2A2A2; font-family: 'Inter';" class="d-none d-sm-block"><a class="btn btn-outline-light" style="color:  #A2A2A2; border-color: #A2A2A2" target="_blank" href="https://transalt.org/reports-list/streets-for-children">Read Report</a></h6>
   </div>
 </nav>
     <header style="">
       <div class="container" style="height: 100vh;">
         <div class="row h-100 justify-content-center align-items-center">
-          <div class="col-sm-8">
-            <h1 class="title animate__animated animate__fadeInUp animate__delay-1s">Traffic violence has killed <span class="titleUnd"><span id="titleNum"></span> children</span> in New York City since Vision Zero began</h1>
+          <div class="col-sm-9">
+            <h1 class="title animate__animated animate__fadeInUp animate__delay-1s">Traffic violence has killed <span class="titleUnd"><span id="titleNum"></span> children</span> in New York City since Vision Zero began in 2014</h1>
             <div class="title-section">
               <div class="row d-flex justify-content-center">
                 <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
@@ -235,7 +239,7 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
                   <h2><span id="largeCar"></span></h2><h2 class="captionText">children killed by SUVs or larger vehicles</h2>
                 </div>
                  <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-4s">
-                  <h2><strong><span id="VZtotal"></span></strong></h2><h2 class="captionText">people killed in total since Vision Zero began in 2014</h2>
+                  <h2><strong><span id="VZtotal"></span></strong></h2><h2 class="captionText">people killed since Vision Zero began</h2>
                 </div>
               </div>
             </div>
@@ -247,7 +251,7 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
 
 
     <section class="intro-graf" id="graf" style="background-image: linear-gradient(
-    to bottom, rgba(0, 0, 0, .5), #1B1B1B), url('https://raw.githubusercontent.com/TransportationAlternatives/projects.transalt.org/main/assets/img/100fatalitiesimages/White%2Bstrollers%2Bwith%2Byellow%2Bphotos%2Binstalled%2Bacross%2Bfrom%2BCity%2BHall%2Bwith%2Ba%2Bsign%2Bin%2Bfront%2Breading%2BVision%2BZero%2Bis%2Bin%2Ba%2Bstate%2Bof%2Bemergency-2.webp'); background-position: center; ">
+    to bottom, rgba(0, 0, 0, .7), #1B1B1B), url('https://raw.githubusercontent.com/TransportationAlternatives/projects.transalt.org/main/assets/img/100fatalitiesimages/White%2Bstrollers%2Bwith%2Byellow%2Bphotos%2Binstalled%2Bacross%2Bfrom%2BCity%2BHall%2Bwith%2Ba%2Bsign%2Bin%2Bfront%2Breading%2BVision%2BZero%2Bis%2Bin%2Ba%2Bstate%2Bof%2Bemergency-2.webp'); background-position: center; ">
       <div>
       <div class="container" style=" padding-top: 5%; padding-bottom: 5%;">
         <div class="row h-100 justify-content-center align-items-center">
@@ -275,7 +279,7 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
               <img src="{{child.ImgURL}}" class="entryimg grayscale" width="100%" height="" style="object-fit: cover; object-position:50% 65%;">
             </div>
             <h3 class="name"><strong><span style="text-transform: ;">{{ child.Name }}</span></strong>, {{child.Age}}</h3>
-            <p class="caption">{{child.Sentence}}</p>
+            <p class="caption" style="font-weight: 300">{{child.Sentence}}</p>
           </div>
         </div>
       {% endfor %}
@@ -305,7 +309,7 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
         <div class="row">
           <div class="col-md-4">
             <p style="color:#ffc20e; text-transform:uppercase; text-align: center; text-decoration:none;font-size: 18px;"><a href="mailto:info@familiesforsafestreets.org" class="innerLink" style="color:#ffc20e; text-decoration:none;">Have something to add?</a></p>
-            <p style="text-align:center; margin-top: -12px; font-family: 'Inter', sans-serif;">Please reach out to us by email to submit a photo of your child or a correction. We are committed to keeping this memorial to the children killed in traffic violence in New York City accurate and updated.</p>
+            <p style="text-align:center; margin-top: -12px; font-family: 'Inter', sans-serif;">Please <a href="https://mailto:info@familiesforsafestreets.org" target="_blank" style="color:#ffc20e">reach out to us by email</a> to submit a photo of your child or a correction. We are committed to keeping this memorial to the children killed in traffic violence in New York City accurate and updated.</p>
           </div>
           <div class="col-md-4">
             <p style="color:#ffc20e; text-transform:uppercase; text-align: center; text-decoration:none;font-size: 18px;"><a href="#graf" class="innerLink" style="color:#ffc20e; text-decoration:none;">About this project</a></p>
@@ -313,7 +317,7 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
           </div>
           <div class="col-md-4">
             <p style="color:#ffc20e; text-transform:uppercase; text-align: center; text-decoration:none;font-size: 18px;"><a href="https://www.familiesforsafestreets.org/get-involved" target="_blank" class="innerLink" style="color:#ffc20e; text-decoration:none;">Have you lost a loved one in a crash?</a></p>
-            <p style="text-align:center; margin-top: -12px; font-family: 'Inter', sans-serif;"><strong>You are not alone.</strong> FSS confronts the epidemic of traffic violence by advocating for lifesaving changes and providing support to those who have been impacted by crashes. Please reach out to us.</p>
+            <p style="text-align:center; margin-top: -12px; font-family: 'Inter', sans-serif; font-weight: 300;"><span style="font-weight:600">You are not alone.</span> FSS confronts the epidemic of traffic violence by advocating for lifesaving changes and providing support to those who have been impacted by crashes. <a href="https://www.familiesforsafestreets.org/personally-impacted" target="_blank" style="color:#ffc20e">Please reach out to us</a>.</p>
           </div>
         </div>
       </div>
