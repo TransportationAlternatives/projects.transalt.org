@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post-nophoto
 title: Tracking serious traffic injuries in New York City
 label: Vision Zero
 shorthead: Serious Injury Database
@@ -190,7 +190,12 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 	<div class="row">
 		<div class="col-md-12">
-    		<iframe class="map-frame" id="map_site" src='/injury-map' style="min-height: 100vh; border-top: 2px solid #C3C3C3; border-bottom: 2px solid #C3C3C3"></iframe>
+			<div class="d-none d-lg-block">
+    			<iframe class="map-frame " id="map_site" src='/injury-map' style="min-height: 100vh; border-top: 2px solid #C3C3C3; border-bottom: 2px solid #C3C3C3"></iframe>
+    		</div>
+    		<div class="d-lg-none">
+				<iframe class="map-frame" id="map_site" src='/injury-map-mobile' style="min-height: 100vh; border-top: 2px solid #C3C3C3; border-bottom: 2px solid #C3C3C3"></iframe>
+			</div>
 		</div>
 	</div>
 </div>
@@ -204,7 +209,9 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 		<div class="col-md-6">
 			<h3>Serious injuries by borough</h3>
 			<p>More than 4,200 people were seriously injured by crashes since January 2022. Below is a breakdown by borough and mode:</p>
-			<table id="borough-breakdown" class="table table-condensed"></table>
+			<div class="table-responsive">
+				<table id="borough-breakdown" class="table "></table>
+			</div>
 		</div>
 	</div>
 </div>
