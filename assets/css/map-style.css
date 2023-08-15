@@ -3,7 +3,8 @@
 }
 
 #sidebarA{
-    color: white;
+    color: #2A3A5F;
+    border-bottom: red;
 }
 
 #filterResults{
@@ -14,7 +15,7 @@
 }
 
 .theme{
-    background-color: #3e6f20;
+    background-color: #fff;
 }
 
 .select{
@@ -78,10 +79,10 @@
 }
 
 .mapboxgl-popup-content {
-    font: 400 15px/22px 'Inter', 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-    text-align: center;
+    font: 400 16px/22px 'Inter', 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+    text-align: left;
     padding: 5;
-    width: 180px;
+    width: 400px;
   }
 
 .mapboxgl-popup-close-button {
@@ -96,5 +97,9 @@
 
   }
 
+.mapboxgl-popup-content li {
+   margin-left: 10px;
+    list-style-type: circle;
+}
 
   
