@@ -32,7 +32,7 @@ function createPopup(currentFeature) {
   if (popups[0]) popups[0].remove();
   new mapboxgl.Popup({ closeOnClick: true })
     .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>' + currentFeature.properties[config.popupInfo] + '</h3>')
+    .setHTML('<div>' + currentFeature.properties[config.popupInfo] + '</div>')
     .addTo(map);
 }
 
@@ -457,10 +457,10 @@ map.on('load', () => {
           },
           paint: {
             'circle-radius': 5, // size of circles
-            'circle-color': '#3D2E5D', // color of circles
+            'circle-color': '#f15d22', // color of circles
             'circle-stroke-color': 'white',
             'circle-stroke-width': 1,
-            'circle-opacity': 0.7,
+            'circle-opacity': 0.8,
           },
         });
       },
