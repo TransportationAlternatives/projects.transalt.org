@@ -1,0 +1,293 @@
+---
+layout: post-nophoto
+date: 2023-08-01
+title: Tracking serious traffic injuries in New York City
+label: Vision Zero
+shorthead: Serious Injury Database
+permalink: /serious-injury-dev
+image: https://images.squarespace-cdn.com/content/5cab9d9b65a707a9b36f4b6c/1674490879659-8SHAGHVM99V7F2TTS6HX/2022+vision+zero+update.png
+---
+
+<script src="https://kit.fontawesome.com/0b6ddf5fd5.js" crossorigin="anonymous"></script>
+
+<!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    
+    <!-- Leaflet-KMZ -->
+    <script src="https://unpkg.com/leaflet-kmz@latest/dist/leaflet-kmz.js"></script>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
+    <script src="https://unpkg.com/leaflet-gesture-handling"></script>
+
+    <!-- Mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+
+    <script>
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+
+<style type="text/css">
+
+	.heading-label {
+		margin-top: -.5rem;
+		font-style: italic;
+		color: #9E9E9F;
+		font-size: 15px;
+	}
+
+	.map-frame {
+        width: 100%;
+        height: 90vh;
+      }
+
+    h2 .accordion-button {
+    	font-weight: 700;
+    }
+
+</style>
+<p style="color: gray">Last updated <span id="date"></span></p>
+<p>Each quarter, DOT publishes serious injury data. Tk tk tk tk</p>
+
+<div class="accordion accordion-flush" id="accordionFlushExample" style="margin:0 !important; padding: 0 !important;">
+  <div class="accordion-item">
+    <h2 class="accordion-header" >
+      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        What is a serious injury?
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse px-0" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body px-0"><p>Serious injuries, as outlined in New York State law, include:</p>
+      	<ul>
+      		<li>Death</li>
+      		<li>Dismemberment</li>
+      		<li>Significant disfigurement</li>
+      		<li>Fracture</li>
+      		<li>Loss of a fetus</li>
+      		<li>Permanent loss of use of a body organ, member, function or system</li>
+      		<li>Significant limitation of use of a body function or system</li>
+      		<li>Medically determined injury or impairment of a non-permanent nature which prevents the injured person from performing substantially all of the material acts which constitute such person’s usual and customary daily activities for not less than 90 days during</li>
+      	</ul>
+      </div>
+    </div>
+  	</div>
+	  <div class="accordion-item">
+	    <h2 class="accordion-header">
+	      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+	        How does the City of New York track serious injuries?
+	      </button>
+	    </h2>
+	    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+	      <div class="accordion-body px-0">
+	      	<p>The City...</p>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="accordion-item">
+	    <h2 class="accordion-header">
+	      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+	        How often is this data made public?
+	      </button>
+	    </h2>
+	    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+	      <div class="accordion-body px-0">
+	      	<p>DOT is required to make this data public 30 days after the end of each quarter.</p>
+	    </div>
+	  </div>
+	</div>
+	  <div class="accordion-item">
+	    <h2 class="accordion-header">
+	      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+	        How can we prevent serious injuries?
+	      </button>
+	    </h2>
+	    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+	      <div class="accordion-body px-0">
+	      	<p>DOT is required to make this data public 30 days after the end of each quarter.</p>
+	    </div>
+	  </div>
+	  
+	<div class="pt-4">
+		<a class="btn btn-primary" href="#map_site">View the map</a>
+	</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="container pt-5">
+
+	<div class="row">
+		<div class="col-md-12">
+			<h2><span id="total-num"></span> people were seriously injured in crashes between January 2022 and June 2023.</h2>
+			<!--<p class="heading-label pt-3" style="">On average, there are XX serious injuries per week.</p>-->
+		</div>
+	</div>
+
+	<div class="row pt-3">
+		<div class="col-md-3">
+			<div class="box">
+				<div class="box-inner">
+					<h3><i class="fa-solid fa-person-walking"></i> <span id="ped-num"></span></h3>
+			    	<p>pedestrians seriously injured</p>
+			    	
+			    	<hr>
+			    	<p class="heading-label">On average, <span id="ped-week"></span> pedestrians are seriously injured each week.</p>
+			    </div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="box">
+				<div class="box-inner">
+					<h3><i class="fa-solid fa-bicycle"></i> <span id="bike-num"></span></h3>
+			    	<p>bike riders seriously injured</p>
+			    	<hr>
+			    	<p class="heading-label">On average, <span id="bike-week"></span> people riding bikes are seriously injured each week.</p>
+			    </div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="box">
+				<div class="box-inner">
+					<h3><i class="fa-solid fa-car"></i> <span id="motor-num"></span></h3>
+			    	<p>motorists seriously injured</p>
+			    	<hr>
+			    	<p class="heading-label">On average, <span id="motor-week"></span> motorists are seriously injured each week.</p>
+			    </div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="box">
+				<div class="box-inner">
+					<h3><i class="fa-solid fa-crutch"></i> <span id="other-num"></span></h3>
+			    	<p><a data-bs-toggle="collapse" href="#collapsePed" role="button" aria-expanded="false" aria-controls="collapsePed">other motorists</a> seriously injured</p>
+			    	<div class="collapse" id="collapsePed">
+					  <div class="card card-body">
+					    Other motorists, as defined by NYPD and DOT, are tkt kt
+					  </div>
+					</div>
+			    	<hr>
+			    	<p class="heading-label">On average, <span id="other-week"></span> other motorists are seriously injured each week.</p>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+	</div>
+</div>
+
+<div class=" pt-5" style="overflow-x: hidden;" id="map_display">
+
+	<div class="row">
+		<div class="col-md-12">
+    		<iframe class="map-frame" id="map_site" src='/injury-map' style="min-height: 100vh; border-top: 2px solid #C3C3C3; border-bottom: 2px solid #C3C3C3"></iframe>
+		</div>
+	</div>
+</div>
+
+<div class="container pt-5">
+
+	<div class="row">
+		<div class="col-md-6">
+			<div style="min-height:600px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/NAXt5/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/NAXt5/full.png" alt="" /></noscript></div>
+		</div>
+		<div class="col-md-6">
+			<h3>Serious injuries by borough</h3>
+			<p>More than 4,200 people were seriously injured by crashes since January 2022. Below is a breakdown by borough and mode:</p>
+			<table id="borough-breakdown" class="table table-condensed"></table>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+<script type="text/javascript">
+  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1sHMkMGRBFGrQyK1-2ibad8hoR2V2w1hMrhti2cXBTVI/edit#gid=0';
+
+$('#total-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select A",
+  fetchSize: 1
+});
+
+$('#ped-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select B",
+  fetchSize: 1
+});
+
+$('#bike-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select C",
+  fetchSize: 1
+});
+
+$('#motor-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select D",
+  fetchSize: 1
+});
+
+$('#other-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select E",
+  fetchSize: 1
+});
+
+$('#ped-week').sheetrock({
+  url: mySpreadsheet,
+  query: "select G",
+  fetchSize: 1
+});
+
+$('#bike-week').sheetrock({
+  url: mySpreadsheet,
+  query: "select H",
+  fetchSize: 1
+});
+
+$('#motor-week').sheetrock({
+  url: mySpreadsheet,
+  query: "select I",
+  fetchSize: 1
+});
+
+$('#other-week').sheetrock({
+  url: mySpreadsheet,
+  query: "select J",
+  fetchSize: 1
+});
+
+$('#date').sheetrock({
+  url: mySpreadsheet,
+  query: "select L",
+  fetchSize: 1
+});
+
+</script>
+<script type="text/javascript">
+  var twoTwo = 'https://docs.google.com/spreadsheets/d/1sHMkMGRBFGrQyK1-2ibad8hoR2V2w1hMrhti2cXBTVI/edit#gid=972299199';
+
+
+$('#borough-breakdown').sheetrock({
+  url: twoTwo,
+  query: "select A,B,C,D,E,F",
+  labels: ['Borough', 'Pedestrians','Bike Riders','Motorists','Other Motorists','Total'],
+  fetchSize: 6
+});
+
+</script>
