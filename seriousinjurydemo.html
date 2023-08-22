@@ -1,5 +1,6 @@
 ---
 layout: post-nophoto
+date: 2023-08-01
 title: Tracking serious traffic injuries in New York City
 label: Vision Zero
 shorthead: Serious Injury Database
@@ -51,7 +52,12 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 </style>
 <p style="color: gray">Last updated <span id="date"></span></p>
-<p>Each quarter, DOT publishes serious injury data. Tk tk tk tk</p>
+
+<p>Serious injury traffic crashes are often absent from news reporting and policymaking, despite life-altering consequences. Every year, injurious traffic crashes leave thousands of New Yorkers with permanent disabilities and requiring months of recovery.</p>
+<p>Nearly one in three New Yorkers have been injured in traffic violence. For every person who is killed in a traffic crash in New York City, another 11 are severely injured.</p>
+
+<p>Transportation Alternatives’ database tracks every traffic crash resulting in serious injury in New York City in an effort to broaden the public conversation about Vision Zero and the preventable harm caused by giving so much space in our city over to car traffic.
+</p>
 
 <div class="accordion accordion-flush" id="accordionFlushExample" style="margin:0 !important; padding: 0 !important;">
   <div class="accordion-item">
@@ -61,8 +67,9 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse px-0" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body px-0"><p>Serious injuries, as outlined in New York State law, include:</p>
-      	<ul>
+      <div class="accordion-body px-0"><p>In this database, the definition of a serious injuries follow New York State law, and includes any traffic crash-related injuries resulting in dismemberment, significant disfigurement, bone fracture, the loss of a fetus, as well as the permanent loss of use of a body part, organ,or  function, the significant limitation of a body function, and any injury which prevents a person from performing most of their customary daily activities for 90 days or more.
+</p>
+      	<!-- <ul>
       		<li>Death</li>
       		<li>Dismemberment</li>
       		<li>Significant disfigurement</li>
@@ -71,31 +78,31 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       		<li>Permanent loss of use of a body organ, member, function or system</li>
       		<li>Significant limitation of use of a body function or system</li>
       		<li>Medically determined injury or impairment of a non-permanent nature which prevents the injured person from performing substantially all of the material acts which constitute such person’s usual and customary daily activities for not less than 90 days during</li>
-      	</ul>
+      	</ul> -->
       </div>
     </div>
   	</div>
 	  <div class="accordion-item">
 	    <h2 class="accordion-header">
 	      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-	        How are serious injuries tracked?
+	        Why track serious injuries?
 	      </button>
 	    </h2>
 	    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 	      <div class="accordion-body px-0">
-	      	<p>The City of New York...</p>
+	      	<p>New York City’s Vision Zero program is a mandate to eliminate all traffic fatalities and serious injuries, however the latter is often disregarded in policymaking and news reporting. Despite this disregard, these injuries are life-altering. Victims of serious injuries face significant hospital bills, unpredictable time off work, medical equipment costs, and the prospect of long term recovery care, therapy, and medical assistance. Traffic crashes are the leading cause of post-traumatic stress disorder. Ignorance to serious injuries is also detrimental to our ability to reach Vision Zero. Serious injuries occur at 11 times the rate of traffic fatalities, providing a more data-rich metric for identifying the most dangerous streets and intersections. In addition to the human cost, there is a significant financial burden to these dangerous streets: a 2010 estimate of the cost of traffic crashes in New York City totaled more than $4 billion annually.</p>
 	      </div>
 	    </div>
 	  </div>
 	  <div class="accordion-item">
 	    <h2 class="accordion-header">
 	      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-	        How often is serious injury data made public?
+	        Where does this data come from?
 	      </button>
 	    </h2>
 	    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 	      <div class="accordion-body px-0">
-	      	<p>DOT is required to make this data public 30 days after the end of each quarter.</p>
+	      	<p>The NYC Serious Injury Traffic Crash Database is based on crash investigations data published by the City of New York on its Open Data portal. The New York City Department of Transportation (DOT) and New York City Police Department investigate all crashes that involve severe injuries as well as fatalities, documenting the involved parties, their modes of transportation, and injuries recorded in hospital records. In 2011, Transportation Alternatives advocated for the creation of Local Law 13, which requires DOT to release this data on a quarterly basis. Prior to this law’s passage this data was not publicly available.</p>
 	    </div>
 	  </div>
 	</div>
@@ -111,9 +118,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	    </div>
 	  </div>
 	  
-	<div class="pt-4">
-		<a class="btn btn-primary" href="#map_site">View the map</a>
-	</div>
+	
 
 		</div>
 
@@ -172,7 +177,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 			    	<p><a data-bs-toggle="collapse" href="#collapsePed" role="button" aria-expanded="false" aria-controls="collapsePed">other motorists</a> seriously injured</p>
 			    	<div class="collapse" id="collapsePed">
 					  <div class="card card-body">
-					    Other motorists, as defined by NYPD and DOT, are tkt kt
+					    Other motorists, as defined by NYPD and DOT, are riders of mopeds or e-scooters.
 					  </div>
 					</div>
 			    	<hr>
