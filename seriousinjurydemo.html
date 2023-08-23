@@ -217,6 +217,24 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 			<div class="table-responsive">
 				<table id="borough-breakdown" class="table "></table>
 			</div>
+			<h3 class="pt-3">Serious injuries by council district</h3>
+			<p>View a breakdown of serious injuries by mode and by council district:</p>
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+			  Show Council District breakdown
+			</button>
+			<!-- Modal -->
+			<div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-lg">
+			    <div class="modal-content">
+			      <div class="modal-body">
+			        <div style="min-height:2216px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/S8mTk/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/S8mTk/full.png" alt="" /></noscript></div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		</div>
 	</div>
 </div>
