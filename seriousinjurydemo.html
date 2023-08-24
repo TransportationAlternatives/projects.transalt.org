@@ -50,6 +50,12 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     	font-weight: 700;
     }
 
+    .take-action {
+        background-color: #f15d22;
+        padding: 24px;
+        color: white;
+      }
+
 </style>
 <p style="color: gray">Last updated <span id="date"></span></p>
 
@@ -106,17 +112,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	    </div>
 	  </div>
 	</div>
-	  <div class="accordion-item">
-	    <h2 class="accordion-header">
-	      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-	        How can we prevent serious injuries?
-	      </button>
-	    </h2>
-	    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-	      <div class="accordion-body px-0">
-	      	<p>New York City's leaders can prevent serious injuries by building streets for people.</p>
-	    </div>
-	  </div>
 	  
 	
 
@@ -130,7 +125,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 	<div class="row">
 		<div class="col-md-12">
-			<h2 style="font-weight: 700;"><span id="total-num"></span> people were seriously injured in crashes between January 2022 and June 2023.</h2>
+			<h2 style="font-weight: ;"><span id="total-num"></span> people were seriously injured in crashes between January 2022 and June 2023.</h2>
 			<!--<p class="heading-label pt-3" style="">On average, there are XX serious injuries per week.</p>-->
 		</div>
 	</div>
@@ -208,16 +203,16 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 <div class="container pt-5">
 
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-6 mb-5">
 			<div style="min-height:600px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/NAXt5/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/NAXt5/full.png" alt="" /></noscript></div>
 		</div>
 		<div class="col-md-6">
-			<h3 style="font-weight: 700;">Serious injuries by borough</h3>
+			<h3 style="font-weight: ;">Serious Injuries by Borough</h3>
 			<p>More than 4,200 people were seriously injured by crashes since January 2022. Below is a breakdown by borough and mode:</p>
-			<div class="table-responsive">
+			<div class="table-responsive mb-5">
 				<table id="borough-breakdown" class="table "></table>
 			</div>
-			<h3 class="pt-3" style="font-weight: 700;">Serious injuries by council district</h3>
+			<h3 class="" style="font-weight: ;">Serious Injuries by Council District</h3>
 			<p>View a breakdown of serious injuries by mode and by council district:</p>
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 			  Show Council District breakdown
@@ -240,6 +235,85 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 </div>
 
 <div class="container pt-5">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Serious Injury Trends</h3>
+                <ul class="nav nav-tabs pt-3" data-bs-tabs="tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#citywide-trend">Citywide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#bronx-trend">The Bronx</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#static">Brooklyn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#static">Manhattan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#static">Queens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#static">Staten Island</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body tab-content">
+                <div class="tab-pane active" id="citywide-trend">
+                    <div class="row">
+						<div class="col-md-3">
+							<p><i class="fa-solid fa-person-walking"></i> <span id="trendP"></span></p>
+						</div>
+						<div class="col-md-3">
+							<p><i class="fa-solid fa-bicycle"></i> <span id="trendB"></span></p>
+						</div>
+						<div class="col-md-3">
+							<p><i class="fa-solid fa-car"></i> <span id="trendM"></span></p>
+						</div>
+						<div class="col-md-3">
+							<p><i class="fa-solid fa-crutch"></i> <span id="trendOM"></span></p>
+						</div>
+					</div>
+                </div>
+                <div class="tab-pane" id="bronx-trend">
+                    <div class="row">
+						<div class="col-md-3">
+							<p><i class="fa-solid fa-person-walking"></i> <span id="trendP"></span></p>
+						</div>
+						<div class="col-md-3">
+							<p><i class="fa-solid fa-bicycle"></i> <span id="trendB"></span></p>
+						</div>
+						<div class="col-md-3">
+							<p><i class="fa-solid fa-car"></i> <span id="trendM"></span></p>
+						</div>
+						<div class="col-md-3">
+							<p><i class="fa-solid fa-crutch"></i> <span id="trendOM"></span></p>
+						</div>
+					</div>
+                </div>
+            </div>
+       </div>
+		</div>
+	</div>
+
+<div class="container pt-5">
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-6">
+			<h3>How can we prevent serious injuries?</h3>
+			<p>To reduce traffic injuries in your neighborhood, pay attention to the design and use of public spaces. Here are a few ways to improve spatial equity:</p>
+			<ul class="pb-3">
+				<li><strong>Install speed-reduction infrastructure</strong> that narrows the widest streets of districts with high rates of traffic injury. Narrowing roadways with curb extensions reduce death and serious injury for all road users by 34% and for pedestrians by 44%. Chicanes reduce driving speeds by 28%. A one mile per hour reduction in driving speed results in a four to six percent reduction in crashes.</li>
+				<li class="mt-2"><strong>Build “local traffic only” Open Streets</strong> by closing streets to through traffic. Open Streets increase the likelihood of walking and biking while reducing traffic injuries by as much as 46%. After the City of New York eliminated through traffic on the 34th Avenue Open Street in Queens, injuries fell by 89%.</li>
+				<li class="mt-2"><strong>Convert car lanes to bus and bike lanes</strong> in districts with high rates of traffic injuries. Converting a car driving lane into pedestrian and bus infrastructure on Manhattan’s First and Second avenues led to a 21% decrease in traffic injuries without lowering traffic volume. The City of New York has found that the removal of car travel lanes leads to an average 30% reduction in people killed or seriously injured.</li>
+			</ul>
+			<div class="take-action">
+              <h2 style="font-weight: 600;" id="">Take action!</h2>
+              <p>Tell Mayor Adams to implement the legally-required NYC Streets Plan and build streets that protect New Yorkers from crashes.</p>
+              <a class="btn btn-outline-light" href="https://act.transalt.org/a/support-streets-plan" role="button" target="_blank" style="color: white">Send a message</a>
+            </div>
+			<h3 class="pt-5">Methodology</h3>
+			<p>Transportation Alternatives’ database is based on the legally-required <a href="https://www.nyc.gov/html/dot/html/about/dotlibrary.shtml" target="_blank">serious injury data</a> published by DOT, crosschecked with NYPD reports.</p>
 </div>
 
 
@@ -307,6 +381,30 @@ $('#other-week').sheetrock({
 $('#date').sheetrock({
   url: mySpreadsheet,
   query: "select L",
+  fetchSize: 1
+});
+
+$('#trendP').sheetrock({
+  url: mySpreadsheet,
+  query: "select N",
+  fetchSize: 1
+});
+
+$('#trendB').sheetrock({
+  url: mySpreadsheet,
+  query: "select O",
+  fetchSize: 1
+});
+
+$('#trendM').sheetrock({
+  url: mySpreadsheet,
+  query: "select P",
+  fetchSize: 1
+});
+
+$('#trendOM').sheetrock({
+  url: mySpreadsheet,
+  query: "select Q",
   fetchSize: 1
 });
 
