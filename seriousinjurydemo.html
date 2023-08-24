@@ -235,69 +235,24 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 </div>
 
 <div class="container pt-5">
-	<div class="row">
-		<div class="col-md-12">
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-6">
 			<h3>Serious Injury Trends</h3>
-                <ul class="nav nav-tabs pt-3" data-bs-tabs="tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#citywide-trend">Citywide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#bronx-trend">The Bronx</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#static">Brooklyn</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#static">Manhattan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#static">Queens</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#static">Staten Island</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-body tab-content">
-                <div class="tab-pane active" id="citywide-trend">
-                    <div class="row">
-						<div class="col-md-3">
-							<p><i class="fa-solid fa-person-walking"></i> <span id="trendP"></span></p>
-						</div>
-						<div class="col-md-3">
-							<p><i class="fa-solid fa-bicycle"></i> <span id="trendB"></span></p>
-						</div>
-						<div class="col-md-3">
-							<p><i class="fa-solid fa-car"></i> <span id="trendM"></span></p>
-						</div>
-						<div class="col-md-3">
-							<p><i class="fa-solid fa-crutch"></i> <span id="trendOM"></span></p>
-						</div>
-					</div>
-                </div>
-                <div class="tab-pane" id="bronx-trend">
-                    <div class="row">
-						<div class="col-md-3">
-							<p><i class="fa-solid fa-person-walking"></i> <span id="trendP"></span></p>
-						</div>
-						<div class="col-md-3">
-							<p><i class="fa-solid fa-bicycle"></i> <span id="trendB"></span></p>
-						</div>
-						<div class="col-md-3">
-							<p><i class="fa-solid fa-car"></i> <span id="trendM"></span></p>
-						</div>
-						<div class="col-md-3">
-							<p><i class="fa-solid fa-crutch"></i> <span id="trendOM"></span></p>
-						</div>
-					</div>
-                </div>
-            </div>
-       </div>
+			<blockquote class="blockquote">
+            	<p><span id="totalTrend"></span></p>
+            </blockquote>
+            <ul>
+            	<li><span id="bxTrend"></span></li>
+            	<li><span id="bkTrend"></span></li>
+            	<li><span id="mnTrend"></span></li>
+            	<li><span id="qnTrend"></span></li>
+            	<li><span id="siTrend"></span></li>
+            </ul>
 		</div>
 	</div>
+</div>
 
-<div class="container pt-5">
+<div class="container pt-3">
 	<div class="row d-flex justify-content-center">
 		<div class="col-md-6">
 			<h3>How can we prevent serious injuries?</h3>
@@ -313,7 +268,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
               <a class="btn btn-outline-light" href="https://act.transalt.org/a/support-streets-plan" role="button" target="_blank" style="color: white">Send a message</a>
             </div>
 			<h3 class="pt-5">Methodology</h3>
-			<p>Transportation Alternatives’ database is based on the legally-required <a href="https://www.nyc.gov/html/dot/html/about/dotlibrary.shtml" target="_blank">serious injury data</a> published by DOT, crosschecked with NYPD reports.</p>
+			<p>Transportation Alternatives’ database is based on the legally-required <a href="https://www.nyc.gov/html/dot/html/about/dotlibrary.shtml" target="_blank">serious injury data</a> published by DOT. To identify missing locations and mode of serious injury, TA cross-referenced NYPD Open Data sets with DOT's reporting.</p>
 </div>
 
 
@@ -384,27 +339,39 @@ $('#date').sheetrock({
   fetchSize: 1
 });
 
-$('#trendP').sheetrock({
+$('#totalTrend').sheetrock({
   url: mySpreadsheet,
   query: "select N",
   fetchSize: 1
 });
 
-$('#trendB').sheetrock({
+$('#bxTrend').sheetrock({
   url: mySpreadsheet,
   query: "select O",
   fetchSize: 1
 });
 
-$('#trendM').sheetrock({
+$('#bkTrend').sheetrock({
   url: mySpreadsheet,
   query: "select P",
   fetchSize: 1
 });
 
-$('#trendOM').sheetrock({
+$('#mnTrend').sheetrock({
   url: mySpreadsheet,
   query: "select Q",
+  fetchSize: 1
+});
+
+$('#qnTrend').sheetrock({
+  url: mySpreadsheet,
+  query: "select R",
+  fetchSize: 1
+});
+
+$('#siTrend').sheetrock({
+  url: mySpreadsheet,
+  query: "select S",
   fetchSize: 1
 });
 
