@@ -1,5 +1,5 @@
 ---
-layout: post-nophoto
+layout: post-nophoto-customhead
 date: 2023-08-01
 title: Tracking serious traffic injuries in New York City
 label: Vision Zero
@@ -57,12 +57,13 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       }
 
 </style>
+<h1 class="headline pb-0">Tracking  <span id="num-total-1"></span> serious traffic injuries in New York City</h1>
 <p style="color: gray">Last updated <span id="date"></span></p>
 
-<p>Serious injury traffic crashes are often absent from news reporting and policymaking, despite life-altering consequences. Every year, injurious traffic crashes leave thousands of New Yorkers with permanent disabilities and requiring months of recovery.</p>
-<p>Nearly <a href="https://static1.squarespace.com/static/5cab9d9b65a707a9b36f4b6c/t/6217ece071d2300a0fdd5fc6/1645735137285/Dec+2020+Siena+Poll+Results+-+Sheet+1.pdf" target="_blank">one in three New Yorkers</a> have been injured in traffic violence. For every person who is killed in a traffic crash in New York City, another 11 are severely injured.</p>
+<p>Serious injury traffic crashes are often absent from the news and policymaking, despite life-altering consequences. Every year, these crashes leave thousands of New Yorkers with permanent disabilities, often requiring months of recovery.</p>
+<p>Nearly <a href="https://static1.squarespace.com/static/5cab9d9b65a707a9b36f4b6c/t/6217ece071d2300a0fdd5fc6/1645735137285/Dec+2020+Siena+Poll+Results+-+Sheet+1.pdf" target="_blank">one in three New Yorkers</a> have been injured in traffic violence. For every person killed in a traffic crash in New York City, another 11 are severely injured.</p>
 
-<p>Transportation Alternatives’ database tracks every traffic crash resulting in serious injury in New York City in an effort to broaden the public conversation about Vision Zero and the preventable harm caused by giving so much space in our city over to car traffic. This is the first time serious injury data has been analyzed and visualized for public consumption.
+<p>Transportation Alternatives’ database tracks every traffic crash resulting in serious injury in New York City in an effort to broaden the conversation about Vision Zero and the preventable harm caused by giving so much space in our city to cars. This is the first time serious injury data has been analyzed for public consumption.
 </p>
 
 <div class="accordion accordion-flush" id="accordionFlushExample" style="margin:0 !important; padding: 0 !important;">
@@ -75,16 +76,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     <div id="flush-collapseOne" class="accordion-collapse collapse px-0" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body px-0"><p>In this database, the definition of serious injuries follow <a href="https://www.nysenate.gov/legislation/laws/ISC/5102" target="_blank">New York State law</a>, and includes any traffic crash-related injuries resulting in dismemberment, significant disfigurement, bone fracture, the loss of a fetus, as well as the permanent loss of use of a body part, organ,or  function, the significant limitation of a body function, and any injury which prevents a person from performing most of their customary daily activities for 90 days or more.
 </p>
-      	<!-- <ul>
-      		<li>Death</li>
-      		<li>Dismemberment</li>
-      		<li>Significant disfigurement</li>
-      		<li>Fracture</li>
-      		<li>Loss of a fetus</li>
-      		<li>Permanent loss of use of a body organ, member, function or system</li>
-      		<li>Significant limitation of use of a body function or system</li>
-      		<li>Medically determined injury or impairment of a non-permanent nature which prevents the injured person from performing substantially all of the material acts which constitute such person’s usual and customary daily activities for not less than 90 days during</li>
-      	</ul> -->
       </div>
     </div>
   	</div>
@@ -109,6 +100,24 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 	      <div class="accordion-body px-0">
 	      	<p>The NYC Serious Injury Traffic Crash Database is based on crash investigations data published by the City of New York on its <a href="https://data.cityofnewyork.us/Transportation/Serious-Injury-Response-Tracking-Analysis-Program-/xeqp-qz8h" target="_blank">Open Data portal</a>. The New York City Department of Transportation (DOT) and New York City Police Department investigate all crashes that involve severe injuries as well as fatalities, documenting the involved parties, their modes of transportation, and injuries recorded in hospital records. In 2011, Transportation Alternatives advocated for the creation of <a href="https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=4772928&GUID=01D4E742-197B-492E-B4CB-96DB078682FC" target="_blank">Local Law 49-2021</a>, which requires DOT to release this data on a quarterly basis. Prior to this law’s passage this data was not publicly available.</p>
+	    </div>
+	  </div>
+	</div>
+	  <div class="accordion-item">
+	    <h2 class="accordion-header">
+	      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+	        Are serious injuries distributed equally?
+	      </button>
+	    </h2>
+	    <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+	      <div class="accordion-body px-0">
+	      	<p>No &mdash; Serious injury crashes are 21% higher in the 10 City Council districts with the greatest percentage of residents living below the poverty line and 15% higher in the 10 districts with the highest percentage of residents of color, compared to the citywide average.</p>
+	      	<ul>
+	      		<li>For bike riders, Manhattan had 77% more serious injuries per capita than the citywide average.</li>
+				<li>For pedestrians, Manhattan had 25% more serious injuries per capita than the citywide average.</li>
+				<li>For moped and e-bike riders, Brooklyn had 27% more serious injuries per capita than the citywide average.</li>
+				<li>For motorists, Staten Island had 48% more serious injuries per capita than the citywide average.</li>
+			</ul>
 	    </div>
 	  </div>
 	</div>
@@ -372,6 +381,12 @@ $('#qnTrend').sheetrock({
 $('#siTrend').sheetrock({
   url: mySpreadsheet,
   query: "select S",
+  fetchSize: 1
+});
+
+$('#num-total-1').sheetrock({
+  url: mySpreadsheet,
+  query: "select X",
   fetchSize: 1
 });
 
