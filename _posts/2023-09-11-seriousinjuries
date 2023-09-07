@@ -74,7 +74,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse px-0" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body px-0"><p>In this database, the definition of serious injuries follow <a href="https://www.nysenate.gov/legislation/laws/ISC/5102" target="_blank">New York State law</a>, and includes any traffic crash-related injuries resulting in dismemberment, significant disfigurement, bone fracture, the loss of a fetus, as well as the permanent loss of use of a body part, organ,or  function, the significant limitation of a body function, and any injury which prevents a person from performing most of their customary daily activities for 90 days or more.
+      <div class="accordion-body px-0"><p>In this database, the definition of serious injuries is based on the New York City Dpeartment of Transportation's (DOT) categorization, which follows <a href="https://www.nysenate.gov/legislation/laws/ISC/5102" target="_blank">New York State law</a>, and includes any traffic crash-related injuries resulting in dismemberment, significant disfigurement, bone fracture, the loss of a fetus, as well as the permanent loss of use of a body part, organ,or  function, the significant limitation of a body function, and any injury which prevents a person from performing most of their customary daily activities for 90 days or more.
 </p>
       </div>
     </div>
@@ -87,6 +87,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	    </h2>
 	    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 	      <div class="accordion-body px-0">
+	      	<p>For every traffic fatality, 11 New Yorkers are seriously injured.</p>
 	      	<p>New York City’s Vision Zero program is a mandate to eliminate all traffic fatalities and serious injuries, however the latter is often disregarded in policymaking and news reporting. Despite this disregard, these injuries are life-altering. Victims of serious injuries face significant hospital bills, unpredictable time off work, medical equipment costs, and the prospect of long term recovery care, therapy, and medical assistance. Traffic crashes are the <a href="https://www.apa.org/news/press/releases/2003/12/accidents-ptsd" target="_blank">leading cause</a> of post-traumatic stress disorder. Ignorance to serious injuries is also detrimental to our ability to reach Vision Zero. Serious injuries occur at 11 times the rate of traffic fatalities, providing a more data-rich metric for identifying the most dangerous streets and intersections. In addition to the human cost, there is a significant financial burden to these dangerous streets: a 2010 estimate of the cost of traffic crashes in New York City totaled more than <a href="https://www1.nyc.gov/html/dot/html/pedestrians/pedsafetyreport.shtml%23:~:text=NYC's%2520traffic%2520fatality%2520rate%2520is,the%2520event%2520of%2520a%2520crash." target="_blank">$4 billion annually</a>.</p>
 	      </div>
 	    </div>
