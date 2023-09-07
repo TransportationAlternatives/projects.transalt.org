@@ -1,6 +1,6 @@
 ---
 layout: post-nophoto-customhead
-date: 2023-09-11
+date: 2023-09-07
 title: Tracking serious traffic injuries in New York City
 label: Vision Zero
 shorthead: Serious Injury Database
@@ -278,7 +278,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
               <a class="btn btn-outline-light" href="https://act.transalt.org/a/support-streets-plan" role="button" target="_blank" style="color: white">Send a message</a>
             </div>
 			<h3 class="pt-5">Methodology</h3>
-			<p>Transportation Alternatives’ database is based on the legally-required <a href="https://www.nyc.gov/html/dot/html/about/dotlibrary.shtml" target="_blank">serious injury data</a> published by DOT. To identify missing locations and mode of serious injury, TA cross-referenced NYPD Open Data sets with DOT's reporting.</p>
+			<p>Transportation Alternatives’ database is based on the legally-required <a href="https://data.cityofnewyork.us/Transportation/Serious-Injury-Response-Tracking-Analysis-Program-/xeqp-qz8h" target="_blank">serious injury data</a> published by DOT. To identify missing locations and mode of serious injury, TA cross-referenced NYPD Open Data sets with DOT's reporting.</p>
 </div>
 
 
