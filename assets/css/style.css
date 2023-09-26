@@ -188,16 +188,9 @@ footer a {
   bottom: 1vh;
 }
 
-@translate-bg: rgba(255, 255, 255, 0.9) !important;
-@translate-border: black !important;
-@downicon-color:black;
-@langicon-color:#002e40;
-@translate-text-color:black;
-@translate-font:sans-serif;
-
 .goog-te-gadget-simple {
-  background-color: @translate-bg !important;
- border-color:@translate-border !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+ border-color: black !important;
   padding: 0.2em !important;
   border-radius: 4px !important;
   font-size: 1rem !important;
@@ -218,11 +211,11 @@ footer a {
   content: "\e894";
   margin-right: 0.5em;
  font-family: 'Material Icons';
- color:@langicon-color;
+ color: #002e40;
 }
 .goog-te-menu-value span {
-  color:@translate-text-color;
-  font-family:@translate-font;
+  color: black;
+  font-family: sans-serif;
 }
 .goog-te-menu-value span:nth-child(1) {
   position: relative;
@@ -242,7 +235,7 @@ footer a {
   font-family: 'Material Icons';
   content: "\E5C5";
   font-size: 1.5rem;
-  color:@downicon-color !important;
+  color: black !important;
 }
 .goog-te-gadget-icon {
   display: none;
