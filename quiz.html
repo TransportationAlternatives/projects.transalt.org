@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giving Tuesday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html, body{
+    height: 100%;
+}
+
+
+body{
+    font-family: 'Montserrat', serif;
+    
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f15d21;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-quiz-container{
+    width: 100rem;
+    height: 50rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-details-container{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-details-container h1{
+    font-size: 1.2rem;
+}
+
+.game-question-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-question-container h1{
+    font-size: 1.75rem;
+    text-align: center;
+    padding: 3px;
+}
+
+.game-options-container{
+    width: 80%;
+    height: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-options-container span{
+    width: 45%;
+    height: 4rem;
+    border: 2px solid darkgray;
+    overflow: hidden;
+}
+span label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-weight: 600;
+    color: rgb(22, 22, 22);
+    font-size: 24px;
+}
+
+span label:hover{
+    -ms-transform: scale(1.12);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
+    color: gray;
+}
+
+input[type="radio"] {
+    position: relative;
+    display: none;
+}
+
+
+input[type=radio]:checked ~ .option {
+    background: paleturquoise;
+}
+
+.next-button-container{
+}
+.next-button-container button{
+    background: none;
+    color: white;
+    font-weight: 600;
+    border: 2px solid #f15d21;
+    background-color: #f15d21;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    outline: none;
+    font-family: 'Montserrat', serif;
+}
+.next-button-container button:hover{
+    background-color: rgb(143, 93, 93);
+}
+
+.modal-container{
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    -webkit-animation: fadeIn 1.2s ease-in-out;
+    animation: fadeIn .2s ease-in-out;
+}
+
+.modal-content-container{
+    height: 20rem;
+    width: 25rem;
+    background-color: rgb(43, 42, 42);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.modal-content-container h1{
+    font-size: 1.3rem;
+    height: 3rem;
+    color: lightgray;
+    text-align: center;
+}
+
+.grade-details{
+    width: 15rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.grade-details p{
+    color: white;
+    text-align: center;
+}
+
+.modal-button-container{
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-button-container button{
+    width: 10rem;
+    height: 2rem;
+    background: none;
+    outline: none;
+    border: 1px solid rgb(252, 242, 241);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.modal-button-container button:hover{
+    background-color: rgb(83, 82, 82);
+}
+
+@media(min-width : 300px) and (max-width : 350px){
+    .game-quiz-container{
+        width: 90%;
+        height: 80vh;
+     }
+     .game-details-container h1{
+        font-size: 1.75rem;
+     }
+ 
+     .game-question-container{
+        height: 6rem;
+     }
+     .game-question-container h1{
+       font-size: 0.9rem;
+    }
+ 
+    .game-options-container span{
+        width: 90%;
+        height: 2.5rem;
+    }
+    .game-options-container span label{
+        font-size: 0.8rem;
+    }
+    .modal-content-container{
+        width: 90%;
+        height: 25rem;
+    }
+    
+    .modal-content-container h1{
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width : 350px) and (max-width : 700px){
+   .game-quiz-container{
+       width: 100%;
+       height: 100vh;
+    }
+    .game-details-container h1{
+        font-size: 1rem;
+    }
+
+    .game-question-container{
+        width: 90%;
+    }
+
+    .game-question-container h1{
+        font-size: 1.75rem;
+     }
+
+    .game-options-container span{
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+    .modal-content-container{
+        width: 90%;
+        height: 25rem;
+    }
+    .modal-content-container h1{
+        font-size: 1.2rem;
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+    </style>
+</head>
+
+
+
+<body onload="NextQuestion(0)">
+    <main>
+        <div class="modal-container" id="score-modal">
+          
+            <div class="modal-content-container">
+              
+                <h1>Congratulations, thanks for playing!.</h1>
+              
+                <div class="grade-details">
+                    <p>Attempts : 10</p>
+                    <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                    <p>Right Answers : <span id="right-answers"></span></p>
+                    <p>Grade : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+              
+                <div class="modal-button-container">
+                    <button><a href="https://act.transalt.org/6OsrUiXGIEm9IRmRkyzxjA2" style="color: white; text-decoration: none;">Make a donation!</a></button>
+                </div>
+              
+            </div>
+        </div>
+
+        <div class="game-quiz-container">
+          
+            <div class="game-details-container">
+                <h1>Score : <span id="player-score"></span> / 10</h1>
+                <h1> Question : <span id="question-number"></span> / 10</h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="game-options-container">
+              
+               <div class="modal-container" id="option-modal">
+                 
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+                      
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+                      
+                    </div>
+                 
+               </div>
+              
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    </main>
+    <script type='text/javascript'>
+        const questions = [
+    {
+        question: "What’s the one borough without Citi Bike?",
+        optionA: "Queens",
+        optionB: "Brooklyn",
+        optionC: "The Bronx",
+        optionD: "Staten Island",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "About what percentage of New York City households (in all 5 boroughs) do not own a car?",
+        optionA: "30%",
+        optionB: "55%",
+        optionC: "75%",
+        optionD: "95%",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "When the subway opened in 1904, how much did one ride cost?",
+        optionA: "5 cents",
+        optionB: "10 cents",
+        optionC: "25 cents",
+        optionD: "50 cents",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "What borough has the most subway stations?",
+        optionA: "Manhattan",
+        optionB: "Bronx",
+        optionC: "Brooklyn",
+        optionD: "Queens",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "What Manhattan park was supposed to be destroyed to make way for the Lower Manhattan Expressway in the 1950s?",
+        optionA: "City Hall Park",
+        optionB: "Tompkins Square Park",
+        optionC: "Central Park",
+        optionD: "Washington Square Park",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "How many rides were taken on Citi Bikes in 2022?",
+        optionA: "5.7 million",
+        optionB: "10.1 million",
+        optionC: "20.4 million",
+        optionD: "30.5 million",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "How many free parking spots are there in New York City?",
+        optionA: "1.4 million",
+        optionB: "2.8 million",
+        optionC: "3 million",
+        optionD: "3.2 million",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "In what year and where was the first ever off-street bike lane in New York built?",
+        optionA: "Queens, 1800",
+        optionB: "Manhattan, 2001",
+        optionC: "Brooklyn, 1894",
+        optionD: "Staten Island, 1993",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "If you put all of the space devoted to free parking in NYC together into a big rectangle, how many acres would it cover?",
+        optionA: "1,000 acres",
+        optionB: "2,000 acres",
+        optionC: "5,000 acres",
+        optionD: "10,000 acres",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "About how many cycling trips are made per day in New York City?",
+        optionA: "75,000",
+        optionB: "125,000",
+        optionC: "300,000",
+        optionD: "550,000",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "In what year did the first on-street protected bike lane in New York City get built?",
+        optionA: "2007",
+        optionB: "2010",
+        optionC: "2013",
+        optionD: "2016",
+        correctOption: "optionA"
+    }
+
+]
+
+
+let shuffledQuestions = [] //empty array to hold shuffled selected questions
+
+function handleQuestions() { 
+    //function to shuffle and push 10 questions to shuffledQuestions array
+    while (shuffledQuestions.length <= 9) {
+        const random = questions[Math.floor(Math.random() * questions.length)]
+        if (!shuffledQuestions.includes(random)) {
+            shuffledQuestions.push(random)
+        }
+    }
+}
+
+
+let questionNumber = 1
+let playerScore = 0  
+let wrongAttempt = 0 
+let indexNumber = 0
+
+// function for displaying next question in the array to dom
+function NextQuestion(index) {
+    handleQuestions()
+    const currentQuestion = shuffledQuestions[index]
+    document.getElementById("question-number").innerHTML = questionNumber
+    document.getElementById("player-score").innerHTML = playerScore
+    document.getElementById("display-question").innerHTML = currentQuestion.question;
+    document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
+    document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
+    document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
+    document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
+
+}
+
+
+function checkForAnswer() {
+    const currentQuestion = shuffledQuestions[indexNumber] //gets current Question 
+    const currentQuestionAnswer = currentQuestion.correctOption //gets current Question's answer
+    const options = document.getElementsByName("option"); //gets all elements in dom with name of 'option' (in this the radio inputs)
+    let correctOption = null
+
+    options.forEach((option) => {
+        if (option.value === currentQuestionAnswer) {
+            //get's correct's radio input with correct answer
+            correctOption = option.labels[0].id
+        }
+    })
+   
+    //checking to make sure a radio input has been checked or an option being chosen
+    if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
+        document.getElementById('option-modal').style.display = "flex"
+    }
+
+    //checking if checked radio button is same as answer
+    options.forEach((option) => {
+        if (option.checked === true && option.value === currentQuestionAnswer) {
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            playerScore++
+            indexNumber++
+            //set to delay question number till when next question loads
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+
+        else if (option.checked && option.value !== currentQuestionAnswer) {
+            const wrongLabelId = option.labels[0].id
+            document.getElementById(wrongLabelId).style.backgroundColor = "red"
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            wrongAttempt++
+            indexNumber++
+            //set to delay question number till when next question loads
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+    })
+}
+
+
+
+//called when the next button is called
+function handleNextQuestion() {
+    checkForAnswer()
+    unCheckRadioButtons()
+    //delays next question displaying for a second
+    setTimeout(() => {
+        if (indexNumber <= 9) {
+            NextQuestion(indexNumber)
+        }
+        else {
+            handleEndGame()
+        }
+        resetOptionBackground()
+    }, 1000);
+}
+
+//sets options background back to null after display the right/wrong colors
+function resetOptionBackground() {
+    const options = document.getElementsByName("option");
+    options.forEach((option) => {
+        document.getElementById(option.labels[0].id).style.backgroundColor = ""
+    })
+}
+
+// unchecking all radio buttons for next question(can be done with map or foreach loop also)
+function unCheckRadioButtons() {
+    const options = document.getElementsByName("option");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+// function for when all questions being answered
+function handleEndGame() {
+    let remark = null
+    let remarkColor = null
+
+    // condition check for player remark and remark color
+    if (playerScore <= 3) {
+        remark = "Nice try!"
+        remarkColor = "red"
+    }
+    else if (playerScore >= 4 && playerScore < 7) {
+        remark = "You'll get them next time!"
+        remarkColor = "orange"
+    }
+    else if (playerScore >= 7) {
+        remark = "Excellent, keep the good work going!"
+        remarkColor = "green"
+    }
+    const playerGrade = (playerScore / 10) * 100
+
+    //data to display to score board
+    document.getElementById('remarks').innerHTML = remark
+    document.getElementById('remarks').style.color = remarkColor
+    document.getElementById('grade-percentage').innerHTML = playerGrade
+    document.getElementById('wrong-answers').innerHTML = wrongAttempt
+    document.getElementById('right-answers').innerHTML = playerScore
+    document.getElementById('score-modal').style.display = "flex"
+
+}
+
+//closes score modal and resets game
+function closeScoreModal() {
+    questionNumber = 1
+    playerScore = 0
+    wrongAttempt = 0
+    indexNumber = 0
+    shuffledQuestions = []
+    NextQuestion(indexNumber)
+    document.getElementById('score-modal').style.display = "none"
+}
+
+//function to close warning modal
+function closeOptionModal() {
+    document.getElementById('option-modal').style.display = "none"
+}
+    </script>
+
+</body>
+
+</html>
