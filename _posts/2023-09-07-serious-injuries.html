@@ -1,6 +1,6 @@
 ---
 layout: post-nophoto-customhead
-date: 2023-09-07
+date: 2023-12-05
 title: Tracking serious traffic injuries in New York City
 label: Vision Zero
 shorthead: Serious Injury Database
@@ -220,7 +220,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 		</div>
 		<div class="col-md-6">
 			<h3 style="font-weight: ;">Serious Injuries by Borough</h3>
-			<p>More than 4,200 people were seriously injured by crashes since January 2022. Below is a breakdown by borough and mode:</p>
+			<p>More than 5,100 people were seriously injured by crashes since January 2022. Below is a breakdown by borough and mode:</p>
 			<div class="table-responsive mb-5">
 				<table id="borough-breakdown" class="table "></table>
 			</div>
@@ -260,6 +260,35 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             	<li><span id="qnTrend"></span></li>
             	<li><span id="siTrend"></span></li>
             </ul>
+
+           <div class="accordion-item">
+	    <h2 class="accordion-header">
+	      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNum" aria-expanded="false" aria-controls="flush-collapseNum">
+	        Previous trends
+	      </button>
+	    </h2>
+	    	<div id="flush-collapseNum" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+		      <div class="accordion-body">
+		      	<p><strong>Citywide total serious injuries increased 9.2% from Q2 2022 to Q2 2023.</strong>
+		      		<ul>
+            	<li>Bronx total serious injuries increased 30.5% from Q2 2022 to Q2 2023.</li>
+            	<li>Brooklyn total serious injuries decreased 9.6% from Q2 2022 to Q2 2023.</li>
+            	<li>Manhattan total serious injuries increased 19.7% from Q2 2022 to Q2 2023.</li>
+            	<li>Queens total serious injuries increased 1.7% from Q2 2022 to Q2 2023.</span></li>
+            	<li>Staten Island total serious injuries increased 47.1% from Q2 2022 to Q2 2023.</li>
+            </ul>
+		      	<p><strong>Citywide total serious injuries increased 9.7% from Q1 2022 to Q1 2023.</strong></p>
+		      	<ul>
+            	<li>Bronx total serious injuries decreased 23.6% from Q1 2022 to Q1 2023.</li>
+            	<li>Brooklyn total serious injuries increased 32.5% from Q1 2022 to Q1 2023.</li>
+            	<li>Manhattan total serious injuries decreased 9.6% from Q1 2022 to Q1 2023.</li>
+            	<li>Queens total serious injuries increased 19.3% from Q1 2022 to Q1 2023.</li>
+            	<li>Staten Island total serious injuries increased 122.2% from Q1 2022 to Q1 2023.</li>
+            </ul>
+		      	
+		      </div>
+	    	</div>
+	  </div></div>
 		</div>
 	</div>
 </div>
@@ -270,7 +299,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 			<h3>How can we prevent serious injuries?</h3>
 			<p>To reduce traffic injuries in your neighborhood, pay attention to the design and use of public spaces. The <a href="https://www.nyc.gov/html/dot/html/about/nyc-streets-plan.shtml" target="_blank">NYC Streets Plan</a> legally requires the City of New York to redesign thousands of intersections for safety, build hundreds of thousands of square feet of new pedestrian space, create hundreds of miles of protected bus and bike lanes, and more. Here are a few ways that our leaders can prevent serious injuries by implementing the NYC Streets Plan and our <a href="https://nyc25x25.org" target="_blank">NYC 25x25</a> vision:</p>
 			<ul class="pb-3">
-				<li><strong>Build protected bike lanes and bus lanes</strong> in districts with high rates of traffic injuries. The NYC Streets Plan is a&nbsp;<a href="http://nyc.legistar1.com/nyc/attachments/02a148f2-6cbc-44b8-acf5-0b66f33d3283.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="http://nyc.legistar1.com/nyc/attachments/02a148f2-6cbc-44b8-acf5-0b66f33d3283.pdf" data-sk="tooltip_parent">legal requirement</a>&nbsp;and critical for designing and building safer, slower streets &ndash; yet the current administration failed to meet mandated goals in 2022. In New York City, converting car storage and driving lanes to car-free protected bike lanes caused bicycling ridership to skyrocket while <a href="https://www.nyc.gov/html/dot/downloads/pdf/2014-11-bicycle-path-data-analysis.pdf" target="_blank">reducing injurious crashes</a> by 17%, pedestrian injuries by 22%, and all injuries, including drivers, by 20%. The City of New York has found that the removal of car travel lanes leads to an average&nbsp;<a href="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" data-sk="tooltip_parent">30% reduction</a>&nbsp;in people killed or seriously injured.</li>
+				<li><strong>Build protected bike lanes and bus lanes</strong> in districts with high rates of traffic injuries. The NYC Streets Plan is a&nbsp;<a href="http://nyc.legistar1.com/nyc/attachments/02a148f2-6cbc-44b8-acf5-0b66f33d3283.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="http://nyc.legistar1.com/nyc/attachments/02a148f2-6cbc-44b8-acf5-0b66f33d3283.pdf" data-sk="tooltip_parent">legal requirement</a>&nbsp;and critical for designing and building safer, slower streets &ndash; yet the current administration failed to meet mandated goals in 2022. In New York City, converting car storage and driving lanes to car-free protected bike lanes caused bicycling ridership to skyrocket while reducing the number of people killed or seriously injured by 18.1%, pedestrians by 35.5% and motorists by 13.1%, according to <a href="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" data-sk="tooltip_parent">14 years of data.</a></li>
 				<li class="mt-2"><strong>Prioritize pedestrian infrastructure&nbsp;in all five boroughs.</strong> Infrastructure like additional pedestrian signals, accessible pedestrian signals, upgraded ramps, and pedestrian-only space are also required by the Streets Plan. Converting a car driving lane into pedestrian and bus infrastructure on First and Second avenues in Manhattan caused traffic injuries to&nbsp;<a href="https://www1.nyc.gov/html/brt/downloads/pdf//201111_1st2nd_progress_report.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www1.nyc.gov/html/brt/downloads/pdf//201111_1st2nd_progress_report.pdf" data-sk="tooltip_parent">drop 21%</a>&nbsp;even though cycling rates rose up to 177% on some segments, bus ridership was up 9%, and traffic speed and volume remained constant.</li>
 				<li class="mt-2"><strong>Invest in self-enforcing streets&nbsp;across the city.</strong> Automated enforcement works: operating speed safety cameras 24/7 has reduced traffic injuries by up to&nbsp;<a href="https://www.nyc.gov/html/dot/html/pr2023/speed-cameras-first-year.shtml" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www.nyc.gov/html/dot/html/pr2023/speed-cameras-first-year.shtml" data-sk="tooltip_parent">45%</a>&nbsp;along some corridors, and constructing traffic-calming infrastructure &mdash; pedestrian islands, curb extensions, and bike lanes &mdash; reduces the number of&nbsp;<a href="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" data-sk="tooltip_parent">people killed or severely injured</a>&nbsp;in crashes, including drivers.</li>
 			</ul>
