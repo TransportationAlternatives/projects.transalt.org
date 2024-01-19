@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Charts Preview</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
+    <style type="text/css">
+      body {
+        text-align: center;
+        font-family: 'Inter', monospace;
+      }
+      h2 {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      h3 {
+        font-size: 16px;
+        padding-bottom: 16px;
+      }
+      hr {
+        padding-bottom: 16px;
+        padding-top: 16px;
+      }
+      .chart-sub {
+        color: gray;
+      }
+
+      .break {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+    </style>
+
+    <!-- mapbox -->
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+
+          <h1>VZ Lessons Charts</h1>
+          <p>updated jan 19 5 pm</p>
+          <hr>
+          <h2 class="chart-head">Traffic fatalities declined in response to data-driven safety interventions in the early years of Vision Zero</h2>
+          <h3 class="chart-sub">New York City’s leaders both failed to meet the needs of a changing city, and too readily surrendered safety to the convenience of drivers and their desire for free parking for their cars. As a result, fatalities plateaued and rose.</h3>
+          <div id="allfatals" style="width: 100%; height:600px;"></div>
+
+          <p class="break">***</p>
+
+
+          <h2 class="chart-head">Within a year of the program's launch, 92% of speed safety camera locations saw a drop in speeding</h2>
+          <h3 class="chart-sub">Speeding dropped at camera locations in green, increased at locations in red, and gray locations did not have enough data.</h3>
+          <div class="alert alert-danger" role="alert">
+This is not ready to review
+</div>
+          <div id="speedmap" style="width: 100%; height:600px;"></div>
+
+          <p class="break">***</p>
+          <h2 class="chart-head">Pedestrian fatalities fell as leading pedestrian interval installation increased</h2>
+          <h3 class="chart-sub">Based on data this is a description of the chart.</h3>
+          <div id="LPI" style="width: 100%; height:600px;"></div>
+
+          <p class="break">***</p>
+          <h2 class="chart-head">NYPD overwhelmingly issued tickets to New Yorkers of color in 2022</h2>
+          <h3 class="chart-sub">Subhead</h3>
+          <div id="policing" style="width: 100%; height:600px;"></div>
+
+          <p class="break">***</p>
+          <h2 class="chart-head">Traffic fatalities increased for Black and Latino New Yorkers between 2014 and 2020</h2>
+          <h3 class="chart-sub">Subhead</h3>
+          <div id="fatals100" style="width: 100%; height:600px;"></div>
+
+          <p class="break">***</p>
+          <h2 class="chart-head">Heatmap</h2>
+          <h3 class="chart-sub">Subhead</h3>
+          <div class="alert alert-danger" role="alert">
+This is not ready to review
+</div>
+          <div id="dawn" style="width: 100%; height:600px;"></div>
+
+          <p class="break">***</p>
+          <h2 class="chart-head">The number of vehicle miles traveled (VMT) has risen 16%, to a record high</h2>
+          <h3 class="chart-sub">Subhead</h3>
+          <div id="vmt" style="width: 100%; height:600px;"></div>
+
+          <p class="break">***</p>
+          <h2 class="chart-head">New Yorkers are biking in record numbers, but the infrastructure has not kept up</h2>
+          <h3 class="chart-sub">Subhead</h3>
+          <div id="pbl" style="width: 100%; height:600px;"></div>
+
+          <p class="break">***</p>
+          <h2 class="chart-head">As cars get bigger, the number of children killed in crashes has increased</h2>
+          <h3 class="chart-sub">Subhead</h3>
+          <div id="child" style="width: 100%; height:600px;"></div>
+
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="maps.js"></script>
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main'));
+  window.addEventListener('resize', function() {
+    myChart.resize();
+  });
+  var myChart2 = echarts.init(document.getElementById('policing'));
+  window.addEventListener('resize', function() {
+    myChart2.resize();
+  });
+  var myChart3 = echarts.init(document.getElementById('fatals100'));
+  window.addEventListener('resize', function() {
+    myChart3.resize();
+  });
+  var myChart4 = echarts.init(document.getElementById('vmt'));
+  window.addEventListener('resize', function() {
+    myChart4.resize();
+  });
+</script>
+<script type="text/javascript">
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjazI5YzQzdXAwOXFxM25vMXV4OGl5OGQzIn0.xYccv6RPj_aa6zkS5ShsDw';
+    const map = new mapboxgl.Map({
+      container: 'speedmap', // container element id
+      style: 'mapbox://styles/mapbox/dark-v11',
+      center: [-74.0059, 40.7128], // initial map center in [lon, lat]
+      zoom: 10
+    });
+
+    map.on('load', () => {
+  map.addSource('locations', { type: 'geojson', data: 'speed.geojson'})
+  map.addLayer({
+    id: 'locations',
+    source: 'locations',
+    type: 'circle',
+    paint: {
+      'circle-color': [
+       'case',
+       [">", ["get", "Difference, 22-21"], 0], "#fbb03b",
+       [">", ["get", "Difference, 22-21"], 1], "#30FF42",
+       "#ccc"
+],
+      'circle-opacity': 0.9,
+      'circle-stroke-width': .5,
+      'circle-stroke-color': '#FFF'
+    }
+  });
+  });
+</script>
+  </body>
+</html>
