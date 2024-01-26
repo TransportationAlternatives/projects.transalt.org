@@ -84,7 +84,41 @@ option = {
           width: 5
         }
       },
-      
+      markLine: {
+        data: [
+          // 1st line we want to draw
+          [
+            // start point of the line
+            // we have to defined line attributes only here (not in the end point)
+            {
+              xAxis: 0,
+              yAxis: 0,
+              symbol: 'none',
+              lineStyle: {
+                normal: {
+                  color: "#f15d22"
+                }
+              },
+              label: {
+                normal: {
+                  show: true,
+                  position: 'insideEnd',
+                  formatter: 'Speed safety camera program begins',
+                  offset: [-10, -10],
+                  fontFamily: '"Inter",sans-serif',
+                  fontSize: 14
+                }
+              }
+            },
+            // end point of the line
+            {
+              xAxis: 0,
+              yAxis: 7000,
+              symbol: 'none'
+            }
+          ]
+        ]
+    },
 
       data: [
         282, 699, 1475, 2307, 3180, 4155, 4845, 5327, 5944, 6173
@@ -102,7 +136,42 @@ option = {
       yAxisIndex: 1,
       data: [
         140, 139, 149, 108, 116, 124, 97, 126, 121, 99
-      ]
+      ],
+      markLine: {
+        data: [
+          // 1st line we want to draw
+          [
+            // start point of the line
+            // we have to defined line attributes only here (not in the end point)
+            {
+              xAxis: 8,
+              yAxis: 0,
+              symbol: 'none',
+              lineStyle: {
+                normal: {
+                  color: "#f15d22"
+                }
+              },
+              label: {
+                normal: {
+                  show: true,
+                  position: 'insideEnd',
+                  formatter: 'Speed safety cameras allowed to operate 24/7',
+                  offset: [-10, -10],
+                  fontFamily: '"Inter",sans-serif',
+                  fontSize: 14
+                }
+              }
+            },
+            // end point of the line
+            {
+              xAxis: 8,
+              yAxis: 210,
+              symbol: 'none'
+            }
+          ]
+        ]
+    },
     },
 
   ]
@@ -231,6 +300,7 @@ option = {
     bottom: '0%',
     containLabel: true
   },
+
   yAxis: {
     type: 'value',
     axisLabel: {
@@ -258,6 +328,7 @@ option = {
     ]
   },
   series: [
+
     {
       name: 'Pedestrian',
       type: 'bar',
@@ -268,6 +339,41 @@ option = {
       emphasis: {
         focus: 'series'
       },
+      markLine: {
+        data: [
+          // 1st line we want to draw
+          [
+            // start point of the line
+            // we have to defined line attributes only here (not in the end point)
+            {
+              xAxis: 0,
+              yAxis: 287,
+              symbol: 'none',
+              lineStyle: {
+                normal: {
+                  color: "#f15d22"
+                }
+              },
+              label: {
+                normal: {
+                  show: true,
+                  position: 'insideStart',
+                  formatter: 'Pre-Vision Zero average, 287 fatalities',
+                  offset: [-5, -10],
+                  fontFamily: '"Inter",sans-serif',
+                  fontSize: 14
+                }
+              }
+            },
+            // end point of the line
+            {
+              xAxis: 9,
+              yAxis: 287,
+              symbol: 'none'
+            }
+          ]
+        ]
+    },
       itemStyle: {
             color: '#f15d22' },
       data: [140, 139, 149, 108, 116, 124, 97, 126, 121, 100]
@@ -315,7 +421,8 @@ option = {
             color: '#FBD6C8' },
       data: [, , , , , , , 15, 21, 20]
     }
-  ]
+  ],
+
 };
 
 option && myChart.setOption(option);
