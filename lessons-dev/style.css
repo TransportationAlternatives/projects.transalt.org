@@ -1,0 +1,247 @@
+h1 {
+	font-family: 'Besley', serif;
+	font-weight: 700;
+}
+
+h3 {
+	font-family: 'Besley', serif;
+	font-weight: 700;
+}
+
+.section-image {
+	padding-top: 3%;
+}
+
+article {
+	padding-bottom: 3%;
+}
+
+
+
+.subhead {
+	text-align: ;
+	font-family: 'Inter', serif;
+	font-size: 24px;
+	padding-top: 8px;
+}
+
+p {
+	font-family: 'Georgia', serif;
+	font-size: 18px;
+	color: #2a2a2a !important;
+	line-height: 28px;
+}
+
+article li {
+	font-family: 'Georgia', serif;
+	font-size: 18px;
+	color: #2a2a2a !important;
+	line-height: 28px;
+}
+
+
+.caption {
+	text-align: left;
+	font-family: 'Inter', serif;
+	font-size: 14px;
+	padding-top: 8px;
+	line-height: 20px;
+	max-width: 75%;
+}
+
+.heading {
+	text-align: center;
+	color: black;
+	text-align: center;
+	position: relative;
+  	top: 375px;
+}
+
+#videoDiv2 {width:100%; max-width:; margin:auto; display:block; position: relative;} /* This has been changed */
+#video2{width:100%; height:auto } /* This has been changed */
+#videoMessage2 { position: absolute; top: 0; left: 0; bottom: ;
+display: flex;
+flex-direction: column; 
+color: white;
+justify-content: end;
+text-align: left;
+width: 100%;
+background: rgba(241, 93, 34, 0.5);
+	background-image: radial-gradient(black 33%, transparent 33%);
+	background-size: 2px 2px;;
+height: 99.25%;}
+
+/*
+
+
+.header-img {
+	height: 600px;
+	background: linear-gradient( rgba(0, 0, 0, 0), rgba(255,255,255, 1) ), url('https://24.media.tumblr.com/522070fa2c89bb461628e75fbb03481a/tumblr_ms2qs0siRq1qhcd6po1_500.gif');
+	background-size: cover;
+	background-position: bottom;
+} */
+
+
+.top {
+}
+.inner-heading {
+	padding-bottom: 24px;
+	padding-top: 40px;
+	text-align: center;
+}
+
+.inner-heading h3 {
+	font-size: 32px;
+}
+
+article a {
+	color: #f15d22;
+}
+
+.label {
+	text-transform: uppercase;
+	color: gray;
+}
+
+h5.inner-label {
+	background-color: black;
+}
+
+.section-wrapper {
+	background-color: #F1F3F4;
+	padding-bottom: 54px;
+}
+
+.section-wrapper-alt {
+	background-color: #fff;
+
+}
+
+.chart-wrapper {
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+.section-image img {
+	height: 400px;
+	object-fit: cover;
+	object-position: 50% 80%;
+}
+
+.chart-head {
+	text-align: center;
+	font-family: 'Inter', serif;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.chart-label {
+	text-align: center;
+	font-family: 'Inter', serif;
+	font-size: 18px;
+	padding-bottom: 12px;
+}
+
+.chart-other {
+	text-align: left;
+	font-family: 'Inter', serif;
+	font-size: 14px;
+	padding-top: 16px;
+	line-height: 20px;
+	max-width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	color: #6E7079;
+}
+
+.chart-source {
+	text-align: left;
+	font-family: 'Inter', serif;
+	font-size: 14px;
+	padding-top: 0;
+	line-height: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	color: #6E7079 !important;
+}
+
+.source-url {
+	color: #6E7079;
+}
+
+.popuph1 {
+	font-family: 'Inter', serif;
+	font-size: 14px;
+}
+
+.popDate {
+	font-family: 'Inter', serif;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+footer p {
+	font-family: 'Inter', serif;
+	font-size: 14px;
+	line-height: 16px;
+	color: #6E7079;
+}
+
+footer a {
+	color: #6E7079;
+}
+
+/* chart styles */
+
+.chart-right {
+	border-right: 4px solid #f15d22 !important;
+}
+
+.chart-bottom {
+	border-bottom: 4px solid #f15d22 !important;
+}
+
+.table-red {
+	background-color: #BA1604 !important;
+	color: white !important;
+	font-weight: 700 !important;
+}
+
+.photo-caption {
+	text-align: left;
+	font-family: 'Inter', serif;
+	font-size: 14px;
+	padding-top: 8px;
+	line-height: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	color: #6E7079 !important;
+}
+
+@media (min-width: 768px) {
+	.wide-right {
+			padding-top: 15px;
+			padding-bottom: 30px;
+			padding-left: 25px;
+			margin-right: -40%;
+			float: right;
+			width: 80%;
+			text-align: right;
+		}
+		.wide-left {
+			padding-top: 15px;
+			padding-bottom: 30px;
+			padding-right: 25px;
+			margin-left: -50%;
+			float: left;
+			width: 90%;
+			text-align: left;
+		}
+}
+@media (max-width: 767px) {
+	.big-image,.wide-right,.wide-left {
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+}

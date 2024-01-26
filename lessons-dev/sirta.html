@@ -1,0 +1,301 @@
+<head>
+	<meta charset='utf-8' />
+	<title>Tracking Serious Injuries in NYC</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+	    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+
+	<style type="text/css">
+		body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h2 {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #2dc4b2;
+}
+
+#console {
+  position: absolute;
+  width: 240px;
+  margin: 10px;
+  padding: 20px;
+  background-color: white;
+}
+
+/* Marker tweaks */
+
+
+.mapboxgl-popup-content {
+  font: 400 16px/22px 'Inter', 'Helvetica Neue', sans-serif;
+  padding: 16px;
+  width: 200px;
+}
+
+.mapboxgl-popup-content h3 {
+  background: #91c949;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+  font-weight: 700;
+  margin-top: -15px;
+}
+
+.mapboxgl-popup-content h4 {
+  margin: 0;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.mapboxgl-popup-content div {
+  padding: 10px;
+}
+.button {
+  background-color: black; /* Green */
+  border: none;
+  padding-left: 16px; padding-right: 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+#menu a {
+font-size: 13px;
+color: #404040;
+display: block;
+margin: 0;
+padding: 0;
+padding: 10px;
+text-decoration: none;
+border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+text-align: center;
+}
+ 
+#menu a:last-child {
+border: none;
+}
+ 
+#menu a:hover {
+background-color: #f8f8f8;
+color: #404040;
+}
+ 
+#menu a.active {
+background-color: #3887be;
+color: #ffffff;
+}
+ 
+#menu a.active:hover {
+background: #3074a4;
+}
+	</style>
+</head>
+<body>
+	<div id='map'></div>
+<div id='console'>
+  <h1>Tracking serious traffic injuries in New York City</h1>
+  <p>Crashes seriously injured 5,110 people between January 2022 and September 2023.</p>
+  <div class='session'>
+  <h2>Day of the week</h2>
+  <div class='row' id='filters'>
+    <input id='all' type='radio' name='toggle' value='all' checked='checked'>
+    <label for='all'>All</label>
+    <input id='pedestrian' type='radio' name='toggle' value='pedestrian'>
+    <label for='pedestrian'>Pedestrian</label>
+    <input id='cyclist' type='radio' name='toggle' value='cyclist'>
+    <label for='cyclist'>Cyclist</label>
+    <input id='motorist' type='radio' name='toggle' value='motorist'>
+    <label for='motorist'>Motorist</label>
+    <input id='other' type='radio' name='toggle' value='other'>
+    <label for='other'>Other Motorist</label>
+  </div>
+</div>
+	<button id='filterResults' class='button'>
+	    <p class="">Show Filters</p>
+	</button>
+	<nav id="menu"></nav>
+</div>
+<script type="text/javascript">
+	mapboxgl.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjazI5YzQzdXAwOXFxM25vMXV4OGl5OGQzIn0.xYccv6RPj_aa6zkS5ShsDw';
+
+const map = new mapboxgl.Map({
+  container: 'map', // container element id
+  style: 'mapbox://styles/mapbox/dark-v11',
+  center: [-74.0059, 40.7128], // initial map center in [lon, lat]
+  zoom: 12,
+
+});
+map.on('load', () => {
+	map.addLayer({
+		'id': 'corridors',
+		'type': 'line',
+		'source': {
+			type: 'geojson',
+			data: 'vz.geojson'
+		},
+		'layout': {
+			'line-join': 'round',
+			'line-cap': 'round',
+			'visibility': 'visible'
+		},
+		'paint': {
+		'line-color': '#DEFFC3',
+		'line-width': 2
+		}
+	});
+});
+map.on('load', () => {
+  map.addLayer({
+    id: 'collisions',
+    type: 'circle',
+    source: {
+      type: 'geojson',
+      data: 'crashes.geojson' // replace this with the url of your own geojson
+    },
+    layout: {
+    	'visibility': 'visible'
+    },
+    paint: {
+      'circle-color': [
+		'match',
+		['get', 'Type'],
+		'Pedestrian',
+		'#fbb03b',
+		'Cyclist',
+		'#223b53',
+		'Motorist',
+		'#e55e5e',
+		'Other Motorist',
+		'#3bb2d0',
+		/* other */ '#f15d22'
+		],
+      'circle-opacity': 0.9,
+      'circle-stroke-width': .5,
+      'circle-stroke-color': '#FFF'
+    }
+  });
+});
+// When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('click', 'collisions', (e) => {
+// Copy coordinates array.
+const coordinates = e.features[0].geometry.coordinates.slice();
+const description = e.features[0].properties.PopUp;
+ 
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+}
+ 
+new mapboxgl.Popup()
+.setLngLat(coordinates)
+.setHTML(description)
+.addTo(map);
+});
+ 
+// Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'places', () => {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'places', () => {
+map.getCanvas().style.cursor = '';
+});
+// After the last frame rendered before the map enters an "idle" state.
+map.on('idle', () => {
+// If these two layers were not added to the map, abort
+if (!map.getLayer('corridors')) {
+return;
+}
+ 
+// Enumerate ids of the layers.
+const toggleableLayerIds = ['corridors'];
+ 
+// Set up the corresponding toggle button for each layer.
+for (const id of toggleableLayerIds) {
+// Skip layers that already have a button set up.
+if (document.getElementById(id)) {
+continue;
+}
+ 
+// Create a link.
+const link = document.createElement('a');
+link.id = id;
+link.href = '#';
+link.textContent = id;
+link.className = 'active';
+ 
+// Show or hide layer when the toggle is clicked.
+link.onclick = function (e) {
+const clickedLayer = this.textContent;
+e.preventDefault();
+e.stopPropagation();
+ 
+const visibility = map.getLayoutProperty(
+clickedLayer,
+'visibility'
+);
+ 
+// Toggle layer visibility by changing the layout object's visibility property.
+if (visibility === 'visible') {
+map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+this.className = '';
+} else {
+this.className = 'active';
+map.setLayoutProperty(
+clickedLayer,
+'visibility',
+'visible'
+);
+}
+};
+ 
+const layers = document.getElementById('menu');
+layers.appendChild(link);
+}
+});
+document.getElementById('filters').addEventListener('change', (event) => {
+  const day = event.target.value;
+  // update the map filter
+  if (day === 'all') {
+    filterDay = ['!=', ['string', ['get', 'Type']], 'placeholder'];
+  } else if (day === 'pedestrian') {
+    filterDay = ['match', ['get', 'Type'], ['Pedestrian'], true, false];
+  } else if (day === 'cyclist') {
+    filterDay = ['match', ['get', 'Type'], ['Cyclist'], true, false];
+  } else if (day === 'motorist') {
+    filterDay = ['match', ['get', 'Type'], ['Motorist'], true, false];
+  } else if (day === 'other') {
+    filterDay = ['match', ['get', 'Type'], ['Other Motorist'], true, false];
+  } else {
+    console.log('error');
+  }
+  map.setFilter('collisions', ['all', filterDay]);
+});
+</script>
+</body>

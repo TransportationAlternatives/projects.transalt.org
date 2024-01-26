@@ -3,114 +3,1060 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Charts Preview</title>
+    <title>Lessons from Vision Zero</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-
-    <style type="text/css">
-      body {
-        text-align: center;
-        font-family: 'Inter', monospace;
-      }
-      h2 {
-        font-size: 22px;
-        font-weight: 700;
-      }
-      h3 {
-        font-size: 16px;
-        padding-bottom: 16px;
-      }
-      hr {
-        padding-bottom: 16px;
-        padding-top: 16px;
-      }
-      .chart-sub {
-        color: gray;
-      }
-
-      .break {
-        padding-top: 32px;
-        padding-bottom: 32px;
-      }
-    </style>
 
     <!-- mapbox -->
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css' rel='stylesheet' />
+
   </head>
   <body>
-    <div class="container py-5">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-8">
 
-          <h1>VZ Lessons Charts</h1>
-          <p>updated jan 19 5 pm</p>
-          <hr>
-          <h2 class="chart-head">Traffic fatalities declined in response to data-driven safety interventions in the early years of Vision Zero</h2>
-          <h3 class="chart-sub">New York City’s leaders both failed to meet the needs of a changing city, and too readily surrendered safety to the convenience of drivers and their desire for free parking for their cars. As a result, fatalities plateaued and rose.</h3>
-          <div id="allfatals" style="width: 100%; height:600px;"></div>
-
-          <p class="break">***</p>
-
-
-          <h2 class="chart-head">Within a year of the program's launch, 92% of speed safety camera locations saw a drop in speeding</h2>
-          <h3 class="chart-sub">Speeding dropped at camera locations in green, increased at locations in red, and gray locations did not have enough data.</h3>
-          <div class="alert alert-danger" role="alert">
-This is not ready to review
+    <!-- nav -->
+    <nav class="navbar fixed-top" style="background-color: rgba(0, 0, 0, .8); color: white;" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style=""><img src="ta-icon.svg" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
+      Transportation Alternatives</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="padding: 12px;">
+      Menu
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Lessons from Vision Zero</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#intro">Introduction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#change">1. Implement Safety Interventions Systemwide</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cost">2. Make Inexpensive Changes Universal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#streets">3. Build Self-Enforcing Streets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#focus">4. Focus on Action, Not Advertising </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#adapt">5. Adapt to Changing Conditions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#conclusion">Conclusion</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="videoDiv2"> 
+  <video id="video2" preload="" autoplay="" muted="" playsinline="" loop="">
+    <source src="video.mp4" type="video/mp4">
+  </video> 
+    <div id="videoMessage2" class="styling">
+      <div class="container" style="padding-bottom: 5%;">
+                <h1>Five Lessons to Explain the Successes and Shortcomings of Vision Zero in New York City</h1>
+                <h2 class="subhead">Looking Back on the 10 Year Anniversary of America’s First Vision Zero Program</h2>
+      </div>
+    </div>
 </div>
-          <div id="speedmap" style="width: 100%; height:600px;"></div>
+    <article>
+      <div class="container top">
+          
+          <div class="row d-flex justify-content-center" id="intro">
+            <div class="col-md-5 pb-4 pt-5">
+              <p style="font-family: 'Inter'; font-size: 16px;" class="border-bottom">Published February 1, 2024</p>
+              <p class="pt-3">In 2014, New York City launched the first Vision Zero program in the United States, pledging to eliminate traffic deaths and serious injuries. New York&rsquo;s effort was inspired by a similar policy enacted by Sweden in 1997, which subsequently spread across the world, leading to the elimination of traffic deaths in cities from Helsinki to Hoboken.&nbsp;&nbsp;</p>
+              <p>In service of this pledge, over the past 10 years, the City of New York launched a wide range of interventions including, but not limited to: lowering the citywide speed limit; installing speed safety cameras; pedestrianizing road space; building protected bike lanes; equipping the city fleet with truck side guards and &ldquo;Intelligent Speed Assistance&rdquo;; developing public education campaigns; and increasing police enforcement.&nbsp;</p>
+              <p>Some of these efforts have been effective; others have been less so. Together, they tell a more complex story as demonstrated by the number of fatalities.</p>
+              <!-- Chart -->
 
-          <p class="break">***</p>
-          <h2 class="chart-head">Pedestrian fatalities fell as leading pedestrian interval installation increased</h2>
-          <h3 class="chart-sub">Based on data this is a description of the chart.</h3>
-          <div id="LPI" style="width: 100%; height:600px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="container chart-wrapper">
+          <div class="row d-flex justify-content-center">
+            <div class="col-xs-10">
+              <h4 class="chart-head">Traffic fatalities declined in response to data-driven safety interventions in the early years of Vision Zero</h4>
+                <p class="chart-label">New York City’s leaders both failed to meet the needs of a changing city, and too readily surrendered safety to the convenience of drivers and their desire for free parking for their cars. As a result, fatalities plateaued and rose.</p>
+              <div id="allfatals" style="height:600px;"></div>
+              <p class="chart-other">*According to DOT: From 2021, the "Other Motorist" category includes victims riding standing e-scooters and moped-style devices that cannot be legally defined as e-bikes, e-scooters, or motorcycles. The victims were previously categorized as pedestrians, bicycles, or motorcycles, depending on specific type. | Data source: <a href="#" target="_blank">NYC DOT</a></p>
+            </div>
+          </div>
+        </div>
+          <div class="container">
 
-          <p class="break">***</p>
-          <h2 class="chart-head">NYPD overwhelmingly issued tickets to New Yorkers of color in 2022</h2>
-          <h3 class="chart-sub">Subhead</h3>
-          <div id="policing" style="width: 100%; height:600px;"></div>
-
-          <p class="break">***</p>
-          <h2 class="chart-head">Traffic fatalities increased for Black and Latino New Yorkers between 2014 and 2020</h2>
-          <h3 class="chart-sub">Subhead</h3>
-          <div id="fatals100" style="width: 100%; height:600px;"></div>
-
-          <p class="break">***</p>
-          <h2 class="chart-head">Heatmap</h2>
-          <h3 class="chart-sub">Subhead</h3>
-          <div class="alert alert-danger" role="alert">
-This is not ready to review
-</div>
-          <div id="dawn" style="width: 100%; height:600px;"></div>
-
-          <p class="break">***</p>
-          <h2 class="chart-head">The number of vehicle miles traveled (VMT) has risen 16%, to a record high</h2>
-          <h3 class="chart-sub">Subhead</h3>
-          <div id="vmt" style="width: 100%; height:600px;"></div>
-
-          <p class="break">***</p>
-          <h2 class="chart-head">New Yorkers are biking in record numbers, but the infrastructure has not kept up</h2>
-          <h3 class="chart-sub">Subhead</h3>
-          <div id="pbl" style="width: 100%; height:600px;"></div>
-
-          <p class="break">***</p>
-          <h2 class="chart-head">As cars get bigger, the number of children killed in crashes has increased</h2>
-          <h3 class="chart-sub">Subhead</h3>
-          <div id="child" style="width: 100%; height:600px;"></div>
-
+            <!-- End full-width chart -->
+           <div class="row d-flex justify-content-center">
+              <div class="col-md-5 pb-5">
+                <p>Traffic fatalities were 16% lower in the last 10 years compared to the decade preceding Vision Zero &mdash; a difference of more than 400 lives. While significant progress has been made, the story of Vision Zero in New York City is neither simple nor linear. For example, pedestrian fatalities in the city declined 29% in the past 10 years, at a time when traffic fatalities, and especially pedestrian fatalities, were surging nationwide. Yet, during that time, driver fatalities rose more than 11%, especially in Black and Latino neighborhoods. Cyclist fatalities fluctuated dramatically &mdash; falling as low as 10 deaths one year and rising to 28 the next &mdash; trending upward overall. 2023 marks the single deadliest year for cyclists this century, and the second deadliest year for cyclists in recorded history.&nbsp;</p>
+                <p>Generally, traffic fatalities declined in response to data-driven safety interventions. But over time, the city and its transportation changed &mdash; larger vehicles, more traffic, more people, more cyclists &mdash; and safety interventions have not adapted. New York City&rsquo;s leaders both failed to meet the needs of a changing city, and too readily surrendered safety to the convenience of drivers and their desire for free parking. As a result, fatalities plateaued and rose.</p>
+                <p>Traffic safety is influenced by forces as diverse as urban planning, history, economics, even pandemic-inspired commuting trends &mdash; and there is no singular solution to keeping people safe on city streets. Protecting people from harm while they walk, bike, or drive requires overlapping layers of safety interventions. Implementing these interventions &mdash; systemically and citywide, not just where it may be politically easy &mdash; requires the resolve of elected leaders and city officials alike.&nbsp;</p>
+                <p>The 10-year anniversary of Vision Zero offers an opportunity to look back and consider what has worked, what has not, and why. New York City&rsquo;s Vision Zero program has already spanned two mayoral administrations and a decade of changes to our city. The future of the program rests on the political will of our leaders, and their embrace of the idea that traffic deaths are not random &ldquo;accidents'' but tragedies they are responsible to prevent.</p>
+                <p>Transportation Alternatives (TA), <a href="https://drive.google.com/file/d/1DHseGvaA2BZ67RbnOS__Ucfz9saFQa_k/view">which proposed bringing this lifesaving program to New York City in 2011</a>, and Families for Safe Streets, which was also established 10 years ago and which lead the charge for many of the lifesaving changes outlined herein, evaluated 10 years of data and identified trends that help explain the successes and shortcomings of New York City&rsquo;s Vision Zero program. The goal of this report is to build on the successes of the program and address the challenges so that no New Yorker need worry about death or serious injury while walking, biking, or driving across the five boroughs.&nbsp;</p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- lesson 1 -->
+
+      <div class="section-wrapper" id="change">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-8 inner-heading">
+                <div class="label">
+                  <h5 class="innter-label">Lesson 1</h5>
+                </div>
+                <h3>Implement Safety Interventions Systemwide</h3>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+              <p>Many Vision Zero efforts fall short by initiating piecemeal change rather than a systemwide approach. Too often, these changes occur after people have died, but fail to pre-emptively redesign identical streets where the same dangerous conditions exist.&nbsp;</p>
+              <p>Some cities lower speed limits on only a limited number of streets, or implement automated enforcement programs on only the &ldquo;most dangerous&rdquo; streets while permitting violations elsewhere &mdash; leading to increased risk on the streets without intervention. Rather than eliminating danger, danger is simply moved around in an unending game of whack-a-mole. As such, officials will celebrate occasional and politically convenient interventions, but shy from the wholesale universal changes necessary to shift the status quo on every block and in every neighborhood.&nbsp;</p>
+              <p>By contrast, the most successful Vision Zero efforts are those implemented systemwide. For example, in 2014, New York City lowered its speed limit to 25 mph and launched an automated speed safety camera program. Today, speed limits of 25 mph or less are the law on 90% of city streets, and the speed safety camera program, one of the largest in the world, operates 24 hours a day in school zones across the five boroughs. And it works. Together, these systemwide changes have changed driver behavior and reduced crashes, speeding, injuries, and fatalities.</p>
+
+            <!-- Chart -->
+
+            </div>
+          </div>
+        </div>
+        <div class="container chart-wrapper">
+          <div class="row d-flex justify-content-center">
+            <div class="col-xs-10">
+              <h4 class="chart-head">Within a year of the program's launch, 92% of speed safety camera locations saw a drop in speeding</h4>
+                <p class="chart-label">Speeding dropped at camera locations in <span style="background-color: #a4de06; padding:6px;border-radius: 5px;">green</span>, increased at locations in <span style="background-color: #AA324D; padding:6px;border-radius: 5px; color: white;">red</span>, and <span style="background-color: #343434; color: white; padding:6px;border-radius: 5px;">gray</span> locations did not have enough data.</p>
+              <div id="speedmap" style="height:600px; width: 100%;"></div>
+              <p class="chart-source" style="text-align:left; padding-top: 8px;">Data source: <a href="https://google.com" target="_blank" class="source-url">THIS</a></p>
+            </div>
+          </div>
+        </div>
+          <div class="container">
+
+            <!-- End full-width chart -->
+
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-5 pt-">
+
+                <p>Within a year of lowering the citywide speed limit to 25 mph, traffic fatalities <a href="https://transalt.org/reports-list/too-fast-too-furious-new-york-citys-speeding-epidemic-and-the-case-for-local-control-of-speed-limits#:~:text=In%20just%20the%20first%20year%20of%20this%20change%3A%C2%A0,Pedestrian%20fatalities%20fell%20by%20more%20than%2025%20percent">declined 22%</a> and pedestrian fatalities declined by 25%. <strong>Ninety-two percent of speed safety camera locations saw a drop in speeding between fiscal years 2021 and 2022.</strong> The number of citations dropped an average of 35%, and as much as 99% at some locations &mdash; a direct indicator of reduced speeding and behavior change. Drops in traffic injuries followed suit, including declines of 45% on Tremont Avenue in the Bronx, 33% on Kings Highway in Brooklyn, 16% on Queens Boulevard in Queens, and 19% on Staten Island's Hylan Boulevard.&nbsp;</p>
+                <p>For every driver who received a speed safety camera ticket in 2021, <a href="https://www.nyc.gov/html/dot/downloads/pdf/speed-camera-report.pdf">fewer than half</a> received a second and the vast majority never received a third. With a $50 fine and no points issued to the driver&rsquo;s license, the cameras are less punitive than a police traffic stop and prevent escalation to violence by reducing contact with police. Cameras are distributed equally outside of schools across the city, and as a result, there is <a href="https://transalt.org/blog/no-correlation-between-race-poverty-level-and-speed-safety-camera-tickets">no correlation</a> between the number of citations issued and race or poverty level of the neighborhoods where the tickets were received.&nbsp;</p>
+                <p>Systemwide implementation means that these interventions affect every New Yorker, protecting people citywide, and shifting behavior because safety was enforced without caveats, loopholes, or omissions.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+
+        <!-- lesson 2 -->
+        <div class="section-wrapper-alt" id="cost">
+          <div class="container">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-8 inner-heading">
+                  <div class="label">
+                    <h5 class="innter-label">Lesson 2</h5>
+                  </div>
+                  <h3>Make Inexpensive Changes Universal</h3>
+                  <div class="section-image">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Portland_Crossing.gif/1200px-Portland_Crossing.gif" class="section-img" width="100%">
+                  <p class="caption">A leading pedestrian interval gives pedestrians and bikers a head start on traffic lights, increasing their visibility to turning traffic.</p>
+                </div>
+                </div>
+              </div>
+          </div>
+          <div class="container">
+            <div class="row d-flex justify-content-center">
+              <div class="col-sm-5">
+                <p>Vision Zero efforts often overlook the effectiveness of low-cost safety interventions installed at scale. While the cost of a street redesign can be significant and the need for upfront capital can stall even the most well-intended Vision Zero programs, less expensive changes &mdash; such as <a href="https://www.nyc.gov/assets/dcas/downloads/pdf/fleet/DOT25_Speed_limit_FAQs.pdf">lowering the speed limit</a>, <a href="https://www.nyc.gov/html/dot/html/pr2023/speed-cameras-first-year.shtml">installing automated enforcement</a>, <a href="https://www.nytimes.com/2022/03/02/nyregion/nyc-raised-crosswalks-traffic-deaths.html">raising crosswalks</a>, <a href="https://narrowlanes.americanhealth.jhu.edu/">narrowing vehicle travel lanes</a>, and <a href="https://bpb-us-w2.wpmucdn.com/sites.northeastern.edu/dist/e/618/files/2018/09/Limit-Speeding-Opportunities-TRR-2018.pdf">retiming traffic signals</a> &mdash; can save lives when implemented comprehensively throughout a city.&nbsp;</p>
+                <p>A prime example of a low-cost, high-efficacy, systemwide Vision Zero effort can be found in Hoboken, New Jersey, <a href="https://www.curbed.com/2022/06/hoboken-traffic-deaths-none-vision-zero-streets.html">the first U.S. city to reach Vision Zero</a> and by far the most successful after seven years without a single traffic fatality. Leaders in Hoboken credit their success to implementing <a href="https://transalt.org/blog/daylighting">universal daylighting</a> &mdash; a technique of increasing the visibility of pedestrians and cyclists at intersections by replacing the parking spaces closest to an intersection with bike parking, curb extensions, and wide sidewalks.</p>
+                <p>Over the past decade, the City of New York has made a similar effort in reprogramming traffic signals at nearly 6,000 intersections. These &ldquo;<a href="https://www.youtube.com/watch?v=YKemPoxs6EY">Leading Pedestrian Intervals</a>&rdquo; (LPI) give pedestrians and cyclists a head-start, showing the &ldquo;walk&rdquo; signal five to seven seconds prior to drivers being given a green light. This allows people on foot and on bike to be visible &mdash; having already entered the crosswalk &mdash; before drivers are permitted to move.</p>
+              <!-- Chart -->
+            </div>
+          </div>
+          </div>
+          <div class="container chart-wrapper">
+            <div class="row d-flex justify-content-center">
+              <div class="col-xs-10">
+                <h4 class="chart-head">Pedestrian fatalities fell as leading pedestrian interval installations increased</h4>
+                <p class="chart-label">At an average cost of $1,200 each, this relatively inexpensive intervention has saved countless lives.</p>
+                <div id="LPI" style="width: 100%; height:600px;"></div>
+                <p class="chart-source">Data source: <a href="https://data.cityofnewyork.us/Transportation/VZV_Leading-Pedestrian-Interval-Signals/mqt5-ctec" target="_blank" class="source-url">NYC DOT</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+
+            <!-- End full-width chart -->
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-sm-5 pb-5">
+
+                  <p><strong>At intersections where the City of New York installed LPIs, the number of pedestrians killed and seriously injured declined by <a href="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf">34%</a> and the number of pedestrians and cyclists killed or seriously injured by left-turning vehicles declined by <a href="https://www.nyc.gov/html/dot/downloads/pdf/left-turn-pedestrian-and-bicycle-crash-study.pdf">56%</a>.&nbsp;</strong></p>
+                  <p>At an average cost of <a href="https://www.bloomberg.com/news/articles/2018-01-26/a-vision-zero-tactic-that-works-leading-pedestrian-intervals">$1,200</a> per LPI, this relatively inexpensive intervention has saved countless lives. Compare this to the incalculable value of human life, and the very real costs to the New York City economy: measured by wage and productivity losses, medical expenses, administrative expenses, property damage, employers&rsquo; uninsured costs, and the value of lost quality of life. Traffic violence costs the New York City economy <a href="https://www.nyc.gov/html/dot/html/pedestrians/pedsafetyreport.shtml#:~:text=NYC%27s%20traffic%20fatality%20rate%20is,the%20event%20of%20a%20crash.">$4.29 billion</a> every year.&nbsp;</p>
+
+                </div>
+              </div>
+
+          </div>
+
+          <!-- lesson 3 -->
+
+           <div class="section-wrapper" id="streets">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-8 inner-heading">
+                <div class="label">
+                  <h5 class="innter-label">Lesson 3</h5>
+                </div>
+                <h3>Build Self-Enforcing Streets</h3>
+                <div class="section-image">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Portland_Crossing.gif/1200px-Portland_Crossing.gif" class="section-img" width="100%">
+                  <p class="caption">A leading pedestrian interval gives pedestrians and bikers a head start on traffic lights, increasing their visibility to turning traffic.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+              <p>Vision Zero programs often falter when City officials prioritize police enforcement over systemic approaches such as street redesigns and automated enforcement. While enforcement presumes that punishment will change future behavior and requires a police officer to witness a dangerous behavior, reengineering a street can reduce risk even in the face of dangerous behaviors, protects people 24 hours a day without staffing, and works preemptively to prevent harm.&nbsp;</p>
+              <p>For example, if multiple drivers are speeding, a police officer can catch only one at a time, whereas installing a protected bike lane reduces the overall speed of the road, slowing down <a href="https://www.nyc.gov/html/dot/downloads/pdf/2012_ppw_trb2012.pdf">the vast majority of drivers</a>, and reducing <a href="https://www.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf">injuries and fatalities for all road users</a>, at every hour of the day. Coupled with automated enforcement, these <a href="https://transalt.org/blog/the-case-for-self-enforcing-streets">&ldquo;self-enforcing streets"</a> can create safe conditions and reduce reckless behavior at scale.&nbsp;</p>
+              <p>When the City of New York launched Vision Zero, its over reliance on law enforcement to address street safety, particularly in low income and communities of color, led to an increase in biased summonsing and traffic fatalities. These communities already had the largest police presence and the most scrutiny on behavior in public space.</p>
+
+            <!-- Chart -->
+
+            </div>
+          </div>
+        </div>
+        <div class="container chart-wrapper">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <h4 class="chart-head">NYPD overwhelmingly issued tickets to New Yorkers of color</h4>
+                <p class="chart-label">Reaching Vision Zero is inextricable from undoing the racist practices that target Black and Latino New Yorkers and put them in harm&rsquo;s way.</p>
+                <div id="policing" style="height:400px;"></div>
+                <p class="chart-source">Data source: <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Criminal-Court-Summons-Historic-/sv2w-rv3k/explore/query/SELECT%0A%20%20%60summons_key%60%2C%0A%20%20%60summons_date%60%2C%0A%20%20%60offense_description%60%2C%0A%20%20%60law_section_number%60%2C%0A%20%20%60law_description%60%2C%0A%20%20%60summons_category_type%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60sex%60%2C%0A%20%20%60race%60%2C%0A%20%20%60jurisdiction_code%60%2C%0A%20%20%60boro%60%2C%0A%20%20%60precinct_of_occur%60%2C%0A%20%20%60x_coordinate_cd%60%2C%0A%20%20%60y_coordinate_cd%60%2C%0A%20%20%60latitude%60%2C%0A%20%20%60longitude%60%2C%0A%20%20%60geocoded_column%60%2C%0A%20%20%60%3A%40computed_region_efsh_h5xi%60%2C%0A%20%20%60%3A%40computed_region_f5dn_yrer%60%2C%0A%20%20%60%3A%40computed_region_yeji_bk3q%60%2C%0A%20%20%60%3A%40computed_region_92fq_4b7q%60%2C%0A%20%20%60%3A%40computed_region_sbqj_enih%60%0AWHERE%0A%20%20%28%60summons_date%60%0A%20%20%20%20%20BETWEEN%20%222022-01-01T00%3A00%3A00%22%20%3A%3A%20floating_timestamp%0A%20%20%20%20%20AND%20%222022-12-31T23%3A45%3A00%22%20%3A%3A%20floating_timestamp%29%0A%20%20AND%20%28%60offense_description%60%20IN%20%28%0A%20%20%20%20%22PEDESTRIAN%20STARTED%20ON%20STEADY%20DONT%20WALK%22%2C%0A%20%20%20%20%22JAYWALK%22%2C%0A%20%20%20%20%22JAYWALKING%20CROSS%20ROADWAY%20DIAGONALLY%22%2C%0A%20%20%20%20%22JAYWALK%20%28CROSS%20TRAFFIC%29%22%2C%0A%20%20%20%20%22jaywalk%22%2C%0A%20%20%20%20%22jaywalkin%22%2C%0A%20%20%20%20%22jaywalking%22%2C%0A%20%20%20%20%22JAYWALKING%22%2C%0A%20%20%20%20%22JAY%20WALKING%22%2C%0A%20%20%20%20%22JAY%20WALKING%60%22%2C%0A%20%20%20%20%22JAYWALKING%20AGAINST%20TRAFFIC%22%2C%0A%20%20%20%20%22JAYWLAKING%22%2C%0A%20%20%20%20%22JAT%20WALKING%22%2C%0A%20%20%20%20%22J-WALKING%22%2C%0A%20%20%20%20%22JAYWALKING%20-%20NOT%20IN%20CROSSWALK%22%2C%0A%20%20%20%20%22J%20-%20WALKING%22%0A%20%20%29%29/page/filter" target="_blank" class="source-url">NYPD</a></p>
+            </div>
+            <div class="col-md-6">
+                <h4 class="chart-head">Traffic fatalities increased for Black and Latino New Yorkers between 2014 and 2020</h4>
+                <p class="chart-label">The majority of safety interventions installed in the past 10 years occurred in predominantly wealthy and white neighborhoods.</p>
+                <div id="fatals100" style="height:400px;"></div>
+                <p class="chart-source">Data source: <a href="https://wonder.cdc.gov/controller/saved/D76/D373F455" target="_blank" class="source-url">CDC</a></p>
+            </div>
+          </div>
+        </div>
+          <div class="container">
+
+            <!-- End full-width chart -->
+
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-5 pt-">
+
+                <p>In 2022, the most recent year of available data, <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Criminal-Court-Summons-Historic-/sv2w-rv3k/explore/query/SELECT%0A%20%20%60summons_key%60%2C%0A%20%20%60summons_date%60%2C%0A%20%20%60offense_description%60%2C%0A%20%20%60law_section_number%60%2C%0A%20%20%60law_description%60%2C%0A%20%20%60summons_category_type%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60sex%60%2C%0A%20%20%60race%60%2C%0A%20%20%60jurisdiction_code%60%2C%0A%20%20%60boro%60%2C%0A%20%20%60precinct_of_occur%60%2C%0A%20%20%60x_coordinate_cd%60%2C%0A%20%20%60y_coordinate_cd%60%2C%0A%20%20%60latitude%60%2C%0A%20%20%60longitude%60%2C%0A%20%20%60geocoded_column%60%2C%0A%20%20%60%3A%40computed_region_efsh_h5xi%60%2C%0A%20%20%60%3A%40computed_region_f5dn_yrer%60%2C%0A%20%20%60%3A%40computed_region_yeji_bk3q%60%2C%0A%20%20%60%3A%40computed_region_92fq_4b7q%60%2C%0A%20%20%60%3A%40computed_region_sbqj_enih%60%0AWHERE%0A%20%20%28%60summons_date%60%0A%20%20%20%20%20BETWEEN%20%222022-01-01T00%3A00%3A00%22%20%3A%3A%20floating_timestamp%0A%20%20%20%20%20AND%20%222022-12-31T23%3A45%3A00%22%20%3A%3A%20floating_timestamp%29%0A%20%20AND%20%28%60offense_description%60%20IN%20%28%0A%20%20%20%20%22PEDESTRIAN%20STARTED%20ON%20STEADY%20DONT%20WALK%22%2C%0A%20%20%20%20%22JAYWALK%22%2C%0A%20%20%20%20%22JAYWALKING%20CROSS%20ROADWAY%20DIAGONALLY%22%2C%0A%20%20%20%20%22JAYWALK%20%28CROSS%20TRAFFIC%29%22%2C%0A%20%20%20%20%22jaywalk%22%2C%0A%20%20%20%20%22jaywalkin%22%2C%0A%20%20%20%20%22jaywalking%22%2C%0A%20%20%20%20%22JAYWALKING%22%2C%0A%20%20%20%20%22JAY%20WALKING%22%2C%0A%20%20%20%20%22JAY%20WALKING%60%22%2C%0A%20%20%20%20%22JAYWALKING%20AGAINST%20TRAFFIC%22%2C%0A%20%20%20%20%22JAYWLAKING%22%2C%0A%20%20%20%20%22JAT%20WALKING%22%2C%0A%20%20%20%20%22J-WALKING%22%2C%0A%20%20%20%20%22JAYWALKING%20-%20NOT%20IN%20CROSSWALK%22%2C%0A%20%20%20%20%22J%20-%20WALKING%22%0A%20%20%29%29/page/filter">92% of summonses for jaywalking</a>, and <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Criminal-Court-Summons-Historic-/sv2w-rv3k/explore/query/SELECT%0A%20%20%60summons_key%60%2C%0A%20%20%60summons_date%60%2C%0A%20%20%60offense_description%60%2C%0A%20%20%60law_section_number%60%2C%0A%20%20%60law_description%60%2C%0A%20%20%60summons_category_type%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60sex%60%2C%0A%20%20%60race%60%2C%0A%20%20%60jurisdiction_code%60%2C%0A%20%20%60boro%60%2C%0A%20%20%60precinct_of_occur%60%2C%0A%20%20%60x_coordinate_cd%60%2C%0A%20%20%60y_coordinate_cd%60%2C%0A%20%20%60latitude%60%2C%0A%20%20%60longitude%60%2C%0A%20%20%60geocoded_column%60%2C%0A%20%20%60%3A%40computed_region_efsh_h5xi%60%2C%0A%20%20%60%3A%40computed_region_f5dn_yrer%60%2C%0A%20%20%60%3A%40computed_region_yeji_bk3q%60%2C%0A%20%20%60%3A%40computed_region_92fq_4b7q%60%2C%0A%20%20%60%3A%40computed_region_sbqj_enih%60%0AWHERE%0A%20%20%28%60summons_date%60%0A%20%20%20%20%20BETWEEN%20%222022-01-01T00%3A00%3A00%22%20%3A%3A%20floating_timestamp%0A%20%20%20%20%20AND%20%222022-12-31T23%3A45%3A00%22%20%3A%3A%20floating_timestamp%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60offense_description%60%2C%0A%20%20%20%20%22BIKEM%20ON%20SIDEWALK%22%2C%0A%20%20%20%20%22BICYCLE%20ON%20SIDE%20WALK%22%2C%0A%20%20%20%20%22BICYCLE%20OB%20SIDEWALK%22%2C%0A%20%20%20%20%22bicycle%20on%20sidewalk%22%2C%0A%20%20%20%20%22BICYCLE%20OPERATION%20SIDEWALK%22%2C%0A%20%20%20%20%22BICYCLE%20RIDING%20ON%20PATHWAY%22%2C%0A%20%20%20%20%22BICYCLE%20ON%20GRASS%2FBRIDLE%20PATH%3B%20RIDE%20ON%22%0A%20%20%29/page/filter">84% of summonses for biking on the sidewalk</a> went to Black and Latino New Yorkers. <a href="https://www.nyc.gov/site/nypd/stats/reports-analysis/vehicle-stop-reports.page">89% of traffic stops that resulted in police use of force</a> were conducted on Black and Latino New Yorkers. At the same time, the majority of safety interventions installed in the past 10 years &mdash; including pedestrian plazas, protected bike lanes, car-free bus lanes, and traffic calming &mdash; occurred in predominantly wealthy and white neighborhoods. <strong>As a result, between 2014 and 2020, the most recent year data is available, traffic fatalities for white New Yorkers decreased 20% while traffic fatalities for Latino New Yorkers increased 7% and fatalities for Black New Yorkers increased 23%.</strong></p>
+                <p>Reaching Vision Zero is inextricable from undoing the racist practices and policies that target Black and Latino New Yorkers and put them more often in harm&rsquo;s way. Shifting resources from enforcement to infrastructure solutions, which are unbiased and work 24/7, lessens the need for armed police enforcement in traffic safety, reduces traffic injuries and fatalities, and saves money.&nbsp;</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+         <!-- lesson 4 -->
+
+      <div class="section-wrapper-alt" id="focus">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-8 inner-heading">
+                <div class="label">
+                  <h5 class="innter-label">Lesson 4</h5>
+                </div>
+                <h3>Focus on Action, Not Advertising</h3>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+              <p>In many Vision Zero cities, officials devote extensive resources to public education advertising campaigns &mdash; billboards, flyers, public service announcements. These campaigns have been proven <a href="https://t.co/B0GRMqfrd5">expensive and largely ineffective</a>.&nbsp;</p>
+              <div class="wide-right">
+                  <img src="img/dusk.png" width="100%" alt="Flyer from NYC DOT that says Visibility decreases at dusk and lower visibility at this time of year makes seeing and reacting to other road users more challenging. Always obey the speed limit, turn slowly and look closely for pedestrians and cyclists. ">
+                  <p class="photo-caption">An example of the print flyer and social media post shared by the City of New York for its campaign.</p>
+                </div>
+              <p>The New York City Department of Transportation&rsquo;s (DOT) annual &ldquo;Dusk to Darkness&rdquo; advertising campaign is a case in point. Centered around the rise in traffic fatalities that typically accompanies the end of Daylight Saving Time, the campaign uses television and radio advertisements, billboards, and flyers to tell drivers not to strike pedestrians in the crosswalk during this period of limited visibility. TA found the campaign has little to no effect on safety, and at times, is correlated with a rise in traffic fatalities. In fact, in the three year period following the launch of the campaign, the number of pedestrians killed and injured near dusk actually increased, as compared to the three years prior when no such campaign occurred.</p>
+
+            <!-- Chart -->
+
+            </div>
+          </div>
+        </div>
+        <div class="container chart-wrapper">
+          <div class="row d-flex justify-content-center">
+            <div class="col-xs-10">
+                <h4 class="chart-head">The number of pedestrians killed and injured near dusk actually increased in the three years following DOT's &ldquo;Dusk to Darkness&rdquo; campaign</h4>
+                <p class="chart-label">See the average change in pedestrians killed and injured each evening by week of the year below. The <strong><span style="color:#f15d22">  &#124;</span></strong> represents the average sunset time.</p>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+            <table class="table">
+            <thead>
+              <tr>
+                <th class="tg-z4i2"></th>
+                <th class="tg-44qx"><span style="font-weight:bold">2 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">3 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">4 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">5 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">6 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">7 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">8 p.m.</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-44qx">January</td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-v0mg">-48%</td>
+                <td class="tg-v0mg chart-right">-27%</td>
+                <td class="tg-v0mg">-25%</td>
+                <td class="tg-v0mg">-17%</td>
+                <td class="tg-v0mg">-20%</td>
+                <td class="tg-v0mg">-24%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-v0mg">-54%</td>
+                <td class="tg-v0mg chart-right">-25%</td>
+                <td class="tg-v0mg">-15%</td>
+                <td class="tg-v0mg">-1%</td>
+                <td class="tg-v0mg">-9%</td>
+                <td class="tg-v0mg">-3%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-50%</td>
+                <td class="tg-v0mg">-57%</td>
+                <td class="tg-v0mg chart-right">-52%</td>
+                <td class="tg-v0mg chart-bottom">-45%</td>
+                <td class="tg-v0mg">-41%</td>
+                <td class="tg-v0mg">-35%</td>
+                <td class="tg-v0mg">-34%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-52%</td>
+                <td class="tg-v0mg">-57%</td>
+                <td class="tg-v0mg">-60%</td>
+                <td class="tg-v0mg chart-right">-51%</td>
+                <td class="tg-v0mg">-47%</td>
+                <td class="tg-v0mg">-41%</td>
+                <td class="tg-v0mg">-38%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">February</td>
+                <td class="tg-v0mg">-45%</td>
+                <td class="tg-v0mg">-32%</td>
+                <td class="tg-v0mg">-44%</td>
+                <td class="tg-v0mg chart-right">-38%</td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-v0mg">-32%</td>
+                <td class="tg-v0mg">-33%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-44%</td>
+                <td class="tg-v0mg">-17%</td>
+                <td class="tg-v0mg">-18%</td>
+                <td class="tg-v0mg chart-right">-18%</td>
+                <td class="tg-v0mg">-31%</td>
+                <td class="tg-v0mg">-17%</td>
+                <td class="tg-v0mg">-17%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-24%</td>
+                <td class="tg-v0mg">-11%</td>
+                <td class="tg-v0mg">-5%</td>
+                <td class="tg-v0mg chart-right">-7%</td>
+                <td class="tg-v0mg chart-bottom">-18%</td>
+                <td class="tg-v0mg">-19%</td>
+                <td class="tg-v0mg">-31%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-20%</td>
+                <td class="tg-v0mg">-33%</td>
+                <td class="tg-v0mg ">-37%</td>
+                <td class="tg-v0mg">-35%</td>
+                <td class="tg-v0mg chart-right">-37%</td>
+                <td class="tg-v0mg">-34%</td>
+                <td class="tg-v0mg">-44%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">March</td>
+                <td class="tg-v0mg">-20%</td>
+                <td class="tg-v0mg">-24%</td>
+                <td class="tg-v0mg">-44%</td>
+                <td class="tg-v0mg">-30%</td>
+                <td class="tg-v0mg chart-right">-40%</td>
+                <td class="tg-v0mg">-41%</td>
+                <td class="tg-v0mg">-58%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-37%</td>
+                <td class="tg-v0mg">-24%</td>
+                <td class="tg-v0mg">-44%</td>
+                <td class="tg-v0mg">-24%</td>
+                <td class="tg-v0mg chart-right">-52%</td>
+                <td class="tg-v0mg">-52%</td>
+                <td class="tg-v0mg">-61%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-46%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-vw3w table-red">2%</td>
+                <td class="tg-v0mg chart-right">-42%</td>
+                <td class="tg-v0mg">-51%</td>
+                <td class="tg-v0mg">-67%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-30%</td>
+                <td class="tg-v0mg">-31%</td>
+                <td class="tg-v0mg">-41%</td>
+                <td class="tg-v0mg">-18%</td>
+                <td class="tg-v0mg chart-right">-44%</td>
+                <td class="tg-v0mg">-58%</td>
+                <td class="tg-v0mg">-64%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">April</td>
+                <td class="tg-v0mg">-5%</td>
+                <td class="tg-v0mg">-30%</td>
+                <td class="tg-v0mg">-22%</td>
+                <td class="tg-v0mg">-31%</td>
+                <td class="tg-v0mg chart-right">-31%</td>
+                <td class="tg-v0mg">-50%</td>
+                <td class="tg-v0mg">-56%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-5%</td>
+                <td class="tg-v0mg">-27%</td>
+                <td class="tg-v0mg">-21%</td>
+                <td class="tg-v0mg">-43%</td>
+                <td class="tg-v0mg chart-right">-39%</td>
+                <td class="tg-v0mg">-19%</td>
+                <td class="tg-v0mg">-17%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-26%</td>
+                <td class="tg-v0mg">-33%</td>
+                <td class="tg-v0mg">-40%</td>
+                <td class="tg-v0mg">-59%</td>
+                <td class="tg-v0mg chart-right">-55%</td>
+                <td class="tg-v0mg">-24%</td>
+                <td class="tg-v0mg">-10%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-54%</td>
+                <td class="tg-v0mg">-48%</td>
+                <td class="tg-v0mg">-61%</td>
+                <td class="tg-v0mg">-68%</td>
+                <td class="tg-v0mg chart-right">-70%</td>
+                <td class="tg-v0mg">-21%</td>
+                <td class="tg-v0mg">-10%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">May</td>
+                <td class="tg-v0mg">-43%</td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-v0mg">-65%</td>
+                <td class="tg-v0mg">-65%</td>
+                <td class="tg-v0mg chart-right">-73%</td>
+                <td class="tg-v0mg">-44%</td>
+                <td class="tg-v0mg">-34%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-55%</td>
+                <td class="tg-v0mg">-56%</td>
+                <td class="tg-v0mg">-63%</td>
+                <td class="tg-v0mg">-57%</td>
+                <td class="tg-v0mg chart-right">-68%</td>
+                <td class="tg-v0mg">-53%</td>
+                <td class="tg-v0mg">-47%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-39%</td>
+                <td class="tg-v0mg">-46%</td>
+                <td class="tg-v0mg">-51%</td>
+                <td class="tg-v0mg">-45%</td>
+                <td class="tg-v0mg chart-right">-55%</td>
+                <td class="tg-v0mg chart-bottom">-51%</td>
+                <td class="tg-v0mg">-50%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-36%</td>
+                <td class="tg-v0mg">-35%</td>
+                <td class="tg-v0mg">-29%</td>
+                <td class="tg-v0mg">-19%</td>
+                <td class="tg-v0mg">-40%</td>
+                <td class="tg-v0mg chart-right">-52%</td>
+                <td class="tg-v0mg">-63%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-16%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-v0mg">-28%</td>
+                <td class="tg-v0mg ">-13%</td>
+                <td class="tg-v0mg">-8%</td>
+                <td class="tg-vw3w table-red chart-right">2%</span></td>
+                <td class="tg-v0mg">-33%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">June</td>
+                <td class="tg-v0mg">-13%</td>
+                <td class="tg-v0mg">-26%</td>
+                <td class="tg-v0mg">-34%</td>
+                <td class="tg-v0mg">-33%</td>
+                <td class="tg-v0mg">-28%</td>
+                <td class="tg-v0mg chart-right">-14%</td>
+                <td class="tg-v0mg">-33%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-47%</td>
+                <td class="tg-v0mg">-51%</td>
+                <td class="tg-v0mg">-51%</td>
+                <td class="tg-v0mg">-43%</td>
+                <td class="tg-v0mg">-31%</td>
+                <td class="tg-v0mg chart-right">-14%</td>
+                <td class="tg-v0mg">-3%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-v0mg">-47%</td>
+                <td class="tg-v0mg">-38%</td>
+                <td class="tg-v0mg">-32%</td>
+                <td class="tg-v0mg">-35%</td>
+                <td class="tg-v0mg chart-right">-48%</td>
+                <td class="tg-v0mg">-26%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-48%</td>
+                <td class="tg-v0mg">-45%</td>
+                <td class="tg-v0mg">-30%</td>
+                <td class="tg-v0mg">-16%</td>
+                <td class="tg-v0mg">-18%</td>
+                <td class="tg-v0mg chart-right">-43%</td>
+                <td class="tg-v0mg">-7%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-36%</td>
+                <td class="tg-v0mg">-50%</td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-v0mg">-17%</td>
+                <td class="tg-v0mg chart-right">-28%</td>
+                <td class="tg-v0mg">0%</td>
+              </tr>
+            </tbody>
+            </table>
+                        </div>
+                        <div class="col-md-6">
+                          <style type="text/css">
+            </style>
+            <table class="table">
+            <thead>
+              <tr>
+                <th class="tg-z4i2"></th>
+                <th class="tg-44qx"><span style="font-weight:bold">2 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">3 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">4 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">5 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">6 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">7 p.m.</span></th>
+                <th class="tg-44qx"><span style="font-weight:bold">8 p.m.</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-44qx">July</td>
+                <td class="tg-v0mg">-38%</td>
+                <td class="tg-v0mg">-53%</td>
+                <td class="tg-v0mg">-47%</td>
+                <td class="tg-v0mg">-33%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="chart-right">-30%</td>
+                <td class="tg-v0mg">-8%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-21%</td>
+                <td class="tg-v0mg">-43%</td>
+                <td class="tg-v0mg">-36%</td>
+                <td class="tg-v0mg">-20%</td>
+                <td class="tg-v0mg">-10%</td>
+                <td class="chart-right table-red">2%</td>
+                <td class="tg-v0mg">0%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-13%</td>
+                <td class="tg-v0mg">-18%</td>
+                <td class="tg-v0mg">-15%</td>
+                <td class="tg-v0mg">-11%</td>
+                <td class="tg-v0mg">-15%</td>
+                <td class="chart-right">-22%</td>
+                <td class="tg-v0mg">-23%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-16%</td>
+                <td class="tg-v0mg">-16%</td>
+                <td class="tg-v0mg">-38%</td>
+                <td class="tg-v0mg">-30%</td>
+                <td class="tg-v0mg">-30%</td>
+                <td class="chart-right">-16%</td>
+                <td class="tg-v0mg">-11%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">August</td>
+                <td class="tg-v0mg">-49%</td>
+                <td class="tg-v0mg">-52%</td>
+                <td class="tg-v0mg">-59%</td>
+                <td class="tg-v0mg">-45%</td>
+                <td class="tg-v0mg">-40%</td>
+                <td class="chart-right chart-bottom">-42%</td>
+                <td class="tg-v0mg">-24%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-38%</td>
+                <td class="tg-v0mg">-47%</td>
+                <td class="tg-v0mg">-43%</td>
+                <td class="tg-v0mg">-51%</td>
+                <td class="tg-v0mg chart-right">-39%</td>
+                <td class="tg-v0mg">-38%</td>
+                <td class="tg-v0mg">-13%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-v0mg">-43%</td>
+                <td class="tg-v0mg">-21%</td>
+                <td class="tg-v0mg">-38%</td>
+                <td class="chart-right">-33%</td>
+                <td class="tg-v0mg">-46%</td>
+                <td class="tg-v0mg">-24%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-5%</td>
+                <td class="tg-vw3w table-red">6%</td>
+                <td class="tg-vw3w table-red">39%</td>
+                <td class="tg-v0mg">-21%</td>
+                <td class="chart-right">-29%</td>
+                <td class="tg-v0mg">-45%</td>
+                <td class="tg-v0mg">-29%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-18%</td>
+                <td class="tg-v0mg">-3%</td>
+                <td class="tg-v0mg">-18%</td>
+                <td class="tg-v0mg">-28%</td>
+                <td class="chart-right">-28%</td>
+                <td class="tg-v0mg">-30%</td>
+                <td class="tg-v0mg">-26%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">September</td>
+                <td class="tg-v0mg">-14%</td>
+                <td class="tg-v0mg">-20%</td>
+                <td class="tg-v0mg ">-16%</td>
+                <td class="tg-v0mg">-13%</td>
+                <td class="tg-v0mg chart-right chart-bottom">-16%</td>
+                <td class="tg-v0mg">-17%</td>
+                <td class="tg-v0mg">-22%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-12%</td>
+                <td class="tg-v0mg">-14%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-v0mg chart-right">-22%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-v0mg">-9%</td>
+                <td class="tg-v0mg">-4%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-11%</td>
+                <td class="tg-v0mg">-22%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-v0mg chart-right">-18%</td>
+                <td class="tg-v0mg">-35%</td>
+                <td class="tg-v0mg">-28%</td>
+                <td class="tg-v0mg">-17%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-vw3w table-red">8%</td>
+                <td class="tg-vw3w table-red">7%</td>
+                <td class="tg-v0mg">-10%</td>
+                <td class="tg-v0mg chart-right">-28%</td>
+                <td class="tg-v0mg">-45%</td>
+                <td class="tg-v0mg">-39%</td>
+                <td class="tg-v0mg">-24%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">October</td>
+                <td class="tg-v0mg">-14%</td>
+                <td class="tg-v0mg">-15%</td>
+                <td class="tg-v0mg">-22%</td>
+                <td class="tg-v0mg chart-right">-31%</td>
+                <td class="tg-v0mg">-44%</td>
+                <td class="tg-v0mg">-43%</td>
+                <td class="tg-v0mg">-39%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-19%</td>
+                <td class="tg-vw3w table-red">2%</td>
+                <td class="tg-v0mg">0%</td>
+                <td class="tg-v0mg chart-right">-35%</td>
+                <td class="tg-v0mg">-50%</td>
+                <td class="tg-v0mg">-47%</td>
+                <td class="tg-v0mg">-41%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-22%</td>
+                <td class="tg-v0mg">-27%</td>
+                <td class="tg-v0mg">-11%</td>
+                <td class="tg-v0mg chart-right chart-bottom">-39%</td>
+                <td class="tg-v0mg">-42%</td>
+                <td class="tg-v0mg">-44%</td>
+                <td class="tg-v0mg">-28%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-vw3w table-red">2%</td>
+                <td class="tg-v0mg ">-8%</td>
+                <td class="tg-vw3w chart-right table-red">16%</td>
+                <td class="tg-v0mg">-13%</td>
+                <td class="tg-v0mg">-13%</td>
+                <td class="tg-v0mg">-26%</td>
+                <td class="tg-v0mg">-21%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-vw3w table-red">2%</td>
+                <td class="tg-v0mg">-12%</td>
+                <td class="tg-vw3w table-red chart-right">18%</td>
+                <td class="tg-v0mg">0%</td>
+                <td class="tg-vw3w table-red">3%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-v0mg">-16%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">November</td>
+                <td class="tg-v0mg">-34%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-vw3w chart-right table-red">1%</td>
+                <td class="tg-vw3w table-red">16%</td>
+                <td class="tg-vw3w table-red">13%</td>
+                <td class="tg-v0mg">-19%</td>
+                <td class="tg-v0mg">-32%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-56%</td>
+                <td class="tg-v0mg">-45%</td>
+                <td class="tg-v0mg chart-right" >-19%</td>
+                <td class="tg-vw3w table-red">1%</td>
+                <td class="tg-v0mg">-11%</td>
+                <td class="tg-v0mg">-37%</td>
+                <td class="tg-v0mg">-45%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-57%</td>
+                <td class="tg-v0mg">-52%</td>
+                <td class="tg-v0mg chart-right">-15%</td>
+                <td class="tg-vw3w table-red">9%</td>
+                <td class="tg-vw3w table-red">2%</td>
+                <td class="tg-v0mg">-29%</td>
+                <td class="tg-v0mg">-48%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-33%</td>
+                <td class="tg-v0mg">-28%</td>
+                <td class="tg-v0mg chart-right">-3%</td>
+                <td class="tg-v0mg">-5%</td>
+                <td class="tg-v0mg">-11%</td>
+                <td class="tg-v0mg">-28%</td>
+                <td class="tg-v0mg">-31%</td>
+              </tr>
+              <tr>
+                <td class="tg-44qx">December</td>
+                <td class="tg-v0mg">-4%</td>
+                <td class="tg-vw3w  table-red">2%</td>
+                <td class="tg-vw3w  chart-right table-red">7%</td>
+                <td class="tg-v0mg">0%</td>
+                <td class="tg-v0mg">-11%</td>
+                <td class="tg-v0mg">-21%</td>
+                <td class="tg-v0mg">-23%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-10%</td>
+                <td class="tg-vw3w table-red">4%</td>
+                <td class="tg-vw3w table-red chart-right">11%</td>
+                <td class="tg-v0mg">-8%</td>
+                <td class="tg-v0mg">-16%</td>
+                <td class="tg-v0mg">-22%</td>
+                <td class="tg-v0mg">-18%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-3%</td>
+                <td class="tg-v0mg">0%</td>
+                <td class="tg-v0mg chart-right">-1%</td>
+                <td class="tg-v0mg">-13%</td>
+                <td class="tg-v0mg">-23%</td>
+                <td class="tg-v0mg">-31%</td>
+                <td class="tg-v0mg">-31%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">-19%</td>
+                <td class="tg-v0mg">-16%</td>
+                <td class="tg-v0mg chart-right">-12%</td>
+                <td class="tg-v0mg">-38%</td>
+                <td class="tg-v0mg">-39%</td>
+                <td class="tg-v0mg">-52%</td>
+                <td class="tg-v0mg">-47%</td>
+              </tr>
+              <tr>
+                <td class="tg-z4i2"></td>
+                <td class="tg-v0mg">0%</td>
+                <td class="tg-v0mg">-10%</td>
+                <td class="tg-v0mg chart-right">-25%</td>
+                <td class="tg-v0mg">-50%</td>
+                <td class="tg-v0mg">-53%</td>
+                <td class="tg-v0mg">-67%</td>
+                <td class="tg-v0mg">-51%</td>
+              </tr>
+            </tbody>
+            </table>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-xs-10">
+                <p class="chart-source">Data source: <a href="https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data" target="_blank" class="source-url">NYC DOT</a></p>
+            </div>
+          </div>
+        </div>
+          <div class="container">
+
+            <!-- End full-width chart -->
+
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-5 pb-5">
+
+                <p>These advertising campaigns are premised on an idea antithetical to Vision Zero &mdash; that traffic crashes are exclusively the fault of a drivers&rsquo; decisions, not of unsafe road design &mdash; and at a high cost, directly sapping funding that could be used to make these roads safe. In 2016, the first year of the &ldquo;dusk to darkness&rdquo; campaign, it <a href="https://www.nytimes.com/2016/10/27/nyregion/new-york-commute-dusk-and-darkness-safety-campaign.html%20Plus%20speed%20billboards%204%20million">cost $1.5 million</a> in radio and television ads, signs on buses, and billboards. In 2022, the agency <a href="https://www.nytimes.com/2022/05/02/nyregion/nyc-speeding-traffic-deaths.html">spent $4 million</a> on an advertising campaign which told drivers to not exceed the speed limit. DOT <a href="https://www.nyc.gov/assets/ethnicmedia/downloads/pdf/MOECM_FY23_AnnualAdvertisingSpendReport.pdf">spent at least $5 million</a> on traffic safety advertising campaigns in Fiscal Year 2023. Taking just the cost of these three advertising campaigns together, this pool of more than $10.5 million could pay for the construction of <a href="https://www.wnyc.org/story/15-miles-bike-lanes/#:~:text=As%20far%20how%20much%20the,is%20reimbursable%20by%20Federal%20funds.">more than 17 miles</a> of protected bike lanes, or the installation of 8,873 LPIs. With limited funding, city officials must focus on solutions proven to be effective &mdash; and when every dollar spent on public education advertising is one unspent on street improvements, these campaigns actually undermine Vision Zero.&nbsp;</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+
+        <!-- lesson 5 -->
+        <div class="section-wrapper" id="adapt">
+          <div class="container">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-8 inner-heading">
+                  <div class="label">
+                    <h5 class="innter-label">Lesson 5</h5>
+                  </div>
+                  <h3>Adapt to Changing Conditions</h3>
+                </div>
+              </div>
+          </div>
+          <div class="container">
+            <div class="row d-flex justify-content-center">
+              <div class="col-sm-5">
+
+                <p>The initial success of Vision Zero programs can plateau or even recede when city officials fail to adapt to changing conditions and needs on city streets. Over time, traffic fatality rates have shifted based on factors as diverse as commuting trends, automobile design, even economics &mdash; but by targeting safety interventions to shifting conditions, city officials can save lives.</p>
+                <div class="wide-right">
+                  <img src="https://images.squarespace-cdn.com/content/v1/63e29e189cbb31405a731aac/1680017966894-DHKQUPDS16Q24AVD4BZW/Young+girl+pushes+young+boy+in+stroller+on+34th+avenue+in+Queens?format=2500w" width="100%" alt="Kids run around an Open Street in Queens, New York">
+                  <p class="photo-caption">In response to the COVID-19 pandemic, the City of New York closed some streets to car-traffic. These streets saw a reduction in crashes and injuries.</p>
+                </div>
+                <p>One example of targeting interventions to shifting conditions can be found in the Open Streets program, when, faced with the sudden risk of a viral pandemic, the City of New York closed some streets to car traffic to make space for safe outdoor recreation. While crashes increased across the city, Open Streets saw a reduction in <a href="https://transalt.org/open-streets-forever-nyc">crashes and injuries</a>.</p>
+
+                <p>Another example of adaptation was launched in just the past year, in response to a rise in cycling, cyclist fatalities, and crowding in bike lanes, the City constructed extra-wide bike lanes on Third and 10th Avenues in Manhattan. Where pedestrians often spilled into the street on crowded sidewalks in Midtown, the City widened sidewalks on Ninth and 10th Avenues. While helpful examples, these are only recent, remain piecemeal and are centralized in the wealthiest neighborhoods.</p>
+                <p>New York City has undergone massive, citywide changes in the Vision Zero era, but our overall approach to Vision Zero has not. Since 2014, New York City&rsquo;s population has grown by more than 200,000 people. The number of vehicle miles traveled (VMT) has risen 16%, to a record high. The number of cycling trips has nearly doubled. Between 2016 and 2020, the number of SUVs owned by New Yorkers increased by <a href="https://transalt.org/press-releases/new-data-shines-light-on-the-growing-dangers-and-growing-ownership-of-suvs-in-new-york-city">21%</a>.</p>
+
+              <!-- Chart -->
+            </div>
+          </div>
+          </div>
+          <div class="container chart-wrapper">
+            <div class="row d-flex justify-content-center">
+              <div class="col-xs-10">
+                <h4 class="chart-head">The number of vehicle miles traveled (VMT) has risen 16% since 2014, to a record high</h4>
+                <p class="chart-label">There are more cars on the road than ever before, many of which are larger and more powerful than older models.</p>
+                <div id="vmt" style="width: 100%; height:600px;"></div>
+                <p class="chart-source">Data source: <a href="https://climate.cityofnewyork.us/initiatives/nyc-greenhouse-gas-inventories/" target="_blank" class="source-url">NYC Mayor's Office of Climate and Environmental Justice</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+
+            <!-- End full-width chart -->
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-sm-5 pb-3">
+
+                  <p>Now, there are more cars on the road, many of which are larger and more powerful than ever before. At the same time, there are more cyclists on the road and more pedestrians in the crosswalks. Each of these changes directly increase the likelihood of deadly conflict. Few efforts have been made to mitigate each of these issues or their collective impact on more dangerous street conditions.&nbsp;</p>
+                  <p><strong>In the same time period that cycling trips doubled, protected bike lane installation only increased enough to address 1.72% of streets.</strong> As a result, 2023 was the second most deadly year in recorded history, and the number of cyclists killed or seriously injured in every 10,000 cycling trips rose between from 2019 and 2022.</p>
+
+                    <!-- Chart -->
+
+            </div>
+          </div>
+        </div>
+        <div class="container chart-wrapper">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <h4 class="chart-head">New Yorkers are biking in record numbers, but the infrastructure has not kept up</h4>
+                <p class="chart-label">Failure to respond to record ridership is indicative of a program that has been slow or unable to adapt to changing conditions.</p>
+                <div id="pbl" style="height:450px; width: 100%;"></div>
+                <p class="chart-source">Data source: <a href="https://www.nyc.gov/html/dot/html/bicyclists/cyclinginthecity.shtml" target="_blank" class="source-url">NYC DOT</a></p>
+            </div>
+            <div class="col-md-6">
+                <h4 class="chart-head">As cars get bigger, the number of children killed in crashes has increased</h4>
+                <p class="chart-label">Nearly 75% of children killed in the most recent five years of Vision Zero era were killed by large vehicles.</p>
+                <div id="child" style="height:450px; width: 100%;"></div>
+                <p class="chart-source">Data source: <a href="https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data" target="_blank" class="source-url">NYC DOT</a></p>
+            </div>
+          </div>
+        </div>
+          <div class="container">
+
+            <!-- End full-width chart -->
+
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-5 pt-3">
+                   <p>In addition, as new SUV registrations rose, so did the number of children killed by large vehicles such as SUVs &mdash; <strong>45% of children killed in the first five years of the Vision Zero era were killed by large vehicles whereas 74% of children killed in the latter five years of Vision Zero era were killed by large vehicles.</strong></p>
+                  <p>These trends &mdash; the growth of cycling, the popularity of larger personal vehicles, the rise in VMT &mdash; did not happen overnight. Failure to respond to these trends is indicative of a Vision Zero program that has been slow or unable to adapt to changing conditions.</p>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+          <!-- lesson 5 -->
+        <div class="section-wrapper-alt" id="conclusion">
+          <div class="container">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-8 inner-heading">
+                  <!-- <div class="label">
+                    <h5 class="innter-label">Conclusion</h5>
+                  </div> -->
+                  <h3>Conclusion</h3>
+                </div>
+              </div>
+          </div>
+          <div class="container">
+            <div class="row d-flex justify-content-center">
+              <div class="col-sm-5">
+                <p>In the past decade, New York City&rsquo;s Vision Zero program served as a model in traffic safety innovation, implementing street designs that have been replicated across the nation and inspiring some 45 cities and towns across the U.S. to adopt the program, too.&nbsp;</p>
+                <p>The City of New York can point to important successes: a 29% reduction in pedestrian fatalities between 2014 and 2023, while pedestrian fatalities were rising nationwide; a 16% reduction in overall traffic fatalities, comparing the decade preceding Vision Zero to the last 10 years; a massive rise in of bicycling &mdash; essential to Vision Zero because more people riding bikes means fewer dangerous cars on the road and <a href="https://ecf.com/resources/cycling-facts-and-figures/safety-numbers">safety in numbers</a> for those who ride.</p>
+                <p>While these are significant accomplishments, the on-the-ground realities across New York City also tell another story. Too many street design improvements remain piecemeal projects, often built in the aftermath of tragedy. As a result, Vision Zero has helped certain neighborhoods, racial and ethnic groups, and modes of transportation, while leaving others woefully behind. This inequity and piecemeal approach to safety remains one of the most significant shortfalls of New York City&rsquo;s Vision Zero program. Vision Zero works, when we invest it, and when we do so in every corner of our city.&nbsp;</p>
+                <p>There is no singular solution to keeping people safe on city streets. Protecting people from harm requires overlapping layers of safety interventions. Implementing these &mdash; systemically and citywide, not just where it may be politically easy &mdash; requires the ongoing resolve of elected leaders and city officials alike.&nbsp;</p>
+                <p>Moving forward, the City of New York and all Vision Zero communities must redouble their efforts, taking a layered and adaptive system wide approach to traffic safety that centers the most vulnerable.This includes expanding the successes, and learning from the shortcomings, outlined above: implementing safety interventions systemwide, making inexpensive changes universal, building self-enforcing streets, focusing on engineering not advertising, and adapting to changing conditions. Specifically, Transportation Alternatives and Families for Safe Streets recommend:</p>
+                <ul>
+                <li>Scale lifesaving interventions citywide, such as <a href="https://transalt.org/daylighting">daylighting</a>, raised crosswalks, lane narrowing, and signal retiming;&nbsp;</li>
+                <li>Pass legislation in Albany to let New York City set speed its own speed limits;</li>
+                <li>Expand automated safety technology to include, but not limited to, those that protect against: bike and bus lane blocking, red light running, alternate-side parking violations</li>
+                <li>Scale successful street redesign projects, such as the 34th Avenue Open Street and the 14th Street busway, across the city;&nbsp;</li>
+                <li>Redesign all major arterial streets to be &ldquo;self-enforcing&rdquo; &mdash; prioritizing the most dangerous locations and where &ldquo;use of force&rdquo; police stops most often occur &mdash; with narrow lanes to reduce speeding, and daylighting, curb extensions, and raised crosswalks at intersections;</li>
+                <li>Decriminalize jaywalking and install LPIs at the locations where the most people are summonsed for jaywalking;</li>
+                <li>Build protected bike lanes on the streets where the most people are summonsed for biking on the sidewalk;</li>
+                <li>Shift funding for educational advertising campaigns to fund safe infrastructure &mdash; including protected bike lanes, car-free busways, and other traffic calming measures;</li>
+                <li>Set a more aggressive citywide target for reducing vehicle miles traveled, with annual targets to achieve a mode shift from trips in cars towards safer and more sustainable modes of travel;</li>
+                <li>Fully implement the NYC Streets Plan, building and expanding protected bike lanes and bus-only lanes with a focus on equity, creating safe, efficient, and fully protected networks that connect neighborhoods and help shift trips out of cars;</li>
+                <li>Pass laws that discourage the ownership of the large, heavy vehicles, such as SUVs and pickup trucks, <a href="https://transalt.org/reports-list/the-deadly-and-costly-impact-of-supersized-vehicles-on-new-york">with vehicle weight fees</a>;</li>
+                <li>Pass laws to target the most reckless drivers, including mandating &ldquo;Intelligent Speed Assistance&rdquo; technology, which limits vehicles to the speed limit.</li>
+                </ul>
+                <p>The City of New York launched the first Vision Zero program in the U.S. in 2014, inspiring a cascade of followers across the country. A decade later, New York City continues to demonstrate areas of success, but also is facing significant challenges as traffic violence is changing faster than our systems and political will. By taking initiative today, learning lessons from our shortcomings, replicating our successes system wide, and adapting Vision Zero to meet the reality of New York City streets in 2024 and beyond, New York City can save lives, inspire more cities to follow suit, and reassume its role as the U.S. leader in traffic safety.</p>
+              </div>
+            </div>
+          </div>
+
+
+    </article>
+
+    <footer class="mt-3 border-top">
+  <div class="container-fluid pt-3">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-between">
+            <p class="small">&copy; Copyright 2024 Transportation Alternatives</p>
+            <p class="small"><a href="https://transalt.org/donate" target="_blank">Donate</a> | <a href="https://transalt.org" target="_blank">transalt.org</a>
+          </div>
+    </div>
+  </div>
+</footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="maps.js"></script>
 <script type="text/javascript">
-  var myChart = echarts.init(document.getElementById('main'));
+  var myChart5 = echarts.init(document.getElementById('allfatals'));
   window.addEventListener('resize', function() {
-    myChart.resize();
+    myChart5.resize();
+  });
+  var myChart6 = echarts.init(document.getElementById('LPI'));
+  window.addEventListener('resize', function() {
+    myChart6.resize();
   });
   var myChart2 = echarts.init(document.getElementById('policing'));
   window.addEventListener('resize', function() {
@@ -124,6 +1070,7 @@ This is not ready to review
   window.addEventListener('resize', function() {
     myChart4.resize();
   });
+  
 </script>
 <script type="text/javascript">
     mapboxgl.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjazI5YzQzdXAwOXFxM25vMXV4OGl5OGQzIn0.xYccv6RPj_aa6zkS5ShsDw';
@@ -131,27 +1078,72 @@ This is not ready to review
       container: 'speedmap', // container element id
       style: 'mapbox://styles/mapbox/dark-v11',
       center: [-74.0059, 40.7128], // initial map center in [lon, lat]
-      zoom: 10
+      zoom: 10,
+      cooperativeGestures: true
     });
 
     map.on('load', () => {
-  map.addSource('locations', { type: 'geojson', data: 'speed.geojson'})
-  map.addLayer({
-    id: 'locations',
-    source: 'locations',
-    type: 'circle',
-    paint: {
-      'circle-color': [
-       'case',
-       [">", ["get", "Difference, 22-21"], 0], "#fbb03b",
-       [">", ["get", "Difference, 22-21"], 1], "#30FF42",
-       "#ccc"
-],
-      'circle-opacity': 0.9,
-      'circle-stroke-width': .5,
-      'circle-stroke-color': '#FFF'
-    }
-  });
+      map.addSource('locations', { type: 'geojson', data: 'speed.geojson'})
+      map.addLayer({
+        id: 'locations',
+        source: 'locations',
+        
+        paint: {
+          'circle-opacity': 0.9,
+          'circle-radius': {
+          'base': 3,
+          'stops': [
+            [20, 3],
+            [22, 180]
+            ]
+          },
+          'circle-stroke-width': .2,
+          'circle-stroke-color': '#EAEAE9',
+          'circle-color': [
+            'match',
+            ['get', 'Color_code'],
+            'green',
+            '#A4DE08',
+            'pink',
+            '#AA324D',
+            'grey',
+            '#343434',
+            '#343434'
+            ]
+        },
+        type: 'circle'
+      });
+
+      // When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('click', 'locations', (e) => {
+// Copy coordinates array.
+const coordinates = e.features[0].geometry.coordinates.slice();
+const description = e.features[0].properties.Mode;
+const address = e.features[0].properties.CrossStreets;
+ 
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+}
+ 
+new mapboxgl.Popup()
+.setLngLat(coordinates)
+.setHTML('<h1 class="popuph1 border-bottom pb-2">' + e.features[0].properties.Full_Intersection + '</h1><p class="popDate"><span style="font-weight:">Borough:</span> ' + e.features[0].properties.Violation_County + '</p><p class="popDate"><span style="font-weight:">Change:</span> ' + e.features[0].properties.Drop + '</p>')
+.addTo(map);
+});
+ 
+// Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'places', () => {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'places', () => {
+map.getCanvas().style.cursor = '';
+});
   });
 </script>
   </body>
