@@ -1,20 +1,50 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjbHJ2Nm9paWkwcGR4MmlzY3ZycGI5NzQ0In0.N-_SdysbafvA0dstl_pBbA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjazI5YzQzdXAwOXFxM25vMXV4OGl5OGQzIn0.xYccv6RPj_aa6zkS5ShsDw';
 
-const map = new mapboxgl.Map({
+var map = new mapboxgl.Map({
   container: 'map', // container element id
   style: 'mapbox://styles/mapbox/dark-v11',
   center: [-74.0059, 40.7128], // initial map center in [lon, lat]
   zoom: 11
 });
 
+var sliderOptions = {
+        elm: 'slider-control',
+        layer: 'collisions',
+        source: 'collisions',
+        input: false,
+        controlWidth: '300px',
+        minProperty: 'Date',
+        maxProperty: 'Date',
+        sliderMin: '2014-01-01T08:00:00.000Z',
+        sliderMax: '2023-12-31T08:00:00.000Z',
+        filterMin: '2014-01-01T08:00:00.000Z',
+        filterMax: '2023-12-31',
+        propertyType: 'iso8601',
+        rangeDescriptionFormat: 'shortDate',
+        descriptionPrefix: 'Date:'
+    }
+
+    map.addControl(new RangeSlider(sliderOptions, 'bottom-right'));
+
 map.on('load', () => {
+
+  map.addSource('collisions', {
+    // type: 'vector',
+    // url: 'mapbox://jacobdecastro.3fuj0i2t'
+    type: 'geojson',
+    data: 'fatalities.geojson'
+  });
+
+  map.addSource('vz_priority', {
+    type: 'vector',
+    url: 'mapbox://jacobdecastro.dasg8mtl'
+  });
+
   map.addLayer({
     id: 'collisions',
     type: 'circle',
-    source: {
-      type: 'geojson',
-      data: 'fatalities.geojson' // replace this with the url of your own geojson
-    },
+    source: 'collisions',
+    // 'source-layer': 'fatalities-20ch32',
     paint: {
       'circle-color': [
         'match',
@@ -36,6 +66,7 @@ map.on('load', () => {
         'base': 1.75,
         'stops': [
           [12, 3],
+          [16, 6],
           [22, 180]
         ]
       },
@@ -43,28 +74,98 @@ map.on('load', () => {
         'circle-stroke-width': .25
     }
   });
+
+  map.addLayer({
+    'id': 'Vision Zero Priority Corridors',
+    'type': 'line',
+    'source': 'vz_priority',
+    'source-layer': 'VZV_Priority_Corridors-2enp65',
+    'layout': {
+        visibility: 'visible', // show initially
+    },
+    'paint': {
+        'line-color': '#f15d22',
+        'line-opacity': .5,
+        'line-width': 1
+    }
+  });
 });
 
+map.on('idle', () => {
+// If these two layers were not added to the map, abort
+if (!map.getLayer('Vision Zero Priority Corridors')) {
+return;
+}
+ 
+// Enumerate ids of the layers.
+const toggleableLayerIds = ['Vision Zero Priority Corridors'];
+ 
+// Set up the corresponding toggle button for each layer.
+for (const id of toggleableLayerIds) {
+// Skip layers that already have a button set up.
+if (document.getElementById(id)) {
+continue;
+}
+ 
+// Create a link.
+const link = document.createElement('a');
+link.id = id;
+link.href = '#';
+link.textContent = id;
+link.className = 'active';
+ 
+// Show or hide layer when the toggle is clicked.
+link.onclick = function (e) {
+const clickedLayer = this.textContent;
+e.preventDefault();
+e.stopPropagation();
+ 
+const visibility = map.getLayoutProperty(
+clickedLayer,
+'visibility'
+);
+ 
+// Toggle layer visibility by changing the layout object's visibility property.
+if (visibility === 'visible') {
+map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+this.className = '';
+} else {
+this.className = 'active';
+map.setLayoutProperty(
+clickedLayer,
+'visibility',
+'visible'
+);
+}
+};
+ 
+const layers = document.getElementById('menu');
+layers.appendChild(link);
+}
+});
+
+
 document.getElementById('filterMode').addEventListener('change', (event) => {
-  const day = event.target.value;
+  const mode = event.target.value;
   // update the map filter
-  if (day === 'all') {
+  if (mode === 'all') {
     filterDay = ['!=', ['string', ['get', 'Mode']], 'placeholder'];
-  } else if (day === 'pedestrian') {
+  } else if (mode === 'pedestrian') {
     filterDay = ['match', ['get', 'Mode'], ['Pedestrian'], true, false];
-  } else if (day === 'cyclist') {
+  } else if (mode === 'cyclist') {
     filterDay = ['match', ['get', 'Mode'], ['Cyclist'], true, false];
-  } else if (day === 'motorcyclist') {
+  } else if (mode === 'motorcyclist') {
     filterDay = ['match', ['get', 'Mode'], ['Motorcyclist'], true, false];
-  } else if (day === 'motorist') {
+  } else if (mode === 'motorist') {
     filterDay = ['match', ['get', 'Mode'], ['Motorist'], true, false];
-  } else if (day === 'other') {
+  } else if (mode === 'other') {
     filterDay = ['match', ['get', 'Mode'], ['Other Motorist'], true, false];
   } else {
     console.log('error');
   }
   map.setFilter('collisions', ['all', filterDay]);
 });
+
 
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.

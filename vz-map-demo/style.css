@@ -4,8 +4,13 @@ body {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.modal-body {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 #map {
   position: absolute;
+  z-index: -1;
   top: 0;
   bottom: 0;
   width: 100%;
@@ -17,14 +22,48 @@ h1 {
 }
 
 h2 {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 20px;
   margin-bottom: 10px;
 }
 
 a {
-  text-decoration: none;
-  color: #2dc4b2;
+  text-decoration: underline;
+  color: black;
+}
+
+.noUi-connect {
+  background: red;
+}
+
+#menu a {
+font-size: 13px;
+color: #404040;
+display: block;
+margin: 0;
+padding: 0;
+padding: 10px;
+text-decoration: none;
+border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+text-align: center;
+}
+ 
+#menu a:last-child {
+border: none;
+}
+ 
+#menu a:hover {
+background-color: #f8f8f8;
+color: #404040;
+}
+ 
+#menu a.active {
+background-color: #292828;
+color: #ffffff;
+}
+ 
+#menu a.active:hover {
+background: #3074a4;
 }
 
 #console {
@@ -33,7 +72,24 @@ a {
   width: 240px;
   margin: 10px;
   padding: 15px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.slider-control-container {
+        padding: 5px;
+        font: 12px/20px 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-weight: 400;
+        color: Black;
+        padding-right: 2%;
+    }
+
+.slider-control-range-display {
+  font: 12px/20px 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
 }
 
 .mapboxgl-popup {
