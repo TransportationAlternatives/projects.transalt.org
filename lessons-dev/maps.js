@@ -358,7 +358,7 @@ option = {
                 normal: {
                   show: true,
                   position: 'insideStart',
-                  formatter: 'Pre-Vision Zero average, 287 fatalities',
+                  formatter: 'Pre-Vision Zero 10-year average, 287 fatalities',
                   offset: [-5, -10],
                   fontFamily: '"Inter",sans-serif',
                   fontSize: 14
@@ -449,9 +449,9 @@ option = {
     }
   },
   grid: {
-    left: '%',
-    right: '1%',
-    bottom: '0%',
+    left: '6%',
+    right: '6%',
+    bottom: '2%',
     containLabel: true,
 
   },
@@ -471,6 +471,9 @@ option = {
         fontFamily: '"Inter", sans-serif',
       },
     containLabel: true,
+    name: 'Fatalities per 100,000',
+    nameLocation: 'middle',
+        nameGap: 30,
   },
   series: [
     {
@@ -546,6 +549,7 @@ option = {
         fontSize: 14,
         fontFamily: '"Inter", sans-serif'
       }
+
   },
   yAxis: {
     type: 'value',
@@ -553,11 +557,12 @@ option = {
     axisLabel: {
         fontSize: 14,
         fontFamily: '"Inter", sans-serif'
-      }
+      },
+      name: 'Miles'
   },
     grid: {
     left: '2%',
-    right: '2%',
+    right: '5%',
     bottom: '2%',
     containLabel: true
   },
@@ -579,7 +584,7 @@ option = {
         data: [
           [
             {
-              name: '2023 estimate',
+              name: 'Estimate',
               xAxis: '2022'
             },
             {
