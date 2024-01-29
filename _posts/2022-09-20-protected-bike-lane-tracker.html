@@ -86,8 +86,8 @@ permalink: /bikelanes
 
 
             <p style="color: gray">Last updated <span id="date"></span></p>
-            <p class="pb-3 mt-2">The <a href="#smp">NYC Streets Plan</a> requires the City of New York to install at least 50 miles of <a data-bs-toggle="modal" href="#pbl-define">protected bike lanes</a> in 2023 and 250 miles in the five years from 2022 to 2026. The administration installed 20 of out of 30 required miles in 2022. <strong>Transportation Alternatives is tracking the Adams administration’s progress.</strong></p>
-            <h3 style="line-height: 1.65em;"><span style="font-weight: 600; background-color: #0B9D58; color: white; padding: 8px;"><span style="color: white;" id="2023-num"></span> out of 50 required miles</span> have been installed in 2023.</h3>
+            <p class="pb-3 mt-2">The <a href="#smp">NYC Streets Plan</a> requires the City of New York to install at least 50 miles of <a data-bs-toggle="modal" href="#pbl-define">protected bike lanes</a> in each year from 2023 to 2026 and a total of 250 miles in the five years from 2022 to 2026. <strong>Transportation Alternatives is tracking the Adams administration’s progress.</strong></p>
+            <h3 style="line-height: 1.65em;"><span style="font-weight: 600; background-color: #0B9D58; color: white; padding: 8px;"><span style="color: white;" id="2024-num"></span> out of 50 required miles</span> have been installed in 2024.</h3>
             <h4 style="line-height: 1.65em; font-size: 18px;" class="pb-2"><span style="color: #;" id="totalnum"></span> out of 250 required miles</span> by 2026 have been installed.</h4>
           </div>
         </div>
@@ -140,13 +140,8 @@ permalink: /bikelanes
           <div class="col-md-6">
             <h3 style="font-weight: 600" class="pt-5" id="smp">About the NYC Streets Plan</h3>
             <p>The <a href="https://www1.nyc.gov/html/dot/html/about/nyc-streets-plan.shtml" target="_blank">NYC Streets Plan</a> will transform how we get around our city. In 2019, historic legislation to implement the NYC Streets Plan became law. In 2022, Mayor Adams and the New York City Council agreed to a <a href="https://www.ny1.com/nyc/all-boroughs/transit/2022/04/24/mayor-adams-pledges--904-million-in-traffic-safety-investments" target="_blank">transformational $904 million investment</a> into making the NYC Streets Plan a reality. These investments in our streets will help us reach <em><a href="https://nyc25x25.org" target="_blank">NYC 25x25</a></em>.</p>
-            <p>This legally mandated plan includes annual benchmarks it must meet through 2026:</p>
-              <div class="wide-right-text wide-right">
-                <p style="margin-bottom: 5px; font-size: 18px;"><b>What about bus lanes?</b></p>
-                <p>The NYC Streets Plan also requires at least 30 miles of bus lanes installed by the end of 2023. Our friends at Riders Alliance are tracking the administration’s progress toward that goal.</p>
-                <a class="btn btn-primary" href="https://www.ridersalliance.org/bus-lane-tracker" role="button" target="_blank">Bus lane tracker</a>
-
-            </div>
+            <p>This legally-mandated plan includes annual benchmarks it must meet from 2022 through 2026:</p>
+              
             <ul>
 
             <li>250 miles of protected bike lanes (at least 30 miles in 2022 and at least 50 miles in following years)</li>
@@ -175,13 +170,17 @@ permalink: /bikelanes
               <a class="btn btn-outline-light" href="https://ctt.ac/7w3FJ" role="button" target="_blank" style="color: white">Send a tweet</a>
             </div>
             <h3 style="font-weight:600" class="pt-5" id="about">About the data</h3>
-            <p>Because there is no open data set or city-hosted tracker that clearly lists bike lane project status citywide, this map has been compiled based on DOT presentations to community boards, social media posts, and on-the-ground reports.</p>
+            <p>Because there is no open data set or city-hosted tracker that clearly lists bike lane project status citywide, this map has been compiled based on agency presentations to community boards, social media posts, and on-the-ground reports.</p>
 
             <p><strong>Help us keep this tracker up-to-date.</strong> Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7c3JcPTzaeecgNovqfHqZfxLrcfrdHCPVE2XLTpTD2s8r8A/viewform" target="_blank">this form to share an update</a> on a protected bike lane project you see under construction or completed, and we'll update our maps.</p>
 
             <p><strong>When are projects marked as completed?</strong> Projects are marked as completed once DOT finishes construction in line with what was originally presented online, on social media, or to community boards.</p>
 
             <p><strong>When are projects marked as under construction?</strong> Projects are moved from <em>announced</em> to <em>under construction</em> when DOT begins work on the project.</p>
+
+            <p><strong>When are projects added to the tracker?</strong> Projects are added to the tracker and marked as announced once there is a public presentation showing a protected bike lane and the project extents and the project is expected to be installed by the end of 2026 (the end of the current NYC Streets Plan). Projects are removed from the tracker if the expected completion date slips past the end of 2026.</p>
+            <p><strong>Are projects built by New York State included in the tracker?</strong> Yes. All protected bike lane projects within NYC borders are included in the tracker, including those built by NYSDOT, the MTA, or other state agencies. New York City can exercise significant influence over state projects within the city. For example, NYCDOT must sign off on all NYSDOT project designs, and the Mayor appoints four members to the MTA board. The breakdown of projects between city operational, city capital, and state is available in the <a href="https://docs.google.com/spreadsheets/d/1j13O-dG7tveVrrRrsGMVB3aLnkiM2ZeMOljmrdewU00/edit?usp=sharing" target="_blank">full dataset</a>.</p> 
+
 
             <hr>
             <p>Created by <a href="https://twitter.com/BrandonWC" target="_blank">Brandon Chamberlin</a> and <a href="https://transalt.org" target="_blank">Transportation Alternatives</a> | <a href="https://docs.google.com/spreadsheets/d/1j13O-dG7tveVrrRrsGMVB3aLnkiM2ZeMOljmrdewU00/edit?usp=sharing" target="_blank">Get the data</a></p>
@@ -352,7 +351,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_t
 </script>
 <script type="text/javascript">
         window.onload = function loadData2() {
-          var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTDp5GkbDbotiX9y0F0l6fuNJu0FyEZdGCcsQSiRU3KRh74DAGG-Sr8MERXR1UNXXiNl5GUa_humkI/pub?gid=621464063&range=H20&single=true&output=csv";
+          var url = "https://docs.google.com/spreadsheets/u/2/d/e/2PACX-1vRTDp5GkbDbotiX9y0F0l6fuNJu0FyEZdGCcsQSiRU3KRh74DAGG-Sr8MERXR1UNXXiNl5GUa_humkI/pub?gid=1473837722&range=N2&single=true&output=csv";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
               if (xmlhttp.readyState == 4) {
@@ -369,35 +368,35 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_t
 
 <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
 <script type="text/javascript">
-  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1j13O-dG7tveVrrRrsGMVB3aLnkiM2ZeMOljmrdewU00/edit#gid=0';
+  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1j13O-dG7tveVrrRrsGMVB3aLnkiM2ZeMOljmrdewU00/edit#gid=1473837722';
 
 $('#top-stats').sheetrock({
   url: mySpreadsheet,
-  query: "select L,M",
-  fetchSize: 4
+  query: "select A,B,C",
+  fetchSize: 7
 });
 
 $('#in-progress').sheetrock({
   url: mySpreadsheet,
-  query: "select O",
+  query: "select H",
   fetchSize: 1
 });
 
 $('#announced').sheetrock({
   url: mySpreadsheet,
-  query: "select P",
+  query: "select I",
   fetchSize: 1
 });
 
 $('#date').sheetrock({
   url: mySpreadsheet,
-  query: "select R",
+  query: "select K",
   fetchSize: 1
 });
 
-$('#2023-num').sheetrock({
+$('#2024-num').sheetrock({
   url: mySpreadsheet,
-  query: "select S",
+  query: "select M",
   fetchSize: 1
 });
 
