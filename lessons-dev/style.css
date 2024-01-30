@@ -16,7 +16,9 @@ article {
 	padding-bottom: 3%;
 }
 
-
+body {
+	overflow-x: hidden;
+}
 
 .subhead {
 	text-align: ;
@@ -39,6 +41,9 @@ article li {
 	line-height: 28px;
 }
 
+td th {
+	font-family: 'Inter', serif !important;
+}
 
 .caption {
 	text-align: left;
@@ -71,6 +76,17 @@ background: rgba(241, 93, 34, 0.5);
 	background-size: 2px 2px;;
 height: 99.25%;}
 
+#headContain {
+	width:100%;
+	max-width:;
+	height: 80vh;
+	position: relative;
+	background-image: linear-gradient(0deg, rgba(241,93,34,1) 0%, rgba(241,93,34,0.45704219187675066) 100%), url(https://images.squarespace-cdn.com/content/63e29e189cbb31405a731aac/c51d8826-2124-425d-a1a7-feb6a6a9228b/ezgif.com-optimize+%284%29.gif?content-type=image%2Fgif);
+	background-size: cover;
+
+} /* This has been changed */
+
+
 /*
 
 
@@ -81,6 +97,13 @@ height: 99.25%;}
 	background-position: bottom;
 } */
 
+.border-month {
+	border-right: 1.25px solid #DEE2E6;
+}
+
+.table-time {
+	white-space: nowrap;
+}
 
 .top {
 }
@@ -194,12 +217,12 @@ footer a {
 
 /* chart styles */
 
-.chart-right {
-	border-right: 4px solid #f15d22 !important;
+.chart-top {
+	border-top: 3px solid #f15d22 !important;
 }
 
-.chart-bottom {
-	border-bottom: 4px solid #f15d22 !important;
+.chart-right {
+	border-right: 3px solid #f15d22 !important;
 }
 
 .table-red {
@@ -208,8 +231,24 @@ footer a {
 	font-weight: 700 !important;
 }
 
-.month-top {
-	border-top: 1.5px solid #5F5F5F;
+.month-right {
+	border-right: 1.5px dotted #DEE2E6;
+}
+
+.camp-right {
+	border-right: 3px solid black;
+}
+
+.camp-left {
+	border-left: 3px solid black;
+}
+
+.camp-top {
+	border-top: 3px solid black;
+}
+
+.camp-bottom {
+	border-bottom: 3px solid black !important;
 }
 
 .photo-caption {

@@ -24,8 +24,8 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#" style=""><img src="ta-icon.svg" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
       Transportation Alternatives</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="padding: 12px;">
-      Menu
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="padding: ;">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
@@ -62,7 +62,8 @@
     </div>
   </div>
 </nav>
-<div id="videoDiv2"> 
+
+<!-- <div id="videoDiv2"> 
   <video id="video2" preload="" autoplay="" muted="" playsinline="" loop="">
     <source src="video.mp4" type="video/mp4">
   </video> 
@@ -72,7 +73,21 @@
                 <h2 class="subhead">A Look at the Successes and Shortcomings of America’s First Vision Zero Program</h2>
       </div>
     </div>
+</div> -->
+
+<header>
+  <div id="headContain"> 
+    <div id="headText" class="styling">
+      <div class="container headText" style="padding-bottom: 2%; position: absolute;
+  bottom: 8px;
+  left: 16px; color: white;">
+          <h1>Five Lessons for the 10-Year Anniversary of Vision Zero in New York City</h1>
+          <h2 class="subhead">A Look at the Successes and Shortcomings of America’s First Vision Zero Program</h2>
+      </div>
+    </div>
 </div>
+</header>
+
     <article>
       <div class="container top">
           
@@ -90,10 +105,10 @@
         <div class="container chart-wrapper">
           <div class="row d-flex justify-content-center">
             <div class="col-xs-10">
-              <h4 class="chart-head">TTraffic fatalities decreased in the early years of Vision Zero, then rose</h4>
+              <h4 class="chart-head">Traffic fatalities decreased in the early years of Vision Zero, then rose</h4>
                 <p class="chart-label">New York City's leaders failed to scale successes and meet the needs of a changing city, resulting in a rise in fatalities over recent years.</p>
               <div id="allfatals" style="height:50vh;"></div>
-              <p class="chart-other">*According to DOT: From 2021, the "Other Motorist" category includes victims riding standing e-scooters and moped-style devices. The victims were previously categorized as pedestrians, bicycles, or motorcycles, depending on specific type. | Data source: <a href="#" target="_blank">NYC DOT</a></p>
+              <p class="chart-other">*According to NYC DOT: From 2021, the "Other Motorist" category includes victims riding standing e-scooters and moped-style devices. The victims were previously categorized as pedestrians, bicycles, or motorcycles, depending on specific type. | Data source: <a href="#" target="_blank">NYC DOT</a></p>
             </div>
           </div>
         </div>
@@ -142,7 +157,7 @@
             <div class="col-xs-10">
               <h4 class="chart-head">Speeding declined at 92% of speed safety camera locations</h4>
                 <p class="chart-label">Citations issued at camera locations in <span style="background-color: #a4de06; padding:6px;border-radius: 5px;">green</span> dropped and in <span style="background-color: #AA324D; padding:6px;border-radius: 5px; color: white;">red</span> rose between fiscal years 2022 and 2021. <span style="background-color: #343434; color: white; padding:6px;border-radius: 5px;">Gray</span> locations did not have enough data.</p>
-              <div id="speedmap" style="height:60vh; width: 100%;"></div>
+              <div id="speedmap" style="height:80vh; width: 100%;"></div>
               <p class="chart-source" style="text-align:left; padding-top: 8px;">Data source: <a href="https://data.cityofnewyork.us/City-Government/Parking-Violations-Issued-Fiscal-Year-2022/7mxj-7a6y" target="_blank" class="source-url">NYC Department of Finance</a></p>
             </div>
           </div>
@@ -176,7 +191,7 @@
                   </div>
                   <h3>Make Inexpensive Changes Universal</h3>
                   <div class="section-image">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Portland_Crossing.gif/1200px-Portland_Crossing.gif" class="section-img" width="100%">
+                  <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/X4OGmGH33UQ?modestbranding=1' frameborder='0' allowfullscreen></iframe></div>
                   <p class="caption">A leading pedestrian interval gives pedestrians and bikers a head start on traffic lights, increasing their visibility to turning traffic.</p>
                 </div>
                 </div>
@@ -227,10 +242,10 @@
                   <h5 class="innter-label">Lesson 3</h5>
                 </div>
                 <h3>Build Self-Enforcing Streets</h3>
-                <div class="section-image">
+                <!-- <div class="section-image">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Portland_Crossing.gif/1200px-Portland_Crossing.gif" class="section-img" width="100%">
                   <p class="caption">A leading pedestrian interval gives pedestrians and bikers a head start on traffic lights, increasing their visibility to turning traffic.</p>
-                </div>
+                </div> -->
               </div>
             </div>
         </div>
@@ -324,585 +339,450 @@
             </div>
           </div>
         </div>
+      </div>
         <div class="container chart-wrapper">
           <div class="row d-flex justify-content-center">
-            <div class="col-xs-10">
-                <h4 class="chart-head">TPedestrian danger rose despite &ldquo;Dusk to Darkness&rdquo; campaign</h4>
-                <p class="chart-label">See the average change in pedestrians killed and injured each evening in the three years following the education campaign's launch, compared to 2010-2014. Each square is a week, and the | represents the average sunset time.</p>
+            <div class="col-md-12">
+                <h4 class="chart-head">Pedestrian danger rose despite &ldquo;Dusk to Darkness&rdquo; campaign</h4>
+                <p class="chart-label">See the average change in pedestrians killed and injured each evening in the three years following the education campaign's launch, compared to 2010-2014. The <span style="border: 2px solid black; padding: 3px;">box</span> represents the campaign duration. Each square is a week, and the <span style="font-weight:700;color: #f15d22">&mdash;</span> represents the average sunset time.</p>
             </div>
           </div>
 
           <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
-            <table class="table table-sm">
-            <thead>
-              <tr>
-                <th class="tg-z4i2"></th>
-                <th class="tg-44qx"><span style="font-weight:bold">2 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">3 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">4 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">5 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">6 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">7 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">8 p.m.</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="tg-44qx month-top"><strong>January</strong></td>
-                <td class="tg-v0mg month-top">-42%</td>
-                <td class="tg-v0mg month-top">-48%</td>
-                <td class="tg-v0mg month-top chart-right">-27%</td>
-                <td class="tg-v0mg month-top ">-25%</td>
-                <td class="tg-v0mg month-top">-17%</td>
-                <td class="tg-v0mg month-top">-20%</td>
-                <td class="tg-v0mg month-top">-24%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-42%</td>
-                <td class="tg-v0mg">-54%</td>
-                <td class="tg-v0mg chart-right">-25%</td>
-                <td class="tg-v0mg">-15%</td>
-                <td class="tg-v0mg">-1%</td>
-                <td class="tg-v0mg">-9%</td>
-                <td class="tg-v0mg">-3%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-50%</td>
-                <td class="tg-v0mg">-57%</td>
-                <td class="tg-v0mg chart-right">-52%</td>
-                <td class="tg-v0mg chart-bottom">-45%</td>
-                <td class="tg-v0mg">-41%</td>
-                <td class="tg-v0mg">-35%</td>
-                <td class="tg-v0mg">-34%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-52%</td>
-                <td class="tg-v0mg">-57%</td>
-                <td class="tg-v0mg">-60%</td>
-                <td class="tg-v0mg chart-right">-51%</td>
-                <td class="tg-v0mg">-47%</td>
-                <td class="tg-v0mg">-41%</td>
-                <td class="tg-v0mg">-38%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>February</strong></td>
-                <td class="tg-v0mg month-top">-45%</td>
-                <td class="tg-v0mg month-top">-32%</td>
-                <td class="tg-v0mg month-top">-44%</td>
-                <td class="tg-v0mg month-top chart-right">-38%</td>
-                <td class="tg-v0mg month-top">-42%</td>
-                <td class="tg-v0mg month-top">-32%</td>
-                <td class="tg-v0mg month-top">-33%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-44%</td>
-                <td class="tg-v0mg">-17%</td>
-                <td class="tg-v0mg">-18%</td>
-                <td class="tg-v0mg chart-right">-18%</td>
-                <td class="tg-v0mg">-31%</td>
-                <td class="tg-v0mg">-17%</td>
-                <td class="tg-v0mg">-17%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-24%</td>
-                <td class="tg-v0mg">-11%</td>
-                <td class="tg-v0mg">-5%</td>
-                <td class="tg-v0mg chart-right">-7%</td>
-                <td class="tg-v0mg chart-bottom">-18%</td>
-                <td class="tg-v0mg">-19%</td>
-                <td class="tg-v0mg">-31%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-20%</td>
-                <td class="tg-v0mg">-33%</td>
-                <td class="tg-v0mg ">-37%</td>
-                <td class="tg-v0mg">-35%</td>
-                <td class="tg-v0mg chart-right">-37%</td>
-                <td class="tg-v0mg">-34%</td>
-                <td class="tg-v0mg">-44%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>March</strong></td>
-                <td class="tg-v0mg month-top">-20%</td>
-                <td class="tg-v0mg month-top">-24%</td>
-                <td class="tg-v0mg month-top">-44%</td>
-                <td class="tg-v0mg month-top">-30%</td>
-                <td class="tg-v0mg month-top chart-right">-40%</td>
-                <td class="tg-v0mg month-top">-41%</td>
-                <td class="tg-v0mg month-top">-58%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-37%</td>
-                <td class="tg-v0mg">-24%</td>
-                <td class="tg-v0mg">-44%</td>
-                <td class="tg-v0mg">-24%</td>
-                <td class="tg-v0mg chart-right">-52%</td>
-                <td class="tg-v0mg">-52%</td>
-                <td class="tg-v0mg">-61%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-46%</td>
-                <td class="tg-v0mg">-23%</td>
-                <td class="tg-v0mg">-42%</td>
-                <td class="tg-vw3w table-red">2%</td>
-                <td class="tg-v0mg chart-right">-42%</td>
-                <td class="tg-v0mg">-51%</td>
-                <td class="tg-v0mg">-67%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-30%</td>
-                <td class="tg-v0mg">-31%</td>
-                <td class="tg-v0mg">-41%</td>
-                <td class="tg-v0mg">-18%</td>
-                <td class="tg-v0mg chart-right">-44%</td>
-                <td class="tg-v0mg">-58%</td>
-                <td class="tg-v0mg">-64%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>April</strong></td>
-                <td class="tg-v0mg month-top">-5%</td>
-                <td class="tg-v0mg month-top">-30%</td>
-                <td class="tg-v0mg month-top">-22%</td>
-                <td class="tg-v0mg month-top">-31%</td>
-                <td class="tg-v0mg month-top chart-right">-31%</td>
-                <td class="tg-v0mg month-top">-50%</td>
-                <td class="tg-v0mg month-top">-56%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-5%</td>
-                <td class="tg-v0mg">-27%</td>
-                <td class="tg-v0mg">-21%</td>
-                <td class="tg-v0mg">-43%</td>
-                <td class="tg-v0mg chart-right">-39%</td>
-                <td class="tg-v0mg">-19%</td>
-                <td class="tg-v0mg">-17%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-26%</td>
-                <td class="tg-v0mg">-33%</td>
-                <td class="tg-v0mg">-40%</td>
-                <td class="tg-v0mg">-59%</td>
-                <td class="tg-v0mg chart-right">-55%</td>
-                <td class="tg-v0mg">-24%</td>
-                <td class="tg-v0mg">-10%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-54%</td>
-                <td class="tg-v0mg">-48%</td>
-                <td class="tg-v0mg">-61%</td>
-                <td class="tg-v0mg">-68%</td>
-                <td class="tg-v0mg chart-right">-70%</td>
-                <td class="tg-v0mg">-21%</td>
-                <td class="tg-v0mg">-10%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>May</strong></td>
-                <td class="tg-v0mg month-top">-43%</td>
-                <td class="tg-v0mg month-top">-42%</td>
-                <td class="tg-v0mg month-top">-65%</td>
-                <td class="tg-v0mg month-top">-65%</td>
-                <td class="tg-v0mg month-top chart-right">-73%</td>
-                <td class="tg-v0mg month-top ">-44%</td>
-                <td class="tg-v0mg month-top">-34%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-55%</td>
-                <td class="tg-v0mg">-56%</td>
-                <td class="tg-v0mg">-63%</td>
-                <td class="tg-v0mg">-57%</td>
-                <td class="tg-v0mg chart-right">-68%</td>
-                <td class="tg-v0mg">-53%</td>
-                <td class="tg-v0mg">-47%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-39%</td>
-                <td class="tg-v0mg">-46%</td>
-                <td class="tg-v0mg">-51%</td>
-                <td class="tg-v0mg">-45%</td>
-                <td class="tg-v0mg chart-right">-55%</td>
-                <td class="tg-v0mg chart-bottom">-51%</td>
-                <td class="tg-v0mg">-50%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-36%</td>
-                <td class="tg-v0mg">-35%</td>
-                <td class="tg-v0mg">-29%</td>
-                <td class="tg-v0mg">-19%</td>
-                <td class="tg-v0mg">-40%</td>
-                <td class="tg-v0mg chart-right">-52%</td>
-                <td class="tg-v0mg">-63%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-16%</td>
-                <td class="tg-v0mg">-23%</td>
-                <td class="tg-v0mg">-28%</td>
-                <td class="tg-v0mg ">-13%</td>
-                <td class="tg-v0mg">-8%</td>
-                <td class="tg-vw3w table-red chart-right">2%</span></td>
-                <td class="tg-v0mg">-33%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>June</strong></td>
-                <td class="tg-v0mg month-top">-13%</td>
-                <td class="tg-v0mg month-top">-26%</td>
-                <td class="tg-v0mg month-top">-34%</td>
-                <td class="tg-v0mg month-top">-33%</td>
-                <td class="tg-v0mg month-top">-28%</td>
-                <td class="tg-v0mg month-top chart-right">-14%</td>
-                <td class="tg-v0mg month-top">-33%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-47%</td>
-                <td class="tg-v0mg">-51%</td>
-                <td class="tg-v0mg">-51%</td>
-                <td class="tg-v0mg">-43%</td>
-                <td class="tg-v0mg">-31%</td>
-                <td class="tg-v0mg chart-right">-14%</td>
-                <td class="tg-v0mg">-3%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-42%</td>
-                <td class="tg-v0mg">-47%</td>
-                <td class="tg-v0mg">-38%</td>
-                <td class="tg-v0mg">-32%</td>
-                <td class="tg-v0mg">-35%</td>
-                <td class="tg-v0mg chart-right">-48%</td>
-                <td class="tg-v0mg">-26%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-48%</td>
-                <td class="tg-v0mg">-45%</td>
-                <td class="tg-v0mg">-30%</td>
-                <td class="tg-v0mg">-16%</td>
-                <td class="tg-v0mg">-18%</td>
-                <td class="tg-v0mg chart-right">-43%</td>
-                <td class="tg-v0mg">-7%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-36%</td>
-                <td class="tg-v0mg">-50%</td>
-                <td class="tg-v0mg">-42%</td>
-                <td class="tg-v0mg">-23%</td>
-                <td class="tg-v0mg">-17%</td>
-                <td class="tg-v0mg chart-right">-28%</td>
-                <td class="tg-v0mg">0%</td>
-              </tr>
-            </tbody>
-            </table>
-                        </div>
-                        <div class="col-md-6">
-                          <style type="text/css">
-            </style>
-            <table class="table table-sm">
-            <thead>
-              <tr>
-                <th class="tg-z4i2"></th>
-                <th class="tg-44qx"><span style="font-weight:bold">2 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">3 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">4 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">5 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">6 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">7 p.m.</span></th>
-                <th class="tg-44qx"><span style="font-weight:bold">8 p.m.</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="tg-44qx month-top"><strong>July</strong></td>
-                <td class="tg-v0mg month-top">-38%</td>
-                <td class="tg-v0mg month-top">-53%</td>
-                <td class="tg-v0mg month-top">-47%</td>
-                <td class="tg-v0mg month-top" >-33%</td>
-                <td class="tg-v0mg month-top">-23%</td>
-                <td class="chart-right month-top">-30%</td>
-                <td class="tg-v0mg month-top">-8%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-21%</td>
-                <td class="tg-v0mg">-43%</td>
-                <td class="tg-v0mg">-36%</td>
-                <td class="tg-v0mg">-20%</td>
-                <td class="tg-v0mg">-10%</td>
-                <td class="chart-right table-red">2%</td>
-                <td class="tg-v0mg">0%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-13%</td>
-                <td class="tg-v0mg">-18%</td>
-                <td class="tg-v0mg">-15%</td>
-                <td class="tg-v0mg">-11%</td>
-                <td class="tg-v0mg">-15%</td>
-                <td class="chart-right">-22%</td>
-                <td class="tg-v0mg">-23%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-16%</td>
-                <td class="tg-v0mg">-16%</td>
-                <td class="tg-v0mg">-38%</td>
-                <td class="tg-v0mg">-30%</td>
-                <td class="tg-v0mg">-30%</td>
-                <td class="chart-right">-16%</td>
-                <td class="tg-v0mg">-11%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>August</strong></td>
-                <td class="tg-v0mg month-top">-49%</td>
-                <td class="tg-v0mg month-top">-52%</td>
-                <td class="tg-v0mg month-top">-59%</td>
-                <td class="tg-v0mg month-top">-45%</td>
-                <td class="tg-v0mg month-top">-40%</td>
-                <td class="chart-right month-top chart-bottom">-42%</td>
-                <td class="tg-v0mg month-top">-24%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-38%</td>
-                <td class="tg-v0mg">-47%</td>
-                <td class="tg-v0mg">-43%</td>
-                <td class="tg-v0mg">-51%</td>
-                <td class="tg-v0mg chart-right">-39%</td>
-                <td class="tg-v0mg">-38%</td>
-                <td class="tg-v0mg">-13%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-42%</td>
-                <td class="tg-v0mg">-43%</td>
-                <td class="tg-v0mg">-21%</td>
-                <td class="tg-v0mg">-38%</td>
-                <td class="chart-right">-33%</td>
-                <td class="tg-v0mg">-46%</td>
-                <td class="tg-v0mg">-24%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-5%</td>
-                <td class="tg-vw3w table-red">6%</td>
-                <td class="tg-vw3w table-red">39%</td>
-                <td class="tg-v0mg">-21%</td>
-                <td class="chart-right">-29%</td>
-                <td class="tg-v0mg">-45%</td>
-                <td class="tg-v0mg">-29%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-18%</td>
-                <td class="tg-v0mg">-3%</td>
-                <td class="tg-v0mg">-18%</td>
-                <td class="tg-v0mg">-28%</td>
-                <td class="chart-right">-28%</td>
-                <td class="tg-v0mg">-30%</td>
-                <td class="tg-v0mg">-26%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>September</strong></td>
-                <td class="tg-v0mg month-top">-14%</td>
-                <td class="tg-v0mg month-top">-20%</td>
-                <td class="tg-v0mg month-top">-16%</td>
-                <td class="tg-v0mg month-top">-13%</td>
-                <td class="tg-v0mg month-top chart-right chart-bottom">-16%</td>
-                <td class="tg-v0mg month-top">-17%</td>
-                <td class="tg-v0mg month-top">-22%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-12%</td>
-                <td class="tg-v0mg">-14%</td>
-                <td class="tg-v0mg">-23%</td>
-                <td class="tg-v0mg chart-right">-22%</td>
-                <td class="tg-v0mg">-23%</td>
-                <td class="tg-v0mg">-9%</td>
-                <td class="tg-v0mg">-4%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-11%</td>
-                <td class="tg-v0mg">-22%</td>
-                <td class="tg-v0mg">-23%</td>
-                <td class="tg-v0mg chart-right">-18%</td>
-                <td class="tg-v0mg">-35%</td>
-                <td class="tg-v0mg">-28%</td>
-                <td class="tg-v0mg">-17%</td>
-              </tr>
-              <tr class="">
-                <td class="tg-z4i2"></td>
-                <td class="tg-vw3w table-red">8%</td>
-                <td class="tg-vw3w table-red">7%</td>
-                <td class="tg-v0mg">-10%</td>
-                <td class="tg-v0mg chart-right">-28%</td>
-                <td class="tg-v0mg">-45%</td>
-                <td class="tg-v0mg">-39%</td>
-                <td class="tg-v0mg">-24%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>October</strong></td>
-                <td class="tg-v0mg month-top">-14%</td>
-                <td class="tg-v0mg month-top">-15%</td>
-                <td class="tg-v0mg month-top">-22%</td>
-                <td class="tg-v0mg month-top chart-right">-31%</td>
-                <td class="tg-v0mg month-top ">-44%</td>
-                <td class="tg-v0mg month-top">-43%</td>
-                <td class="tg-v0mg month-top">-39%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-19%</td>
-                <td class="tg-vw3w table-red">2%</td>
-                <td class="tg-v0mg">0%</td>
-                <td class="tg-v0mg chart-right">-35%</td>
-                <td class="tg-v0mg">-50%</td>
-                <td class="tg-v0mg">-47%</td>
-                <td class="tg-v0mg">-41%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-22%</td>
-                <td class="tg-v0mg">-27%</td>
-                <td class="tg-v0mg">-11%</td>
-                <td class="tg-v0mg chart-right chart-bottom">-39%</td>
-                <td class="tg-v0mg">-42%</td>
-                <td class="tg-v0mg">-44%</td>
-                <td class="tg-v0mg">-28%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-vw3w table-red">2%</td>
-                <td class="tg-v0mg ">-8%</td>
-                <td class="tg-vw3w chart-right table-red">16%</td>
-                <td class="tg-v0mg">-13%</td>
-                <td class="tg-v0mg">-13%</td>
-                <td class="tg-v0mg">-26%</td>
-                <td class="tg-v0mg">-21%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-vw3w table-red">2%</td>
-                <td class="tg-v0mg">-12%</td>
-                <td class="tg-vw3w table-red chart-right">18%</td>
-                <td class="tg-v0mg">0%</td>
-                <td class="tg-vw3w table-red">3%</td>
-                <td class="tg-v0mg">-23%</td>
-                <td class="tg-v0mg">-16%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>November</strong></td>
-                <td class="tg-v0mg month-top">-34%</td>
-                <td class="tg-v0mg month-top">-23%</td>
-                <td class="tg-vw3w month-top chart-right table-red">1%</td>
-                <td class="tg-vw3w month-top table-red">16%</td>
-                <td class="tg-vw3w month-top table-red">13%</td>
-                <td class="tg-v0mg month-top">-19%</td>
-                <td class="tg-v0mg month-top">-32%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-56%</td>
-                <td class="tg-v0mg">-45%</td>
-                <td class="tg-v0mg chart-right" >-19%</td>
-                <td class="tg-vw3w table-red">1%</td>
-                <td class="tg-v0mg">-11%</td>
-                <td class="tg-v0mg">-37%</td>
-                <td class="tg-v0mg">-45%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-57%</td>
-                <td class="tg-v0mg">-52%</td>
-                <td class="tg-v0mg chart-right">-15%</td>
-                <td class="tg-vw3w table-red">9%</td>
-                <td class="tg-vw3w table-red">2%</td>
-                <td class="tg-v0mg">-29%</td>
-                <td class="tg-v0mg">-48%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-33%</td>
-                <td class="tg-v0mg">-28%</td>
-                <td class="tg-v0mg chart-right">-3%</td>
-                <td class="tg-v0mg">-5%</td>
-                <td class="tg-v0mg">-11%</td>
-                <td class="tg-v0mg">-28%</td>
-                <td class="tg-v0mg">-31%</td>
-              </tr>
-              <tr>
-                <td class="tg-44qx month-top"><strong>December</strong></td>
-                <td class="tg-v0mg month-top">-4%</td>
-                <td class="tg-vw3w  month-top table-red">2%</td>
-                <td class="tg-vw3w  month-top chart-right table-red">7%</td>
-                <td class="tg-v0mg month-top">0%</td>
-                <td class="tg-v0mg month-top">-11%</td>
-                <td class="tg-v0mg month-top">-21%</td>
-                <td class="tg-v0mg month-top">-23%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-10%</td>
-                <td class="tg-vw3w table-red">4%</td>
-                <td class="tg-vw3w table-red chart-right">11%</td>
-                <td class="tg-v0mg">-8%</td>
-                <td class="tg-v0mg">-16%</td>
-                <td class="tg-v0mg">-22%</td>
-                <td class="tg-v0mg">-18%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-3%</td>
-                <td class="tg-v0mg">0%</td>
-                <td class="tg-v0mg chart-right">-1%</td>
-                <td class="tg-v0mg">-13%</td>
-                <td class="tg-v0mg">-23%</td>
-                <td class="tg-v0mg">-31%</td>
-                <td class="tg-v0mg">-31%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">-19%</td>
-                <td class="tg-v0mg">-16%</td>
-                <td class="tg-v0mg chart-right">-12%</td>
-                <td class="tg-v0mg">-38%</td>
-                <td class="tg-v0mg">-39%</td>
-                <td class="tg-v0mg">-52%</td>
-                <td class="tg-v0mg">-47%</td>
-              </tr>
-              <tr>
-                <td class="tg-z4i2"></td>
-                <td class="tg-v0mg">0%</td>
-                <td class="tg-v0mg">-10%</td>
-                <td class="tg-v0mg chart-right">-25%</td>
-                <td class="tg-v0mg">-50%</td>
-                <td class="tg-v0mg">-53%</td>
-                <td class="tg-v0mg">-67%</td>
-                <td class="tg-v0mg">-51%</td>
-              </tr>
-            </tbody>
-            </table>
+            <div class="col-xs-12">
+              <p style="text-align: center; font-family: 'Inter', sans-serif;font-size: 14px;text-transform: uppercase;">Scroll to see all months &rarr;</p>
+              <div class="table-responsive">
+<style type="text/css">
+.tg .tg-rrhr{background-color:#62BF92;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-h5s6{background-color:#D7EFE3;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-3qnc{background-color:#BEE4D2;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-zbcb{background-color:#E5F4ED;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-40d5{background-color:#CAE9DA;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-81k6{background-color:#87CEAB;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-hgwg{background-color:#F3FAF6;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-ugx6{background-color:#FFF;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-sxjx{background-color:#57BB8A;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-dx4i{background-color:#A7DBC2;text-align:right;vertical-align:middle}
+.tg .tg-kpfa{background-color:#9ED7BB;text-align:right;vertical-align:middle}
+.tg .tg-qwur{background-color:#90D2B2;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-tigq{background-color:#C7E8D8;text-align:right;vertical-align:middle}
+.tg .tg-5dje{background-color:#D5EEE2;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-k9ql{background-color:#DCF1E6;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-1ngj{background-color:#B0DFC8;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-4qs9{color:#212529;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-9wum{background-color:#B3E0CA;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-w9be{background-color:#85CDAA;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-4ula{background-color:#E67C73;color:#212529;font-weight:bold;text-align:right;vertical-align:middle}
+.tg .tg-ya7h{background-color:#C7E8D8;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-u1i9{background-color:#A9DCC3;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-gg9s{background-color:#99D6B8;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-8hht{background-color:#DAF0E5;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-sf1d{background-color:#B9E3CE;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-mmqm{background-color:#E98B83;color:#212529;font-weight:bold;text-align:right;vertical-align:middle}
+.tg .tg-stl7{color:#212529;font-weight:bold;text-align:left;vertical-align:middle}
+.tg .tg-bwzf{background-color:#CCEADB;text-align:right;vertical-align:middle}
+.tg .tg-i99h{background-color:#A7DBC2;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-arpl{background-color:#DEF1E8;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-6sq6{background-color:#CCEADB;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-r5mw{background-color:#F0AFAA;color:#212529;font-weight:bold;text-align:right;vertical-align:middle}
+.tg .tg-7zrl{text-align:left;vertical-align:middle;white-space: tn;}
+.tg .tg-n5bg{background-color:#FEF8F8;color:#212529;font-weight:bold;text-align:right;vertical-align:middle}
+.tg .tg-pk5t{background-color:#D3EDE0;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-aruq{background-color:#F8FCFA;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-29tc{background-color:#F6CDC9;color:#212529;font-weight:bold;text-align:right;vertical-align:middle}
+.tg .tg-f79u{background-color:#FCFEFD;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-vmcw{background-color:#E3F3EB;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-wnhq{background-color:#C5E7D6;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-fgys{background-color:#C0E5D3;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-nf6j{background-color:#B7E2CD;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-yads{background-color:#AEDEC6;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-cofq{background-color:#A5DAC0;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-7elo{background-color:#E1F2EA;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-k1yo{background-color:#F3BEB9;color:#212529;font-weight:bold;text-align:right;vertical-align:middle}
+.tg .tg-952r{background-color:#ECF7F2;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-4zzm{background-color:#8BD0AE;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-ehff{background-color:#97D5B6;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-12pr{background-color:#89CFAD;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-xctz{background-color:#EEF8F3;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-6h1z{background-color:#9ED7BB;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-xawh{background-color:#92D3B3;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-znk1{background-color:#A2D9BE;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-fjwk{background-color:#80CBA6;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-45cm{background-color:#5DBD8E;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-r71v{background-color:#BCE3D0;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-7q3m{background-color:#DAF0E5;text-align:right;vertical-align:middle}
+.tg .tg-geqi{background-color:#CAE9DA;text-align:right;vertical-align:middle}
+.tg .tg-bfst{background-color:#A0D8BD;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-v0io{background-color:#79C8A2;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-2bjr{background-color:#CEEBDD;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-f6qk{background-color:#FDF1F0;color:#212529;font-weight:bold;text-align:right;vertical-align:middle}
+.tg .tg-i9ar{background-color:#9CD6BA;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-q9o7{background-color:#95D4B5;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-ll28{background-color:#6EC49A;color:#212529;text-align:right;vertical-align:middle}
+.tg .tg-8fqi{background-color:#C3E6D5;color:#212529;text-align:right;vertical-align:middle}
+</style>
+<table class="table">
+<thead>
+  <tr>
+    <th class="tg-7zrl"></th>
+    <th class="tg-4qs9" colspan="5"  style="font-weight:bold;color:#212529">October</span></th>
+    <th class="tg-4qs9" colspan="4"  style="font-weight:bold;color:#212529">November</span></th>
+    <th class="tg-4qs9" colspan="5"  style="font-weight:bold;color:#212529">December</span></th>
+    <th class="tg-4qs9" colspan="4"  style="font-weight:bold;color:#212529">January</span></th>
+    <th class="tg-4qs9" colspan="4"  style="font-weight:bold;color:#212529">February</span></th>
+    <th class="tg-4qs9" colspan="4"  style="font-weight:bold;color:#212529">March</span></th>
+    <th class="tg-4qs9" colspan="4"  style="font-weight:bold;color:#212529">April</span></th>
+    <th class="tg-4qs9" colspan="5"  style="font-weight:bold;color:#212529">May</span></th>
+    <th class="tg-4qs9" colspan="5"  style="font-weight:bold;color:#212529">June</span></th>
+    <th class="tg-4qs9" colspan="4"  style="font-weight:bold;color:#212529">July</span></th>
+    <th class="tg-4qs9" colspan="5"  style="font-weight:bold;color:#212529">August</span></th>
+    <th class="tg-4qs9" colspan="4"  style="font-weight:bold;color:#212529">September</span></th>
+  </tr>
+</thead>
+<tbody class="table-group-divider">
+  <tr>
+    <td class="tg-stl7 table-time"  style="font-weight:bold;color:#212529">3 p.m.</td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl "></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl "></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+  </tr>
+  <tr>
+    <td class="tg-stl7 table-time"  style="font-weight:bold;color:#212529">4 p.m.</td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-mmqm camp-top camp-left" style="font-weight:bold;color:#212529;background-color:#E98B83">16%</td>
+    <td class="tg-4ula camp-top" style="font-weight:bold;color:#212529;background-color:#E67C73">18%</td>
+    <td class="tg-n5bg camp-top " style="font-weight:bold;color:#212529;background-color:#FEF8F8">1%</td>
+    <td class="tg-pk5t camp-top" style="font-weight:normal;color:#212529;background-color:#D3EDE0">-19%</td>
+    <td class="tg-k9ql camp-top" style="font-weight:normal;color:#212529;background-color:#DCF1E6">-15%</td>
+    <td class="tg-aruq camp-top"  style="font-weight:normal;color:#212529;background-color:#F8FCFA">-3%</td>
+    <td class="tg-29tc camp-top"  style="font-weight:bold;color:#212529;background-color:#F6CDC9">7%</td>
+    <td class="tg-r5mw camp-right camp-top"  style="font-weight:bold;color:#212529;background-color:#F0AFAA">11%</td>
+    <td class="tg-f79u"  style="font-weight:normal;color:#212529;background-color:#FCFEFD">-1%</td>
+    <td class="tg-vmcw"  style="font-weight:normal;color:#212529;background-color:#E3F3EB">-12%</td>
+    <td class="tg-wnhq"  style="font-weight:normal;color:#212529;background-color:#C5E7D6">-25%</td>
+    <td class="tg-fgys"  style="font-weight:normal;color:#212529;background-color:#C0E5D3">-27%</td>
+    <td class="tg-wnhq"  style="font-weight:normal;color:#212529;background-color:#C5E7D6">-25%</td>
+    <td class="tg-81k6" style="font-weight:normal;color:#212529;background-color:#87CEAB">-52%</td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+  </tr>
+  <tr>
+    <td class="tg-stl7 table-time"  style="font-weight:bold;color:#212529">5 p.m.</td>
+    <td class="tg-nf6j"  style="font-weight:normal;color:#212529;background-color:#B7E2CD">-31%</td>
+    <td class="tg-yads"  style="font-weight:normal;color:#212529;background-color:#AEDEC6">-35%</td>
+    <td class="tg-cofq"  style="font-weight:normal;color:#212529;background-color:#A5DAC0">-39%</td>
+    <td class="tg-7elo chart-top camp-bottom camp-left"  style="font-weight:normal;color:#212529;background-color:#E1F2EA">-13%</td>
+    <td class="tg-ugx6 camp-bottom chart-top"  style="font-weight:normal;color:#212529;background-color:#FFF">0%</td>
+    <td class="tg-mmqm camp-bottom chart-top"  style="font-weight:bold;color:#212529;background-color:#E98B83">16%</td>
+    <td class="tg-n5bg camp-bottom chart-top"  style="font-weight:bold;color:#212529;background-color:#FEF8F8">1%</td>
+    <td class="tg-k1yo camp-bottom chart-top"  style="font-weight:bold;color:#212529;background-color:#F3BEB9">9%</td>
+    <td class="tg-hgwg  camp-bottom chart-top"  style="font-weight:normal;color:#212529;background-color:#F3FAF6">-5%</td>
+    <td class="tg-ugx6  camp-bottom chart-top"  style="font-weight:normal;color:#212529;background-color:#FFF">0%</td>
+    <td class="tg-952r  camp-bottom chart-top camp-right"  style="font-weight:normal;color:#212529;background-color:#ECF7F2">-8%</td>
+    <td class="tg-7elo chart-top"  style="font-weight:normal;color:#212529;background-color:#E1F2EA">-13%</td>
+    <td class="tg-i99h chart-top"  style="font-weight:normal;color:#212529;background-color:#A7DBC2">-38%</td>
+    <td class="tg-4zzm chart-top"  style="font-weight:normal;color:#212529;background-color:#8BD0AE">-50%</td>
+    <td class="tg-wnhq chart-top"  style="font-weight:normal;color:#212529;background-color:#C5E7D6">-25%</td>
+    <td class="tg-k9ql chart-top"  style="font-weight:normal;color:#212529;background-color:#DCF1E6">-15%</td>
+    <td class="tg-ehff chart-top chart-right"  style="font-weight:normal;color:#212529;background-color:#97D5B6">-45%</td>
+    <td class="tg-12pr"  style="font-weight:normal;color:#212529;background-color:#89CFAD">-51%</td>
+    <td class="tg-i99h"  style="font-weight:normal;color:#212529;background-color:#A7DBC2">-38%</td>
+    <td class="tg-5dje"  style="font-weight:normal;color:#212529;background-color:#D5EEE2">-18%</td>
+    <td class="tg-xctz"  style="font-weight:normal;color:#212529;background-color:#EEF8F3">-7%</td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl "></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-bwzf"  style="background-color:#CCEADB">-22%</td>
+    <td class="tg-5dje"  style="font-weight:normal;color:#212529;background-color:#D5EEE2">-18%</td>
+    <td class="tg-3qnc"  style="font-weight:normal;color:#212529;background-color:#BEE4D2">-28%</td>
+  </tr>
+  <tr>
+    <td class="tg-stl7 table-time"  style="font-weight:bold;color:#212529">6 p.m.</td>
+    <td class="tg-gg9s chart-top"  style="font-weight:normal;color:#212529;background-color:#99D6B8">-44%</td>
+    <td class="tg-4zzm chart-top"  style="font-weight:normal;color:#212529;background-color:#8BD0AE">-50%</td>
+    <td class="tg-6h1z chart-top"  style="font-weight:normal;color:#212529;background-color:#9ED7BB">-42%</td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl "></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl "></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-xawh chart-top"  style="font-weight:normal;color:#212529;background-color:#92D3B3">-47%</td>
+    <td class="tg-6h1z chart-top"  style="font-weight:normal;color:#212529;background-color:#9ED7BB">-42%</td>
+    <td class="tg-nf6j chart-top"  style="font-weight:normal;color:#212529;background-color:#B7E2CD">-31%</td>
+    <td class="tg-5dje chart-top chart-right"  style="font-weight:normal;color:#212529;background-color:#D5EEE2">-18%</td>
+    <td class="tg-u1i9"  style="font-weight:normal;color:#212529;background-color:#A9DCC3">-37%</td>
+    <td class="tg-znk1"  style="font-weight:normal;color:#212529;background-color:#A2D9BE">-40%</td>
+    <td class="tg-81k6"  style="font-weight:normal;color:#212529;background-color:#87CEAB">-52%</td>
+    <td class="tg-6h1z"  style="font-weight:normal;color:#212529;background-color:#9ED7BB">-42%</td>
+    <td class="tg-gg9s"  style="font-weight:normal;color:#212529;background-color:#99D6B8">-44%</td>
+    <td class="tg-nf6j"  style="font-weight:normal;color:#212529;background-color:#B7E2CD">-31%</td>
+    <td class="tg-cofq"  style="font-weight:normal;color:#212529;background-color:#A5DAC0">-39%</td>
+    <td class="tg-fjwk"  style="font-weight:normal;color:#212529;background-color:#80CBA6">-55%</td>
+    <td class="tg-45cm"  style="font-weight:normal;color:#212529;background-color:#5DBD8E">-70%</td>
+    <td class="tg-sxjx"  style="font-weight:normal;color:#212529;background-color:#57BB8A">-73%</td>
+    <td class="tg-rrhr"  style="font-weight:normal;color:#212529;background-color:#62BF92">-68%</td>
+    <td class="tg-fjwk"  style="font-weight:normal;color:#212529;background-color:#80CBA6">-55%</td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-cofq"  style="font-weight:normal;color:#212529;background-color:#A5DAC0">-39%</td>
+    <td class="tg-9wum"  style="font-weight:normal;color:#212529;background-color:#B3E0CA">-33%</td>
+    <td class="tg-r71v"  style="font-weight:normal;color:#212529;background-color:#BCE3D0">-29%</td>
+    <td class="tg-3qnc"  style="font-weight:normal;color:#212529;background-color:#BEE4D2">-28%</td>
+    <td class="tg-7q3m chart-right"  style="background-color:#DAF0E5">-16%</td>
+    <td class="tg-geqi chart-top"  style="background-color:#CAE9DA">-23%</td>
+    <td class="tg-yads chart-top"  style="font-weight:normal;color:#212529;background-color:#AEDEC6">-35%</td>
+    <td class="tg-ehff chart-top"  style="font-weight:normal;color:#212529;background-color:#97D5B6">-45%</td>
+  </tr>
+  <tr>
+    <td class="tg-stl7 table-time"  style="font-weight:bold;color:#212529">7 p.m.</td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl "></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-1ngj chart-top"  style="font-weight:normal;color:#212529;background-color:#B0DFC8">-34%</td>
+    <td class="tg-bfst chart-top"  style="font-weight:normal;color:#212529;background-color:#A0D8BD">-41%</td>
+    <td class="tg-81k6 chart-top"  style="font-weight:normal;color:#212529;background-color:#87CEAB">-52%</td>
+    <td class="tg-12pr chart-top"  style="font-weight:normal;color:#212529;background-color:#89CFAD">-51%</td>
+    <td class="tg-v0io chart-top"  style="font-weight:normal;color:#212529;background-color:#79C8A2">-58%</td>
+    <td class="tg-4zzm chart-top"  style="font-weight:normal;color:#212529;background-color:#8BD0AE">-50%</td>
+    <td class="tg-pk5t chart-top"   style="font-weight:normal;color:#212529;background-color:#D3EDE0">-19%</td>
+    <td class="tg-ya7h chart-top"  style="font-weight:normal;color:#212529;background-color:#C7E8D8">-24%</td>
+    <td class="tg-2bjr chart-top"  style="font-weight:normal;color:#212529;background-color:#CEEBDD">-21%</td>
+    <td class="tg-gg9s chart-top"  style="font-weight:normal;color:#212529;background-color:#99D6B8">-44%</td>
+    <td class="tg-w9be chart-top"  style="font-weight:normal;color:#212529;background-color:#85CDAA">-53%</td>
+    <td class="tg-12pr chart-top chart-right"  style="font-weight:normal;color:#212529;background-color:#89CFAD">-51%</td>
+    <td class="tg-81k6"  style="font-weight:normal;color:#212529;background-color:#87CEAB">-52%</td>
+    <td class="tg-f6qk"  style="font-weight:bold;color:#212529;background-color:#FDF1F0">2%</td>
+    <td class="tg-arpl"  style="font-weight:normal;color:#212529;background-color:#DEF1E8">-14%</td>
+    <td class="tg-arpl"  style="font-weight:normal;color:#212529;background-color:#DEF1E8">-14%</td>
+    <td class="tg-qwur"  style="font-weight:normal;color:#212529;background-color:#90D2B2">-48%</td>
+    <td class="tg-i9ar" style="font-weight:normal;color:#212529;background-color:#9CD6BA">-43%</td>
+    <td class="tg-3qnc" style="font-weight:normal;color:#212529;background-color:#BEE4D2">-28%</td>
+    <td class="tg-sf1d" style="font-weight:normal;color:#212529;background-color:#B9E3CE">-30%</td>
+    <td class="tg-f6qk" style="font-weight:bold;color:#212529;background-color:#FDF1F0">2%</td>
+    <td class="tg-6sq6" style="font-weight:normal;color:#212529;background-color:#CCEADB">-22%</td>
+    <td class="tg-8hht" style="font-weight:normal;color:#212529;background-color:#DAF0E5">-16%</td>
+    <td class="tg-kpfa chart-right" style="background-color:#9ED7BB">-42%</td>
+    <td class="tg-dx4i chart-top" style="background-color:#A7DBC2">-38%</td>
+    <td class="tg-q9o7 chart-top" style="font-weight:normal;color:#212529;background-color:#95D4B5">-46%</td>
+    <td class="tg-ehff chart-top" style="font-weight:normal;color:#212529;background-color:#97D5B6">-45%</td>
+    <td class="tg-sf1d chart-top" style="font-weight:normal;color:#212529;background-color:#B9E3CE">-30%</td>
+    <td class="tg-h5s6 chart-top" style="font-weight:normal;color:#212529;background-color:#D7EFE3">-17%</td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+  </tr>
+  <tr>
+    <td class="tg-stl7 table-time"  style="font-weight:bold;color:#212529">8 p.m.</td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-ll28 chart-top" style="font-weight:normal;color:#212529;background-color:#6EC49A">-63%</td>
+    <td class="tg-9wum chart-top" style="font-weight:normal;color:#212529;background-color:#B3E0CA">-33%</td>
+    <td class="tg-9wum chart-top" style="font-weight:normal;color:#212529;background-color:#B3E0CA">-33%</td>
+    <td class="tg-aruq chart-top" style="font-weight:normal;color:#212529;background-color:#F8FCFA">-3%</td>
+    <td class="tg-8fqi chart-top" style="font-weight:normal;color:#212529;background-color:#C3E6D5">-26%</td>
+    <td class="tg-xctz chart-top" style="font-weight:normal;color:#212529;background-color:#EEF8F3">-7%</td>
+    <td class="tg-ugx6 chart-top" style="font-weight:normal;color:#212529;background-color:#FFF">0%</td>
+    <td class="tg-952r chart-top" style="font-weight:normal;color:#212529;background-color:#ECF7F2">-8%</td>
+    <td class="tg-ugx6 chart-top" style="font-weight:normal;color:#212529;background-color:#FFF">0%</td>
+    <td class="tg-40d5 chart-top" style="font-weight:normal;color:#212529;background-color:#CAE9DA">-23%</td>
+    <td class="tg-zbcb chart-top" style="font-weight:normal;color:#212529;background-color:#E5F4ED">-11%</td>
+    <td class="tg-tigq chart-top" style="background-color:#C7E8D8">-24%</td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl "></td>
+    <td class="tg-7zrl month-right"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+    <td class="tg-7zrl"></td>
+  </tr>
+</tbody>
+</table>
+</div>
+              </div>
             </div>
           </div>
-          <div class="row d-flex justify-content-center">
+          <div class="row d-flex justify-content-center -1">
             <div class="col-xs-10">
                 <p class="chart-source">Data source: <a href="https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data" target="_blank" class="source-url">NYC DOT</a></p>
             </div>
@@ -1114,7 +994,9 @@
       style: 'mapbox://styles/mapbox/dark-v11',
       center: [-74.0059, 40.7128], // initial map center in [lon, lat]
       zoom: 10,
-      cooperativeGestures: true
+      cooperativeGestures: true,
+      maxZoom: 11,
+      minZoom: 9
     });
 
     map.on('load', () => {
@@ -1149,13 +1031,20 @@
         type: 'circle'
       });
 
-      // When a click event occurs on a feature in the places layer, open a popup at the
-// location of the feature, with description HTML from its properties.
-map.on('click', 'locations', (e) => {
+
+    // Create a popup, but don't add it to the map yet.
+const popup = new mapboxgl.Popup({
+closeButton: false,
+closeOnClick: false
+});
+ 
+map.on('mouseenter', 'locations', (e) => {
+// Change the cursor style as a UI indicator.
+map.getCanvas().style.cursor = 'pointer';
+ 
 // Copy coordinates array.
 const coordinates = e.features[0].geometry.coordinates.slice();
-const description = e.features[0].properties.Mode;
-const address = e.features[0].properties.CrossStreets;
+const description = e.features[0].properties.description;
  
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
@@ -1164,22 +1053,16 @@ while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
 }
  
-new mapboxgl.Popup()
-.setLngLat(coordinates)
-.setHTML('<h1 class="popuph1 border-bottom pb-2">' + e.features[0].properties.Full_Intersection + '</h1><p class="popDate"><span style="font-weight:">Borough:</span> ' + e.features[0].properties.Violation_County + '</p><p class="popDate"><span style="font-weight:">Change:</span> ' + e.features[0].properties.Drop + '</p>')
-.addTo(map);
+// Populate the popup and set its coordinates
+// based on the feature found.
+popup.setLngLat(coordinates).setHTML('<h1 class="popuph1 border-bottom pb-2"> Borough: ' + e.features[0].properties.Violation_County + '</h1><p class="popDate"><span style="font-weight:">Change:</span> ' + e.features[0].properties.Drop + '</span></p>').addTo(map);
 });
  
-// Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'places', () => {
-map.getCanvas().style.cursor = 'pointer';
-});
- 
-// Change it back to a pointer when it leaves.
-map.on('mouseleave', 'places', () => {
+map.on('mouseleave', 'locations', () => {
 map.getCanvas().style.cursor = '';
+popup.remove();
 });
-  });
+});
 </script>
   </body>
 </html>
