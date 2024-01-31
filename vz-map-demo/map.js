@@ -40,6 +40,44 @@ map.on('load', () => {
     url: 'mapbox://jacobdecastro.dasg8mtl'
   });
 
+  map.addSource('cb', {
+    type: 'vector',
+    url: 'mapbox://jacobdecastro.6b0vi9rm'
+  });
+
+    map.addLayer({
+    'id': 'Community Board boundaries',
+    'type': 'line',
+    'source': 'cb',
+    'source-layer': 'cb-bzfyay',
+    'layout': {
+        visibility: 'visible', // show initially
+    },
+    'paint': {
+        'line-color': 'white',
+        'line-width': 1,
+        'line-opacity': .5
+    }
+  });
+
+
+   map.addLayer({
+    'id': 'Vision Zero Priority Corridors',
+    'type': 'line',
+    'source': 'vz_priority',
+    'source-layer': 'VZV_Priority_Corridors-2enp65',
+    'layout': {
+        visibility: 'visible', // show initially
+    },
+    'paint': {
+        'line-color': '#f15d22',
+        'line-opacity': .5,
+        'line-width': 1
+    }
+  });
+
+
+
   map.addLayer({
     id: 'collisions',
     type: 'circle',
@@ -53,12 +91,10 @@ map.on('load', () => {
         '#fbb03b',
         'Cyclist',
         '#223b53',
-        'Motorcyclist',
-        '#e55e5e',
         'Other Motorist',
         '#3bb2d0',
         'Motorist',
-        '#3bb2d0',
+        '#e55e5e',
         /* other */ '#ccc'
         ],
       'circle-opacity': 0.8,
@@ -74,31 +110,17 @@ map.on('load', () => {
         'circle-stroke-width': .25
     }
   });
-
-  map.addLayer({
-    'id': 'Vision Zero Priority Corridors',
-    'type': 'line',
-    'source': 'vz_priority',
-    'source-layer': 'VZV_Priority_Corridors-2enp65',
-    'layout': {
-        visibility: 'visible', // show initially
-    },
-    'paint': {
-        'line-color': '#f15d22',
-        'line-opacity': .5,
-        'line-width': 1
-    }
-  });
 });
+ 
 
 map.on('idle', () => {
 // If these two layers were not added to the map, abort
-if (!map.getLayer('Vision Zero Priority Corridors')) {
+if (!map.getLayer('Vision Zero Priority Corridors') || !map.getLayer('Community Board boundaries')) {
 return;
 }
  
 // Enumerate ids of the layers.
-const toggleableLayerIds = ['Vision Zero Priority Corridors'];
+const toggleableLayerIds = ['Vision Zero Priority Corridors','Community Board boundaries'];
  
 // Set up the corresponding toggle button for each layer.
 for (const id of toggleableLayerIds) {
