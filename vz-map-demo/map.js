@@ -11,7 +11,7 @@ var sliderOptions = {
         elm: 'slider-control',
         layer: 'collisions',
         source: 'collisions',
-        input: false,
+        input: true,
         controlWidth: '300px',
         minProperty: 'Date',
         maxProperty: 'Date',
@@ -219,3 +219,21 @@ map.getCanvas().style.cursor = 'pointer';
 map.on('mouseleave', 'places', () => {
 map.getCanvas().style.cursor = '';
 });
+
+map.on('mousemove', 'cb', function(e) {
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
+
+        // Single out the first found feature.
+        var feature = e.features[0];
+
+        // Display a popup with the name of the county
+        popup.setLngLat(e.lngLat)
+            .setText(feature.properties.COUNTY)
+            .addTo(map);
+    });
+
+    map.on('mouseleave', 'cb', function() {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+    });
