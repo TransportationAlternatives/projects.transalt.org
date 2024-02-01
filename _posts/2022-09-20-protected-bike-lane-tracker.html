@@ -139,10 +139,10 @@ permalink: /bikelanes
         <div class="row d-flex justify-content-center">
           <div class="col-md-6">
             <h3 style="font-weight: 600" class="pt-5" id="smp">Project anouncements</h3>
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTDp5GkbDbotiX9y0F0l6fuNJu0FyEZdGCcsQSiRU3KRh74DAGG-Sr8MERXR1UNXXiNl5GUa_humkI/pubchart?oid=286705411&amp;format=interactive"></iframe>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTDp5GkbDbotiX9y0F0l6fuNJu0FyEZdGCcsQSiRU3KRh74DAGG-Sr8MERXR1UNXXiNl5GUa_humkI/pubchart?oid=286705411&amp;format=image"></iframe>
 
             <h3 style="font-weight: 600" class="pt-5" id="smp">Project pipeline</h3>
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTDp5GkbDbotiX9y0F0l6fuNJu0FyEZdGCcsQSiRU3KRh74DAGG-Sr8MERXR1UNXXiNl5GUa_humkI/pubchart?oid=2020865501&amp;format=interactive"></iframe>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTDp5GkbDbotiX9y0F0l6fuNJu0FyEZdGCcsQSiRU3KRh74DAGG-Sr8MERXR1UNXXiNl5GUa_humkI/pubchart?oid=2020865501&amp;format=image"></iframe>
 
             <h3 style="font-weight: 600" class="pt-5" id="smp">About the NYC Streets Plan</h3>
             <p>The <a href="https://www1.nyc.gov/html/dot/html/about/nyc-streets-plan.shtml" target="_blank">NYC Streets Plan</a> will transform how we get around our city. In 2019, historic legislation to implement the NYC Streets Plan became law. In 2022, Mayor Adams and the New York City Council agreed to a <a href="https://www.ny1.com/nyc/all-boroughs/transit/2022/04/24/mayor-adams-pledges--904-million-in-traffic-safety-investments" target="_blank">transformational $904 million investment</a> into making the NYC Streets Plan a reality. These investments in our streets will help us reach <em><a href="https://nyc25x25.org" target="_blank">NYC 25x25</a></em>.</p>
@@ -282,8 +282,10 @@ permalink: /bikelanes
             // e.layer.addTo(map);
           });
 
+          kmz.load('https://projects.transalt.org/assets/img/2024.kmz');
           kmz.load('https://projects.transalt.org/assets/img/2023.kmz');
           kmz.load('https://projects.transalt.org/assets/img/2022.kmz');
+
 
           var control2 = L.control.layers(null, null, { collapsed:false }).addTo(map);
         </script>
