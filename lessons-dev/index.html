@@ -81,6 +81,8 @@
       <div class="container headText" style="padding-bottom: 2%; position: absolute;
   bottom: 8px;
   left: 16px; color: white;">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xs-10">
           <h1>Five Lessons for the 10-Year Anniversary of Vision Zero in New York City</h1>
           <h2 class="subhead">A Look at the Successes and Shortcomings of America’s First Vision Zero Program</h2>
       </div>
@@ -117,11 +119,11 @@
             <!-- End full-width chart -->
            <div class="row d-flex justify-content-center">
               <div class="col-md-5 pb-5">
-                <p>Traffic fatalities were 16% lower in the last 10 years compared to the decade preceding Vision Zero &mdash; a difference of more than 400 lives. While significant progress has been made, the story of Vision Zero in New York City is neither simple nor linear. For example, pedestrian fatalities in the city declined 29% in the past 10 years, at a time when traffic fatalities, and especially pedestrian fatalities, were surging nationwide. Yet, during that time, driver fatalities rose more than 11%, especially in Black and Latino neighborhoods. Cyclist fatalities fluctuated dramatically &mdash; falling as low as 10 deaths one year and rising to 28 the next &mdash; trending upward overall. 2023 marks the single deadliest year for cyclists this century, and the second deadliest year for cyclists in recorded history.&nbsp;</p>
+                <p>Traffic fatalities were 16% lower in the last 10 years compared to the decade preceding Vision Zero &mdash; a difference of more than 400 lives. While significant progress has been made, the story of Vision Zero in New York City is neither simple nor linear. For example, pedestrian fatalities in the city declined 29% in the past 10 years, at a time when traffic fatalities, and especially pedestrian fatalities, were surging nationwide. Yet, during that time, driver fatalities rose more than 11%, especially in predominantly Black and Latino neighborhoods. Cyclist fatalities fluctuated dramatically &mdash; falling as low as 10 deaths one year and rising to 28 the next &mdash; trending upward overall. 2023 marks the single deadliest year for cyclists this century, and the second deadliest year for cyclists in recorded history.&nbsp;</p>
                 <p>Generally, traffic fatalities declined in response to data-driven safety interventions. But over time, the city and its transportation changed &mdash; larger vehicles, more traffic, more people, more cyclists &mdash; and safety interventions have not adapted. New York City&rsquo;s leaders both failed to meet the needs of a changing city, and too readily surrendered safety to the convenience of drivers and their desire for free parking. As a result, fatalities plateaued and rose.</p>
                 <p>Traffic safety is influenced by forces as diverse as urban planning, history, economics, even pandemic-inspired commuting trends &mdash; and there is no singular solution to keeping people safe on city streets. Protecting people from harm while they walk, bike, or drive requires overlapping layers of safety interventions. Implementing these interventions &mdash; systemically and citywide, not just where it may be politically easy &mdash; requires the resolve of elected leaders and city officials alike.&nbsp;</p>
                 <p>The 10-year anniversary of Vision Zero offers an opportunity to look back and consider what has worked, what has not, and why. New York City&rsquo;s Vision Zero program has already spanned two mayoral administrations and a decade of changes to our city. The future of the program rests on the political will of our leaders, and their embrace of the idea that traffic deaths are not random &ldquo;accidents'' but tragedies they are responsible to prevent.</p>
-                <p>Transportation Alternatives (TA), <a href="https://drive.google.com/file/d/1DHseGvaA2BZ67RbnOS__Ucfz9saFQa_k/view">which proposed bringing this lifesaving program to New York City in 2011</a>, and Families for Safe Streets, which was also established 10 years ago and which lead the charge for many of the lifesaving changes outlined herein, evaluated 10 years of data and identified trends that help explain the successes and shortcomings of New York City&rsquo;s Vision Zero program. The goal of this report is to build on the successes of the program and address the challenges so that no New Yorker need worry about death or serious injury while walking, biking, or driving across the five boroughs.&nbsp;</p>
+                <p>Transportation Alternatives (TA), <a href="https://drive.google.com/file/d/1DHseGvaA2BZ67RbnOS__Ucfz9saFQa_k/view">which proposed bringing this lifesaving program to New York City in 2011</a>, and Families for Safe Streets, which was also established 10 years ago and which led the charge for many of the lifesaving changes outlined herein, evaluated 10 years of data and identified trends that help explain the successes and shortcomings of New York City&rsquo;s Vision Zero program. The goal of this report is to build on the successes of the program and address the challenges so that no New Yorker need worry about death or serious injury while walking, biking, or driving across the five boroughs.&nbsp;</p>
             </div>
           </div>
         </div>
@@ -930,8 +932,8 @@
                 <p>Moving forward, the City of New York and all Vision Zero communities must redouble their efforts, taking a layered and adaptive system wide approach to traffic safety that centers the most vulnerable.This includes expanding the successes, and learning from the shortcomings, outlined above: implementing safety interventions systemwide, making inexpensive changes universal, building self-enforcing streets, focusing on engineering not advertising, and adapting to changing conditions. Specifically, Transportation Alternatives and Families for Safe Streets recommend:</p>
                 <ul>
                 <li>Scale lifesaving interventions citywide, such as <a href="https://transalt.org/daylighting">daylighting</a>, raised crosswalks, lane narrowing, and signal retiming;&nbsp;</li>
-                <li>Pass legislation in Albany to let New York City set speed its own speed limits;</li>
-                <li>Expand automated safety technology to include, but not limited to, those that protect against: bike and bus lane blocking, red light running, alternate-side parking violations</li>
+                <li>Pass legislation in Albany to let New York City set its own speed limits;</li>
+                <li>Expand automated safety technology to include technology that protects against: bike and bus lane blocking, red light running, alternate-side parking violations among other infractions;</li>
                 <li>Scale successful street redesign projects, such as the 34th Avenue Open Street and the 14th Street busway, across the city;&nbsp;</li>
                 <li>Redesign all major arterial streets to be &ldquo;self-enforcing&rdquo; &mdash; prioritizing the most dangerous locations and where &ldquo;use of force&rdquo; police stops most often occur &mdash; with narrow lanes to reduce speeding, and daylighting, curb extensions, and raised crosswalks at intersections;</li>
                 <li>Decriminalize jaywalking and install LPIs at the locations where the most people are summonsed for jaywalking;</li>
@@ -1000,11 +1002,11 @@
     });
 
     map.on('load', () => {
-      map.addSource('locations', { type: 'geojson', data: 'speed.geojson'})
+      map.addSource('locations', { type: 'vector', url: 'mapbox://jacobdecastro.64ppm2p1'})
       map.addLayer({
-        id: 'locations',
-        source: 'locations',
-        
+        'id': 'locationsMap',
+        'source': 'locations',
+        'source-layer': 'speed-1ekxky',
         paint: {
           'circle-opacity': 0.9,
           'circle-radius': {
