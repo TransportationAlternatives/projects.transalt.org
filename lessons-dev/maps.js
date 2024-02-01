@@ -84,7 +84,7 @@ option = {
           width: 5
         }
       },
-      markLine: {
+      /* markLine: {
         data: [
           // 1st line we want to draw
           [
@@ -99,7 +99,7 @@ option = {
                   color: "#f15d22"
                 }
               },
-              label: {
+               label: {
                 normal: {
                   show: true,
                   position: 'insideEnd',
@@ -109,7 +109,7 @@ option = {
                   fontSize: 14
                 }
               }
-            },
+            }, 
             // end point of the line
             {
               xAxis: 0,
@@ -118,7 +118,7 @@ option = {
             }
           ]
         ]
-    },
+    }, */
 
       data: [
         282, 699, 1475, 2307, 3180, 4155, 4845, 5327, 5944, 6173
@@ -137,7 +137,7 @@ option = {
       data: [
         140, 139, 149, 108, 116, 124, 97, 126, 121, 99
       ],
-      markLine: {
+      /* markLine: {
         data: [
           // 1st line we want to draw
           [
@@ -171,7 +171,7 @@ option = {
             }
           ]
         ]
-    },
+    }, */
     },
 
   ]
@@ -376,7 +376,7 @@ option = {
     },
       itemStyle: {
             color: '#f15d22' },
-      data: [140, 139, 149, 108, 116, 124, 97, 126, 121, 100]
+      data: [140, 139, 149, 108, 117, 124, 94, 127, 122, 100]
     },
     {
       name: 'Cyclist',
@@ -390,7 +390,7 @@ option = {
       },
       itemStyle: {
             color: '#F58559' },
-      data: [20, 14, 18, 24, 10, 28, 25, 19, 19, 29]
+      data: [20, 14, 18, 24, 10, 28, 26, 19, 19, 29]
     },
 
     {
@@ -405,7 +405,7 @@ option = {
       },
       itemStyle: {
             color: '#F8AE90' },
-      data: [99, 81, 65, 92, 79, 68, 120, 115, 100, 110]
+      data: [99, 81, 65, 92, 79, 68, 122, 114, 99, 110]
     },
     {
       name: 'Other Motorist*',
