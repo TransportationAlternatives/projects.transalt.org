@@ -206,7 +206,7 @@ coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
  
 new mapboxgl.Popup()
 .setLngLat(coordinates)
-.setHTML('<p class="popDate">' + e.features[0].properties.Date + '</p><h1 class="popuph1 border-bottom pb-2">' + e.features[0].properties.Cross_Streets + '</h1><p class="popDate"><span style="font-weight:700">Borough:</span> ' + e.features[0].properties.Borough + '</p><p class="popDate"><span style="font-weight:700">Mode:</span> ' + e.features[0].properties.Mode + '</p><p class="popDate"><span style="font-weight:700">Crash ID:</span> ' + e.features[0].properties.Crash_ID + '</p><p class="popDate"><span style="font-weight:700">Person ID:</span> ' + e.features[0].properties.Person_ID + '</p>')
+.setHTML('<p class="popDate">' + e.features[0].properties.Date + '</p><h1 class="popuph1 border-bottom pb-2">' + e.features[0].properties.Cross_Streets + '</h1><p class="popDate"><span style="font-weight:700">Borough:</span> ' + e.features[0].properties.Borough + '</p><p class="popDate"><span style="font-weight:700">Mode:</span> ' + e.features[0].properties.Mode + '</p><p class="popDate"><span style="font-weight:700">Age:</span> ' + e.features[0].properties.Age + '</p><p class="popDate"><span style="font-weight:700">Gender:</span> ' + e.features[0].properties.Gender + '</p>')
 .addTo(map);
 });
  
