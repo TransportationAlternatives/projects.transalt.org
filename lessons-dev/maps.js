@@ -471,7 +471,7 @@ option = {
         fontFamily: '"Inter", sans-serif',
       },
     containLabel: true,
-    name: 'Fatalities per 100,000',
+    name: 'Fatalities per 100,000 residents',
     nameLocation: 'middle',
         nameGap: 30,
   },
