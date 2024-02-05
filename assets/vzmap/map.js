@@ -32,7 +32,7 @@ map.on('load', () => {
     // type: 'vector',
     // url: 'mapbox://jacobdecastro.3fuj0i2t'
     type: 'geojson',
-    data: 'fatalities.geojson'
+    data: '/assets/vzmap/fatalities.geojson'
   });
 
   map.addSource('vz_priority', {
