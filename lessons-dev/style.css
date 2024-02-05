@@ -101,7 +101,7 @@ height: 99.25%;}
 		position: relative;
 		background-image: linear-gradient(0deg, rgba(241,93,34,1) 0%, rgba(241,93,34,0.45704219187675066) 100%), url(header.jpg);
 		background-size: cover;
-
+		background-position: 30%;
 	}
 
 }
