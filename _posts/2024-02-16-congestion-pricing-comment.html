@@ -1,0 +1,110 @@
+---
+title: Show your support for congestion pricing in 2 minutes or less
+layout: post-no-title
+date: 2024-02-16
+shorthead: Bike Lane Tracker
+image: /assets/img/congestionpricing.jpg
+permalink: /congestion-pricing-comment
+---
+
+<style type="text/css">
+	.centered {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.img-container {
+	  position: relative;
+	  text-align: left;
+	  color: white;
+}
+
+@media (min-width: 768px) {
+	.img-container {
+	  width: 120%;
+	  margin-left: -10%;
+	}
+}
+</style>
+
+<div class="img-container">
+  <img src="/assets/img/congestionpricing.jpg" alt="View of the street from the front of the bus" style="width:100%;">
+  <h1 class="centered">Show your support for congestion pricing in 2 minutes or less</h1>
+</div>
+
+<img src="" width="100%">
+
+<p class="pt-3"><strong>Right now, the MTA is collecting public comments on congestion pricing.</strong> Here’s why you should care:</p>
+<ul>
+	<li class="pt-2">The MTA is reviewing all comments — and <strong>we need to make our voices heard</strong>. We know a minority of New Yorkers who oppose congestion pricing are working overtime to curtail the program.</li>
+	<li class="pt-2">This is why we need to submit clear comments: <strong>Congestion pricing now with no exemptions</strong>. Each new exemption will lead to higher tolls for everybody else.</li>
+	<li class="pt-2">The future of New York City depends on the future of congestion pricing. <strong>Congestion pricing means faster buses, cleaner air, fewer cars, and safer streets.</strong></li>
+	<li class="pt-2">Congestion pricing will fund much-needed upgrades to our transit system, <strong>including the Second Avenue subway, the Interborough Express, train and subway station accessibility projects, new subway signals, and more</strong>.</li>
+</ul>
+
+<h3 class="pt-4 pb-1">We'll help you write a public comment</h3>
+<p>We need you to submit a comment in support of congestion pricing. This will only take a minute or two, but it is vital to ensuring the success of the program.</p>
+<h4>Step 1: Fill out the form</h4>
+
+<form>
+	<div class="mb-3">
+		<label for="name" class="form-label">What's your name?</label>
+		<input type="text" id="name" class="form-control" required>
+	</div>
+	<div class="mb-3">
+ 		<label for="location" class="form-label">Where do you live?</label>
+    	<input type="text" id="location" class="form-control" list="boroughOptions" required>
+    	<datalist id="boroughOptions">
+		  <option value="the Bronx">
+		  <option value="Brooklyn">
+		  <option value="Manhattan">
+		  <option value="Queens">
+		  <option value="Staten Island">
+		  <option value="Long Island">
+		  <option value="New Jersey">
+		  <option value="Westchester">
+		  	<option value="Hudson Valley">
+		  <option value="Jersey City">
+		  <option value="Hoboken">
+		  	<option value="Connecticut">
+		  	<option value="Newark">
+		</datalist>
+
+    </div>
+    <div class="mb-3">
+		<label for="deliver" class="form-label">I'm counting on congestion pricing to deliver...</label>
+		<input type="text" id="deliver" list="datalistOptions" class="form-control" placeholder="Need an idea? Choose an option using the dropdown menu">
+		<datalist id="datalistOptions">
+		  <option value="faster buses">
+		  <option value="cleaner air">
+		  <option value="safer streets">
+		  <option value="less congestion">
+		  <option value="reduced air pollution">
+		  	<option value="an accessible transit system">
+		</datalist>
+		<div class="form-text">Congestion pricing will bring cleaner air, faster buses, and safer streets to the region. What benefit are you most looking forward to?</div>
+	</div>
+     
+</form>
+  
+<button type="submit" onclick="madLibs()" id="libbutton" class="btn btn-primary">Generate</button>
+     <div id="mystory" class="pt-3"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script type="text/javascript">
+	new ClipboardJS('.btn');
+</script>
+
+  <script type="text/javascript">
+  	function madLibs() {
+
+  var mystory = document.getElementById("mystory");
+  var location = document.getElementById("location").value;
+  var deliver = document.getElementById("deliver").value;
+  var name = document.getElementById("name").value;
+
+  mystory.innerHTML = "<span id='comment'>I'm writing in support of the Central Business District Tolling Program.<br><br>As a " + location + " resident, I'm counting on congestion pricing to deliver " + deliver + ".<br><br>In addition, congestion pricing will raise $15 billion to expand and modernize our transit system while reducing traffic will greatly benefit myself and millions of public transit riders throughout the entire city and region.<br><br>Thank you,<br>" + name + "</span><br><br><h4>Step 2: Copy your comment</h4><button class='btn btn-primary' data-clipboard-target='#comment'>Copy to clipboard</button><br><br><h4>Step 3: Submit to MTA</h4><p>Click the link below to go to the MTA's website. You can paste your comment from above directly into the text box.</p><a href='https://contact.mta.info/s/forms/CBDTP' target='_blank' class='btn btn-primary'>Open MTA comment portal</a>";
+}
+  </script>
