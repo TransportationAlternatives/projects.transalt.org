@@ -1,0 +1,242 @@
+<head>
+  <meta charset='utf-8' />
+  <title>Serious Injuries in New York City, Mapped</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.1.0/nouislider.min.css" />
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.1.0/nouislider.min.js'></script>
+    <script id="search-js" defer="" src="https://api.mapbox.com/search-js/v1.0.0-beta.18/web.js"></script>
+
+    <!-- Moment.js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/ba78ba88-0894-44d4-80bb-e407c4b578c2/favicon%203.ico?v=1648657962312">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TB4133TPG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2TB4133TPG');
+    </script>
+
+</head>
+
+<body>
+
+  <!-- nav -->
+    <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+      <img src="/assets/sirta/ta-icon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      Serious Injuries, Mapped
+    </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutSite" target="_blank">What Is a Serious Injury?</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#trends" target="_blank">Serious Injury Trends</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#policy" target="_blank">Recommendations</a>
+            <a class="nav-link disabled" aria-disabled="true">|</a>
+            <a class="nav-link" href="https://transalt.org/donate" target="_blank">Donate</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+  <div id='map'></div>
+
+
+
+  <div id='console'>
+
+  
+    <p>Transportation Alternatives’ database tracks every traffic crash resulting in serious injury in New York City. <a href="#" data-bs-toggle="modal" data-bs-target="#aboutSite">Learn more about this site</a>.</p>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#filterSite" aria-expanded="false" aria-controls="filterSite" style="border-radius: 0; background-color: #f15d22">
+    Filters
+  </button>
+  <div class="collapse pt-3" id="filterSite">
+    <h2>Mode</h2>
+     <div id='filterMode'>
+      <div class="form-check">
+        <input class="form-check-input" id='all' type='radio' name='toggle' value='all' checked='checked'>
+        <label class="form-check-label" for='all'>All</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" id='pedestrian' type='radio' name='toggle' value='pedestrian' >
+        <label class="form-check-label" for='pedestrian'>Pedestrian</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" id='cyclist' type='radio' name='toggle' value='cyclist' >
+        <label class="form-check-label" for='cyclist'>Cyclist</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" id='motorist' type='radio' name='toggle' value='motorist' >
+        <label class="form-check-label" for='motorist'>Motorist</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" id='other' type='radio' name='toggle' value='other' >
+        <label class="form-check-label" for='other'>Other Motorist</label>
+      </div>
+    </div>
+
+    <h2 class="pt-3">Layers</h2>
+    <nav id="menu"></nav>
+</div>
+     </div>
+
+    
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="aboutSite" tabindex="-1" aria-labelledby="aboutSite" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="aboutSite">About this site</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Serious injuries from traffic crashes are often absent from the news and policymaking, despite life-altering consequences. Every year, these crashes leave thousands of New Yorkers with permanent disabilities, often requiring months of recovery and leading to financial hardship.</p>
+        <p>Nearly <a href="https://static1.squarespace.com/static/5cab9d9b65a707a9b36f4b6c/t/6217ece071d2300a0fdd5fc6/1645735137285/Dec+2020+Siena+Poll+Results+-+Sheet+1.pdf" target="_blank">one in three New Yorkers</a> have been injured in traffic violence. <strong>For every person killed in a traffic crash in New York City, another 11 are severely injured.</strong></p>
+
+        <p>Transportation Alternatives’ database tracks every traffic crash resulting in serious injury in New York City in an effort to broaden the conversation about Vision Zero and the preventable harm caused by giving so much space in our city to cars. This is the first time serious injury data has been analyzed and visualized for public consumption.</p>
+        <div class="accordion accordion-flush" id="accordionFlushExample" style="margin:0 !important; padding: 0 !important;">
+  <div class="accordion-item">
+    <h2 class="accordion-header" >
+      <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        What is a serious injury?
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse px-0" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body px-0"><p>In this database, the definition of serious injuries is based on the New York City Department of Transportation's (DOT) categorization, which follows <a href="https://www.nysenate.gov/legislation/laws/ISC/5102" target="_blank">New York State law</a>, and includes any traffic crash-related injuries resulting in dismemberment, significant disfigurement, bone fracture, the loss of a fetus, as well as the permanent loss of use of a body part, organ,or  function, the significant limitation of a body function, and any injury which prevents a person from performing most of their customary daily activities for 90 days or more.
+</p>
+      </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Why track serious injuries?
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body px-0">
+          <p>For every traffic fatality, 11 New Yorkers are seriously injured.</p>
+          <p>New York City’s Vision Zero program is a mandate to eliminate all traffic fatalities and serious injuries, however the latter is often disregarded in policymaking and news reporting. Despite this disregard, these injuries are life-altering. Victims of serious injuries face significant hospital bills, unpredictable time off work, medical equipment costs, and the prospect of long term recovery care, therapy, and medical assistance. Traffic crashes are the <a href="https://www.apa.org/news/press/releases/2003/12/accidents-ptsd" target="_blank">leading cause</a> of post-traumatic stress disorder. Serious injuries occur at 11 times the rate of traffic fatalities, providing a more data-rich metric for identifying the most dangerous streets and intersections. In addition to the human cost, there is a significant financial burden to these dangerous streets: a 2010 estimate of the cost of traffic crashes in New York City totaled more than <a href="https://www1.nyc.gov/html/dot/html/pedestrians/pedsafetyreport.shtml%23:~:text=NYC's%2520traffic%2520fatality%2520rate%2520is,the%2520event%2520of%2520a%2520crash." target="_blank">$4 billion annually</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+          Where does this data come from?
+        </button>
+      </h2>
+      <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body px-0">
+          <p>The NYC Serious Injury Traffic Crash Database is based on crash investigations data published by the City of New York on its <a href="https://data.cityofnewyork.us/Transportation/Serious-Injury-Response-Tracking-Analysis-Program-/xeqp-qz8h" target="_blank">Open Data portal</a>. The New York City Department of Transportation (DOT) and New York City Police Department investigate all crashes that involve severe injuries as well as fatalities, documenting the involved parties, their modes of transportation, and injuries recorded in hospital records. Starting in 2011, Transportation Alternatives advocated for the creation of <a href="https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=4772928&GUID=01D4E742-197B-492E-B4CB-96DB078682FC" target="_blank">Local Law 49-2021</a>, which requires DOT to release this data on a quarterly basis. Prior to this law’s passage this data was not publicly available.</p>
+      </div>
+    </div>
+  </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+          Are serious injuries distributed equally?
+        </button>
+      </h2>
+      <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body px-0">
+          <p>No &mdash; Serious injury crashes are 21% higher in the 10 City Council districts with the greatest percentage of residents living below the poverty line and 15% higher in the 10 districts with the highest percentage of residents of color, compared to the citywide average.</p>
+          <ul>
+            <li>For bike riders, Manhattan had 77% more serious injuries per capita than the citywide average.</li>
+        <li>For pedestrians, Manhattan had 25% more serious injuries per capita than the citywide average.</li>
+        <li>For moped and e-scooter riders, Brooklyn had 27% more serious injuries per capita than the citywide average.</li>
+        <li>For motorists, Staten Island had 48% more serious injuries per capita than the citywide average.</li>
+      </ul>
+      </div>
+    </div>
+    <hr>
+    <h4 class="pt-1">Methodology</h4>
+      <p>Transportation Alternatives’ database is based on the legally-required <a href="https://data.cityofnewyork.us/Transportation/Serious-Injury-Response-Tracking-Analysis-Program-/xeqp-qz8h" target="_blank">serious injury data</a> published by DOT. To identify missing locations and mode of serious injury, TA cross-referenced NYPD Open Data sets with DOT's reporting.</p>
+      <p><strong>For additional data and analysis:</strong> See fatalities and all injuries by council district or community board with <a href="https://spatialequity.nyc" target="_blank">Spatial Equity NYC</a>. To see fatalities mapped, see <a href="https://crashmapper.org/#/" target="_blank">Crashmapper</a>, produced by CHECKPEDS.</p>
+  </div>
+    
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="policy" tabindex="-1" aria-labelledby="policy" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="policy">How can we prevent serious injuries?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>To reduce traffic injuries in your neighborhood, pay attention to the design and use of public spaces. The <a href="https://www.nyc.gov/html/dot/html/about/nyc-streets-plan.shtml" target="_blank">NYC Streets Plan</a> legally requires the City of New York to redesign thousands of intersections for safety, build hundreds of thousands of square feet of new pedestrian space, create hundreds of miles of protected bus and bike lanes, and more. Here are a few ways that our leaders can prevent serious injuries by implementing the NYC Streets Plan and our <a href="https://nyc25x25.org" target="_blank">NYC 25x25</a> vision:</p>
+      <ul class="pb-3">
+        <li><strong>Build protected bike lanes and bus lanes</strong> in districts with high rates of traffic injuries. The NYC Streets Plan is a&nbsp;<a href="http://nyc.legistar1.com/nyc/attachments/02a148f2-6cbc-44b8-acf5-0b66f33d3283.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="http://nyc.legistar1.com/nyc/attachments/02a148f2-6cbc-44b8-acf5-0b66f33d3283.pdf" data-sk="tooltip_parent">legal requirement</a>&nbsp;and critical for designing and building safer, slower streets &ndash; yet the current administration failed to meet mandated goals in 2022. In New York City, converting car storage and driving lanes to car-free protected bike lanes caused bicycling ridership to skyrocket while reducing the number of people killed or seriously injured by 18.1%, pedestrians by 35.5% and motorists by 13.1%, according to <a href="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" data-sk="tooltip_parent">14 years of data.</a></li>
+        <li class="mt-2"><strong>Prioritize pedestrian infrastructure&nbsp;in all five boroughs.</strong> Infrastructure like additional pedestrian signals, accessible pedestrian signals, upgraded ramps, and pedestrian-only space are also required by the Streets Plan. Converting a car driving lane into pedestrian and bus infrastructure on First and Second avenues in Manhattan caused traffic injuries to&nbsp;<a href="https://www1.nyc.gov/html/brt/downloads/pdf//201111_1st2nd_progress_report.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www1.nyc.gov/html/brt/downloads/pdf//201111_1st2nd_progress_report.pdf" data-sk="tooltip_parent">drop 21%</a>&nbsp;even though cycling rates rose up to 177% on some segments, bus ridership was up 9%, and traffic speed and volume remained constant.</li>
+        <li class="mt-2"><strong>Invest in self-enforcing streets&nbsp;across the city.</strong> Automated enforcement works: operating speed safety cameras 24/7 has reduced traffic injuries by up to&nbsp;<a href="https://www.nyc.gov/html/dot/html/pr2023/speed-cameras-first-year.shtml" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www.nyc.gov/html/dot/html/pr2023/speed-cameras-first-year.shtml" data-sk="tooltip_parent">45%</a>&nbsp;along some corridors, and constructing traffic-calming infrastructure &mdash; pedestrian islands, curb extensions, and bike lanes &mdash; reduces the number of&nbsp;<a href="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" target="_blank" rel="noopener noreferrer" data-stringify-link="https://www1.nyc.gov/html/dot/downloads/pdf/safety-treatment-evaluation-2005-2018.pdf" data-sk="tooltip_parent">people killed or severely injured</a>&nbsp;in crashes, including drivers.</li>
+      </ul>
+      <div class="take-action">
+              <h2 style="font-weight: 600;" id="">Take action!</h2>
+              <p>Tell Mayor Adams to implement the legally-required NYC Streets Plan and build streets that protect New Yorkers from crashes.</p>
+              <a class="btn btn-primary" href="https://act.transalt.org/a/support-streets-plan" role="button" target="_blank" style="color: white;border-radius: 0;">Send a message</a>
+            </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trends -->
+<div class="modal fade" id="trends" tabindex="-1" aria-labelledby="trends" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="policy">Serious Injury Trends</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Citywide Serious Injury Trends by Mode</h4>
+        <p>chart here</p>
+
+        <h4>Serious Injuries by Borough</h4>
+        <p>table here</p>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<script src="rangeSlider.js"></script>
+<script type="text/javascript" src="map.js"></script>
+<style type="text/css">
+  .noUi-connect {
+  background: gray;
+}
+</style>
+
+</body>
