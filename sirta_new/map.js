@@ -15,16 +15,21 @@ var map = new mapboxgl.Map({
 
 const searchJS = document.getElementById('search-js');
 searchJS.onload = function () {
-const searchBox = new MapboxSearchBox();
-searchBox.accessToken = ACCESS_TOKEN;
-searchBox.options = {
-types: 'address,poi',
-proximity: [-74.0059, 40.7128]
-};
-searchBox.marker = true;
-searchBox.mapboxgl = mapboxgl;
-map.addControl(searchBox);
-};
+  const searchBox = new MapboxSearchBox();
+  searchBox.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjazI5YzQzdXAwOXFxM25vMXV4OGl5OGQzIn0.xYccv6RPj_aa6zkS5ShsDw';
+  searchBox.options = {
+  types: 'address,poi',
+  proximity: [-74.0059, 40.7128]
+  };
+  searchBox.marker = true;
+  searchBox.mapboxgl = mapboxgl;
+  map.addControl(searchBox);
+  search.popoverOptions = {
+    placement: 'top-start',
+    flip: true,
+    offset: 5
+}
+  };
 
 var sliderOptions = {
         elm: 'slider-control',
@@ -107,21 +112,21 @@ map.on('load', () => {
         'match',
         ['get', 'Mode'],
         'Pedestrian',
-        '#fbb03b',
+        '#f15d22',
         'Cyclist',
-        '#223b53',
+        '#44884e',
         'Other Motorist',
-        '#3bb2d0',
+        '#e5a231',
         'Motorist',
-        '#e55e5e',
+        '#3d77a4',
         /* other */ '#ccc'
         ],
-      'circle-opacity': 0.8,
+      'circle-opacity': 0.9,
       'circle-radius': {
         'base': 1.75,
         'stops': [
-          [12, 3],
-          [16, 10],
+          [12, 2],
+          [16, 8],
           [22, 180]
         ]
       },

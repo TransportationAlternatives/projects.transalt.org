@@ -4,6 +4,16 @@ body {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+mapbox-search-box {
+  position: absolute;
+  z-index: 1;
+  top: 55px;
+  right: 5px;
+  opacity: 75%;
+  overflow: hidden;
+  
+}
+
 .modal-body {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
