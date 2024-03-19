@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: trade-gothic-next, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 mapbox-search-box {
@@ -15,7 +15,7 @@ mapbox-search-box {
 }
 
 .modal-body {
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: trade-gothic-next, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #map {
@@ -97,7 +97,7 @@ background: #3074a4;
 
 .slider-control-container {
         padding: 5px;
-        font: 12px/20px 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
+        font: 12px/20px trade-gothic-next, 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
         padding-top: 5px;
         padding-bottom: 5px;
         font-weight: 400;
@@ -106,7 +106,7 @@ background: #3074a4;
     }
 
 .slider-control-range-display {
-  font: 12px/20px 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: 12px/20px trade-gothic-next, 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: 400;
@@ -114,11 +114,11 @@ background: #3074a4;
 
 .mapboxgl-popup {
   max-width: 500px;
-  font: 12px/20px 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: 12px/20px trade-gothic-next, 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 .popuph1 {
-  font: 18px/20px 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: 18px/20px trade-gothic-next, 'Inter','Helvetica Neue', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }

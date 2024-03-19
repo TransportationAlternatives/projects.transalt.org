@@ -59,6 +59,13 @@ map.on('load', () => {
     data: 'injuries.geojson'
   });
 
+    map.addSource('cd', {
+    // type: 'vector',
+    // url: 'mapbox://jacobdecastro.3fuj0i2t'
+    type: 'geojson',
+    data: 'assets/sirta/cd.geojson'
+  });
+
   map.addSource('vz_priority', {
     type: 'vector',
     url: 'mapbox://jacobdecastro.dasg8mtl'
@@ -75,7 +82,7 @@ map.on('load', () => {
     'source': 'cb',
     'source-layer': 'cb-bzfyay',
     'layout': {
-        visibility: 'visible', // show initially
+        visibility: 'none', // show initially
     },
     'paint': {
         'line-color': 'white',
@@ -84,6 +91,21 @@ map.on('load', () => {
     }
   });
 
+   map.addLayer({
+    'id': 'Council District boundaries',
+    'type': 'line',
+    'source': 'cd',
+    'layout': {
+        visibility: 'none', // show initially
+    },
+    'paint': {
+        'line-color': 'yellow',
+        'line-width': 1,
+        'line-opacity': .5
+    }
+  });
+
+
 
    map.addLayer({
     'id': 'Vision Zero Priority Corridors',
@@ -91,7 +113,7 @@ map.on('load', () => {
     'source': 'vz_priority',
     'source-layer': 'VZV_Priority_Corridors-2enp65',
     'layout': {
-        visibility: 'visible', // show initially
+        visibility: 'none', // show initially
     },
     'paint': {
         'line-color': '#f15d22',
@@ -140,12 +162,12 @@ map.on('load', () => {
 
 map.on('idle', () => {
 // If these two layers were not added to the map, abort
-if (!map.getLayer('Vision Zero Priority Corridors') || !map.getLayer('Community Board boundaries')) {
+if (!map.getLayer('Vision Zero Priority Corridors') || !map.getLayer('Community Board boundaries') || !map.getLayer('Council District boundaries')) {
 return;
 }
  
 // Enumerate ids of the layers.
-const toggleableLayerIds = ['Vision Zero Priority Corridors','Community Board boundaries'];
+const toggleableLayerIds = ['Vision Zero Priority Corridors','Community Board boundaries','Council District boundaries'];
  
 // Set up the corresponding toggle button for each layer.
 for (const id of toggleableLayerIds) {
