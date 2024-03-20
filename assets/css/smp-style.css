@@ -5,11 +5,11 @@
 
       #map2 { height: 500px; }
 
-      body { font-family: 'Inter', sans-serif; }
+      body { font-family: trade-gothic-next, 'Inter', sans-serif; }
 
       h1 {
         font-weight: 600;
-        font-family: 'Montserrat', sans-serif;
+        font-family: trade-gothic-next, 'Montserrat', sans-serif;
       }
 
       li {
@@ -21,7 +21,7 @@
       }
 
       .nav-link, .navbar-brand {
-        font-family: 'Montserrat', sans-serif;
+        font-family: trade-gothic-next, 'Montserrat', sans-serif;
         font-weight: 600;
         color: #414042 !important;
         font-size: 18px !important;
@@ -30,14 +30,14 @@
       .btn {
         text-transform: uppercase;
         border-radius: 0;
-        font-family: 'Inter', sans-serif;
+        font-family: trade-gothic-next, 'Inter', sans-serif;
         font-weight: 700;
       }
 
       .btn-primary {
         background-color: #f15d22 !important;
         border-color: #f15d22 !important;
-        font-family: 'Inter', sans-serif;
+        font-family: trade-gothic-next, 'Inter', sans-serif;
         font-weight: 700;
       }
 
