@@ -20,7 +20,7 @@ layout: default
 	    					{% endif %}
 	    						<div class="archive-item d-md-flex justify-content-between flex-row-reverse">
 	    							<p class="archive-date">{{ post.date | date: "%B" }} {{ post.date | date: "%d" | plus:'0' }}</p>
-	    							<a href="{{ post.url }}" class="archive-link">{{ post.title }}</a>
+	    							<a style="font-family: trade-gothic-next, sans-serif" href="{{ post.url }}" class="archive-link">{{ post.title }}</a>
 	    						</div>					
 	    						{% if forloop.last %}{% endif %}
 	    				{% endfor %} 
