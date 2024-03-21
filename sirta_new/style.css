@@ -12,7 +12,15 @@ mapbox-search-box {
   opacity: 75%;
   overflow: hidden;
   
+
 }
+
+.heading-label {
+    margin-top: -.5rem;
+    font-style: italic;
+    color: #9E9E9F;
+    font-size: 15px;
+  }
 
 .modal-body {
   font-family: trade-gothic-next, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;

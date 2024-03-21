@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://use.typekit.net/zic5jea.css">
+  <script src="https://kit.fontawesome.com/0b6ddf5fd5.js" crossorigin="anonymous"></script>
     <!-- Slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.1.0/nouislider.min.css" />
 
@@ -218,11 +219,85 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h4>Citywide Serious Injury Trends by Mode</h4>
-        <p>chart here</p>
+        <div class="row">
+    <div class="col-md-12">
+      <h3 style="font-weight: ;"><span id="total-num"></span> people were seriously injured in crashes between January 2022 and December 2023.</h3>
+      <!--<p class="heading-label pt-3" style="">On average, there are XX serious injuries per week.</p>-->
+    </div>
+  </div>
 
-        <h4>Serious Injuries by Borough</h4>
-        <p>table here</p>
+  <div class="row pt-3">
+    <div class="col-md-3">
+      <div class="box">
+        <div class="box-inner">
+          <h3><i class="fa-solid fa-person-walking"></i> <span id="ped-num"></span></h3>
+            <p>pedestrians seriously injured</p>
+            
+            <hr>
+            <p class="heading-label">On average, <span id="ped-week"></span> pedestrians are seriously injured each week.</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="box">
+        <div class="box-inner">
+          <h3><i class="fa-solid fa-bicycle"></i> <span id="bike-num"></span></h3>
+            <p>bike riders seriously injured</p>
+            <hr>
+            <p class="heading-label">On average, <span id="bike-week"></span> people riding bikes are seriously injured each week.</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="box">
+        <div class="box-inner">
+          <h3><i class="fa-solid fa-car"></i> <span id="motor-num"></span></h3>
+            <p>motorists seriously injured</p>
+            <hr>
+            <p class="heading-label">On average, <span id="motor-week"></span> motorists are seriously injured each week.</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="box">
+        <div class="box-inner">
+          <h3><i class="fa-solid fa-crutch"></i> <span id="other-num"></span></h3>
+            <p><a data-bs-toggle="collapse" href="#collapsePed" role="button" aria-expanded="false" aria-controls="collapsePed">other motorists</a> seriously injured</p>
+            <div class="collapse" id="collapsePed">
+            <div class="card card-body">
+              Other motorists, as defined by NYPD and DOT, are riders of mopeds or e-scooters.
+            </div>
+          </div>
+            <hr>
+            <p class="heading-label">On average, <span id="other-week"></span> other motorists are seriously injured each week.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+        <div style="min-height:600px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/NAXt5/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/NAXt5/full.png" alt="" /></noscript></div>
+
+        <h3 style="font-weight: ; pt-3" class="pt-5">Serious Injuries by Borough</h3>
+      <p>More than 5,000 people were seriously injured by crashes since January 2022. Below is a breakdown by borough and mode:</p>
+      <div class="table-responsive mb-5">
+        <table id="borough-breakdown" class="table "></table>
+      </div>
+      <div style="min-height:258px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/948xY/embed.js?v=5" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/948xY/full.png" alt="" /></noscript></div>
+
+      <h3 class="pt-5">Serious Injury Trends</h3>
+      <blockquote class="blockquote">
+              <p><span id="totalTrend"></span></p>
+            </blockquote>
+            <ul>
+              <li><span id="bxTrend"></span></li>
+              <li><span id="bkTrend"></span></li>
+              <li><span id="mnTrend"></span></li>
+              <li><span id="qnTrend"></span></li>
+              <li><span id="siTrend"></span></li>
+            </ul>
       
       </div>
     </div>
@@ -238,5 +313,120 @@
   background: gray;
 }
 </style>
+
+<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+<script type="text/javascript">
+  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1sHMkMGRBFGrQyK1-2ibad8hoR2V2w1hMrhti2cXBTVI/edit#gid=0';
+
+$('#total-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select A",
+  fetchSize: 1
+});
+
+$('#ped-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select B",
+  fetchSize: 1
+});
+
+$('#bike-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select C",
+  fetchSize: 1
+});
+
+$('#motor-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select D",
+  fetchSize: 1
+});
+
+$('#other-num').sheetrock({
+  url: mySpreadsheet,
+  query: "select E",
+  fetchSize: 1
+});
+
+$('#ped-week').sheetrock({
+  url: mySpreadsheet,
+  query: "select G",
+  fetchSize: 1
+});
+
+$('#bike-week').sheetrock({
+  url: mySpreadsheet,
+  query: "select H",
+  fetchSize: 1
+});
+
+$('#motor-week').sheetrock({
+  url: mySpreadsheet,
+  query: "select I",
+  fetchSize: 1
+});
+
+$('#other-week').sheetrock({
+  url: mySpreadsheet,
+  query: "select J",
+  fetchSize: 1
+});
+
+$('#totalTrend').sheetrock({
+  url: mySpreadsheet,
+  query: "select N",
+  fetchSize: 1
+});
+
+$('#bxTrend').sheetrock({
+  url: mySpreadsheet,
+  query: "select O",
+  fetchSize: 1
+});
+
+$('#bkTrend').sheetrock({
+  url: mySpreadsheet,
+  query: "select P",
+  fetchSize: 1
+});
+
+$('#mnTrend').sheetrock({
+  url: mySpreadsheet,
+  query: "select Q",
+  fetchSize: 1
+});
+
+$('#qnTrend').sheetrock({
+  url: mySpreadsheet,
+  query: "select R",
+  fetchSize: 1
+});
+
+$('#siTrend').sheetrock({
+  url: mySpreadsheet,
+  query: "select S",
+  fetchSize: 1
+});
+
+$('#num-total-1').sheetrock({
+  url: mySpreadsheet,
+  query: "select X",
+  fetchSize: 1
+});
+
+</script>
+<script type="text/javascript">
+  var twoTwo = 'https://docs.google.com/spreadsheets/d/1sHMkMGRBFGrQyK1-2ibad8hoR2V2w1hMrhti2cXBTVI/edit#gid=972299199';
+
+
+$('#borough-breakdown').sheetrock({
+  url: twoTwo,
+  query: "select A,B,C,D,E,F",
+  labels: ['Borough', 'Pedestrians','Bike Riders','Motorists','Other Motorists','Total'],
+  fetchSize: 7
+});
+
+</script>
 
 </body>
