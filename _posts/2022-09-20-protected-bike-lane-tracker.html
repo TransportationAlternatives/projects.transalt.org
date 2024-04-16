@@ -166,6 +166,7 @@ permalink: /bikelanes
           </div>
           <div class="col-md-6 py-3">
             <h3 style="font-weight: 600"><span id="announced"></span> miles <span style="color: #E65200;">announced</span></h3>
+            <p><span id="post26"></span> miles announced for installation after 2026.</p>
             <div id="map3"></div>
           </div>
         </div>
@@ -393,6 +394,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_t
 
   // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
   kmz3.load('https://projects.transalt.org/assets/img/announced.kmz');
+  kmz3.load('https://projects.transalt.org/assets/img/post26.kmz');
 
 </script>
 <script type="text/javascript">
@@ -479,6 +481,11 @@ $('#2024-num').sheetrock({
   $('#a6').sheetrock({
   url: mySpreadsheet,
   query: "select T",
+  fetchSize: 1
+});
+  $('#post26').sheetrock({
+  url: mySpreadsheet,
+  query: "select U",
   fetchSize: 1
 });
 
