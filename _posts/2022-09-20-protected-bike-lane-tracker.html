@@ -95,8 +95,9 @@ permalink: /bikelanes
       </div>
       <div class="container-xxl pb-3">
          <div id="map"></div>
+        <p class="pt-2" style="color: gray; font-size: 14px;"><span style="background-color: #9C27B0; padding-left:5px"></span> = 2022 • <span style="background-color: #0288D2; padding-left: 5px"></span> = 2023 • <span style="background-color: #0E9D58; padding-left:5px"></span> = 2024</p>
          <p class="pt-2" style="color: gray; font-size: 14px;"><i class="bi bi-hand-index-thumb"></i> Click on a project for more information.</p>
-
+  
       </div>
      
 
@@ -140,6 +141,7 @@ permalink: /bikelanes
         <div class="row d-flex justify-content-center">
           <div class="col-md-6">
             <h3 style="font-weight: 600" class="pt-5" id="">Project anouncements</h3>
+            <p>NYC DOT last announced a new protected bike lane project <span style="color: #;" id="a1"></span> days ago on <span style="color: #;" id="a2"></span>. It has been <span style="color: #;" id="a3"></span> days since they last announced a project at least one mile long on <span style="color: #;" id="a4"></span>. <span style="color: #;" id="a5"></span> miles of new projects have been announced in the past year, representing <span style="color: #;" id="a6"></span> of the 50 miles required to be installed this year.</p>
             <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://docs.google.com/spreadsheets/d/e/2PACX-1vRTDp5GkbDbotiX9y0F0l6fuNJu0FyEZdGCcsQSiRU3KRh74DAGG-Sr8MERXR1UNXXiNl5GUa_humkI/pubchart?oid=286705411&format=interactive'></iframe></div>
             <p style="font-size:14px; line-height:16px; padding-top: 8px">Graph shows all projects under the current NYC Streets Plan, i.e., projects that had yet to be completed at the start of 2022 and were or are expected to be completed by the end of 2026.
 </p>
@@ -384,7 +386,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_t
 $('#top-stats').sheetrock({
   url: mySpreadsheet,
   query: "select A,B,C",
-  fetchSize: 7
+  fetchSize: 5
 });
 
 $('#in-progress').sheetrock({
@@ -408,6 +410,42 @@ $('#date').sheetrock({
 $('#2024-num').sheetrock({
   url: mySpreadsheet,
   query: "select M",
+  fetchSize: 1
+});
+
+  $('#a1').sheetrock({
+  url: mySpreadsheet,
+  query: "select O",
+  fetchSize: 1
+});
+
+  $('#a2').sheetrock({
+  url: mySpreadsheet,
+  query: "select P",
+  fetchSize: 1
+});
+
+  $('#a3').sheetrock({
+  url: mySpreadsheet,
+  query: "select Q",
+  fetchSize: 1
+});
+
+  $('#a4').sheetrock({
+  url: mySpreadsheet,
+  query: "select R",
+  fetchSize: 1
+});
+
+   $('#a5').sheetrock({
+  url: mySpreadsheet,
+  query: "select S",
+  fetchSize: 1
+});
+
+  $('#a6').sheetrock({
+  url: mySpreadsheet,
+  query: "select T",
   fetchSize: 1
 });
 
