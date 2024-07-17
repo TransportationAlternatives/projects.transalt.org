@@ -16,9 +16,9 @@ var sliderOptions = {
         minProperty: 'Date',
         maxProperty: 'Date',
         sliderMin: '2014-01-01T08:00:00.000Z',
-        sliderMax: '2023-12-31T08:00:00.000Z',
+        sliderMax: '2024-06-29T08:00:00.000Z',
         filterMin: '2014-01-01T08:00:00.000Z',
-        filterMax: '2023-12-31',
+        filterMax: '2024-06-29',
         propertyType: 'iso8601',
         rangeDescriptionFormat: 'shortDate',
         descriptionPrefix: 'Date:'
