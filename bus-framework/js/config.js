@@ -15,7 +15,7 @@ var config = {
             id: 'allbuses',
             alignment: 'center',
             hidden: false,
-            title: 'There are 21,565 bus stops in New York City — and we know how to cool them down.',
+            title: 'There are 13,748 bus stops in New York City — and we know how to cool them down.',
             description: 'New York City’s coolest bus stops offer solutions for its hottest ones: bus shelters, shade trees, and efficient service. These solutions offer benefits beyond keeping bus riders safe and cool.',
             location: {
                 center: [-73.96416, 40.74147],
