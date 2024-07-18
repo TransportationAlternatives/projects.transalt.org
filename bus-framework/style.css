@@ -214,6 +214,16 @@ background: #3074a4;
   }
 }
 
+@media (max-width: 750px) {
+            .leadin {
+  padding: 0 1rem 60vh;
+  margin: 0 auto;
+  max-width: 90vw;
+  color: black;
+            }
+        }
+
+
 .leadin-photo2 {
   display: block;
   object-fit: cover;
