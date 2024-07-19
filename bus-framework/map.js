@@ -14,23 +14,20 @@ var map2 = new mapboxgl.Map({
   cooperativeGestures: true
 });
 
-/* const searchJS = document.getElementById('search-js');
-searchJS.onload = function () {
-  const searchBox = new MapboxSearchBox();
-  searchBox.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjbHc3ejV0dDkyOXk5MnFscjRpZ2t1a213In0.FEJ1W-jzrgCjuwsnDEyboQ';
-  searchBox.options = {
-  types: 'address,poi',
-  proximity: [-74.0059, 40.7128]
-  };
-  searchBox.marker = true;
-  searchBox.mapboxgl = mapboxgl;
-  map.addControl(searchBox);
-  search.popoverOptions = {
-    placement: 'top-start',
-    flip: true,
-    offset: 5
-}
-  }; */
+const searchJS = document.getElementById('search-js');
+    searchJS.onload = function () {
+        const searchBox = new MapboxSearchBox();
+        searchBox.accessToken = 'pk.eyJ1IjoiamFjb2JkZWNhc3RybyIsImEiOiJjbHc3ejV0dDkyOXk5MnFscjRpZ2t1a213In0.FEJ1W-jzrgCjuwsnDEyboQ';
+        searchBox.options = {
+            types: 'address,poi',
+            proximity: [-73.99209, 40.68933]
+        };
+        searchBox.marker = true;
+        searchBox.mapboxgl = mapboxgl;
+        map2.addControl(searchBox);
+    };
+
+
 
 map2.on('load', () => {
 
@@ -174,7 +171,7 @@ coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
  
 new mapboxgl.Popup()
 .setLngLat(coordinates)
-.setHTML('<p class="popDate">' + e.features[0].properties.ntaname + '</p><h1 class="popuph1 border-bottom pb-2">' + e.features[0].properties.stop_name + '</h1><p class="popDate"><span style="font-weight:700">Routes:</span> ' + e.features[0].properties.route_ids + '</p><p class="popDate">' + e.features[0].properties.mean_sentence + '</p><p class="popDate"><span style="font-weight:700">Shelter?</span> ' + e.features[0].properties.Shelter + '</p><p class="popDate"><span style="font-weight:700">Countdown clock?</span> ' + e.features[0].properties.Countdown_clock_within_25ft + '</p><p class="popDate"><span style="font-weight:700">Bench within 25 feet?</span> ' + e.features[0].properties.Bench_within_25ft + '</p><p class="popDate"><span style="font-weight:700">Tree within 25 feet?</span> ' + e.features[0].properties.Tree_within_25ft + '</p><p class="popDate"><span style="font-weight:700">Stop ID:</span> ' + e.features[0].properties.stop_id + '</p>')
+.setHTML('<p class="popDate">' + e.features[0].properties.ntaname + '</p><h1 class="popuph1 border-bottom pb-2">' + e.features[0].properties.stop_name + '</h1><p class="popDate pb-2">' + e.features[0].properties.Sentence +'</p><p class="popDate"><span style="font-weight:700">Routes:</span> ' + e.features[0].properties.route_ids + '</p><p class="popDate"><span style="font-weight:700">Shelter?</span> ' + e.features[0].properties.Shelter + '</p><p class="popDate"><span style="font-weight:700">Countdown clock?</span> ' + e.features[0].properties.Countdown_clock_within_25ft + '</p><p class="popDate"><span style="font-weight:700">Bench within 25 feet?</span> ' + e.features[0].properties.Bench_within_25ft + '</p><p class="popDate"><span style="font-weight:700">Tree within 25 feet?</span> ' + e.features[0].properties.Tree_within_25ft + '</p><p class="popDate"><span style="font-weight:700">Stop ID:</span> ' + e.features[0].properties.stop_id + '</p>')
 .addTo(map2);
 });
  
@@ -205,4 +202,5 @@ map2.on('mousemove', 'cb', function(e) {
         map2.getCanvas().style.cursor = '';
         popup.remove();
     });
+
 

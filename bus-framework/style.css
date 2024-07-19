@@ -57,6 +57,10 @@ li {
 
 }
 
+a {
+    color: #0074E0;
+}
+
 #menu a {
 font-size: 13px;
 color: #404040;
