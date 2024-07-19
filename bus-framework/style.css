@@ -8,6 +8,7 @@ header {
 		url(img/header.webp);
 	color: white;
 	background-size: cover;
+    background-position: right;
 }
 
 p {
@@ -19,6 +20,13 @@ p {
 	font-family: trade-gothic-next,'Inter',system-ui,sans-serif;
 	font-size: 14px;
 }
+
+.caption {
+    font-family: trade-gothic-next,'Inter',system-ui,sans-serif;
+    font-size: 14px;
+    padding-top: 6px;
+}
+
 
 footer p {
     font-family: trade-gothic-next,'Inter',system-ui,sans-serif;
