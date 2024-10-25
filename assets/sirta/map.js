@@ -56,14 +56,14 @@ map.on('load', () => {
     // type: 'vector',
     // url: 'mapbox://jacobdecastro.3fuj0i2t'
     type: 'geojson',
-    data: 'injuries.geojson'
+    data: 'https://projects.transalt.org/assets/sirta/injuries.geojson'
   });
 
     map.addSource('cd', {
     // type: 'vector',
     // url: 'mapbox://jacobdecastro.3fuj0i2t'
     type: 'geojson',
-    data: 'assets/sirta/cd.geojson'
+    data: 'https://projects.transalt.org/assets/sirta/cd.geojson'
   });
 
   map.addSource('vz_priority', {
