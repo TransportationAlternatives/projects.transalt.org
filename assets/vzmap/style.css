@@ -1,11 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: trade-gothic-next, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .modal-body {
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: trade-gothic-next, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #map {
