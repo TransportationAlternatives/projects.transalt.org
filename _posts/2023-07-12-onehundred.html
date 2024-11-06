@@ -365,7 +365,7 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
     $(document).ready(function () {
       $.ajax({
         type: "GET",
-        url: 'https://docs.google.com/spreadsheets/d/1-76TysvoluJqHqI2SeRcha15o3FC-kuu0Rxs35bgy94/gviz/tq?tqx=out:csv&sheet=Sheet1',
+        url: 'https://docs.google.com/spreadsheets/d/1-76TysvoluJqHqI2SeRcha15o3FC-kuu0Rxs35bgy94/gviz/tq?tqx=out:csv&sheet=usethisone',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
