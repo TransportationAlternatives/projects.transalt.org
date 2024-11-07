@@ -9,7 +9,7 @@ map.on('load', () => {
         map.addSource('earthquakes', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
-            data: 'data.geojson'
+            data: 'https://projects.transalt.org/assets/data.geojson'
         });
 
         map.addLayer({
