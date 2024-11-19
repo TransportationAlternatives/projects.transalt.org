@@ -343,8 +343,8 @@ background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0.6615239
 
       function makeGeoJSON(csvData) {
         csv2geojson.csv2geojson(csvData, {
-          latfield: 'longitude',
-          lonfield: 'latitude',
+          latfield: 'latitude',
+          lonfield: 'longitude',
           delimiter: ','
         }, function (err, data) {
           map.on('load', function () {
