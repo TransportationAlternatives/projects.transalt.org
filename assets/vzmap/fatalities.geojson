@@ -42017,7 +42017,7 @@
     "properties": {
     "Fatality_Date":"2024/03/22",
     "Borough":"Queens",
-    "Cross_Streets":"114 St and Liberty Ave",
+    "Cross_Streets":"114th St and Liberty Ave",
     "Mode":"Pedestrian",
     "Age":52,
     "Gender":"F",
@@ -42034,7 +42034,7 @@
     "properties": {
     "Fatality_Date":"2024/03/23",
     "Borough":"Brooklyn",
-    "Cross_Streets":"18 Ave and 56 St",
+    "Cross_Streets":"18th Ave and 56th St",
     "Mode":"Other Motorist",
     "Age":22,
     "Gender":"M",
@@ -44076,7 +44076,7 @@
     "Borough":"Bronx",
     "Cross_Streets":"Hutchinson River Pkwy and E Tremont Ave",
     "Mode":"Pedestrian",
-    "Age":null,
+    "Age":66,
     "Gender":"M",
     "Collision_ID":4752748,
     "NewDate":"September 2, 2024"
@@ -44926,7 +44926,7 @@
     "Borough":"Brooklyn",
     "Cross_Streets":"Pennsylvania Ave and Riverdale Ave",
     "Mode":"Pedestrian",
-    "Age":null,
+    "Age":50,
     "Gender":"F",
     "Collision_ID":4772871,
     "NewDate":""
@@ -44941,11 +44941,28 @@
     "properties": {
     "Fatality_Date":"2024/11/21",
     "Borough":"Queens",
-    "Cross_Streets":"Kosciuszko Bridge",
+    "Cross_Streets":"Kosciuszko Bridge and 54th Dr",
     "Mode":"Motorist",
     "Age":75,
     "Gender":"M",
     "Collision_ID":4773163,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.82303000,40.741394000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/11/23",
+    "Borough":"Queens",
+    "Cross_Streets":"Long Island Expy and Main St",
+    "Mode":"Motorist",
+    "Age":32,
+    "Gender":"F",
+    "Collision_ID":4773456,
     "NewDate":""
     }
   },
@@ -44963,23 +44980,6 @@
     "Age":47,
     "Gender":"F",
     "Collision_ID":4773457,
-    "NewDate":""
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -73.82303000,40.741394000 ]
-    },
-    "properties": {
-    "Fatality_Date":"2024/11/23",
-    "Borough":"Queens",
-    "Cross_Streets":"Long Island Expy and Main St",
-    "Mode":"Pedestrian",
-    "Age":32,
-    "Gender":"F",
-    "Collision_ID":4773456,
     "NewDate":""
     }
   },
@@ -45038,7 +45038,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.96311076,40.620131142 ]
+       "coordinates":  [ -73.96327000,40.620094000 ]
     },
     "properties": {
     "Fatality_Date":"2024/12/01",
@@ -45047,7 +45047,7 @@
     "Mode":"Pedestrian",
     "Age":73,
     "Gender":"F",
-    "Collision_ID":null,
+    "Collision_ID":4775450,
     "NewDate":""
     }
   },
@@ -45062,9 +45062,247 @@
     "Borough":"Bronx",
     "Cross_Streets":"Webster Ave and E 233rd St",
     "Mode":"Cyclist",
-    "Age":null,
+    "Age":30,
     "Gender":"M",
-    "Collision_ID":null,
+    "Collision_ID":4775744,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.83780000,40.742130000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/03",
+    "Borough":"Queens",
+    "Cross_Streets":"Van Wyck Expy and Jewel Ave",
+    "Mode":"Pedestrian",
+    "Age":41,
+    "Gender":"M",
+    "Collision_ID":4776236,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94080000,40.620125000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/06",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Kings Hwy and Ave M",
+    "Mode":"Motorist",
+    "Age":57,
+    "Gender":"M",
+    "Collision_ID":4776867,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.84843400,40.840218000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/06",
+    "Borough":"Bronx",
+    "Cross_Streets":"St Raymond Ave and Seddon St",
+    "Mode":"Pedestrian",
+    "Age":56,
+    "Gender":"F",
+    "Collision_ID":4776866,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.08493000,40.585590000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/11",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Mason Ave and Delaware Ave",
+    "Mode":"Pedestrian",
+    "Age":64,
+    "Gender":"F",
+    "Collision_ID":4777953,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.07583047,40.639594147 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/11",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Bay St and Slosson Ter",
+    "Mode":"Pedestrian",
+    "Age":60,
+    "Gender":"M",
+    "Collision_ID":4778126,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.24058533,40.511493680 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/13",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Amboy Rd and Fisher Ave",
+    "Mode":"Pedestrian",
+    "Age":84,
+    "Gender":"M",
+    "Collision_ID":4778585,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.72038000,40.725475000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/14",
+    "Borough":"Queens",
+    "Cross_Streets":"Jericho Tpke and 91st Ave",
+    "Mode":"Pedestrian",
+    "Age":78,
+    "Gender":"M",
+    "Collision_ID":4779476,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.76680000,40.746105000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/18",
+    "Borough":"Queens",
+    "Cross_Streets":"Long Island Expy and Clearview Expy",
+    "Mode":"Pedestrian",
+    "Age":65,
+    "Gender":"M",
+    "Collision_ID":4779876,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.81853000,40.873560000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/21",
+    "Borough":"Bronx",
+    "Cross_Streets":"Hutchinson River Pkwy and ?",
+    "Mode":"Motorist",
+    "Age":45,
+    "Gender":"F",
+    "Collision_ID":4780490,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.77161000,40.744526000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/24",
+    "Borough":"Queens",
+    "Cross_Streets":"Clearview Expy at LIE ramp",
+    "Mode":"Pedestrian",
+    "Age":56,
+    "Gender":"M",
+    "Collision_ID":4781815,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.73544000,40.672688000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/25",
+    "Borough":"Queens",
+    "Cross_Streets":"Laurelton Pkwy and Merrick Blvd",
+    "Mode":"Motorist",
+    "Age":21,
+    "Gender":"M",
+    "Collision_ID":4781385,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.79138000,40.690285000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/25",
+    "Borough":"Queens",
+    "Cross_Streets":"158th St and 111th Ave",
+    "Mode":"Pedestrian",
+    "Age":45,
+    "Gender":"F",
+    "Collision_ID":4781816,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.81964000,40.677000000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/28",
+    "Borough":"Queens",
+    "Cross_Streets":"115th Ave and Lefferts Blvd",
+    "Mode":"Pedestrian",
+    "Age":51,
+    "Gender":"F",
+    "Collision_ID":4782691,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95874643,40.652968941 ]
+    },
+    "properties": {
+    "Fatality_Date":"2024/12/31",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Caton Ave 120' east of Flatbush Ave",
+    "Mode":"Pedestrian",
+    "Age":64,
+    "Gender":"M",
+    "Collision_ID":4783016,
     "NewDate":""
     }
   }
