@@ -41026,7 +41026,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.82287698,40.789412822 ]
+       "coordinates":  [ -73.82285215,40.789430872 ]
     },
     "properties": {
     "Fatality_Date":"2024/01/01",
@@ -41043,7 +41043,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.82287698,40.789412822 ]
+       "coordinates":  [ -73.82291151,40.789395919 ]
     },
     "properties": {
     "Fatality_Date":"2024/01/01",
@@ -41060,7 +41060,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.82287698,40.789412822 ]
+       "coordinates":  [ -73.82297663,40.789360343 ]
     },
     "properties": {
     "Fatality_Date":"2024/01/01",
@@ -41077,7 +41077,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.82287698,40.789412822 ]
+       "coordinates":  [ -73.82284556,40.789432744 ]
     },
     "properties": {
     "Fatality_Date":"2024/01/01",
@@ -41094,7 +41094,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.85007500,40.689842000 ]
+       "coordinates":  [ -73.82291151,40.789392175 ]
     },
     "properties": {
     "Fatality_Date":"2024/01/01",
