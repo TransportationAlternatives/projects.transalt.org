@@ -41077,7 +41077,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.82284556,40.789432744 ]
+       "coordinates":  [ -73.82294184,40.789380746 ]
     },
     "properties": {
     "Fatality_Date":"2024/01/01",
@@ -41094,7 +41094,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.82291151,40.789392175 ]
+       "coordinates":  [ -73.92530000,40.583960000 ]
     },
     "properties": {
     "Fatality_Date":"2024/01/01",
