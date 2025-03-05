@@ -45305,6 +45305,465 @@
     "Collision_ID":4783016,
     "NewDate":""
     }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.91070000,40.776130000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/02",
+    "Borough":"Queens",
+    "Cross_Streets":"Ditmars Blvd and 31st St",
+    "Mode":"Pedestrian",
+    "Age":53,
+    "Gender":"F",
+    "Collision_ID":4783310,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.12365000,40.627285000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/06",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Forest Ave and Raymond Pl",
+    "Mode":"Pedestrian",
+    "Age":68,
+    "Gender":"M",
+    "Collision_ID":4784160,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90198000,40.634354000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/10",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Ave L and E 88th St",
+    "Mode":"Pedestrian",
+    "Age":87,
+    "Gender":"F",
+    "Collision_ID":4785035,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.00241000,40.645805000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/13",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"7th Ave and 44th St",
+    "Mode":"Pedestrian",
+    "Age":70,
+    "Gender":"F",
+    "Collision_ID":4785620,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.01712000,40.603310000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/17",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Belt Pkwy and Bay 8th St",
+    "Mode":"Motorist",
+    "Age":23,
+    "Gender":"M",
+    "Collision_ID":4786429,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.81164000,40.701710000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/21",
+    "Borough":"Queens",
+    "Cross_Streets":"143rd St and 90th Ave",
+    "Mode":"Motorist",
+    "Age":63,
+    "Gender":"M",
+    "Collision_ID":4787451,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.89483000,40.667835000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/24",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Blake Ave and Pennsylvania Ave",
+    "Mode":"Pedestrian",
+    "Age":57,
+    "Gender":"F",
+    "Collision_ID":4788343,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.99531000,40.594425000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/24",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Cropsey Ave and 24th Ave",
+    "Mode":"Pedestrian",
+    "Age":95,
+    "Gender":"F",
+    "Collision_ID":4788054,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92284800,40.652464000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/25",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Kings Hwy and Church Ave",
+    "Mode":"Pedestrian",
+    "Age":30,
+    "Gender":"M",
+    "Collision_ID":4788144,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.93040500,40.802822000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/26",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Harlem River Dr and E 123rd St",
+    "Mode":"Pedestrian",
+    "Age":53,
+    "Gender":"M",
+    "Collision_ID":4788419,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97674600,40.759167000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/26",
+    "Borough":"Manhattan",
+    "Cross_Streets":"5th Ave and E 51st St",
+    "Mode":"Pedestrian",
+    "Age":39,
+    "Gender":"M",
+    "Collision_ID":4788709,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.75409000,40.724693000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/31",
+    "Borough":"Queens",
+    "Cross_Streets":"212 St and Hillside Ave",
+    "Mode":"Pedestrian",
+    "Age":29,
+    "Gender":"M",
+    "Collision_ID":4789587,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.91608000,40.769900000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/01",
+    "Borough":"Queens",
+    "Cross_Streets":"Grand Central Pkwy and 31 St",
+    "Mode":"Motorist",
+    "Age":38,
+    "Gender":"M",
+    "Collision_ID":4792295,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90188000,40.831707000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/03",
+    "Borough":"Bronx",
+    "Cross_Streets":"Franklin Ave and E 169th St",
+    "Mode":"Pedestrian",
+    "Age":59,
+    "Gender":"F",
+    "Collision_ID":4790193,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.86316000,40.835530000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/03",
+    "Borough":"Bronx",
+    "Cross_Streets":"White Plains Rd and Wood Ave",
+    "Mode":"Pedestrian",
+    "Age":75,
+    "Gender":"M",
+    "Collision_ID":4790185,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94791400,40.769863000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/04",
+    "Borough":"Manhattan",
+    "Cross_Streets":"FDR Dr and 72nd St",
+    "Mode":"Motorist",
+    "Age":null,
+    "Gender":"F",
+    "Collision_ID":4790343,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95375000,40.766853000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/05",
+    "Borough":"Manhattan",
+    "Cross_Streets":"York Ave and 72nd St",
+    "Mode":"Pedestrian",
+    "Age":90,
+    "Gender":"F",
+    "Collision_ID":4790720,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96000000,40.756725000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/06",
+    "Borough":"Manhattan",
+    "Cross_Streets":"FDR Dr and 34th St",
+    "Mode":"Pedestrian",
+    "Age":61,
+    "Gender":"M",
+    "Collision_ID":4791148,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.74648000,40.665600000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/08",
+    "Borough":"Queens",
+    "Cross_Streets":"Belt Pkwy and 233rd St",
+    "Mode":"Motorist",
+    "Age":27,
+    "Gender":"F",
+    "Collision_ID":4791204,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.73955000,40.665257000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/14",
+    "Borough":"Queens",
+    "Cross_Streets":"Brookville Blvd and South Conduit Ave",
+    "Mode":"Motorist",
+    "Age":78,
+    "Gender":"M",
+    "Collision_ID":4792680,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.87652000,40.642540000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/16",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Belt Pkwy and Pennsylvania Ave",
+    "Mode":"Motorist",
+    "Age":41,
+    "Gender":"M",
+    "Collision_ID":4793436,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.87322000,40.832024000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/24",
+    "Borough":"Bronx",
+    "Cross_Streets":"Metcalf Ave and E 172nd St",
+    "Mode":"Other Motorist",
+    "Age":17,
+    "Gender":"M",
+    "Collision_ID":4794705,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.91495500,40.814938000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/25",
+    "Borough":"Bronx",
+    "Cross_Streets":"Brook Ave and 149th St",
+    "Mode":"Cyclist",
+    "Age":57,
+    "Gender":"M",
+    "Collision_ID":4795059,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.86191000,40.757793000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/26",
+    "Borough":"Queens",
+    "Cross_Streets":"107th St and Northern Blvd",
+    "Mode":"Motorist",
+    "Age":23,
+    "Gender":"M",
+    "Collision_ID":4795252,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90127000,40.666878000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/27",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Blake Ave and Van Sinderen Ave",
+    "Mode":"Motorist",
+    "Age":26,
+    "Gender":"F",
+    "Collision_ID":4795300,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97828000,40.685196000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/28",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"State St and Flatbush Ave",
+    "Mode":"Pedestrian",
+    "Age":45,
+    "Gender":"F",
+    "Collision_ID":4795527,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94126400,40.717712976 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/01",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Withers St and Woodpoint Rd",
+    "Mode":"Pedestrian",
+    "Age":49,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":""
+    }
   }
 ]
 }
