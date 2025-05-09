@@ -45514,7 +45514,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 40.81602500,-73.939460000 ]
+       "coordinates":  [ -73.93946000,40.816025000 ]
     },
     "properties": {
     "Fatality_Date":"2025/01/29",
@@ -45922,7 +45922,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.95066000,40.708170000 ]
     },
     "properties": {
     "Fatality_Date":"2025/03/24",
@@ -45939,7 +45939,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.89923190,40.659083593 ]
     },
     "properties": {
     "Fatality_Date":"2025/03/26",
@@ -46058,7 +46058,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.93131531,40.868862296 ]
     },
     "properties": {
     "Fatality_Date":"2025/04/02",
@@ -46099,7 +46099,7 @@
     "Borough":"Manhattan",
     "Cross_Streets":"W 40 St and 9 Av",
     "Mode":"Pedestrian",
-    "Age":null,
+    "Age":39,
     "Gender":"M",
     "Collision_ID":4803350,
     "NewDate":""
@@ -46194,7 +46194,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.90962000,40.604990000 ]
     },
     "properties": {
     "Fatality_Date":"2025/04/16",
@@ -46313,7 +46313,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.81813000,40.859245000 ]
     },
     "properties": {
     "Fatality_Date":"2025/04/25",
