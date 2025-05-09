@@ -18,7 +18,7 @@ var sliderOptions = {
         sliderMin: '2014-01-01',
         sliderMax: '2025-03-01',
         filterMin: '2014-01-01',
-        filterMax: '2025-03-01',
+        filterMax: '2025-05-01',
         propertyType: 'iso8601',
         rangeDescriptionFormat: 'shortDate',
         descriptionPrefix: 'Date:'
