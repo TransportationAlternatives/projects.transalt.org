@@ -45446,6 +45446,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.78062400,40.667522000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/24",
+    "Borough":"Queens",
+    "Cross_Streets":"North Conduit Ave and Rockaway Blvd",
+    "Mode":"Pedestrian",
+    "Age":23,
+    "Gender":"M",
+    "Collision_ID":4788744,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.92284800,40.652464000 ]
     },
     "properties": {
@@ -45490,6 +45507,23 @@
     "Age":39,
     "Gender":"M",
     "Collision_ID":4788709,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 40.81602500,-73.939460000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/01/29",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 138 St and Lenox Ave",
+    "Mode":"Cyclist",
+    "Age":59,
+    "Gender":"M",
+    "Collision_ID":4789910,
     "NewDate":""
     }
   },
@@ -45572,7 +45606,7 @@
     "Borough":"Manhattan",
     "Cross_Streets":"FDR Dr and 72nd St",
     "Mode":"Motorist",
-    "Age":null,
+    "Age":19,
     "Gender":"F",
     "Collision_ID":4790343,
     "NewDate":""
@@ -45604,7 +45638,7 @@
     "properties": {
     "Fatality_Date":"2025/02/06",
     "Borough":"Manhattan",
-    "Cross_Streets":"FDR Dr and 34th St",
+    "Cross_Streets":"FDR Dr and E 53rd St",
     "Mode":"Pedestrian",
     "Age":61,
     "Gender":"M",
@@ -45633,6 +45667,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.97671000,40.764996000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/11",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 58 St and 6th Ave",
+    "Mode":"Pedestrian",
+    "Age":83,
+    "Gender":"F",
+    "Collision_ID":4792095,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.73955000,40.665257000 ]
     },
     "properties": {
@@ -45641,7 +45692,7 @@
     "Cross_Streets":"Brookville Blvd and South Conduit Ave",
     "Mode":"Motorist",
     "Age":78,
-    "Gender":"M",
+    "Gender":"F",
     "Collision_ID":4792680,
     "NewDate":""
     }
@@ -45667,13 +45718,30 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.97674600,40.759167000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/02/18",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 51 St and 5th Ave",
+    "Mode":"Cyclist",
+    "Age":67,
+    "Gender":"M",
+    "Collision_ID":4796322,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.87322000,40.832024000 ]
     },
     "properties": {
     "Fatality_Date":"2025/02/24",
     "Borough":"Bronx",
     "Cross_Streets":"Metcalf Ave and E 172nd St",
-    "Mode":"Other Motorist",
+    "Mode":"Motorist",
     "Age":17,
     "Gender":"M",
     "Collision_ID":4794705,
@@ -45741,7 +45809,7 @@
     "Fatality_Date":"2025/02/28",
     "Borough":"Brooklyn",
     "Cross_Streets":"State St and Flatbush Ave",
-    "Mode":"Pedestrian",
+    "Mode":"Motorist",
     "Age":45,
     "Gender":"F",
     "Collision_ID":4795527,
@@ -45752,16 +45820,543 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.94126400,40.717712976 ]
+       "coordinates":  [ -73.94127000,40.717697000 ]
     },
     "properties": {
     "Fatality_Date":"2025/03/01",
     "Borough":"Brooklyn",
     "Cross_Streets":"Withers St and Woodpoint Rd",
     "Mode":"Pedestrian",
+    "Age":20,
+    "Gender":"M",
+    "Collision_ID":4796530,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.08739000,40.592190000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/07",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Hylan Blvd and Benton Ave",
+    "Mode":"Pedestrian",
+    "Age":80,
+    "Gender":"M",
+    "Collision_ID":4797079,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.82349000,40.764652000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/14",
+    "Borough":"Queens",
+    "Cross_Streets":"North Blvd and Parsons Blvd",
+    "Mode":"Pedestrian",
+    "Age":78,
+    "Gender":"F",
+    "Collision_ID":4799008,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.86231000,40.730118000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/19",
+    "Borough":"Queens",
+    "Cross_Streets":"63rd Dr and Queens Blvd",
+    "Mode":"Cyclist",
+    "Age":23,
+    "Gender":"M",
+    "Collision_ID":4799953,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95795000,40.732010000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/21",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"India St and Franklin St",
+    "Mode":"Pedestrian",
     "Age":49,
     "Gender":"M",
-    "Collision_ID":null,
+    "Collision_ID":4800420,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.91460000,40.860516000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/22",
+    "Borough":"Bronx",
+    "Cross_Streets":"Major Deegan Expy and West Fordham Rd",
+    "Mode":"Motorist",
+    "Age":39,
+    "Gender":"M",
+    "Collision_ID":4800421,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/24",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Union Avenue at Scholes St",
+    "Mode":"Pedestrian",
+    "Age":72,
+    "Gender":"M",
+    "Collision_ID":4808695,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/26",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"New Lots Ave and Van Sinderen Ave",
+    "Mode":"Pedestrian",
+    "Age":31,
+    "Gender":"M",
+    "Collision_ID":4801963,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.85484000,40.686447000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/28",
+    "Borough":"Queens",
+    "Cross_Streets":"87th St and Atlantic Ave",
+    "Mode":"Pedestrian",
+    "Age":31,
+    "Gender":"M",
+    "Collision_ID":4801846,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.85484000,40.686447000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/28",
+    "Borough":"Queens",
+    "Cross_Streets":"87th St and Atlantic Ave",
+    "Mode":"Pedestrian",
+    "Age":67,
+    "Gender":"M",
+    "Collision_ID":4801846,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90107000,40.868282000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/29",
+    "Borough":"Bronx",
+    "Cross_Streets":"University Ave and W Kingsbridge Rd",
+    "Mode":"Pedestrian",
+    "Age":65,
+    "Gender":"M",
+    "Collision_ID":4801942,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96727000,40.607258000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/29",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Quentin Rd and Ocean Pkwy",
+    "Mode":"Pedestrian",
+    "Age":34,
+    "Gender":"F",
+    "Collision_ID":4801962,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96727000,40.607258000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/29",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Quentin Rd and Ocean Pkwy",
+    "Mode":"Pedestrian",
+    "Age":8,
+    "Gender":"F",
+    "Collision_ID":4801962,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96727000,40.607258000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/03/29",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Quentin Rd and Ocean Pkwy",
+    "Mode":"Pedestrian",
+    "Age":5,
+    "Gender":"F",
+    "Collision_ID":4801962,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/02",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Dyckman St and Hudson River Greenway",
+    "Mode":"Motorist",
+    "Age":null,
+    "Gender":"M",
+    "Collision_ID":4803024,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92276000,40.817387000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/02",
+    "Borough":"Bronx",
+    "Cross_Streets":"E 149 St and Morris Ave",
+    "Mode":"Pedestrian",
+    "Age":52,
+    "Gender":"M",
+    "Collision_ID":4803347,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.99356000,40.757145000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/04",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 40 St and 9 Av",
+    "Mode":"Pedestrian",
+    "Age":null,
+    "Gender":"M",
+    "Collision_ID":4803350,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.87157000,40.730064000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/05",
+    "Borough":"Queens",
+    "Cross_Streets":"60th Dr and Woodhaven Blvd",
+    "Mode":"Motorist",
+    "Age":55,
+    "Gender":"M",
+    "Collision_ID":4803498,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97845500,40.616707000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/06",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Bay Pkwy and 60 St",
+    "Mode":"Pedestrian",
+    "Age":61,
+    "Gender":"M",
+    "Collision_ID":4803841,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94538000,40.665100000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/08",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Brooklyn Ave and Montgomery St",
+    "Mode":"Pedestrian",
+    "Age":101,
+    "Gender":"F",
+    "Collision_ID":4804451,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.18709600,40.619180000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/09",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Gulf Ave and 5th Ave",
+    "Mode":"Pedestrian",
+    "Age":34,
+    "Gender":"M",
+    "Collision_ID":4804882,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.77200000,40.712776000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/14",
+    "Borough":"Queens",
+    "Cross_Streets":"188 St and 90 Ave",
+    "Mode":"Motorist",
+    "Age":19,
+    "Gender":"M",
+    "Collision_ID":4805902,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/16",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Arkansas Dr at 56 Dr",
+    "Mode":"Motorist",
+    "Age":89,
+    "Gender":"M",
+    "Collision_ID":4806223,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.88631400,40.810192000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/17",
+    "Borough":"Bronx",
+    "Cross_Streets":"Coster St and Oak Point Avenue",
+    "Mode":"Pedestrian",
+    "Age":61,
+    "Gender":"M",
+    "Collision_ID":4807051,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.87646500,40.721596000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/19",
+    "Borough":"Queens",
+    "Cross_Streets":"80th St and Juniper Blvd",
+    "Mode":"Cyclist",
+    "Age":null,
+    "Gender":"M",
+    "Collision_ID":4807280,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.81173000,40.666690000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/21",
+    "Borough":"Queens",
+    "Cross_Streets":"Belt Pkwy and Lefferts Blvd",
+    "Mode":"Motorist",
+    "Age":57,
+    "Gender":"M",
+    "Collision_ID":4807281,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97650000,40.788315000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/23",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Broadway and W 86th St",
+    "Mode":"Pedestrian",
+    "Age":57,
+    "Gender":"M",
+    "Collision_ID":4807749,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.98545000,40.778477000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/24",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 70th St and West End Ave",
+    "Mode":"Cyclist",
+    "Age":74,
+    "Gender":"M",
+    "Collision_ID":4807979,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.78326400,40.689995000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/24",
+    "Borough":"Queens",
+    "Cross_Streets":"Linden Blvd and 166 St",
+    "Mode":"Pedestrian",
+    "Age":62,
+    "Gender":"M",
+    "Collision_ID":4809253,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/25",
+    "Borough":"Bronx",
+    "Cross_Streets":"Bruckner Blvd at Pelham Pkw",
+    "Mode":"Motorist",
+    "Age":42,
+    "Gender":"M",
+    "Collision_ID":4808167,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.85457000,40.701363000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/25",
+    "Borough":"Queens",
+    "Cross_Streets":"Woodhaven Blvd and Myrtle Ave",
+    "Mode":"Pedestrian",
+    "Age":23,
+    "Gender":"F",
+    "Collision_ID":4808010,
+    "NewDate":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.99766000,40.720833000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/05/01",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Broome St and Centre St",
+    "Mode":"Cyclist",
+    "Age":44,
+    "Gender":"M",
+    "Collision_ID":4809521,
     "NewDate":""
     }
   }
