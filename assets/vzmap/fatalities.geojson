@@ -45946,7 +45946,7 @@
     "Borough":"Brooklyn",
     "Cross_Streets":"Withers St and Woodpoint Rd",
     "Mode":"Pedestrian",
-    "Age":20,
+    "Age":42,
     "Gender":"M",
     "Collision_ID":4796530,
     "NewDate":"March 1, 2025"
@@ -45973,29 +45973,12 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
-    },
-    "properties": {
-    "Fatality_Date":"2025/03/07",
-    "Borough":"Staten Island",
-    "Cross_Streets":"Forest Ave and Decker Ave",
-    "Mode":"Pedestrian",
-    "Age":39,
-    "Gender":"M",
-    "Collision_ID":null,
-    "NewDate":"March 7, 2025"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ -73.82349000,40.764652000 ]
     },
     "properties": {
     "Fatality_Date":"2025/03/14",
     "Borough":"Queens",
-    "Cross_Streets":"North Blvd and Parsons Blvd",
+    "Cross_Streets":"Northern Blvd and Parsons Blvd",
     "Mode":"Pedestrian",
     "Age":78,
     "Gender":"F",
@@ -46335,7 +46318,7 @@
     "properties": {
     "Fatality_Date":"2025/04/16",
     "Borough":"Brooklyn",
-    "Cross_Streets":"Arkansas Dr at 56th Dr",
+    "Cross_Streets":"Arkansas Dr and 56th Dr",
     "Mode":"Motorist",
     "Age":89,
     "Gender":"M",
@@ -46371,7 +46354,7 @@
     "Borough":"Queens",
     "Cross_Streets":"80th St and Juniper Blvd",
     "Mode":"Cyclist",
-    "Age":null,
+    "Age":54,
     "Gender":"M",
     "Collision_ID":4807280,
     "NewDate":"April 19, 2025"
@@ -46386,7 +46369,7 @@
     "properties": {
     "Fatality_Date":"2025/04/21",
     "Borough":"Queens",
-    "Cross_Streets":"Belt Pkwy and Lefferts Blvd",
+    "Cross_Streets":"Belt Pkwy and 130 St",
     "Mode":"Motorist",
     "Age":57,
     "Gender":"M",
@@ -46415,23 +46398,6 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.98545000,40.778477000 ]
-    },
-    "properties": {
-    "Fatality_Date":"2025/04/24",
-    "Borough":"Manhattan",
-    "Cross_Streets":"W 70th St and West End Ave",
-    "Mode":"Cyclist",
-    "Age":74,
-    "Gender":"M",
-    "Collision_ID":4807979,
-    "NewDate":"April 24, 2025"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ -73.78326400,40.689995000 ]
     },
     "properties": {
@@ -46449,23 +46415,6 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.81813000,40.859245000 ]
-    },
-    "properties": {
-    "Fatality_Date":"2025/04/25",
-    "Borough":"Bronx",
-    "Cross_Streets":"Bruckner Blvd at Pelham Pkwy",
-    "Mode":"Motorist",
-    "Age":42,
-    "Gender":"M",
-    "Collision_ID":4808167,
-    "NewDate":"April 25, 2025"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ -73.85457000,40.701363000 ]
     },
     "properties": {
@@ -46476,6 +46425,23 @@
     "Age":23,
     "Gender":"F",
     "Collision_ID":4808010,
+    "NewDate":"April 25, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.81813000,40.859245000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/04/25",
+    "Borough":"Bronx",
+    "Cross_Streets":"Bruckner Blvd at Pelham Pkwy",
+    "Mode":"Motorist",
+    "Age":42,
+    "Gender":"M",
+    "Collision_ID":4808167,
     "NewDate":"April 25, 2025"
     }
   },
@@ -46551,6 +46517,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.95507813,40.820098880 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/05/10",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 135th St and Broadway",
+    "Mode":"Pedestrian",
+    "Age":73,
+    "Gender":"M",
+    "Collision_ID":4812753,
+    "NewDate":"May 10, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.92542000,40.663292000 ]
     },
     "properties": {
@@ -46585,7 +46568,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.73377545,40.742774252 ]
     },
     "properties": {
     "Fatality_Date":"2025/05/17",
@@ -46605,14 +46588,14 @@
        "coordinates":  [ -74.08721000,40.609880000 ]
     },
     "properties": {
-    "Fatality_Date":"2025/05/18",
+    "Fatality_Date":"2025/05/17",
     "Borough":"Staten Island",
     "Cross_Streets":"Targee St and Pierce St",
     "Mode":"Pedestrian",
-    "Age":55,
+    "Age":58,
     "Gender":"M",
     "Collision_ID":4813412,
-    "NewDate":"May 18, 2025"
+    "NewDate":"May 17, 2025"
     }
   },
   {
@@ -46626,7 +46609,7 @@
     "Borough":"Bronx",
     "Cross_Streets":"White Plains Rd and East 216th St",
     "Mode":"Pedestrian",
-    "Age":74,
+    "Age":76,
     "Gender":"F",
     "Collision_ID":4815461,
     "NewDate":"May 24, 2025"
@@ -46661,9 +46644,26 @@
     "Cross_Streets":"Flatbush Ave and Avenue U",
     "Mode":"Motorist",
     "Age":30,
-    "Gender":"F",
+    "Gender":"M",
     "Collision_ID":4815725,
     "NewDate":"May 25, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.93358000,40.802750000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/02",
+    "Borough":"Manhattan",
+    "Cross_Streets":"RFK Bridge Exit and E 125th St / 2nd Ave",
+    "Mode":"Pedestrian",
+    "Age":50,
+    "Gender":"M",
+    "Collision_ID":4817511,
+    "NewDate":"June 2, 2025"
     }
   },
   {
@@ -46675,7 +46675,7 @@
     "properties": {
     "Fatality_Date":"2025/06/10",
     "Borough":"Queens",
-    "Cross_Streets":"121 St and 149 Ave",
+    "Cross_Streets":"121th St and 149th Ave",
     "Mode":"Motorist",
     "Age":25,
     "Gender":"M",
@@ -46709,7 +46709,7 @@
     "properties": {
     "Fatality_Date":"2025/06/11",
     "Borough":"Queens",
-    "Cross_Streets":"217 St and Northern Blvd",
+    "Cross_Streets":"217th St and Northern Blvd",
     "Mode":"Pedestrian",
     "Age":74,
     "Gender":"M",
@@ -46755,23 +46755,6 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
-    },
-    "properties": {
-    "Fatality_Date":"2025/06/13",
-    "Borough":"Brooklyn",
-    "Cross_Streets":"Bushwick Ave and Flushing Ave",
-    "Mode":"Motorist",
-    "Age":26,
-    "Gender":"M",
-    "Collision_ID":null,
-    "NewDate":"June 13, 2025"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ -73.87057500,40.733116000 ]
     },
     "properties": {
@@ -46789,7 +46772,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.98086000,40.741970000 ]
     },
     "properties": {
     "Fatality_Date":"2025/06/16",
@@ -46798,7 +46781,7 @@
     "Mode":"Pedestrian",
     "Age":49,
     "Gender":"M",
-    "Collision_ID":null,
+    "Collision_ID":4820937,
     "NewDate":"June 16, 2025"
     }
   },
@@ -46806,7 +46789,24 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.82851400,40.689240000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/17",
+    "Borough":"Queens",
+    "Cross_Streets":"101 Ave at 116 St",
+    "Mode":"Pedestrian",
+    "Age":66,
+    "Gender":"M",
+    "Collision_ID":4821444,
+    "NewDate":"June 17, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95741000,40.789482000 ]
     },
     "properties": {
     "Fatality_Date":"2025/06/18",
@@ -46815,8 +46815,348 @@
     "Mode":"Cyclist",
     "Age":43,
     "Gender":"M",
-    "Collision_ID":null,
+    "Collision_ID":4821445,
     "NewDate":"June 18, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.02509308,40.637794490 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/21",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"3rd Ave and 67th St",
+    "Mode":"Motorist",
+    "Age":22,
+    "Gender":"M",
+    "Collision_ID":4821960,
+    "NewDate":"June 21, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.99927521,40.618179320 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/22",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"New Utrecht Ave and 72nd St",
+    "Mode":"Pedestrian",
+    "Age":42,
+    "Gender":"M",
+    "Collision_ID":4822074,
+    "NewDate":"June 22, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96621704,40.614894870 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/23",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"E 8th St and Ave N",
+    "Mode":"Motorist",
+    "Age":17,
+    "Gender":"M",
+    "Collision_ID":4822639,
+    "NewDate":"June 23, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.89029000,40.689686000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/26",
+    "Borough":"Queens",
+    "Cross_Streets":"Jackie Robinson Pkwy and Cypress Ave",
+    "Mode":"Motorist",
+    "Age":39,
+    "Gender":"M",
+    "Collision_ID":4823332,
+    "NewDate":"June 26, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.74401800,40.698018000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/26",
+    "Borough":"Queens",
+    "Cross_Streets":"116th Ave and Nashville Blvd",
+    "Mode":"Other Motorist",
+    "Age":39,
+    "Gender":"M",
+    "Collision_ID":4823380,
+    "NewDate":"June 26, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.82645700,40.856604000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/28",
+    "Borough":"Bronx",
+    "Cross_Streets":"Pelham Pkwy and Bruckner Expy",
+    "Mode":"Motorist",
+    "Age":31,
+    "Gender":"M",
+    "Collision_ID":4824000,
+    "NewDate":"June 28, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.93943024,40.669250490 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/28",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Eastern Pkwy and Albany Ave",
+    "Mode":"Pedestrian",
+    "Age":8,
+    "Gender":"M",
+    "Collision_ID":4823788,
+    "NewDate":"June 28, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.13180500,40.621017000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/29",
+    "Borough":"Staten Island",
+    "Cross_Streets":"College Avenue and Jewett Avenue",
+    "Mode":"Other Motorist",
+    "Age":16,
+    "Gender":"M",
+    "Collision_ID":4825475,
+    "NewDate":"June 29, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.78229500,40.788692000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/02",
+    "Borough":"Queens",
+    "Cross_Streets":"Cross Island Pkwy at Bell Blvd",
+    "Mode":"Motorist",
+    "Age":51,
+    "Gender":"M",
+    "Collision_ID":4824810,
+    "NewDate":"July 2, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96282000,40.697155000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/03",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Brooklyn Queens Expy and Emerson St",
+    "Mode":"Motorist",
+    "Age":55,
+    "Gender":"M",
+    "Collision_ID":4825127,
+    "NewDate":"July 3, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90005000,40.676895000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/03",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"E New York Ave and Broadway",
+    "Mode":"Pedestrian",
+    "Age":36,
+    "Gender":"M",
+    "Collision_ID":4825128,
+    "NewDate":"July 3, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94396000,40.643543000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/05",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Clarendon Rd and E 35th St",
+    "Mode":"Motorist",
+    "Age":34,
+    "Gender":"M",
+    "Collision_ID":4825305,
+    "NewDate":"July 5, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.83897400,40.666965000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/05",
+    "Borough":"Queens",
+    "Cross_Streets":"Belt Pkwy and Cross Bay Blvd",
+    "Mode":"Motorist",
+    "Age":24,
+    "Gender":"M",
+    "Collision_ID":4825307,
+    "NewDate":"July 5, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.83897400,40.666965000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/05",
+    "Borough":"Queens",
+    "Cross_Streets":"Belt Pkwy and Cross Bay Blvd",
+    "Mode":"Motorist",
+    "Age":22,
+    "Gender":"F",
+    "Collision_ID":4825307,
+    "NewDate":"July 5, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.07206000,40.621860000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/05",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Bay St and Norwood Ave",
+    "Mode":"Motorist",
+    "Age":24,
+    "Gender":"M",
+    "Collision_ID":4825308,
+    "NewDate":"July 5, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90964500,40.772090000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/07",
+    "Borough":"Queens",
+    "Cross_Streets":"37 St and 23 Ave",
+    "Mode":"Motorist",
+    "Age":39,
+    "Gender":"M",
+    "Collision_ID":4825812,
+    "NewDate":"July 7, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97230000,40.626430000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/07",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Avenue I and E 5th St",
+    "Mode":"Pedestrian",
+    "Age":70,
+    "Gender":"M",
+    "Collision_ID":4825939,
+    "NewDate":"July 7, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95732177,40.598726407 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/08",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Avenue U and E 14th St",
+    "Mode":"Pedestrian",
+    "Age":90,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 8, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96985693,40.757049892 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/11",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"52nd St and 3rd Ave",
+    "Mode":"Pedestrian",
+    "Age":80,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 11, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96985693,40.757049892 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/11",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"52nd St and 3rd Ave",
+    "Mode":"Pedestrian",
+    "Age":59,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 11, 2025"
     }
   },
   {
@@ -46826,14 +47166,31 @@
        "coordinates":  { }
     },
     "properties": {
-    "Fatality_Date":"2025/06/21",
-    "Borough":"Brooklyn",
-    "Cross_Streets":"3rd Ave and 67th St",
+    "Fatality_Date":"2025/07/11",
+    "Borough":"Bronx",
+    "Cross_Streets":"Bartow Ave and Co-op City Blvd",
     "Mode":"Motorist",
-    "Age":22,
-    "Gender":"M",
+    "Age":71,
+    "Gender":"F",
     "Collision_ID":null,
-    "NewDate":"June 21, 2025"
+    "NewDate":"July 11, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/13",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"395 Gateway Drive",
+    "Mode":"Pedestrian",
+    "Age":21,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"July 13, 2025"
     }
   }
 ]
