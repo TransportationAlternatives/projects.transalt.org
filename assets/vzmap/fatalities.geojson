@@ -46653,6 +46653,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.95819470,40.587558419 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/06/02",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"E 12th St and Avenue Z",
+    "Mode":"Pedestrian",
+    "Age":87,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 2, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.81958000,40.668392000 ]
     },
     "properties": {
@@ -47157,6 +47174,23 @@
     "Gender":"M",
     "Collision_ID":4826233,
     "NewDate":"July 8, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.85773500,40.892754000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/07/09",
+    "Borough":"Bronx",
+    "Cross_Streets":"E 232nd St and White Plains Rd",
+    "Mode":"Pedestrian",
+    "Age":67,
+    "Gender":"F",
+    "Collision_ID":4826530,
+    "NewDate":"July 9, 2025"
     }
   },
   {
@@ -48030,6 +48064,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.82670600,40.687473000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/09/21",
+    "Borough":"Queens",
+    "Cross_Streets":"103rd Ave and 117th St",
+    "Mode":"Cyclist",
+    "Age":56,
+    "Gender":"M",
+    "Collision_ID":4844819,
+    "NewDate":"September 21, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.73136000,40.698357000 ]
     },
     "properties": {
@@ -48052,7 +48103,7 @@
     "properties": {
     "Fatality_Date":"2025/09/24",
     "Borough":"Manhattan",
-    "Cross_Streets":"W 40th St and 5th Ave",
+    "Cross_Streets":"E 40th St and 5th Ave",
     "Mode":"Pedestrian",
     "Age":50,
     "Gender":"F",
@@ -48166,6 +48217,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -74.00083166,40.647372316 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/05",
+    "Borough":"Queens",
+    "Cross_Streets":"Hillside Ave and 170th St",
+    "Mode":"Pedestrian",
+    "Age":27,
+    "Gender":"M",
+    "Collision_ID":4847742,
+    "NewDate":"October 5, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -74.15021694,40.609488134 ]
     },
     "properties": {
@@ -48251,17 +48319,306 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.96149000,40.818010000 ]
+       "coordinates":  [ -74.00115204,40.762023930 ]
     },
     "properties": {
     "Fatality_Date":"2025/10/09",
     "Borough":"Manhattan",
-    "Cross_Streets":"Henry Hudson Pkwy and 125th St",
+    "Cross_Streets":"W 42nd St and 12th Ave",
     "Mode":"Motorist",
-    "Age":38,
+    "Age":70,
     "Gender":"M",
-    "Collision_ID":4848694,
+    "Collision_ID":4848742,
     "NewDate":"October 9, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97465500,40.579970000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/15",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Neptune Ave and W 6th St",
+    "Mode":"Pedestrian",
+    "Age":89,
+    "Gender":"F",
+    "Collision_ID":4850067,
+    "NewDate":"October 15, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90741000,40.727207000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/16",
+    "Borough":"Queens",
+    "Cross_Streets":"Borden Ave and Maurice Ave",
+    "Mode":"Pedestrian",
+    "Age":40,
+    "Gender":"M",
+    "Collision_ID":4850347,
+    "NewDate":"October 16, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94184000,40.817850000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/17",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Adam Clayton Powell Blvd and W 139th St",
+    "Mode":"Motorist",
+    "Age":56,
+    "Gender":"M",
+    "Collision_ID":4850599,
+    "NewDate":"October 17, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.93682000,40.798306000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/19",
+    "Borough":"Manhattan",
+    "Cross_Streets":"E 118th St and 2nd Ave",
+    "Mode":"Pedestrian",
+    "Age":37,
+    "Gender":"F",
+    "Collision_ID":4850978,
+    "NewDate":"October 19, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90522000,40.856205000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/19",
+    "Borough":"Bronx",
+    "Cross_Streets":"Jerome Ave and Cameron Pl",
+    "Mode":"Motorist",
+    "Age":46,
+    "Gender":"M",
+    "Collision_ID":4850977,
+    "NewDate":"October 19, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95827500,40.585026000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/19",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Shore Pkwy and E 7th St",
+    "Mode":"Motorist",
+    "Age":28,
+    "Gender":"M",
+    "Collision_ID":4851266,
+    "NewDate":"October 19, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95827500,40.585026000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/19",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Shore Pkwy and E 7th St",
+    "Mode":"Motorist",
+    "Age":22,
+    "Gender":"M",
+    "Collision_ID":4851266,
+    "NewDate":"October 19, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.82072000,40.698830000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/22",
+    "Borough":"Queens",
+    "Cross_Streets":"130th St and 90th Ave",
+    "Mode":"Pedestrian",
+    "Age":40,
+    "Gender":"M",
+    "Collision_ID":4852154,
+    "NewDate":"October 22, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97217600,40.786484000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/23",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 86th St and Columbus Ave",
+    "Mode":"Pedestrian",
+    "Age":83,
+    "Gender":"M",
+    "Collision_ID":4852156,
+    "NewDate":"October 23, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.16979557,40.561105268 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/26",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Arthur Kill Rd and Richmond Ave",
+    "Mode":"Pedestrian",
+    "Age":60,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"October 26, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.85958000,40.752323000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/27",
+    "Borough":"Queens",
+    "Cross_Streets":"108th St and 38th Ave",
+    "Mode":"Cyclist",
+    "Age":26,
+    "Gender":"M",
+    "Collision_ID":4853000,
+    "NewDate":"October 27, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.91764000,40.816067000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/28",
+    "Borough":"Bronx",
+    "Cross_Streets":"E 149th St and 3rd Ave",
+    "Mode":"Pedestrian",
+    "Age":68,
+    "Gender":"M",
+    "Collision_ID":4854825,
+    "NewDate":"October 28, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.98100000,40.628310000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/29",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"49th St and 18th Ave",
+    "Mode":"Pedestrian",
+    "Age":84,
+    "Gender":"M",
+    "Collision_ID":4853451,
+    "NewDate":"October 29, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.86268000,40.765434000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/10/31",
+    "Borough":"Queens",
+    "Cross_Streets":"Grand Central Pkwy and 29th Ave",
+    "Mode":"Pedestrian",
+    "Age":46,
+    "Gender":"M",
+    "Collision_ID":4854072,
+    "NewDate":"October 31, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.00423000,40.731130000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/11/06",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Morton St and 7th Ave",
+    "Mode":"Pedestrian",
+    "Age":27,
+    "Gender":"F",
+    "Collision_ID":4855569,
+    "NewDate":"November 6, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.86541053,40.865480885 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/11/13",
+    "Borough":"Bronx",
+    "Cross_Streets":"Holland Ave and Allerton Ave",
+    "Mode":"Pedestrian",
+    "Age":80,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"November 13, 2025"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90116606,40.855165326 ]
+    },
+    "properties": {
+    "Fatality_Date":"2025/11/23",
+    "Borough":"Bronx",
+    "Cross_Streets":"Grand Concourse and Anthony Ave",
+    "Mode":"Pedestrian",
+    "Age":null,
+    "Gender":"",
+    "Collision_ID":null,
+    "NewDate":"November 23, 2025"
     }
   }
 ]
