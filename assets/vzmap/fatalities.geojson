@@ -48846,7 +48846,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 74.15372703,40.612293670 ]
+       "coordinates":  [ -74.15372703,40.612293670 ]
     },
     "properties": {
     "Fatality_Date":"2025/12/21",
@@ -49030,4 +49030,5 @@
     }
   }
 ]
+
 }
