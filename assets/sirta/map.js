@@ -40,9 +40,9 @@ var sliderOptions = {
         minProperty: 'Crash_Date',
         maxProperty: 'Crash_Date',
         sliderMin: '2022-01-01',
-        sliderMax: '2025-12-31',
+        sliderMax: '2025-12-30',
         filterMin: '2022-01-01',
-        filterMax: '2025-12-31',
+        filterMax: '2025-12-30',
         propertyType: 'iso8601',
         rangeDescriptionFormat: 'shortDate',
         descriptionPrefix: 'Date:'
