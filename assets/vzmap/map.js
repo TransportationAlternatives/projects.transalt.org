@@ -195,7 +195,7 @@ map.on('click', 'collisions', (e) => {
 // Copy coordinates array.
 const coordinates = e.features[0].geometry.coordinates.slice();
 const description = e.features[0].properties.Mode;
-const address = e.features[0].properties.CrossStreets;
+const address = e.features[0].properties.Cross_Streets;
  
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
