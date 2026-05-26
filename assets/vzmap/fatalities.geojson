@@ -49123,7 +49123,7 @@
     "properties": {
     "Fatality_Date":"2026/01/08",
     "Borough":"Brooklyn",
-    "Cross_Streets":"Belt Pkwy and 92 St Pedestrian Bridge",
+    "Cross_Streets":"Belt Pkwy and 92nd St Pedestrian Bridge",
     "Mode":"Motorist",
     "Age":43,
     "Gender":"M",
@@ -49594,7 +49594,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.93208787,40.846498703 ]
     },
     "properties": {
     "Fatality_Date":"2026/03/23",
@@ -49798,7 +49798,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.83624172,40.735135578 ]
     },
     "properties": {
     "Fatality_Date":"2026/04/14",
@@ -49871,7 +49871,7 @@
     "properties": {
     "Fatality_Date":"2026/04/17",
     "Borough":"Queens",
-    "Cross_Streets":"Crescent St at 35 Avenue",
+    "Cross_Streets":"Crescent St at 35th Avenue",
     "Mode":"Pedestrian",
     "Age":83,
     "Gender":"M",
@@ -49990,7 +49990,7 @@
     "properties": {
     "Fatality_Date":"2026/05/02",
     "Borough":"Manhattan",
-    "Cross_Streets":"Amsterdam Ave and W 181 St",
+    "Cross_Streets":"Amsterdam Ave and W 181th St",
     "Mode":"Cyclist",
     "Age":49,
     "Gender":"F",
@@ -50070,7 +50070,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -74.11336000,40.629280000 ]
     },
     "properties": {
     "Fatality_Date":"2026/05/09",
@@ -50079,8 +50079,110 @@
     "Mode":"Motorist",
     "Age":31,
     "Gender":"M",
-    "Collision_ID":null,
+    "Collision_ID":4897568,
     "NewDate":"May 9, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90611000,40.765335000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/13",
+    "Borough":"Queens",
+    "Cross_Streets":"47th St and 25th Ave",
+    "Mode":"Pedestrian",
+    "Age":59,
+    "Gender":"M",
+    "Collision_ID":4899210,
+    "NewDate":"May 13, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.13547500,40.625282000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/15",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Forest Ave and Burnside Ave",
+    "Mode":"Pedestrian",
+    "Age":72,
+    "Gender":"M",
+    "Collision_ID":4900041,
+    "NewDate":"May 15, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96430000,40.802372000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/15",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 109th St and Amsterdam Ave",
+    "Mode":"Pedestrian",
+    "Age":46,
+    "Gender":"M",
+    "Collision_ID":4899219,
+    "NewDate":"May 15, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96430000,40.802372000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/15",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 109th St and Amsterdam Ave",
+    "Mode":"Pedestrian",
+    "Age":35,
+    "Gender":"M",
+    "Collision_ID":4899219,
+    "NewDate":"May 15, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97494500,40.714270000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/17",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Williamsburg Brdg and Delancy St",
+    "Mode":"Motorist",
+    "Age":26,
+    "Gender":"M",
+    "Collision_ID":4899523,
+    "NewDate":"May 17, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.84603000,40.741447000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/17",
+    "Borough":"Queens",
+    "Cross_Streets":"Grand Central Pkwy and Long Island Expy",
+    "Mode":"Pedestrian",
+    "Age":76,
+    "Gender":"M",
+    "Collision_ID":4899531,
+    "NewDate":"May 17, 2026"
     }
   }
 ]
