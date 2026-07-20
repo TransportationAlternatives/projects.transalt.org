@@ -49118,23 +49118,6 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -74.04096000,40.619007000 ]
-    },
-    "properties": {
-    "Fatality_Date":"2026/01/08",
-    "Borough":"Brooklyn",
-    "Cross_Streets":"Belt Pkwy and 92nd St Pedestrian Bridge",
-    "Mode":"Motorist",
-    "Age":43,
-    "Gender":"M",
-    "Collision_ID":4870313,
-    "NewDate":"January 8, 2026"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ -73.96843000,40.750763000 ]
     },
     "properties": {
@@ -49316,23 +49299,6 @@
     "Gender":"M",
     "Collision_ID":4876979,
     "NewDate":"February 6, 2026"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -73.90906000,40.816580000 ]
-    },
-    "properties": {
-    "Fatality_Date":"2026/02/08",
-    "Borough":"Bronx",
-    "Cross_Streets":"Westchester Ave and Trinity Ave",
-    "Mode":"Pedestrian",
-    "Age":27,
-    "Gender":"M",
-    "Collision_ID":4877891,
-    "NewDate":"February 8, 2026"
     }
   },
   {
@@ -49718,11 +49684,28 @@
     "properties": {
     "Fatality_Date":"2026/04/04",
     "Borough":"Bronx",
-    "Cross_Streets":"Bruckner Expy and White Plans Rd",
+    "Cross_Streets":"Bruckner Expy and White Plains Rd",
     "Mode":"Pedestrian",
-    "Age":55,
+    "Age":71,
     "Gender":"M",
     "Collision_ID":4889644,
+    "NewDate":"April 4, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.90050500,40.671204000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/04/04",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Pitkin Ave and Hinsdale St",
+    "Mode":"Motorist",
+    "Age":27,
+    "Gender":"M",
+    "Collision_ID":4890574,
     "NewDate":"April 4, 2026"
     }
   },
@@ -49753,27 +49736,10 @@
     "Fatality_Date":"2026/04/08",
     "Borough":"Bronx",
     "Cross_Streets":"Jerome Ave and W. Mosholu Pkwy",
-    "Mode":"Other Motorist",
+    "Mode":"Motorist",
     "Age":32,
     "Gender":"M",
     "Collision_ID":4890590,
-    "NewDate":"April 8, 2026"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -73.89621000,40.586338000 ]
-    },
-    "properties": {
-    "Fatality_Date":"2026/04/08",
-    "Borough":"Brooklyn",
-    "Cross_Streets":"Flatbush Ave and Old 6-24 Rnwy",
-    "Mode":"Motorist",
-    "Age":76,
-    "Gender":"F",
-    "Collision_ID":4890580,
     "NewDate":"April 8, 2026"
     }
   },
@@ -49820,7 +49786,7 @@
     "properties": {
     "Fatality_Date":"2026/04/15",
     "Borough":"Manhattan",
-    "Cross_Streets":"FDR Drive and E Houston St",
+    "Cross_Streets":"FDR Dr and E Houston St",
     "Mode":"Pedestrian",
     "Age":74,
     "Gender":"M",
@@ -49854,7 +49820,7 @@
     "properties": {
     "Fatality_Date":"2026/04/17",
     "Borough":"Brooklyn",
-    "Cross_Streets":"Gates Ave and Saint Nicholas Ave",
+    "Cross_Streets":"Gates Ave and St Nicholas Ave",
     "Mode":"Pedestrian",
     "Age":29,
     "Gender":"F",
@@ -49871,7 +49837,7 @@
     "properties": {
     "Fatality_Date":"2026/04/17",
     "Borough":"Queens",
-    "Cross_Streets":"Crescent St at 35th Avenue",
+    "Cross_Streets":"Crescent St and 35th Ave",
     "Mode":"Pedestrian",
     "Age":83,
     "Gender":"M",
@@ -49894,6 +49860,23 @@
     "Gender":"F",
     "Collision_ID":4893597,
     "NewDate":"April 21, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.91867598,40.799498906 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/04/23",
+    "Borough":"Queens",
+    "Cross_Streets":"RFK Bridge",
+    "Mode":"Motorist",
+    "Age":41,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"April 23, 2026"
     }
   },
   {
@@ -49968,17 +49951,17 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -74.13900000,40.607390000 ]
+       "coordinates":  [ -73.91852600,40.712450000 ]
     },
     "properties": {
-    "Fatality_Date":"2026/05/02",
-    "Borough":"Staten Island",
-    "Cross_Streets":"S Gannon Ave and Ardmore Ave",
-    "Mode":"Motorist",
-    "Age":25,
+    "Fatality_Date":"2026/05/01",
+    "Borough":"Queens",
+    "Cross_Streets":"Flushing Ave and Woodward Ave",
+    "Mode":"Cyclist",
+    "Age":28,
     "Gender":"M",
-    "Collision_ID":4895912,
-    "NewDate":"May 2, 2026"
+    "Collision_ID":4896677,
+    "NewDate":"May 1, 2026"
     }
   },
   {
@@ -49990,11 +49973,28 @@
     "properties": {
     "Fatality_Date":"2026/05/02",
     "Borough":"Manhattan",
-    "Cross_Streets":"Amsterdam Ave and W 181th St",
+    "Cross_Streets":"Amsterdam Ave and W 181st St",
     "Mode":"Cyclist",
     "Age":49,
     "Gender":"F",
     "Collision_ID":4896075,
+    "NewDate":"May 2, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.13900000,40.607390000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/02",
+    "Borough":"Staten Island",
+    "Cross_Streets":"S Gannon Ave and Ardmore Ave",
+    "Mode":"Motorist",
+    "Age":25,
+    "Gender":"M",
+    "Collision_ID":4895912,
     "NewDate":"May 2, 2026"
     }
   },
@@ -50040,7 +50040,7 @@
     },
     "properties": {
     "Fatality_Date":"2026/05/03",
-    "Borough":"Queens",
+    "Borough":"Brooklyn",
     "Cross_Streets":"Jamaica Ave and Cypress Hills St",
     "Mode":"Other Motorist",
     "Age":42,
@@ -50070,17 +50070,17 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -74.11336000,40.629280000 ]
+       "coordinates":  [ -74.00178000,40.761333000 ]
     },
     "properties": {
-    "Fatality_Date":"2026/05/09",
-    "Borough":"Staten Island",
-    "Cross_Streets":"Forest Ave and N Burgher Ave",
-    "Mode":"Motorist",
-    "Age":31,
+    "Fatality_Date":"2026/05/08",
+    "Borough":"Manhattan",
+    "Cross_Streets":"12th Ave and W 41st St",
+    "Mode":"Cyclist",
+    "Age":23,
     "Gender":"M",
-    "Collision_ID":4897568,
-    "NewDate":"May 9, 2026"
+    "Collision_ID":4897517,
+    "NewDate":"May 8, 2026"
     }
   },
   {
@@ -50155,16 +50155,50 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.99464400,40.769980000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/16",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 55th St and 12th Ave",
+    "Mode":"Pedestrian",
+    "Age":58,
+    "Gender":"M",
+    "Collision_ID":4901715,
+    "NewDate":"May 16, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.97494500,40.714270000 ]
     },
     "properties": {
     "Fatality_Date":"2026/05/17",
     "Borough":"Manhattan",
-    "Cross_Streets":"Williamsburg Brdg and Delancy St",
+    "Cross_Streets":"Williamsburg Bridge and Delancey St",
     "Mode":"Motorist",
     "Age":26,
     "Gender":"M",
     "Collision_ID":4899523,
+    "NewDate":"May 17, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.98390000,40.621853000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/17",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"58th St and 19th Ave",
+    "Mode":"Other Motorist",
+    "Age":55,
+    "Gender":"M",
+    "Collision_ID":4899466,
     "NewDate":"May 17, 2026"
     }
   },
@@ -50180,9 +50214,655 @@
     "Cross_Streets":"Grand Central Pkwy and Long Island Expy",
     "Mode":"Pedestrian",
     "Age":76,
-    "Gender":"M",
+    "Gender":"F",
     "Collision_ID":4899531,
     "NewDate":"May 17, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.77477000,40.595734000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/22",
+    "Borough":"Queens",
+    "Cross_Streets":"Beach Channel Dr and Beach 43rd St",
+    "Mode":"Cyclist",
+    "Age":48,
+    "Gender":"M",
+    "Collision_ID":4900963,
+    "NewDate":"May 22, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.77011000,40.731777000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/25",
+    "Borough":"Queens",
+    "Cross_Streets":"Francis Lewis Blvd and Union Tpke",
+    "Mode":"Pedestrian",
+    "Age":71,
+    "Gender":"F",
+    "Collision_ID":4901578,
+    "NewDate":"May 25, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.02281000,40.616486000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/26",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"90th St and Parrott Pl",
+    "Mode":"Pedestrian",
+    "Age":37,
+    "Gender":"M",
+    "Collision_ID":4901811,
+    "NewDate":"May 26, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.81540000,40.884850000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/27",
+    "Borough":"Bronx",
+    "Cross_Streets":"New England Thr and Hutchinson River Pkwy",
+    "Mode":"Pedestrian",
+    "Age":42,
+    "Gender":"M",
+    "Collision_ID":4903482,
+    "NewDate":"May 27, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94913835,40.754564149 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/28",
+    "Borough":"Queens",
+    "Cross_Streets":"Queensboro Bridge",
+    "Mode":"Other Motorist",
+    "Age":39,
+    "Gender":"M",
+    "Collision_ID":4902153,
+    "NewDate":"May 28, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94913835,40.754564149 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/28",
+    "Borough":"Queens",
+    "Cross_Streets":"Queensboro Bridge",
+    "Mode":"Cyclist",
+    "Age":35,
+    "Gender":"M",
+    "Collision_ID":4902153,
+    "NewDate":"May 28, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.03559000,40.639763000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/29",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Shore Rd and 68th St",
+    "Mode":"Cyclist",
+    "Age":61,
+    "Gender":"M",
+    "Collision_ID":4902286,
+    "NewDate":"May 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94903600,40.768642000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/01",
+    "Borough":"Manhattan",
+    "Cross_Streets":"FDR Dr and E 74th St",
+    "Mode":"Motorist",
+    "Age":48,
+    "Gender":"M",
+    "Collision_ID":4903272,
+    "NewDate":"June 1, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.16272000,40.560776000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/02",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Armstrong Ave and Arthur Kill Rd",
+    "Mode":"Motorist",
+    "Age":22,
+    "Gender":"M",
+    "Collision_ID":4903392,
+    "NewDate":"June 2, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.89427000,40.829212000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/05",
+    "Borough":"Bronx",
+    "Cross_Streets":"Intervale Ave and Chisholm St",
+    "Mode":"Pedestrian",
+    "Age":30,
+    "Gender":"F",
+    "Collision_ID":4904317,
+    "NewDate":"June 5, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.86832000,40.668670000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/07",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Linden Blvd and Crescent St",
+    "Mode":"Motorist",
+    "Age":32,
+    "Gender":"M",
+    "Collision_ID":4904754,
+    "NewDate":"June 7, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.75370000,40.610420000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/07",
+    "Borough":"Queens",
+    "Cross_Streets":"Beach Channel Dr and Horton Ave",
+    "Mode":"Pedestrian",
+    "Age":42,
+    "Gender":"M",
+    "Collision_ID":4904936,
+    "NewDate":"June 7, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.06508000,40.601204000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/09",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Verrazzano-Narrows Brdg and Lily Pond Ave",
+    "Mode":"Motorist",
+    "Age":34,
+    "Gender":"M",
+    "Collision_ID":4905415,
+    "NewDate":"June 9, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92165037,40.757050316 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/14",
+    "Borough":"Queens",
+    "Cross_Streets":"38th St and 34th Ave",
+    "Mode":"Pedestrian",
+    "Age":55,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"June 14, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.13821944,40.636098017 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/17",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Castleton Ave and Treadwell Ave",
+    "Mode":"Motorist",
+    "Age":16,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 17, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95432996,40.800615200 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/18",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 112th St and Adam Clayton Powell Blvd",
+    "Mode":"Motorist",
+    "Age":13,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 18, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94487027,40.829019888 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/19",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 151st St and Amsterdam Ave",
+    "Mode":"Cyclist",
+    "Age":32,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 19, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.13672704,40.628662200 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/21",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Decker Ave and Catherine St",
+    "Mode":"Pedestrian",
+    "Age":60,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"June 21, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.93269103,40.804061622 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/22",
+    "Borough":"Manhattan",
+    "Cross_Streets":"E 127th St and 2nd Ave",
+    "Mode":"Pedestrian",
+    "Age":53,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 22, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92958764,40.852480171 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/27",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Audobon Ave and W 187th St",
+    "Mode":"Motorist",
+    "Age":18,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"June 27, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.73100590,40.665354067 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/27",
+    "Borough":"Queens",
+    "Cross_Streets":"S Conduit Ave and 247th St",
+    "Mode":"Motorist",
+    "Age":52,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 27, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.80452700,40.756379062 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/29",
+    "Borough":"Queens",
+    "Cross_Streets":"162nd St and 46th Ave",
+    "Mode":"Motorist",
+    "Age":13,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.86049923,40.887813470 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/29",
+    "Borough":"Bronx",
+    "Cross_Streets":"E 225nd St and White Plains Road",
+    "Mode":"Pedestrian",
+    "Age":93,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"June 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92485252,40.735756909 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/29",
+    "Borough":"Queens",
+    "Cross_Streets":"Long Island Expy and Brooklyn Queens Expy",
+    "Mode":"Motorist",
+    "Age":35,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92485252,40.735756909 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/29",
+    "Borough":"Queens",
+    "Cross_Streets":"Long Island Expy and Brooklyn Queens Expy",
+    "Mode":"Motorist",
+    "Age":42,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92485252,40.735756909 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/29",
+    "Borough":"Queens",
+    "Cross_Streets":"Long Island Expy and Brooklyn Queens Expy",
+    "Mode":"Motorist",
+    "Age":56,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.02006095,40.653411636 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/06/30",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"1st Ave and 47th St",
+    "Mode":"Motorist",
+    "Age":17,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"June 30, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/01",
+    "Borough":"Queens",
+    "Cross_Streets":"247th St and S Conduit Ave",
+    "Mode":"Motorist",
+    "Age":52,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 1, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/02",
+    "Borough":"Queens",
+    "Cross_Streets":"64th St and Roosevelt Ave",
+    "Mode":"Motorist",
+    "Age":31,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 2, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/07",
+    "Borough":"Bronx",
+    "Cross_Streets":"Saint Anns Ave and Major Deegan Expy",
+    "Mode":"Pedestrian",
+    "Age":null,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 7, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/08",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Hylan Blvd and Nelson Ave",
+    "Mode":"Pedestrian",
+    "Age":76,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 8, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/09",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Harlem River Dr and W 170th St",
+    "Mode":"Motorist",
+    "Age":26,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 9, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/11",
+    "Borough":"Queens",
+    "Cross_Streets":"N Conduit Ave and 159th St",
+    "Mode":"Motorist",
+    "Age":45,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 11, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/16",
+    "Borough":"Queens",
+    "Cross_Streets":"Grand Central Pkwy and Jackie Robinson Pkwy",
+    "Mode":"Motorist",
+    "Age":null,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 16, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/16",
+    "Borough":"Queens",
+    "Cross_Streets":"Grand Central Pkwy and Jackie Robinson Pkwy",
+    "Mode":"Motorist",
+    "Age":null,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"July 16, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/17",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"E 92nd St and Rutland Rd",
+    "Mode":"Pedestrian",
+    "Age":79,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"July 17, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/17",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Pennsylvania Ave and Cozine Ave",
+    "Mode":"Pedestrian",
+    "Age":34,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 17, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/18",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"St. Marks Ave and Franklin Ave",
+    "Mode":"Pedestrian",
+    "Age":67,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 18, 2026"
     }
   }
 ]
