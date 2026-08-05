@@ -7,6 +7,6 @@
   
 [[redirects]]
   from = "https://3dollarcitibike.nyc/*"
-  to = "https://projects.transalt.org/3-dollar-citibike.html"
-  status = 302
+  to = "https://ta-projects.netlify.app/3-dollar-citibike.html"
+  status = 200
   force = true
