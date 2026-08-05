@@ -1,0 +1,435 @@
+git<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$3 Citi Bike — City Bike Riders Union</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=VT323&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-deep:#151f4d;
+    --blue-mid:#213272;
+    --blue-bright:#36A4E2;
+    --silver-1:#f3f5f9;
+    --silver-2:#aab2c2;
+    --silver-3:#5b6172;
+    --lime:#d4ff5a;
+    --white:#ffffff;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(54,164,226,0.25), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(54,164,226,0.2), transparent 45%),
+      linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-mid) 55%, var(--blue-deep) 100%);
+    background-attachment:fixed;
+    color:var(--silver-1);
+    font-family:'Space Mono', monospace;
+    overflow-x:hidden;
+    position:relative;
+    min-height:100vh;
+  }
+
+  /* starfield sparkle layer */
+  .stars{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 10% 20%, white, transparent),
+      radial-gradient(1.5px 1.5px at 80% 15%, white, transparent),
+      radial-gradient(1px 1px at 45% 55%, white, transparent),
+      radial-gradient(2px 2px at 65% 75%, white, transparent),
+      radial-gradient(1px 1px at 25% 85%, white, transparent),
+      radial-gradient(1.5px 1.5px at 90% 60%, white, transparent),
+      radial-gradient(1px 1px at 35% 35%, white, transparent);
+    background-repeat:no-repeat;
+    animation:twinkle 3s ease-in-out infinite alternate;
+    opacity:0.5;
+  }
+  @keyframes twinkle{ from{opacity:.25;} to{opacity:.65;} }
+
+  /* scanline overlay for CRT feel */
+  .scanlines{
+    position:fixed; inset:0; pointer-events:none; z-index:9998;
+    background:repeating-linear-gradient(to bottom, rgba(255,255,255,0.035) 0px, rgba(255,255,255,0.035) 1px, transparent 2px, transparent 4px);
+    mix-blend-mode:overlay;
+  }
+
+  /* ---------- marquee ticker ---------- */
+  .ticker{
+    position:relative; z-index:2;
+    width:100%; overflow:hidden;
+    background:linear-gradient(90deg, var(--blue-deep), var(--blue-bright), var(--blue-deep));
+    border-bottom:2px solid var(--silver-2);
+    padding:7px 0;
+  }
+  .ticker.bottom{border-bottom:none; border-top:2px solid var(--silver-2);}
+  .ticker-track{
+    display:inline-flex; white-space:nowrap;
+    animation:scroll-left 22s linear infinite;
+    font-family:'VT323', monospace;
+    font-size:1.4rem;
+    letter-spacing:1px;
+    color:var(--silver-1);
+  }
+  .ticker-track span{padding-right:2.5rem;}
+  @keyframes scroll-left{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  main{position:relative; z-index:2; max-width:900px; margin:0 auto; padding:2.5rem 1.25rem 4rem;}
+
+  /* ---------- hero ---------- */
+  .eyebrow{
+    text-align:center; font-family:'VT323', monospace; font-size:1.35rem;
+    letter-spacing:4px; color:var(--lime); text-transform:uppercase; margin-bottom:.5rem;
+    text-shadow:0 0 8px rgba(212,255,90,0.6);
+  }
+  .eyebrow .bolt{margin:0 6px;}
+
+  h1.hero-title{
+    font-family:'Orbitron', sans-serif;
+    font-weight:900;
+    text-align:center;
+    font-size:clamp(3rem, 12vw, 6.5rem);
+    line-height:0.95;
+    margin:0 0 .35rem;
+    letter-spacing:1px;
+    background:linear-gradient(180deg, #ffffff 0%, #d8dee8 18%, #8891a3 42%, #ffffff 52%, #b7bfcf 70%, #ffffff 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 0 18px rgba(54,164,226,0.55));
+  }
+
+  p.tagline{
+    text-align:center; font-family:'VT323', monospace; font-size:1.6rem;
+    color:var(--silver-1); margin:0 auto 2.25rem; max-width:32ch; letter-spacing:.5px;
+  }
+
+  /* ---------- spinning bike portal ---------- */
+  .portal-wrap{
+    display:flex; justify-content:center; margin:1.5rem auto 2.5rem;
+  }
+  .portal{
+    position:relative;
+    width:min(280px, 62vw); height:min(280px, 62vw);
+    border-radius:50%;
+    background:radial-gradient(circle at 40% 35%, rgba(255,255,255,0.15), rgba(33,50,114,0.9) 65%);
+    border:3px solid var(--silver-2);
+    box-shadow:
+      0 0 0 6px rgba(54,164,226,0.15),
+      0 0 40px rgba(54,164,226,0.55),
+      inset 0 0 30px rgba(0,0,0,0.5);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .portal::before{
+    content:"";
+    position:absolute; inset:14px;
+    border-radius:50%;
+    border:1px dashed rgba(255,255,255,0.25);
+    animation:ring-spin 12s linear infinite;
+  }
+  @keyframes ring-spin{ to{ transform:rotate(360deg);} }
+
+  .bike-stage{ perspective:900px; width:70%; }
+  .bike-spin{
+    animation:spin3d 5.5s linear infinite;
+    transform-style:preserve-3d;
+    filter:drop-shadow(0 6px 10px rgba(0,0,0,0.4));
+  }
+  @keyframes spin3d{
+    from{ transform:rotateY(0deg); }
+    to{ transform:rotateY(360deg); }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .bike-spin, .ring-spin, .portal::before, .ticker-track{ animation:none !important; }
+  }
+
+  /* ---------- body copy ---------- */
+  .lede{
+    font-size:1.05rem; line-height:1.7; text-align:center;
+    max-width:60ch; margin:0 auto 3rem; color:var(--silver-1);
+  }
+  .lede strong{color:var(--lime);}
+
+  /* ---------- action grid ---------- */
+  .grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:1.1rem;
+    margin-bottom:1rem;
+  }
+  @media (max-width:600px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    position:relative;
+    background:linear-gradient(160deg, var(--silver-1), var(--silver-2) 45%, var(--silver-1) 100%);
+    color:var(--blue-deep);
+    border:none; border-radius:10px;
+    padding:1.3rem 1.1rem 1.1rem;
+    text-align:left;
+    cursor:pointer;
+    font-family:'Space Mono', monospace;
+    box-shadow:
+      0 4px 0 var(--silver-3),
+      0 8px 18px rgba(0,0,0,0.35),
+      inset 0 1px 0 rgba(255,255,255,0.8);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .card:hover, .card:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:
+      0 7px 0 var(--silver-3),
+      0 14px 24px rgba(54,164,226,0.4),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  .card:active{ transform:translateY(0); box-shadow:0 2px 0 var(--silver-3), inset 0 1px 0 rgba(255,255,255,0.8);}
+  .card .icon{ font-size:1.6rem; display:block; margin-bottom:.35rem; }
+  .card .card-title{ font-family:'Orbitron', sans-serif; font-weight:700; font-size:.95rem; letter-spacing:.5px; display:block; margin-bottom:.3rem;}
+  .card .card-hint{ font-size:.8rem; color:var(--blue-mid); opacity:.75; }
+
+  /* small hover-tooltip preview (desktop) */
+  .card .peek{
+    position:absolute; left:50%; bottom:calc(100% + 10px); transform:translateX(-50%) translateY(6px);
+    width:230px; background:var(--blue-deep); color:var(--silver-1);
+    border:1px solid var(--blue-bright); border-radius:8px; padding:.6rem .7rem;
+    font-size:.78rem; line-height:1.35; opacity:0; pointer-events:none;
+    transition:opacity .15s ease, transform .15s ease;
+    box-shadow:0 6px 16px rgba(0,0,0,0.5);
+    z-index:5;
+  }
+  .card:hover .peek{ opacity:1; transform:translateX(-50%) translateY(0); }
+  @media (hover:none){ .card .peek{ display:none; } }
+
+  /* ---------- modal ---------- */
+  .modal-backdrop{
+    position:fixed; inset:0; background:rgba(9,14,36,0.78);
+    display:none; align-items:center; justify-content:center; z-index:100; padding:1rem;
+  }
+  .modal-backdrop.open{ display:flex; }
+  .modal{
+    width:100%; max-width:440px;
+    background:linear-gradient(165deg, var(--silver-1), var(--silver-2));
+    color:var(--blue-deep);
+    border-radius:12px;
+    padding:1.75rem 1.6rem 1.6rem;
+    position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6), 0 0 0 3px var(--blue-bright);
+  }
+  .modal h2{
+    font-family:'Orbitron', sans-serif; font-size:1.15rem; margin:0 0 .75rem; padding-right:1.5rem;
+  }
+  .modal p{ font-size:.92rem; line-height:1.6; margin:0 0 1rem; }
+  .modal .close{
+    position:absolute; top:.85rem; right:.9rem; background:var(--blue-deep); color:var(--silver-1);
+    border:none; width:26px; height:26px; border-radius:50%; cursor:pointer; font-family:monospace; font-size:.9rem;
+  }
+  .modal .cta{
+    display:inline-block; background:var(--blue-deep); color:var(--white);
+    text-decoration:none; font-family:'Orbitron', sans-serif; font-size:.8rem;
+    padding:.7rem 1.1rem; border-radius:6px; letter-spacing:.5px;
+    box-shadow:0 3px 0 var(--blue-mid);
+  }
+  .modal .cta:hover{ background:var(--blue-bright); }
+
+  .modal form{ display:flex; flex-direction:column; gap:.6rem; margin-top:.5rem; }
+  .modal input[type=email], .modal input[type=text]{
+    font-family:'Space Mono', monospace; padding:.6rem .7rem; border-radius:6px;
+    border:1px solid var(--silver-3); font-size:.85rem;
+  }
+  .modal .submit-btn{
+    font-family:'Orbitron', sans-serif; font-size:.8rem; letter-spacing:.5px;
+    background:var(--blue-deep); color:#fff; border:none; padding:.7rem 1rem; border-radius:6px;
+    cursor:pointer; box-shadow:0 3px 0 var(--blue-mid);
+  }
+  .modal .submit-btn:hover{ background:var(--blue-bright); }
+  .form-note{ font-size:.72rem; opacity:.7; margin-top:-.2rem; }
+  .success-msg{ display:none; font-size:.85rem; background:#dff4d8; border:1px solid #6ba85e; padding:.6rem .7rem; border-radius:6px; }
+
+  /* ---------- footer ---------- */
+  footer{
+    position:relative; z-index:2; text-align:center; padding:2rem 1rem 1rem;
+    font-family:'VT323', monospace; font-size:1.05rem; color:var(--silver-2);
+  }
+  .counter{
+    display:inline-flex; align-items:center; gap:.5rem; margin:1rem 0;
+    background:#000; color:#ff4d4d; font-family:'VT323', monospace; font-size:1.3rem;
+    padding:.35rem .8rem; border-radius:4px; border:2px solid var(--silver-2); letter-spacing:3px;
+  }
+  .ta-credit{ font-family:'Space Mono', monospace; font-size:.75rem; color:var(--silver-2); opacity:.8; }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="scanlines"></div>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>★ $3 CITI BIKE ★ A 45-MINUTE RIDE SHOULDN'T COST MORE THAN $3 ★ JOIN THE CITY BIKE RIDERS UNION ★ LAUNCH PARTY AUG 12 ★ MAKE CITI BIKE AFFORDABLE ★</span>
+    <span>★ $3 CITI BIKE ★ A 45-MINUTE RIDE SHOULDN'T COST MORE THAN $3 ★ JOIN THE CITY BIKE RIDERS UNION ★ LAUNCH PARTY AUG 12 ★ MAKE CITI BIKE AFFORDABLE ★</span>
+  </div>
+</div>
+
+<main>
+  <p class="eyebrow"><span class="bolt">⚡</span>CITI BIKE PRICES ARE OUT OF CONTROL<span class="bolt">⚡</span></p>
+  <h1 class="hero-title">$3<br>CITI&nbsp;BIKE</h1>
+  <p class="tagline">A 45-minute ride shouldn't cost more than $3.</p>
+
+  <div class="portal-wrap">
+    <div class="portal">
+      <div class="bike-stage">
+        <svg class="bike-spin" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="45" cy="95" r="26" fill="none" stroke="#f3f5f9" stroke-width="5"/>
+          <circle cx="175" cy="95" r="26" fill="none" stroke="#f3f5f9" stroke-width="5"/>
+          <circle cx="45" cy="95" r="4" fill="#36A4E2"/>
+          <circle cx="175" cy="95" r="4" fill="#36A4E2"/>
+          <path d="M45 95 L95 45 L130 95 M95 45 L85 25 M175 95 L120 95 L95 45" fill="none" stroke="#36A4E2" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M70 25 H100" stroke="#f3f5f9" stroke-width="5" stroke-linecap="round"/>
+          <path d="M120 95 H150 L160 70" fill="none" stroke="#f3f5f9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="55" y="60" width="26" height="16" rx="3" fill="#d4ff5a"/>
+          <path d="M62 60 L70 68 L64 68 L72 76" stroke="#213272" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <p class="lede">
+    Citi Bike is too expensive. Electric Citi Bike rides have <strong>tripled in price</strong> in just a few years — and what used to be an accessible way to get around is becoming increasingly out of reach for many New Yorkers. A 45-minute bike ride shouldn't cost more than $3 — and we're bringing Citi Bike riders together to form the City Bike Riders Union, and calling for public subsidies and efficiency improvements to bring the price down.
+  </p>
+
+  <div class="grid">
+    <button class="card" onclick="openModal('party')">
+      <span class="icon">🎉</span>
+      <span class="card-title">LAUNCH PARTY</span>
+      <span class="card-hint">Aug 12 — tap for details</span>
+      <span class="peek">Join us Aug 12 to launch TA's newest campaign. Party + a chance to win a free Citi Bike annual membership.</span>
+    </button>
+
+    <button class="card" onclick="openModal('petition')">
+      <span class="icon">✍️</span>
+      <span class="card-title">SIGN THE PETITION</span>
+      <span class="card-hint">Make Citi Bike affordable</span>
+      <span class="peek">Add your name and tell the City: Citi Bike needs to stay affordable for everyone.</span>
+    </button>
+
+    <button class="card" onclick="openModal('join')">
+      <span class="icon">🤝</span>
+      <span class="card-title">JOIN THE UNION</span>
+      <span class="card-hint">Riders need a voice</span>
+      <span class="peek">As Citi Bike's city contract ends, riders need a seat at the table. Join the Riders Union.</span>
+    </button>
+
+    <button class="card" onclick="openModal('about')">
+      <span class="icon">ℹ️</span>
+      <span class="card-title">ABOUT US</span>
+      <span class="card-hint">Who's behind this?</span>
+      <span class="peek">We're Citi Bike riders and fans organized by Transportation Alternatives.</span>
+    </button>
+  </div>
+</main>
+
+<footer>
+  <div class="counter">👀 VISITORS: <span id="hitcount">004821</span></div><br>
+  <span class="ta-credit">$3 CITI BIKE is a campaign by Transportation Alternatives &middot; best viewed at 12&nbsp;mph</span>
+</footer>
+
+<div class="ticker bottom">
+  <div class="ticker-track">
+    <span>★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ FOLLOW THE CAMPAIGN ★ THIS IS A RIDERS' MOVEMENT ★ $3 CITI BIKE ★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ FOLLOW THE CAMPAIGN ★ THIS IS A RIDERS' MOVEMENT ★</span>
+    <span>★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ FOLLOW THE CAMPAIGN ★ THIS IS A RIDERS' MOVEMENT ★ $3 CITI BIKE ★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ FOLLOW THE CAMPAIGN ★ THIS IS A RIDERS' MOVEMENT ★</span>
+  </div>
+</div>
+
+<!-- ---------- modal ---------- -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+  const content = {
+    party: {
+      title: "🎉 Launch Party — Aug 12",
+      html: `<p>Join us on August 12th to launch TA's newest campaign: $3 Citi Bike. A 45-minute bike ride shouldn't cost more than $3. Come party and win a free Citi Bike annual membership!</p>
+             <a class="cta" href="https://www.zeffy.com/en-US/ticketing/dollar3-citi-bike-campaign-launch-party" target="_blank" rel="noopener">RSVP →</a>`
+    },
+    petition: {
+      title: "✍️ Make Citi Bike Affordable!",
+      html: `<p>A 45-minute bike ride shouldn't cost more than $3. Add your name and tell the City that Citi Bike needs public subsidies and efficiency improvements to bring the price down.</p>
+             <a class="cta" href="https://act.transalt.org/a/3citibike" target="_blank" rel="noopener">Sign the Petition →</a>`
+    },
+    join: {
+      title: "🤝 Join the City Bike Riders Union",
+      html: `<p>As Citi Bike's contract with the City comes to a close, riders need a voice in shaping the next contract. We won't sit back silently as rides grow more expensive, bikes break down, and fleet balancing deteriorates. Join the Citi Bike Riders Union and fight for a Citi Bike that truly serves New Yorkers.</p>
+             <form onsubmit="submitJoin(event)">
+               <input type="text" placeholder="First name" required>
+               <input type="email" placeholder="Email address" required>
+               <button class="submit-btn" type="submit">Join the Union →</button>
+               <p class="form-note">Demo form — NEED TO INSERT LINK TO COLLECT</p>
+             </form>
+             <p class="success-msg" id="joinSuccess">✅ You're in! Welcome to the Union.</p>`
+    },
+    about: {
+      title: "ℹ️ About the Union",
+      html: `<p>We are the City Bike Riders Union: a group of Citi Bike riders and fans organized by Transportation Alternatives to fight for a better and more affordable Citi Bike program in NYC.</p>`
+    }
+  };
+
+  const backdrop = document.getElementById('modalBackdrop');
+  const body = document.getElementById('modalBody');
+
+  function openModal(key){
+    const c = content[key];
+    body.innerHTML = `<h2>${c.title}</h2>${c.html}`;
+    backdrop.classList.add('open');
+  }
+  function closeModal(){ backdrop.classList.remove('open'); }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+  function submitJoin(e){
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('joinSuccess').style.display = 'block';
+  }
+
+  // real hit counter via CounterAPI (counterapi.dev) — shared across all visitors
+  const el = document.getElementById('hitcount');
+  fetch('https://api.counterapi.dev/v1/3dollar-citibike/visits/up')
+    .then(r => r.json())
+    .then(data => {
+      el.textContent = String(data.count).padStart(6, '0');
+    })
+    .catch(() => {
+      // fallback to local display if API is unreachable
+      el.textContent = '??????';
+    });
+
+  // cursor sparkle trail (desktop only)
+  if (matchMedia('(hover:hover)').matches) {
+    let last = 0;
+    document.addEventListener('mousemove', (e) => {
+      const now = Date.now();
+      if (now - last < 45) return;
+      last = now;
+      const s = document.createElement('div');
+      s.textContent = Math.random() > 0.5 ? '✦' : '✧';
+      s.style.cssText = `position:fixed; left:${e.clientX}px; top:${e.clientY}px; pointer-events:none; z-index:9999;
+        color:${Math.random() > 0.5 ? '#d4ff5a' : '#36A4E2'}; font-size:${10 + Math.random()*8}px;
+        transform:translate(-50%,-50%); transition:transform .6s ease, opacity .6s ease; opacity:1;`;
+      document.body.appendChild(s);
+      requestAnimationFrame(() => {
+        s.style.transform = `translate(-50%,-50%) translateY(-20px) scale(0.4)`;
+        s.style.opacity = '0';
+      });
+      setTimeout(() => s.remove(), 650);
+    });
+  }
+</script>
+
+</body>
+</html>
