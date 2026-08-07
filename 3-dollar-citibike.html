@@ -394,6 +394,7 @@
   const el = document.getElementById('hitcount');
   fetch('/.netlify/functions/counter')
     .then(r => { if (!r.ok) throw new Error('bad response'); return r.json(); })
+    .then(r => r.json())
     .then(data => {
       el.textContent = String(data.count).padStart(6, '0');
     })
