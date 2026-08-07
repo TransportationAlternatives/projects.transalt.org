@@ -4,3 +4,9 @@
 
 [build.environment]
   RUBY_VERSION = "3.1.2"
+  
+[[redirects]]
+  from = "https://3dollarcitibike.nyc/*"
+  to = "https://ta-projects.netlify.app/3-dollar-citibike.html"
+  status = 200
+  force = true

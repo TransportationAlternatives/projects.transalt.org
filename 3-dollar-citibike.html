@@ -256,7 +256,7 @@
     font-family:'VT323', monospace; font-size:1.05rem; color:var(--silver-2);
   }
   .ta-credit{ font-family:'Space Mono', monospace; font-size:.75rem; color:var(--silver-2); opacity:.8; }
-  .ta-credit a{ color:inherit; text-decoration:underline; }
+  .ta-credit a, .ta-credit a:visited, .ta-credit a:hover, .ta-credit a:active {   color: inherit; }
 </style>
 </head>
 <body>
@@ -266,8 +266,8 @@
 
 <div class="ticker">
   <div class="ticker-track">
-    <span>★ $3 CITI BIKE ★ A 45-MINUTE RIDE SHOULDN'T COST MORE THAN $3 ★ JOIN THE CITY BIKE RIDERS UNION ★ LAUNCH PARTY AUG 12 ★ MAKE CITI BIKE AFFORDABLE ★</span>
-    <span>★ $3 CITI BIKE ★ A 45-MINUTE RIDE SHOULDN'T COST MORE THAN $3 ★ JOIN THE CITY BIKE RIDERS UNION ★ LAUNCH PARTY AUG 12 ★ MAKE CITI BIKE AFFORDABLE ★</span>
+    <span>★  $3 CITI BIKE  ★  LAUNCH PARTY AUG 12  ★  MAKE CITI BIKE AFFORDABLE  ★  $3 CITI BIKE  ★  LAUNCH PARTY AUG 12  ★  MAKE CITI BIKE AFFORDABLE  ★</span>
+    <span>★  $3 CITI BIKE  ★  LAUNCH PARTY AUG 12  ★  MAKE CITI BIKE AFFORDABLE  ★  $3 CITI BIKE  ★  LAUNCH PARTY AUG 12  ★  MAKE CITI BIKE AFFORDABLE  ★</span>
   </div>
 </div>
 
@@ -285,7 +285,7 @@
   </div>
 
   <p class="lede">
-    Citi Bike is too expensive. Electric Citi Bike rides have <strong>tripled in price</strong> in just a few years — and what used to be an accessible way to get around is becoming increasingly out of reach for many New Yorkers. A 45-minute bike ride shouldn't cost more than $3 — and we're bringing Citi Bike riders together to form the City Bike Riders Union, and calling for public subsidies and efficiency improvements to bring the price down.
+    Citi Bike is too expensive. Electric Citi Bike rides have <strong>tripled in price</strong> in just a few years. A 45-minute bike ride shouldn't cost more than $3 — and we're bringing Citi Bike riders together to form the City Bike Riders Union, calling for public subsidies and efficiency improvements to bring the price down.
   </p>
 
   <div class="grid">
@@ -325,8 +325,8 @@
 
 <div class="ticker bottom">
   <div class="ticker-track">
-    <span>★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ FOLLOW THE CAMPAIGN ★ THIS IS A RIDERS' MOVEMENT ★ $3 CITI BIKE ★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ FOLLOW THE CAMPAIGN ★ THIS IS A RIDERS' MOVEMENT ★</span>
-    <span>★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ FOLLOW THE CAMPAIGN ★ THIS IS A RIDERS' MOVEMENT ★ $3 CITI BIKE ★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ FOLLOW THE CAMPAIGN ★ THIS IS A RIDERS' MOVEMENT ★</span>
+    <span>★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ THIS IS A RIDERS' MOVEMENT ★ $3 CITI BIKE ★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ THIS IS A RIDERS' MOVEMENT ★</span>
+    <span>★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ THIS IS A RIDERS' MOVEMENT ★ $3 CITI BIKE ★ RIDERS UNITE ★ FAIR FARES FOR CITI BIKE ★ $3 CITI BIKE ★ THIS IS A RIDERS' MOVEMENT ★</span>
   </div>
 </div>
 
@@ -352,7 +352,7 @@
     },
     join: {
       title: "🤝 Join the City Bike Riders Union",
-      html: `<p>As Citi Bike's contract with the City comes to a close, riders need a voice in shaping the next contract. We won't sit back silently as rides grow more expensive, bikes break down, and fleet balancing deteriorates. Join the Citi Bike Riders Union and fight for a Citi Bike that truly serves New Yorkers.</p>
+      html: `<p>As Citi Bike's contract with the City comes to a close, riders need a voice in shaping the next contract. We won't sit back silently as rides grow more expensive, bikes break down, and fleet balancing deteriorates. Join the City Bike Riders Union and fight for a Citi Bike that truly serves New Yorkers.</p>
              <form onsubmit="submitJoin(event)">
                <input type="text" placeholder="First name" required>
                <input type="email" placeholder="Email address" required>
@@ -383,6 +383,18 @@
     e.target.style.display = 'none';
     document.getElementById('joinSuccess').style.display = 'block';
   }
+
+  // real hit counter via CounterAPI (counterapi.dev) — shared across all visitors
+  const el = document.getElementById('hitcount');
+  fetch('/.netlify/functions/counter')
+    .then(r => { if (!r.ok) throw new Error('bad response'); return r.json(); })
+    .then(r => r.json())
+    .then(data => {
+      el.textContent = String(data.count).padStart(6, '0');
+    })
+    .catch(() => {
+      el.textContent = '??????';
+    });
 
   // cursor sparkle trail (desktop only)
   if (matchMedia('(hover:hover)').matches) {
