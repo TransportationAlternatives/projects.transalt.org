@@ -6,7 +6,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const store = getStore({ name: "counters", consistency: "strong" });
+    const store = getStore("counters");
 
     const current = await store.get("visits", { type: "text" });
     const count = (parseInt(current || "0") || 0) + 1;
