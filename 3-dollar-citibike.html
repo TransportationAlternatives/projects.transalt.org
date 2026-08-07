@@ -393,12 +393,11 @@
   // real hit counter via CounterAPI (counterapi.dev) — shared across all visitors
   const el = document.getElementById('hitcount');
   fetch('/.netlify/functions/counter')
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error('bad response'); return r.json(); })
     .then(data => {
       el.textContent = String(data.count).padStart(6, '0');
     })
     .catch(() => {
-      // fallback to local display if API is unreachable
       el.textContent = '??????';
     });
 
