@@ -267,8 +267,8 @@
 
 <div class="ticker">
   <div class="ticker-track">
-    <span>★  $3 CITI BIKE  ★  LAUNCH PARTY AUG 12  ★  MAKE CITI BIKE AFFORDABLE  ★  $3 CITI BIKE  ★  LAUNCH PARTY AUG 12  ★  MAKE CITI BIKE AFFORDABLE  ★</span>
-    <span>★  $3 CITI BIKE  ★  LAUNCH PARTY AUG 12  ★  MAKE CITI BIKE AFFORDABLE  ★  $3 CITI BIKE  ★  LAUNCH PARTY AUG 12  ★  MAKE CITI BIKE AFFORDABLE  ★</span>
+    <span>★  $3 CITI BIKE  ★  CITI BIKE PRICES ARE OUT OF CONTROL  ★  MAKE CITI BIKE AFFORDABLE  ★  $3 CITI BIKE  ★  CITI BIKE PRICES ARE OUT OF CONTROL  ★  MAKE CITI BIKE AFFORDABLE  ★</span>
+    <span>★  $3 CITI BIKE  ★  CITI BIKE PRICES ARE OUT OF CONTROL  ★  MAKE CITI BIKE AFFORDABLE  ★  $3 CITI BIKE  ★  CITI BIKE PRICES ARE OUT OF CONTROL  ★  MAKE CITI BIKE AFFORDABLE  ★</span>
   </div>
 </div>
 
@@ -290,13 +290,6 @@
   </p>
 
   <div class="grid">
-    <button class="card" onclick="openModal('party')">
-      <span class="icon">🎉</span>
-      <span class="card-title">LAUNCH PARTY</span>
-      <span class="card-hint">Aug 12 — tap for details</span>
-      <span class="peek">Join us Aug 12 to launch TA's newest campaign. Party + a chance to win a free Citi Bike annual membership.</span>
-    </button>
-
     <button class="card" onclick="openModal('petition')">
       <span class="icon">✍️</span>
       <span class="card-title">SIGN THE PETITION</span>
@@ -310,6 +303,13 @@
       <span class="card-hint">Riders need a voice</span>
       <span class="peek">As Citi Bike's city contract ends, riders need a seat at the table. Join the Riders Union.</span>
     </a>
+
+     <button class="card" onclick="openModal('party')">
+      <span class="icon">🎉</span>
+      <span class="card-title">LAUNCH PARTY RECAP</span>
+      <span class="card-hint">Check out how it went</span>
+      <span class="peek">We launched TA's newest campaign with a party on Aug 12 at 3 Dollar Bill.</span>
+    </button>
 
     <button class="card" onclick="openModal('about')">
       <span class="icon">ℹ️</span>
@@ -342,9 +342,9 @@
 <script>
   const content = {
     party: {
-      title: "🎉 Launch Party — Aug 12",
-      html: `<p>Join us on August 12th to launch TA's newest campaign: $3 Citi Bike. A 45-minute bike ride shouldn't cost more than $3. Come party and win a free Citi Bike annual membership!</p>
-             <a class="cta" href="https://www.zeffy.com/en-US/ticketing/dollar3-citi-bike-campaign-launch-party" target="_blank" rel="noopener">RSVP →</a>`
+      title: "🎉 Launch Party Recap",
+      html: `<p>We threw a party on August 12th to launch TA's newest campaign at 3 Dollar Bill, welcoming attendees into the Riders Union. We gave away a prize for most expensive ride and raffled off a free Citi Bike annual membership!</p>
+             <a class="cta" href="https://hellgatenyc.com/citi-bike-3-dollars/" target="_blank" rel="noopener">Check it out →</a>`
     },
     petition: {
       title: "✍️ Make Citi Bike Affordable!",
