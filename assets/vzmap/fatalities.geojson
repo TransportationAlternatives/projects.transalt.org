@@ -50342,6 +50342,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.90369469,40.858692433 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/31",
+    "Borough":"Bronx",
+    "Cross_Streets":"W 183rd St and Jerome Ave",
+    "Mode":"Pedestrian",
+    "Age":60,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"May 31, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.94903600,40.768642000 ]
     },
     "properties": {
@@ -50672,7 +50689,7 @@
     "Borough":"Brooklyn",
     "Cross_Streets":"1st Ave and 47th St",
     "Mode":"Motorist",
-    "Age":17,
+    "Age":14,
     "Gender":"M",
     "Collision_ID":null,
     "NewDate":"June 30, 2026"
@@ -50682,24 +50699,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
-    },
-    "properties": {
-    "Fatality_Date":"2026/07/01",
-    "Borough":"Queens",
-    "Cross_Streets":"247th St and S Conduit Ave",
-    "Mode":"Motorist",
-    "Age":52,
-    "Gender":"M",
-    "Collision_ID":null,
-    "NewDate":"July 1, 2026"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.90005400,40.745942000 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/02",
@@ -50716,14 +50716,14 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.91909188,40.804594742 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/07",
     "Borough":"Bronx",
-    "Cross_Streets":"Saint Anns Ave and Major Deegan Expy",
+    "Cross_Streets":"St Ann's Ave and Major Deegan Expy",
     "Mode":"Pedestrian",
-    "Age":null,
+    "Age":40,
     "Gender":"M",
     "Collision_ID":null,
     "NewDate":"July 7, 2026"
@@ -50733,7 +50733,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -74.14590400,40.542430000 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/08",
@@ -50750,7 +50750,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.93270892,40.839844798 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/09",
@@ -50767,7 +50767,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.77611800,40.667846000 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/11",
@@ -50784,14 +50784,31 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.93263245,40.856716160 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/13",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Broadway and Fairview Ave",
+    "Mode":"Cyclist",
+    "Age":40,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 13, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.93516555,40.844877020 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/16",
-    "Borough":"Queens",
-    "Cross_Streets":"Grand Central Pkwy and Jackie Robinson Pkwy",
-    "Mode":"Motorist",
-    "Age":null,
+    "Borough":"Manhattan",
+    "Cross_Streets":"Audobon Ave and W 175th St",
+    "Mode":"Pedestrian",
+    "Age":44,
     "Gender":"M",
     "Collision_ID":null,
     "NewDate":"July 16, 2026"
@@ -50801,14 +50818,31 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.82613020,40.716281982 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/16",
     "Borough":"Queens",
     "Cross_Streets":"Grand Central Pkwy and Jackie Robinson Pkwy",
     "Mode":"Motorist",
-    "Age":null,
+    "Age":23,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 16, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.82613020,40.716281982 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/16",
+    "Borough":"Queens",
+    "Cross_Streets":"Grand Central Pkwy and Jackie Robinson Pkwy",
+    "Mode":"Motorist",
+    "Age":24,
     "Gender":"F",
     "Collision_ID":null,
     "NewDate":"July 16, 2026"
@@ -50818,7 +50852,24 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.88831800,40.655496000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/17",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Pennsylvania Ave and Cozine Ave",
+    "Mode":"Pedestrian",
+    "Age":40,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 17, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92756600,40.661909000 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/17",
@@ -50835,24 +50886,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
-    },
-    "properties": {
-    "Fatality_Date":"2026/07/17",
-    "Borough":"Brooklyn",
-    "Cross_Streets":"Pennsylvania Ave and Cozine Ave",
-    "Mode":"Pedestrian",
-    "Age":34,
-    "Gender":"M",
-    "Collision_ID":null,
-    "NewDate":"July 17, 2026"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  { }
+       "coordinates":  [ -73.95606800,40.675928000 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/18",
@@ -50863,6 +50897,193 @@
     "Gender":"M",
     "Collision_ID":null,
     "NewDate":"July 18, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95520020,40.678344730 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/21",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Franklin Ave and Pacific St",
+    "Mode":"Other Motorist",
+    "Age":45,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"July 21, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.00642867,40.617821171 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/22",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"14th Ave and 77th St",
+    "Mode":"Other Motorist",
+    "Age":20,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 22, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.00410807,40.713206665 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/29",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Centre St and Chambers St",
+    "Mode":"Motorist",
+    "Age":17,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.98717862,40.771044246 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/30",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Amsterdam Ave and W 60th St",
+    "Mode":"Other Motorist",
+    "Age":49,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"July 30, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.93107036,40.868707387 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/31",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Henry Hudson Pkwy and Dyckman St",
+    "Mode":"Motorist",
+    "Age":30,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 31, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.86008270,40.738378971 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/01",
+    "Borough":"Queens",
+    "Cross_Streets":"99th St and 57th Ave",
+    "Mode":"Pedestrian",
+    "Age":65,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"August 1, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.91486560,40.830297443 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/08",
+    "Borough":"Bronx",
+    "Cross_Streets":"College Ave and 166th St",
+    "Mode":"Pedestrian",
+    "Age":55,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 8, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.98669073,40.766654923 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/08",
+    "Borough":"Manhattan",
+    "Cross_Streets":"9th Ave and W 55th St",
+    "Mode":"Pedestrian",
+    "Age":66,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 8, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.89863884,40.725858295 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/08",
+    "Borough":"Queens",
+    "Cross_Streets":"Long Island Expy and 69th St",
+    "Mode":"Motorist",
+    "Age":49,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 8, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.87567920,40.688585704 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/18",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Jamiaca Ave and Cypress Hills St",
+    "Mode":"Cyclist",
+    "Age":29,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"August 18, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.89519920,40.815724304 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/18",
+    "Borough":"Bronx",
+    "Cross_Streets":"Bruckner Blvd and Longwood Ave",
+    "Mode":"Cyclist",
+    "Age":51,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 18, 2026"
     }
   }
 ]
