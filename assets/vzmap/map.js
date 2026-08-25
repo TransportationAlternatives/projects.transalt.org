@@ -16,9 +16,9 @@ var sliderOptions = {
         minProperty: 'Fatality_Date',
         maxProperty: 'Fatality_Date',
         sliderMin: '2014-01-01',
-        sliderMax: '2026-08-18',
+        sliderMax: '2026-08-23',
         filterMin: '2014-01-01',
-        filterMax: '2026-08-18',
+        filterMax: '2026-08-23',
         propertyType: 'iso8601',
         rangeDescriptionFormat: 'shortDate',
         descriptionPrefix: 'Date:'
