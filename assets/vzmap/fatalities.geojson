@@ -50070,6 +50070,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.88866688,40.685163828 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/05/07",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Highland Blvd and Vermont Pl",
+    "Mode":"Motorist",
+    "Age":32,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"May 7, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -74.00178000,40.761333000 ]
     },
     "properties": {
@@ -50733,6 +50750,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.87463600,40.663354000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/07/08",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Stanley Ave and Berriman St",
+    "Mode":"Pedestrian",
+    "Age":54,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"July 8, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -74.14590400,40.542430000 ]
     },
     "properties": {
@@ -50808,7 +50842,7 @@
     "Borough":"Manhattan",
     "Cross_Streets":"Audobon Ave and W 175th St",
     "Mode":"Pedestrian",
-    "Age":44,
+    "Age":48,
     "Gender":"M",
     "Collision_ID":null,
     "NewDate":"July 16, 2026"
@@ -50920,7 +50954,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -74.00642867,40.617821171 ]
+       "coordinates":  [ -74.00643158,40.617813110 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/22",
@@ -50937,13 +50971,13 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -74.00410807,40.713206665 ]
+       "coordinates":  [ -74.00405884,40.713134770 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/29",
     "Borough":"Manhattan",
     "Cross_Streets":"Centre St and Chambers St",
-    "Mode":"Motorist",
+    "Mode":"Cyclist",
     "Age":17,
     "Gender":"M",
     "Collision_ID":null,
@@ -50954,7 +50988,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.98717862,40.771044246 ]
+       "coordinates":  [ -73.98714447,40.771053310 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/30",
@@ -50988,14 +51022,14 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.86008270,40.738378971 ]
+       "coordinates":  [ -73.86006927,40.738372800 ]
     },
     "properties": {
     "Fatality_Date":"2026/08/01",
     "Borough":"Queens",
     "Cross_Streets":"99th St and 57th Ave",
     "Mode":"Pedestrian",
-    "Age":65,
+    "Age":70,
     "Gender":"F",
     "Collision_ID":null,
     "NewDate":"August 1, 2026"
@@ -51005,24 +51039,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.91486560,40.830297443 ]
-    },
-    "properties": {
-    "Fatality_Date":"2026/08/08",
-    "Borough":"Bronx",
-    "Cross_Streets":"College Ave and 166th St",
-    "Mode":"Pedestrian",
-    "Age":55,
-    "Gender":"M",
-    "Collision_ID":null,
-    "NewDate":"August 8, 2026"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -73.98669073,40.766654923 ]
+       "coordinates":  [ -73.98666100,40.766617000 ]
     },
     "properties": {
     "Fatality_Date":"2026/08/08",
@@ -51050,6 +51067,23 @@
     "Gender":"M",
     "Collision_ID":null,
     "NewDate":"August 8, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.77314758,40.709922790 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/16",
+    "Borough":"Queens",
+    "Cross_Streets":"Jamaica Ave and 186th St",
+    "Mode":"Pedestrian",
+    "Age":37,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 16, 2026"
     }
   },
   {
@@ -51084,6 +51118,40 @@
     "Gender":"M",
     "Collision_ID":null,
     "NewDate":"August 18, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92418353,40.630727258 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/20",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Avenue I and E 54th St",
+    "Mode":"Cyclist",
+    "Age":40,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 20, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.00052485,40.732309428 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/23",
+    "Borough":"Manhattan",
+    "Cross_Streets":"6th Ave and W Washington Pl",
+    "Mode":"Pedestrian",
+    "Age":22,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"August 23, 2026"
     }
   }
 ]
