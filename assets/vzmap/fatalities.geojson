@@ -50359,7 +50359,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.90369469,40.858692433 ]
+       "coordinates":  [ -73.90390778,40.858367920 ]
     },
     "properties": {
     "Fatality_Date":"2026/05/31",
@@ -50478,7 +50478,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.92165037,40.757050316 ]
+       "coordinates":  [ -73.92165900,40.757053000 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/14",
@@ -50495,7 +50495,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -74.13821944,40.636098017 ]
+       "coordinates":  [ -74.13823700,40.636119840 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/17",
@@ -50512,7 +50512,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.95432996,40.800615200 ]
+       "coordinates":  [ -73.95439148,40.800659180 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/18",
@@ -50529,7 +50529,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.94487027,40.829019888 ]
+       "coordinates":  [ -73.94483700,40.829022000 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/19",
@@ -50546,7 +50546,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -74.13672704,40.628662200 ]
+       "coordinates":  [ -74.13674164,40.628662110 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/21",
@@ -50563,7 +50563,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.93269103,40.804061622 ]
+       "coordinates":  [ -73.93266300,40.804066000 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/22",
@@ -50580,7 +50580,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.92958764,40.852480171 ]
+       "coordinates":  [ -73.92960358,40.852474210 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/27",
@@ -50614,7 +50614,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.80452700,40.756379062 ]
+       "coordinates":  [ -73.80488586,40.753765110 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/29",
@@ -50631,7 +50631,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.86049923,40.887813470 ]
+       "coordinates":  [ -73.86045074,40.887802120 ]
     },
     "properties": {
     "Fatality_Date":"2026/06/29",
@@ -50835,7 +50835,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.93516555,40.844877020 ]
+       "coordinates":  [ -73.93518066,40.844844820 ]
     },
     "properties": {
     "Fatality_Date":"2026/07/16",
@@ -51073,6 +51073,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.83588590,40.852017163 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/09",
+    "Borough":"Bronx",
+    "Cross_Streets":"Hutchinson River Pkwy and Wilkinson Ave",
+    "Mode":"Motorist",
+    "Age":60,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 9, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.77314758,40.709922790 ]
     },
     "properties": {
@@ -51141,7 +51158,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -74.00052485,40.732309428 ]
+       "coordinates":  [ -74.00051117,40.732315060 ]
     },
     "properties": {
     "Fatality_Date":"2026/08/23",
@@ -51152,6 +51169,210 @@
     "Gender":"F",
     "Collision_ID":null,
     "NewDate":"August 23, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.81712341,40.717678070 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/25",
+    "Borough":"Queens",
+    "Cross_Streets":"Main St and Union Tpke",
+    "Mode":"Pedestrian",
+    "Age":61,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"August 25, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.02459803,40.639962439 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/25",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Belt Pkwy and 65th St",
+    "Mode":"Motorist",
+    "Age":18,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 25, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.02459803,40.639962439 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/25",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Belt Pkwy and 65th St",
+    "Mode":"Motorist",
+    "Age":17,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 25, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.02459803,40.639962439 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/25",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Belt Pkwy and 65th St",
+    "Mode":"Motorist",
+    "Age":16,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 25, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.84729800,40.876733000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/28",
+    "Borough":"Bronx",
+    "Cross_Streets":"Boston Rd and Corsa Ave",
+    "Mode":"Pedestrian",
+    "Age":53,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 28, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.99839886,40.708657725 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/29",
+    "Borough":"Manhattan",
+    "Cross_Streets":"FDR Dr and Robert F Wagner Sr Pl",
+    "Mode":"Motorist",
+    "Age":25,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.01747000,40.644864000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/29",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"55th St and 3rd Ave",
+    "Mode":"Pedestrian",
+    "Age":28,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"August 29, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94877360,40.643250271 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/05",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Nostrand Ave and Clarendon Rd",
+    "Mode":"Pedestrian",
+    "Age":58,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 5, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.14800989,40.575654469 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/06",
+    "Borough":"Staten Island",
+    "Cross_Streets":"Richmond Hill Rd and Edinboro Rd",
+    "Mode":"Motorist",
+    "Age":28,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 6, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.98832326,40.689870236 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/07",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Schermerhorn St and Smith St",
+    "Mode":"Other Motorist",
+    "Age":77,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 7, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97217358,40.749802365 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/09",
+    "Borough":"Manhattan",
+    "Cross_Streets":"E 42nd St and 2nd Ave",
+    "Mode":"Motorist",
+    "Age":27,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"September 9, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.99588056,40.716415036 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/10",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Canal St and Bowery",
+    "Mode":"Pedestrian",
+    "Age":77,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 10, 2026"
     }
   }
 ]
