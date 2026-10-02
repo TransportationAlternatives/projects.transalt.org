@@ -49679,23 +49679,6 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -73.84776000,40.827520000 ]
-    },
-    "properties": {
-    "Fatality_Date":"2026/04/04",
-    "Borough":"Bronx",
-    "Cross_Streets":"Bruckner Expy and White Plains Rd",
-    "Mode":"Pedestrian",
-    "Age":71,
-    "Gender":"M",
-    "Collision_ID":4889644,
-    "NewDate":"April 4, 2026"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ -73.90050500,40.671204000 ]
     },
     "properties": {
@@ -49706,6 +49689,23 @@
     "Age":27,
     "Gender":"M",
     "Collision_ID":4890574,
+    "NewDate":"April 4, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.84776000,40.827520000 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/04/04",
+    "Borough":"Bronx",
+    "Cross_Streets":"Bruckner Expy and White Plains Rd",
+    "Mode":"Pedestrian",
+    "Age":71,
+    "Gender":"M",
+    "Collision_ID":4889644,
     "NewDate":"April 4, 2026"
     }
   },
@@ -51243,6 +51243,23 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
+       "coordinates":  [ -73.76162457,40.679732401 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/08/28",
+    "Borough":"Queens",
+    "Cross_Streets":"Farmers Blvd and Merrick Blvd",
+    "Mode":"Other Motorist",
+    "Age":60,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"August 28, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
        "coordinates":  [ -73.84729800,40.876733000 ]
     },
     "properties": {
@@ -51373,6 +51390,176 @@
     "Gender":"M",
     "Collision_ID":null,
     "NewDate":"September 10, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.93110830,40.842475368 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/13",
+    "Borough":"Manhattan",
+    "Cross_Streets":"Dyckman St and Harlem River Dr",
+    "Mode":"Pedestrian",
+    "Age":null,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"September 13, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.98535745,40.727590410 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/15",
+    "Borough":"Manhattan",
+    "Cross_Streets":"St Marks Pl and 1st Ave",
+    "Mode":"Pedestrian",
+    "Age":62,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 15, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.92922192,40.683440771 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/15",
+    "Borough":"Brooklyn",
+    "Cross_Streets":"Malcolm X Blvd and Macon St",
+    "Mode":"Other Motorist",
+    "Age":28,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 15, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.94363536,40.752137618 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/17",
+    "Borough":"Queens",
+    "Cross_Streets":"Queensboro Bridge",
+    "Mode":"Motorist",
+    "Age":29,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 17, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.98248789,40.731440260 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/18",
+    "Borough":"Manhattan",
+    "Cross_Streets":"E 14th St and 1st Ave",
+    "Mode":"Cyclist",
+    "Age":15,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"September 18, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.89967963,40.847431188 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/21",
+    "Borough":"Bronx",
+    "Cross_Streets":"Park Ave and E Tremont Ave",
+    "Mode":"Pedestrian",
+    "Age":70,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 21, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96369366,40.781327257 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/23",
+    "Borough":"Manhattan",
+    "Cross_Streets":"East Dr and E 84th St",
+    "Mode":"Pedestrian",
+    "Age":41,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 23, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.87764221,40.693681232 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/23",
+    "Borough":"Queens",
+    "Cross_Streets":"Jackie Robinson Pkwy and Cypress Hills St",
+    "Mode":"Motorist",
+    "Age":44,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"September 23, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.99063870,40.751018530 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/09/28",
+    "Borough":"Manhattan",
+    "Cross_Streets":"W 34th St and 7th Ave",
+    "Mode":"Cyclist",
+    "Age":51,
+    "Gender":"F",
+    "Collision_ID":null,
+    "NewDate":"September 28, 2026"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.89663496,40.909681421 ]
+    },
+    "properties": {
+    "Fatality_Date":"2026/10/01",
+    "Borough":"Bronx",
+    "Cross_Streets":"Broadway and W 261st St",
+    "Mode":"Motorist",
+    "Age":45,
+    "Gender":"M",
+    "Collision_ID":null,
+    "NewDate":"October 1, 2026"
     }
   }
 ]
