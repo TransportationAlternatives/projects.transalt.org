@@ -1,11 +1,17 @@
+# The Jekyll site is the main build. citibike-price/ is an Astro app with its
+# own npm build (excluded from Jekyll in _config.yml); it is built second and
+# dropped into _site/citibike-price so it serves at /citibike-price/.
+# Its basemap needs PUBLIC_STADIA_API_KEY set in the Netlify UI.
 [build]
-  command = "bundle exec jekyll build"
+  command = "bundle exec jekyll build && cd citibike-price/app && npm ci && npm run build && cp -R dist ../../_site/citibike-price"
   publish = "_site"
   functions = "netlify/functions"
 
 [build.environment]
   RUBY_VERSION = "3.1.2"
-  
+  NODE_VERSION = "22"
+  PUBLIC_BASE_PATH = "/citibike-price"
+
 [[redirects]]
   from = "https://3dollarcitibike.nyc/"
   to = "/3-dollar-citibike.html"
