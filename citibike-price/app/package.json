@@ -1,0 +1,43 @@
+{
+  "name": "citibike-sheds-web",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build:data": "node scripts/build-data.mjs",
+    "build:coverage": "node scripts/build-coverage.mjs",
+    "build:landmark-areas": "node scripts/build-landmark-areas.mjs",
+    "build:landmark-reach": "node scripts/build-landmark-reach.mjs",
+    "build": "node scripts/build-data.mjs && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.0",
+    "@deck.gl/mapbox": "^9.3.4",
+    "@mapbox/polyline": "^1.2.1",
+    "@stadiamaps/api": "^9.1.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@tanstack/react-query": "^5.101.0",
+    "astro": "^5.2.0",
+    "deck.gl": "^9.3.4",
+    "fuse.js": "^7.5.0",
+    "lucide-react": "^1.55.0",
+    "maplibre-gl": "^5.1.0",
+    "motion": "^13.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-map-gl": "^8.1.2",
+    "react-use-measure": "^2.1.7",
+    "tailwindcss": "^4.0.0",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@turf/turf": "^7.2.0",
+    "@types/geojson": "^7946.0.15",
+    "@types/mapbox__polyline": "^1.0.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}

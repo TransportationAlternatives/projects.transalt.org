@@ -1,0 +1,296 @@
+// Drives the narrated trip-line story as a set of discrete, independently
+// re-enterable steps — NOT a scrubbable timeline. The sibling of DockController
+// / TripLines: it owns the animation clock and is triggered imperatively from
+// the UI (playNear / playFar), while the static resting frames (showIntro /
+// showOrigin / holdNear / holdFar) are painted when the store lands on a step.
+//
+// Each draw-out step still has a private 0→1 progress clock (the bead's position
+// is a function of it), but that `t` is never addressed from outside — you only
+// ever play a step forward or paint its resting frame.
+
+import type maplibregl from "maplibre-gl";
+import { DockController } from "./dockController";
+import { COLOR_ALL, TripLines, tiersForPhase } from "./tripLines";
+import type { WalkshedLayer } from "./walksheds";
+import { FAR_ONLY, PLAYBACK_SPEEDUP, type Layers, type StepKey } from "./store";
+import { FULL_VIEW } from "./constants";
+import { easeToOrigin } from "./mapControl";
+
+const EMPTY: Set<string> = new Set();
+
+const clamp01 = (x: number) => (x < 0 ? 0 : x > 1 ? 1 : x);
+const linear = (t: number) => t; // constant speed — for bike-speed draw-out
+
+export class StoryController {
+  private raf: number | null = null;
+  // The step whose draw-out is running (or rewinding to replay), so landing on
+  // that same step's resting frame (the advance onDone triggers) lets it finish.
+  private playing: StepKey | null = null;
+  // How far the running draw-out is towards every trip docking (0→1), for the
+  // UI's ride clock. Null when nothing is drawing.
+  private progress: { key: StepKey; frac: number } | null = null;
+  private rewind: ReturnType<typeof setTimeout> | null = null;
+  // Which dock styling is currently baked: a StepKey (that step's arrival
+  // delays), or "bare" (origin only). Latched so the per-frame renderStep doesn't
+  // re-bake 2.4k feature-states every tick — but keyed by step, not just by pick,
+  // because each step bakes different delays.
+  private applied: string | null = null;
+  // Far step, toggled on: the other docks are back on the map (dimmed,
+  // clickable) so a new origin can be picked from it. Every other entry point
+  // resets this via stop(); holdFar sets it.
+  private explore = false;
+
+  constructor(
+    private map: maplibregl.Map,
+    private trips: TripLines,
+    private docks: DockController,
+    private sheds: WalkshedLayer,
+    private originFor: (id: string) => [number, number] | null,
+    private selectedId: () => string | null,
+  ) {}
+
+  // ── Static resting frames (painted when the store lands on a step) ──────────
+
+  // Intro: no station picked → full field, full-metro camera, no trips.
+  showIntro() {
+    this.stop();
+    this.isolateOrigin(null);
+    this.trips.setTiers({ visible: false, progress: 0, opacity: 1 }, { visible: false, progress: 0, opacity: 1 });
+    this.sheds.show(null);
+    this.map.jumpTo({ center: FULL_VIEW.center, zoom: FULL_VIEW.zoom });
+  }
+
+  // Step 1 (selected): isolate + style the picked origin, no trips yet. Leaves
+  // the camera alone so the selection flyTo (mapControl) can run uninterrupted.
+  showOrigin() {
+    this.stop();
+    if (!this.hasOrigin()) return this.showIntro();
+    this.renderStep("near", 0, { hideTrips: true });
+  }
+
+  // Step 2/3 resting frames: the draw-out held at its end (progress 1). Static —
+  // the camera stays wherever it is (no auto-fit), so re-entering a step via the
+  // reset-to-any-step controls doesn't lurch.
+  holdNear() {
+    if (this.playing === "near") return;
+    this.stop();
+    if (!this.hasOrigin()) return this.showIntro();
+    this.renderStep("near", 1);
+  }
+
+  // `layers` is the far step's tier toggle. The default (≤45 only) is exactly
+  // the draw-out's last frame, so it lets an in-flight draw-out finish fading;
+  // any other choice takes over immediately.
+  //
+  // `explore` clears the trips and sheds and brings the other docks back
+  // (dimmed, clickable) for picking a new origin.
+  holdFar(layers: Layers = FAR_ONLY, explore = false) {
+    const isDefault = !layers.near && layers.far && !explore;
+    if (this.playing === "far" && isDefault) return;
+    this.stop();
+    this.explore = explore;
+    if (!this.hasOrigin()) return this.showIntro();
+    if (isDefault) return this.renderStep("far", 1);
+
+    const id = this.selectedId()!;
+    const shown = explore ? { near: false, far: false } : layers;
+    this.isolateOrigin(id);
+    this.ensureDockStyling(id, "far", 1, false);
+    this.trips.setTiers(
+      { visible: shown.near, progress: 1, opacity: 1 }, // baked orange
+      { visible: shown.far, progress: 1, opacity: 1, color: COLOR_ALL },
+    );
+    // Near switched off still leaves its ghost under the ≤45 shed, as on the
+    // default frame; exploring clears both.
+    this.sheds.showLevels({
+      near: shown.near ? "on" : explore || !shown.far ? "off" : "ghost",
+      far: shown.far ? "on" : "off",
+    });
+  }
+
+  // ── Draw-out animations (triggered by the UI's play buttons) ────────────────
+
+  // Step 2: draw the ≤11 set out at constant bike speed, then hold.
+  playNear(onDone?: () => void) {
+    this.play("near", onDone);
+  }
+
+  // Step 3: draw the full ≤45 set out (all-blue) at constant bike speed.
+  playFar(onDone?: () => void) {
+    this.play("far", onDone);
+  }
+
+  // Re-run a step from the top. The draw-out itself starts wherever the camera
+  // is (it only ever frames outward), so a replay first has to undo the zoom-out
+  // the last draw left behind: clear the lines, ease back to the origin view the
+  // selection landed on, and only then play. onDone fires when the draw settles,
+  // same as playNear/playFar.
+  replay(key: StepKey, onDone?: () => void) {
+    const rewindMs = this.rewindToOrigin(key);
+    if (rewindMs == null) return;
+    // Counts as playing from the start of the rewind, so a resting-frame repaint
+    // of this same step (e.g. far's replay resetting the layer toggle) doesn't
+    // stop() it and cancel the pending draw-out.
+    this.playing = key;
+    this.progress = { key, frac: 0 }; // clock reads 0:00 while the camera rewinds
+    this.rewind = setTimeout(() => {
+      this.rewind = null;
+      this.play(key, onDone);
+    }, rewindMs);
+  }
+
+  // Clear the drawn lines and ease back to the origin view, without playing
+  // anything. Returns the ease's duration, or null if there's no pick to rewind
+  // to. Standalone, this is the "start the story over" frame (the final step's
+  // Replay); `replay` chains a draw-out onto it.
+  rewindToOrigin(key: StepKey = "near"): number | null {
+    this.stop();
+    if (!this.hasOrigin()) return null;
+    const origin = this.originFor(this.selectedId()!)!;
+    this.renderStep(key, 0, { hideTrips: true });
+    this.map.stop();
+    return easeToOrigin(this.map, origin);
+  }
+
+  stop() {
+    if (this.raf != null) {
+      cancelAnimationFrame(this.raf);
+      this.raf = null;
+    }
+    this.playing = null;
+    this.progress = null;
+    this.explore = false;
+    if (this.rewind != null) {
+      clearTimeout(this.rewind);
+      this.rewind = null;
+    }
+    this.trips.endAutoFit();
+  }
+
+  // Draw-out progress for the ride clock: polled per frame by the UI rather than
+  // pushed, so only the clock re-renders.
+  rideProgress(): { key: StepKey; frac: number } | null {
+    return this.progress;
+  }
+
+  // Clear the latch so the next pick re-applies dock styling from scratch.
+  resetPick() {
+    this.applied = null;
+  }
+
+  dispose() {
+    this.stop();
+  }
+
+  // ── internals ───────────────────────────────────────────────────────────────
+
+  // Tween `key`'s local progress 0→1 at constant bike speed (duration derived
+  // from the route distances), painting each frame, then hold at 1. onDone fires
+  // as soon as every trip has docked; the clock runs on until the last trails
+  // have faded, so they don't freeze mid-fade.
+  private play(key: StepKey, onDone?: () => void) {
+    this.stop();
+    if (!this.hasOrigin()) return;
+    // Kill any in-flight MapLibre camera animation (the selection flyTo, scroll
+    // easing, drag inertia) so it can't fight our per-frame paints, then take
+    // camera ownership for the draw-out.
+    this.map.stop();
+    this.trips.beginAutoFit();
+
+    const ride = this.trips.rideSecondsFor(key);
+    const dur = (ride * 1000) / PLAYBACK_SPEEDUP;
+    const doneAt = ride > 0 ? this.trips.doneSecondsFor(key) / ride : 1;
+    let done = false;
+    this.progress = { key, frac: 0 };
+    const t0 = performance.now();
+    const tick = (now: number) => {
+      const k = dur <= 0 ? 1 : clamp01((now - t0) / dur);
+      this.renderStep(key, linear(k));
+      if (!done && k >= doneAt) {
+        done = true;
+        this.progress = null;
+        onDone?.();
+      } else if (!done) {
+        this.progress = { key, frac: k / doneAt };
+      }
+      if (k < 1) {
+        this.raf = requestAnimationFrame(tick);
+      } else {
+        this.raf = null;
+        this.playing = null;
+        this.trips.endAutoFit();
+      }
+    };
+    this.playing = key;
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  // Paint one frame of a step: isolate + style the origin, then set the tiers for
+  // this step's progress (or hide them entirely for the pre-draw resting frame).
+  // A step's walkshed fades in once every trip has docked (doneSecondsFor).
+  private renderStep(
+    key: StepKey,
+    t: number,
+    opts?: { hideTrips?: boolean },
+  ) {
+    const id = this.selectedId()!;
+    this.isolateOrigin(id);
+    this.ensureDockStyling(id, key, t, !!opts?.hideTrips);
+    // The far step keeps the near shed up as a ghost throughout (rewind, draw-out
+    // and resting frame), so the ≤45 ride grows out past today's ≤11 reach.
+    const nearGhost = key === "far" && !this.explore ? "ghost" : "off";
+    if (opts?.hideTrips) {
+      this.trips.setTiers({ visible: false, progress: 0, opacity: 1 }, { visible: false, progress: 0, opacity: 1 });
+      this.sheds.showLevels({ near: nearGhost, far: "off" });
+      return;
+    }
+    const { near, all } = tiersForPhase(key, t);
+    this.trips.setTiers(near, all);
+    const ride = this.trips.rideSecondsFor(key);
+    const docked = t >= 1 || t * ride >= this.trips.doneSecondsFor(key);
+    if (key === "near") this.sheds.show(docked ? "near" : null);
+    else this.sheds.showLevels({ near: nearGhost, far: docked ? "on" : "off" });
+  }
+
+  private hasOrigin(): boolean {
+    const id = this.selectedId();
+    return !!(id && this.originFor(id));
+  }
+
+  // Isolate the origin dock when a station is picked (`id`); pass null to
+  // restore the full clickable field (the intro). DockController owns the
+  // filtering itself now that a dock draws on two layers (dot + pin).
+  private isolateOrigin(id: string | null) {
+    this.docks.isolate(id, this.explore);
+  }
+
+  // Bake the origin marker and this step's arrival delays into feature-state,
+  // once per step (latched by `applied`, cleared by resetPick).
+  //
+  // `bare` is the pre-draw frame (showOrigin / rewindToOrigin): origin only —
+  // the lines haven't ridden out yet, so nothing has arrived.
+  private ensureDockStyling(id: string, key: StepKey, t: number, bare: boolean) {
+    const tag = (bare ? "bare" : key) + (this.explore ? "+explore" : "");
+    if (this.applied === tag) return;
+    this.applied = tag;
+
+    this.docks.select({
+      selectedId: id,
+      near: EMPTY,
+      ring: EMPTY,
+      showNear: true,
+      showRing: true,
+      // Exploring dims the rest of the field back in (a distance ripple) rather
+      // than hiding it, so the other docks can be clicked.
+      hideOthers: !this.explore,
+      delays: bare || this.explore ? undefined : this.trips.arrivalDelays(key),
+    });
+
+    // A draw-out starting from the top (t≈0) plays the wave alongside the lines.
+    // A resting frame (holdNear/holdFar land at t=1) has no lines to sync to, so
+    // settle instantly — otherwise the wave would replay over an already
+    // fully-drawn map.
+    if (t >= 1) this.docks.refresh();
+    else this.docks.start();
+  }
+}

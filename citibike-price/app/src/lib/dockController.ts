@@ -1,0 +1,493 @@
+// Dock layer controller for the map.
+//
+// Owns everything about the dock (station) circle layer: its paint, the
+// "plop-in" wave animation, and per-dock highlighting. The idea is that all
+// dock-level map behaviour lives behind this one controller — today that's the
+// wave + selection styling; tooltips/hover cards are the natural next thing to
+// add here (see the EXTENSION POINT note near the bottom).
+//
+// On selection, every dock gets per-feature animation values baked into
+// MapLibre feature-state (color, target opacity, base size, stroke, and a
+// distance-based `delay`). A single requestAnimationFrame loop then sweeps a
+// global `time` past those delays; the paint expressions below turn that into
+// a ripple of dots that fade in fast and overshoot ("plop") to their size.
+//
+// Keeping this out of the React component means the per-frame work is plain
+// imperative map calls — no re-renders — and the easing/timing lives in one
+// place.
+
+import type {
+  ExpressionSpecification,
+  CircleLayerSpecification,
+  SymbolLayerSpecification,
+  FilterSpecification,
+  Map,
+} from "maplibre-gl";
+import { CONTOURS } from "./sheds";
+import { BRAND_ORANGE } from "./constants";
+import { withBase } from "./base";
+
+export const DOCKS_SOURCE = "stations";
+// The pins get their OWN source, normally tiled — see Map.tsx. DOCKS_SOURCE is
+// pinned to maxzoom 13, which means a zoomed-in view overzooms one ~5km tile
+// holding every dock in it. Circles don't care (no placement pass); a symbol
+// layer would place hundreds of pins to show ~20.
+export const DOCKS_PIN_SOURCE = "stations-pins";
+export const DOCKS_LAYER = "stations";
+// Invisible circles under the dots, a few px wider, so a dot is pickable
+// without landing on its ~3px face. Same source and filter as DOCKS_LAYER.
+export const DOCKS_HIT_LAYER = "stations-hit";
+export const DOCKS_ICON_LAYER = "stations-icon";
+export const DOCK_ICON_ID = "dock-pin";
+
+// A station_id no dock can have. Filtering a layer to it is how a layer is made
+// to draw nothing — cheaper than opacity 0, which still rasterizes everything.
+const NO_DOCK = "__none__";
+
+const SELECTED_COLOR = BRAND_ORANGE;
+const BASE_COLOR = BRAND_ORANGE;
+const COLOR_NEAR = CONTOURS[0].color; // ≤11 min — emerald
+const COLOR_RING = CONTOURS[1].color; // 11–45 min — indigo
+
+// Reused empty set for selections that show no tiers (a plain highlight).
+const EMPTY: Set<string> = new Set();
+
+// WAVE_MS: how long the ripple takes to sweep the whole map (the farthest
+// station starts plopping at WAVE_MS). FADE_MS: each dot's own plop duration.
+const WAVE_MS = 2400;
+const FADE_MS = 500;
+const SETTLED = WAVE_MS + FADE_MS + 1; // a `time` past which everything is at rest
+
+// --- circle ⇄ pin ⇄ bubble cross-fade ---------------------------------------
+// A dock is a dot when the field is dense, a pin once it has room to breathe,
+// and a named bubble once there's room for its NAME. The first two live on
+// their own layer over the same source (a circle layer can't draw an image),
+// reading the same feature-state; the swap is a zoom ramp that fades one out as
+// the other fades in. Below ZOOM_CIRCLE it's all dots, above ZOOM_ICON all
+// pins, and in between both are partly drawn.
+//
+// ZOOM_CIRCLE is exported because the pin layer's `minzoom` must match it:
+// below it the pins are at opacity 0, so the layer may as well not exist
+// (see Map.tsx).
+export const ZOOM_CIRCLE = 13;
+const ZOOM_ICON = 14.2;
+
+// The third look is DOM, not a layer (see StationBubble.tsx), so this gate is
+// about node count and label collision rather than paint. Both bottom out in
+// the same place, which is why one constant can serve both: a 1600×900 viewport
+// over Midtown holds ~420 docks at ZOOM_ICON but only ~80 here and ~20 by 17.2.
+// Docks sit ~250m apart, which is ~135px at this zoom — tight for a ~150px name
+// bubble, so the densest Midtown blocks overlap a little until 16.5. Set to
+// match ORIGIN_ZOOM so the names are up the moment a pick's ease-in lands.
+export const ZOOM_BUBBLE = 16;
+// Where the pins have fully handed off to the bubbles. Short band on purpose:
+// the two looks sit at the same anchor, so a long overlap reads as clutter.
+// Exported for the same reason as ZOOM_CIRCLE, at the other end: the pin layer's
+// `maxzoom` matches it, because above this the pins are at opacity 0.
+export const ZOOM_BUBBLE_FULL = 16.4;
+
+const ICON_URL = withBase("/tmap-icon.svg");
+// The artwork is padded inside its 186×186 viewBox; this is the pin's tight
+// bbox, cropped on rasterize so `icon-anchor: bottom` puts the tip exactly on
+// the station rather than ~9% below it.
+const ICON_BBOX = { x: 37.2, y: 18.6, w: 111.6, h: 150 };
+const ICON_H = 36; // CSS px tall at icon-size 1
+const ICON_RATIO = 2; // rasterize at 2× so pins stay crisp on retina
+
+// Rasterize the pin SVG into the map's image sprite. Must resolve before the
+// symbol layer is added, or MapLibre warns and draws nothing.
+export async function loadDockIcon(map: Map): Promise<void> {
+  if (map.hasImage(DOCK_ICON_ID)) return;
+  const img = new Image();
+  img.decoding = "async";
+  await new Promise<void>((resolve, reject) => {
+    img.onload = () => resolve();
+    img.onerror = () => reject(new Error(`could not load ${ICON_URL}`));
+    img.src = ICON_URL;
+  });
+  const h = ICON_H * ICON_RATIO;
+  const w = Math.round((h * ICON_BBOX.w) / ICON_BBOX.h);
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+  ctx.drawImage(img, ICON_BBOX.x, ICON_BBOX.y, ICON_BBOX.w, ICON_BBOX.h, 0, 0, w, h);
+  map.addImage(DOCK_ICON_ID, ctx.getImageData(0, 0, w, h), { pixelRatio: ICON_RATIO });
+}
+
+export interface StationPoint {
+  id: string;
+  /** Human name ("2 Ave & 36 St") — what the bubble puts on the map. */
+  name: string;
+  lon: number;
+  lat: number;
+}
+
+export interface Selection {
+  selectedId: string;
+  near: Set<string>;
+  ring: Set<string>;
+  showNear: boolean;
+  showRing: boolean;
+  // Optional per-station appearance delay (wall-ms), e.g. the moment each
+  // destination's trip line arrives. When omitted, a straight-line distance
+  // ripple is used instead.
+  delays?: globalThis.Map<string, number>;
+  // Hide (opacity 0) stations that aren't the origin or in a shown tier,
+  // instead of dimming them — they stay clickable but invisible.
+  hideOthers?: boolean;
+}
+
+// --- paint expressions ----------------------------------------------------
+// Only the `time` literal changes per frame; everything else reads feature-state.
+
+// ms since this station's wave arrival (negative until its turn comes).
+const since = (time: number): ExpressionSpecification =>
+  ["-", time, ["coalesce", ["feature-state", "delay"], 0]];
+
+// Opacity snaps in over the first third of the fade — the dot "appears" fast,
+// then the size bounce sells the impact.
+const appearExpr = (time: number): ExpressionSpecification =>
+  ["interpolate", ["linear"], since(time), 0, 0, FADE_MS * 0.3, 1];
+
+// "Plop": scale overshoots its target then settles back, like the dot dropped
+// onto the map and squished. Stays at 0 before arrival, clamps to 1 after.
+const bounceExpr = (time: number): ExpressionSpecification =>
+  [
+    "interpolate", ["linear"], since(time),
+    0, 0,
+    FADE_MS * 0.45, 1.35,  // overshoot past full size
+    FADE_MS * 0.72, 0.92,  // settle back, slight undershoot
+    FADE_MS, 1.0,
+  ];
+
+// A dock's target opacity, faded in by the wave. Shared by both layers — the
+// dot and the pin dim together, so `op` still means "how present is this dock".
+const litExpr = (time: number): ExpressionSpecification =>
+  ["*", ["coalesce", ["feature-state", "op"], 0.85], appearExpr(time)];
+
+// The cross-fade. A zoom interpolate has to be the TOP-LEVEL expression (same
+// rule as radiusExpr), so the fade can't be a factor multiplied onto the dot
+// opacity — it has to BE the outer interpolate, with the lit value as a stop.
+const opacityExpr = (time: number): ExpressionSpecification =>
+  [
+    "interpolate", ["linear"], ["zoom"],
+    ZOOM_CIRCLE, litExpr(time),
+    ZOOM_ICON, 0,
+  ];
+
+// The pin's half of the cross-fade. Fully STATIC, unlike opacityExpr: no `time`
+// and no feature-state, so it's set once at layer creation and never touched.
+//
+// It can afford to ignore per-dock `op` because `isolate()` already does that
+// job with a filter: every step calls isolateOrigin(id) before styling, which
+// filters this layer to NO_DOCK — the story draws no pins at all, since the
+// origin is a bubble by then. In the intro nothing is isolated, but appearAll
+// gives every dock the same `op` — so there has never been a frame where two
+// pins wanted different opacities.
+//
+// Being state-free is what lets the pins live on their own source (no
+// promoteId, no duplicated setFeatureState) — which is what actually makes them
+// cheap. See DOCKS_PIN_SOURCE.
+// The top stops hand the dock off to its bubble: the two draw at the same
+// anchor, so a pin left under a bubble is just a smudge behind the tail.
+const iconOpacityExpr = (): ExpressionSpecification =>
+  [
+    "interpolate", ["linear"], ["zoom"],
+    ZOOM_CIRCLE, 0,
+    ZOOM_ICON, 1,
+    ZOOM_BUBBLE, 1,
+    ZOOM_BUBBLE_FULL, 0,
+  ];
+
+const radiusExpr = (time: number): ExpressionSpecification => {
+  // A zoom interpolate must be the TOP-LEVEL expression, so the per-station
+  // size and plop bounce live inside its output stops. Each station's base size
+  // is feature-state "r" (zoom-10 px); it scales ~2.4× by zoom 15.
+  const r: ExpressionSpecification = ["coalesce", ["feature-state", "r"], 2.5];
+  const grow = bounceExpr(time);
+  return [
+    "interpolate", ["linear"], ["zoom"],
+    10, ["*", r, grow],
+    15, ["*", r, 2.4, grow],
+  ];
+};
+
+// Pin scale. Zoom-only, and it has to be: `icon-size` is a LAYOUT property, and
+// MapLibre rejects feature-state in layout outright ("feature-state data
+// expressions are not supported with layout properties") — the layer won't even
+// add. So unlike the dot, the pin can't carry per-dock size or the plop bounce.
+//
+// The pin ended up static all the way down: icon-opacity dropped its clock and
+// its feature-state too (see iconOpacityExpr), so nothing about this layer
+// varies per dock or per frame. That's the point — it's what keeps a symbol
+// layer off the hot path. If a future step ever shows tier pins at mixed sizes,
+// it needs a second symbol layer filtered to that tier with its own static
+// icon-size — not a feature-state.
+const iconSizeExpr = (): ExpressionSpecification => [
+  "interpolate", ["linear"], ["zoom"],
+  ZOOM_CIRCLE, 0.55,
+  16, 0.9,
+];
+
+// Paint for the station circle layer. Color/stroke come from feature-state
+// (default to the resting look). `time` is the wave clock: SETTLED is the
+// resting field; 0 is pre-ripple (opacity and radius both 0). The Layer must
+// mount at 0 — react-map-gl adds it before `onLoad`, so SETTLED would flash
+// every dock for a frame before start() can tick the clock.
+// Extra pick radius around a dot, CSS px. Dots are ~2.5px at zoom 10 and ~6px
+// by 15, so this roughly triples the target at city scale.
+const HIT_PAD_PX = 6;
+
+// Paint for DOCKS_HIT_LAYER: the dot's settled radius plus a pad, drawn at
+// opacity 0. queryRenderedFeatures tests geometry, not opacity, so a fully
+// transparent circle is still a hit target. Static — no `time`, never updated.
+export function stationHitPaint(): CircleLayerSpecification["paint"] {
+  const r: ExpressionSpecification = ["coalesce", ["feature-state", "r"], 2.5];
+  return {
+    "circle-opacity": 0,
+    "circle-stroke-width": 0,
+    "circle-radius": [
+      "interpolate", ["linear"], ["zoom"],
+      10, ["+", r, HIT_PAD_PX],
+      15, ["+", ["*", r, 2.4], HIT_PAD_PX],
+    ],
+  };
+}
+
+export function stationPaint(
+  time: number = SETTLED,
+): CircleLayerSpecification["paint"] {
+  return {
+    "circle-color": ["coalesce", ["feature-state", "color"], BASE_COLOR],
+    "circle-stroke-color": ["coalesce", ["feature-state", "stroke"], "#ffffff"],
+    "circle-stroke-width": 1,
+    "circle-radius": radiusExpr(time),
+    "circle-opacity": opacityExpr(time),
+    // The stroke needs the same fade as the fill: it's a separate property that
+    // defaults to opaque, so without this the dot's ring survives the cross-fade
+    // and hangs around the pin — loudest on the origin, whose stroke is a wide
+    // coloured ring rather than a hairline of white.
+    "circle-stroke-opacity": opacityExpr(time),
+  };
+}
+
+// Layout for the pin layer. Collision is off — 2.4k docks are a field, not
+// labels, and MapLibre would otherwise drop most of them; the zoom gate is what
+// keeps the pins from piling up, not placement.
+export function stationIconLayout(): SymbolLayerSpecification["layout"] {
+  return {
+    "icon-image": DOCK_ICON_ID,
+    "icon-anchor": "bottom",
+    "icon-allow-overlap": true,
+    "icon-ignore-placement": true,
+    "icon-size": iconSizeExpr(),
+  };
+}
+
+export function stationIconPaint(): SymbolLayerSpecification["paint"] {
+  return { "icon-opacity": iconOpacityExpr() };
+}
+
+export class DockController {
+  private map: Map;
+  private stations: StationPoint[] = [];
+  private byId = new globalThis.Map<string, StationPoint>();
+  private time = SETTLED;
+  private endTime = SETTLED; // when the current run is fully settled
+  private raf: number | null = null;
+
+  constructor(map: Map) {
+    this.map = map;
+  }
+
+  setStations(list: StationPoint[]) {
+    this.stations = list;
+    this.byId = new globalThis.Map(list.map((s) => [s.id, s]));
+  }
+
+  // Highlight a single dock: paint it red at full opacity and fade the rest of
+  // the field down to 0.15 (no tiers shown). This is the plain "I clicked a
+  // dock" styling; use `select` directly when you also need near/ring tiers.
+  //
+  // `wave` (default true) plays the ripple as the field re-settles; pass false
+  // to snap straight to the highlighted look.
+  selectDock(dockId: string, { wave = true }: { wave?: boolean } = {}) {
+    this.select({
+      selectedId: dockId,
+      near: EMPTY,
+      ring: EMPTY,
+      showNear: false,
+      showRing: false,
+    });
+    // if (wave) this.start();
+    // else this.refresh();
+  }
+
+  // Bake each station's target look + appearance delay into feature-state.
+  // Call on a new selection or when the visible tiers change.
+  select({ selectedId, near, ring, showNear, showRing, delays, hideOthers }: Selection) {
+    const origin = this.byId.get(selectedId);
+    if (!origin || !this.map.getLayer(DOCKS_LAYER)) return;
+
+    // Straight-line distance ripple, used when no explicit delays are given.
+    const cosLat = Math.cos((origin.lat * Math.PI) / 180);
+    const dist = (s: StationPoint) =>
+      Math.hypot((s.lon - origin.lon) * cosLat, s.lat - origin.lat);
+    let max = 0;
+    if (!delays) for (const s of this.stations) max = Math.max(max, dist(s));
+    max = max || 1;
+
+    let maxDelay = 0;
+    for (const s of this.stations) {
+      const isSel = s.id === selectedId;
+      const inNear = showNear && near.has(s.id);
+      const inRing = showRing && ring.has(s.id);
+
+      let op = hideOthers ? 0 : 0.15;
+      let color = BASE_COLOR, stroke = "#ffffff", r = 2.5;
+      if (isSel) {
+        op = 1; color = SELECTED_COLOR; stroke = SELECTED_COLOR; r = 6;
+      } else if (inNear) {
+        op = 0.95; color = COLOR_NEAR; r = 3;
+      } else if (inRing) {
+        op = 0.95; color = COLOR_RING; r = 3;
+      }
+
+      // Origin appears immediately; others use their arrival delay (or the
+      // distance ripple). Hidden dots don't extend the run length.
+      const delay = isSel ? 0 : delays ? (delays.get(s.id) ?? 0) : (dist(s) / max) * WAVE_MS;
+      if (op > 0) maxDelay = Math.max(maxDelay, delay);
+
+      this.map.setFeatureState(
+        { source: DOCKS_SOURCE, id: s.id },
+        { delay, op, color, stroke, r },
+      );
+    }
+
+    this.endTime = maxDelay + FADE_MS;
+  }
+
+  // Intro: ripple the WHOLE station field in at full opacity (no selection),
+  // plopping outward from `center`. Used on first load before any station is
+  // picked. Call start() after to play it.
+  appearAll(center: [number, number]) {
+    if (!this.map.getLayer(DOCKS_LAYER)) return;
+    const cosLat = Math.cos((center[1] * Math.PI) / 180);
+    const dist = (s: StationPoint) =>
+      Math.hypot((s.lon - center[0]) * cosLat, s.lat - center[1]);
+    let max = 0;
+    for (const s of this.stations) max = Math.max(max, dist(s));
+    max = max || 1;
+
+    let maxDelay = 0;
+    for (const s of this.stations) {
+      const delay = (dist(s) / max) * WAVE_MS;
+      maxDelay = Math.max(maxDelay, delay);
+      this.map.setFeatureState(
+        { source: DOCKS_SOURCE, id: s.id },
+        { delay, op: 0.85, color: BASE_COLOR, stroke: "#ffffff", r: 2.5 },
+      );
+    }
+    this.endTime = maxDelay + FADE_MS;
+  }
+
+  // Run the ripple from time 0, then settle.
+  start() {
+    if (this.raf != null) cancelAnimationFrame(this.raf);
+    const t0 = performance.now();
+    const end = this.endTime;
+    // Paint the zero frame now, not on the first rAF: select() has already
+    // baked the new feature-state, but the expressions still carry the last
+    // run's settled time, which would render everything at full for a frame.
+    this.time = 0;
+    this.applyAnim(0);
+    const tick = () => {
+      const t = performance.now() - t0;
+      this.time = t;
+      this.applyAnim(t);
+      if (t < end) {
+        this.raf = requestAnimationFrame(tick);
+      } else {
+        this.raf = null;
+        this.time = end + 1;
+        this.applyAnim(this.time); // settle exactly at full
+      }
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  // Re-apply paint without restarting the ripple (e.g. after toggling tiers).
+  // If no run is in flight, settle fully so newly-shown dots aren't stuck hidden.
+  refresh() {
+    if (this.raf == null) this.time = this.endTime + 1;
+    this.applyAnim(this.time);
+  }
+
+  // Clear all selection styling — every station back to the resting dot field.
+  reset() {
+    if (this.raf != null) cancelAnimationFrame(this.raf);
+    this.raf = null;
+    if (!this.map.getLayer(DOCKS_LAYER)) return;
+    this.map.removeFeatureState({ source: DOCKS_SOURCE });
+    this.time = SETTLED;
+    this.applyAnim(SETTLED);
+  }
+
+  dispose() {
+    if (this.raf != null) cancelAnimationFrame(this.raf);
+    this.raf = null;
+  }
+
+  // Show only `id`'s dock, or pass null to restore the full clickable field.
+  // Lives here rather than in the caller so a dock's looks can't drift out of
+  // sync — it's one thing wearing three, and they must all filter alike.
+  //
+  // An isolated dock is exactly the case where the React bubble draws it (see
+  // StationBubble.tsx), at every zoom. So both the dot and the pin are filtered
+  // to NO_DOCK rather than to `id`: the bubble is the origin's only look, and
+  // the story never pays for the symbol layer at all.
+  //
+  // `showOthers` (the far step, where you can pick another origin from the map)
+  // keeps every OTHER dock drawn and clickable — still everything but `id`, so
+  // the origin's bubble stays its only look.
+  isolate(id: string | null, showOthers = false) {
+    const filter: FilterSpecification | null = !id
+      ? null
+      : showOthers
+        ? ["!=", ["get", "station_id"], id]
+        : ["==", ["get", "station_id"], NO_DOCK];
+    this.setFilterIfChanged(DOCKS_LAYER, filter);
+    this.setFilterIfChanged(DOCKS_HIT_LAYER, filter);
+    this.setFilterIfChanged(DOCKS_ICON_LAYER, filter);
+  }
+
+  private setFilterIfChanged(layer: string, filter: FilterSpecification | null) {
+    if (!this.map.getLayer(layer)) return;
+    const cur = this.map.getFilter(layer) ?? null;
+    if (JSON.stringify(cur) !== JSON.stringify(filter)) {
+      this.map.setFilter(layer, filter);
+    }
+  }
+
+
+  // --- EXTENSION POINT ----------------------------------------------------
+  // Future dock-level UI (hover tooltips / selected-dock cards) belongs here:
+  // this controller already owns the layer id, the id→point lookup (`byId`),
+  // and the selection state, so tooltip show/hide/position methods would have
+  // everything they need without the React component reaching into the map.
+
+  private applyAnim(time: number) {
+    if (this.map.getLayer(DOCKS_LAYER)) {
+      const op = opacityExpr(time);
+      this.map.setPaintProperty(DOCKS_LAYER, "circle-opacity", op);
+      this.map.setPaintProperty(DOCKS_LAYER, "circle-stroke-opacity", op);
+      this.map.setPaintProperty(DOCKS_LAYER, "circle-radius", radiusExpr(time));
+    }
+    // The pin layer is absent on purpose: icon-opacity is clockless (see
+    // iconOpacityExpr) and icon-size is layout, so there is nothing here to
+    // drive per frame. Leave it that way — a symbol layer is the most expensive
+    // thing on this map to invalidate.
+  }
+}
